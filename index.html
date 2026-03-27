@@ -1,900 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YourName — Technical Artist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-    :root {
-      --acc:     #c97a2e;
-      --acc-dim: rgba(201,122,46,0.1);
-      --bg:      #111009;
-      --bg2:     #1a1810;
-      --bg3:     #222018;
-      --tx:      #e8e2d6;
-      --tx2:     rgba(232,226,214,0.45);
-      --tx3:     rgba(232,226,214,0.22);
-      --bd:      rgba(255,255,255,0.07);
-      --bd2:     rgba(255,255,255,0.12);
-    }
+const caseStudies = [
+  {
+    title: "Procedural Destruction Pipeline",
+    meta: "Houdini · Unreal · Python",
+    desc: "Built reusable destruction tooling for fast iteration, cleaner authoring, and gameplay-ready results.",
+    impact: "Faster setup · scalable output",
+  },
+  {
+    title: "Editor Workflow Automation",
+    meta: "Unreal · Blueprint · Python",
+    desc: "Reduced repetitive environment setup through scripted actions and artist-facing tools.",
+    impact: "Lower manual overhead",
+  },
+  {
+    title: "Gameplay-Driven Shader Systems",
+    meta: "UE5 · HLSL · Materials",
+    desc: "Designed visual systems that support readability, performance, and design intent in real time.",
+    impact: "Runtime-conscious visuals",
+  },
+];
 
-    html { scroll-behavior: smooth; }
+const posts = [
+  "What makes a TA case study actually useful",
+  "When proceduralism saves time—and when it does not",
+  "Debug views, breakdowns, and showing the real work",
+];
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--tx);
-      min-height: 100vh;
-    }
-
-    /* ─── LIGHT MODE ─── */
-    body.light {
-      --bg:      #f7f4ee;
-      --bg2:     #efeade;
-      --bg3:     #e8e2d4;
-      --tx:      #1c1a12;
-      --tx2:     rgba(28,26,18,0.5);
-      --tx3:     rgba(28,26,18,0.28);
-      --bd:      rgba(0,0,0,0.09);
-      --bd2:     rgba(0,0,0,0.14);
-      --acc:     #b06820;
-      --acc-dim: rgba(176,104,32,0.08);
-    }
-
-    /* ─── TYPOGRAPHY HELPERS ─── */
-    .mono  { font-family: 'DM Mono', monospace; }
-    .serif { font-family: 'DM Serif Display', serif; font-weight: 400; }
-
-    .eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--acc);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 1px;
-      background: var(--acc);
-    }
-
-    /* ─── LAYOUT ─── */
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
-
-    /* ─── NAV ─── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 0.5px solid var(--bd);
-      transition: background 0.3s;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 40px;
-    }
-
-    .nav-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--acc);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .nav-right { display: flex; align-items: center; gap: 28px; }
-
-    .nav-links { display: flex; gap: 24px; list-style: none; }
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--tx2);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--acc); }
-
-    /* theme toggle */
-    .toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--bg2);
-      border: 0.5px solid var(--bd2);
-      border-radius: 20px;
-      padding: 5px 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .toggle-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      color: var(--tx3);
-      text-transform: uppercase;
-      width: 32px;
-    }
-    .toggle-knob {
-      width: 28px; height: 14px;
-      background: var(--bg3);
-      border: 0.5px solid var(--bd2);
-      border-radius: 10px;
-      position: relative;
-    }
-    .toggle-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--acc);
-      position: absolute;
-      top: 1px; left: 1px;
-      transition: transform 0.25s;
-    }
-    body.light .toggle-dot { transform: translateX(14px); }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: 80px 40px 64px;
-      border-bottom: 0.5px solid var(--bd);
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--acc) 1px, transparent 1px),
-        linear-gradient(90deg, var(--acc) 1px, transparent 1px);
-      background-size: 44px 44px;
-      opacity: 0.028;
-      pointer-events: none;
-    }
-
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(40px, 6vw, 72px);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: -0.02em;
-      color: var(--tx);
-      margin-bottom: 20px;
-    }
-    .hero h1 em { font-style: italic; color: var(--acc); }
-
-    .hero-sub {
-      font-size: 15px;
-      color: var(--tx2);
-      max-width: 480px;
-      line-height: 1.75;
-      margin-bottom: 32px;
-    }
-
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--acc);
-      background: var(--acc-dim);
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-
-    .read-time {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--tx3);
-      letter-spacing: 0.06em;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--acc);
-      padding: 12px 24px;
-      border-radius: 2px;
-      cursor: pointer;
-      text-decoration: none;
-      border: none;
-      transition: opacity 0.2s;
-    }
-    .btn:hover { opacity: 0.85; }
-
-    .hero-aside {
-      background: var(--bg2);
-      border: 0.5px solid var(--bd2);
-      border-radius: 6px;
-      padding: 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-aside-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--tx3);
-      margin-bottom: 16px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .stat-val {
-      font-family: 'DM Mono', monospace;
-      font-size: 26px;
-      color: var(--acc);
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--tx3);
-    }
-
-    .tools-list {
-      border-top: 0.5px solid var(--bd);
-      padding-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .tool-chip {
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--tx3);
-      border: 0.5px solid var(--bd2);
-      padding: 3px 8px;
-      border-radius: 2px;
-    }
-
-    /* ─── SECTION SHARED ─── */
-    section { padding: 56px 40px; border-bottom: 0.5px solid var(--bd); }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 28px;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--tx3);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-label::after {
-      content: '';
-      width: 36px;
-      height: 0.5px;
-      background: var(--bd2);
-    }
-
-    .view-all {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--acc);
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .view-all:hover { opacity: 1; }
-
-    /* ─── BLOG CARDS ─── */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .card {
-      border: 0.5px solid var(--bd);
-      border-radius: 4px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.02);
-      cursor: pointer;
-      transition: border-color 0.2s;
-      text-decoration: none;
-    }
-    body.light .card { background: rgba(0,0,0,0.02); }
-    .card:hover { border-color: rgba(201,122,46,0.4); }
-
-    .card-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--bg2);
-    }
-
-    .card-body { padding: 14px 16px; }
-
-    .card-meta {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--acc);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      opacity: 0.8;
-    }
-
-    .card-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--tx);
-      line-height: 1.4;
-    }
-
-    /* ─── VIDEO GRID ─── */
-    .vid-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 14px;
-    }
-
-    .vid-thumb {
-      position: relative;
-      background: var(--bg2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .play-btn {
-      width: 38px; height: 38px;
-      border: 1px solid var(--bd2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.2s;
-    }
-    .card:hover .play-btn { border-color: var(--acc); }
-
-    .vid-duration {
-      position: absolute;
-      bottom: 10px; left: 12px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--tx3);
-      letter-spacing: 0.06em;
-    }
-
-    .vid-col { display: grid; gap: 14px; }
-
-    /* ─── SCREENSHOTS ─── */
-    .shots {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 10px;
-    }
-
-    .shot {
-      background: var(--bg2);
-      border: 0.5px solid var(--bd);
-      border-radius: 4px;
-      cursor: pointer;
-      overflow: hidden;
-      transition: border-color 0.2s;
-      display: flex;
-      align-items: flex-end;
-      padding: 10px 12px;
-      min-height: 90px;
-    }
-    .shot:hover { border-color: rgba(201,122,46,0.3); }
-    .shot-main { min-height: 180px; }
-
-    .shot-fn {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--tx3);
-      letter-spacing: 0.07em;
-    }
-
-    /* ─── RESUME ─── */
-    .resume-scroll-wrap {
-      height: 440px;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(201,122,46,0.2) transparent;
-    }
-
-    .resume-entry {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 28px;
-      padding: 28px 0;
-      border-bottom: 0.5px solid var(--bd);
-      transition: opacity 0.4s;
-    }
-    .resume-entry:last-child { border-bottom: none; }
-
-    .resume-left { padding-top: 2px; }
-
-    .resume-banner {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 7px;
-      transition: transform 0.35s cubic-bezier(0.34,1.2,0.64,1);
-      transform-origin: left center;
-    }
-
-    .resume-logo {
-      width: 32px; height: 32px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      flex-shrink: 0;
-      transition: transform 0.35s cubic-bezier(0.34,1.2,0.64,1);
-    }
-
-    .resume-co {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: font-size 0.35s cubic-bezier(0.34,1.2,0.64,1), color 0.3s;
-      white-space: nowrap;
-      color: var(--tx2);
-    }
-
-    .resume-dates {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--tx3);
-      letter-spacing: 0.06em;
-    }
-
-    .resume-role {
-      font-family: 'DM Serif Display', serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--tx);
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .resume-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-    .resume-skill {
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 8px;
-      border-radius: 2px;
-      background: var(--acc-dim);
-      color: var(--acc);
-    }
-
-    .resume-desc {
-      font-size: 14px;
-      color: var(--tx2);
-      line-height: 1.75;
-    }
-
-    /* focused state */
-    .resume-entry.focused .resume-banner { transform: scale(1.12); }
-    .resume-entry.focused .resume-co    { color: var(--acc); }
-    .resume-entry.focused .resume-logo  { transform: scale(1.1); }
-    .resume-entry:not(.focused)         { opacity: 0.38; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      padding: 28px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--tx3);
-      letter-spacing: 0.06em;
-    }
-
-    .socials { display: flex; gap: 20px; }
-    .socials a {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--tx3);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      transition: color 0.2s;
-    }
-    .socials a:hover { color: var(--acc); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      .hero           { grid-template-columns: 1fr; gap: 36px; }
-      .hero-aside     { display: none; }
-      .cards          { grid-template-columns: 1fr 1fr; }
-      .vid-grid       { grid-template-columns: 1fr; }
-      .shots          { grid-template-columns: 1fr 1fr; }
-      .resume-entry   { grid-template-columns: 1fr; gap: 8px; }
-      .nav-links      { display: none; }
-    }
-
-    @media (max-width: 560px) {
-      .cards { grid-template-columns: 1fr; }
-      .shots { grid-template-columns: 1fr; }
-      .hero, section, footer { padding-left: 20px; padding-right: 20px; }
-      .nav-inner { padding-left: 20px; padding-right: 20px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ═══ NAV ═══ -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">YourName.ta</a>
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#videos">Videos</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="toggle" onclick="toggleTheme()">
-          <span class="toggle-label" id="toggle-label">Dark</span>
-          <div class="toggle-knob"><div class="toggle-dot"></div></div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div style="position:relative;z-index:1;">
-      <div class="eyebrow">Latest post</div>
-      <h1>Procedural rust<br>in <em>Substance</em><br>Designer.</h1>
-      <div class="hero-meta">
-        <span class="tag">Shader Dev</span>
-        <span class="read-time">5 min read · Mar 24, 2026</span>
-      </div>
-      <p class="hero-sub">A fully parametric rust material using multi-level noise stacking, height-based masking, and edge wear detection — built inside a single SD graph.</p>
-      <a href="#" class="btn">Read post →</a>
-    </div>
-    <div class="hero-aside" style="position:relative;z-index:1;">
-      <div class="hero-aside-label">Quick stats</div>
-      <div class="stats">
-        <div>
-          <div class="stat-val">24</div>
-          <div class="stat-label">Posts</div>
-        </div>
-        <div>
-          <div class="stat-val">18</div>
-          <div class="stat-label">Videos</div>
-        </div>
-        <div>
-          <div class="stat-val">6+</div>
-          <div class="stat-label">Yrs exp</div>
-        </div>
-      </div>
-      <div class="tools-list">
-        <span class="tool-chip">UE5</span>
-        <span class="tool-chip">Houdini</span>
-        <span class="tool-chip">Substance</span>
-        <span class="tool-chip">Python</span>
-        <span class="tool-chip">HLSL</span>
-        <span class="tool-chip">Maya</span>
-        <span class="tool-chip">Niagara</span>
-        <span class="tool-chip">Blender</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ BLOG ═══ -->
-  <section id="blog">
-    <div class="section-head">
-      <div class="section-label">Blog</div>
-      <a href="#" class="view-all">View all →</a>
-    </div>
-    <div class="cards">
-      <a href="#" class="card">
-        <div class="card-thumb" style="background:linear-gradient(135deg,#1a1810,#222018);"></div>
-        <div class="card-body">
-          <div class="card-meta">Shader Dev · 5 min</div>
-          <div class="card-title">Procedural rust in Substance Designer</div>
-        </div>
-      </a>
-      <a href="#" class="card">
-        <div class="card-thumb" style="background:linear-gradient(135deg,#181610,#1c1a12);"></div>
-        <div class="card-body">
-          <div class="card-meta">Pipeline · 8 min</div>
-          <div class="card-title">Automating LOD generation with Python</div>
-        </div>
-      </a>
-      <a href="#" class="card">
-        <div class="card-thumb" style="background:linear-gradient(135deg,#141210,#1e1c14);"></div>
-        <div class="card-body">
-          <div class="card-meta">VFX · 4 min</div>
-          <div class="card-title">UE5 Niagara fluids — a deep dive</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ═══ VIDEOS ═══ -->
-  <section id="videos">
-    <div class="section-head">
-      <div class="section-label">Videos</div>
-      <a href="#" class="view-all">View all →</a>
-    </div>
-    <div class="vid-grid">
-      <a href="#" class="card">
-        <div class="card-thumb vid-thumb" style="aspect-ratio:16/8;">
-          <div class="play-btn">
-            <svg width="11" height="13" viewBox="0 0 10 12" fill="none"><path d="M1 1L9 6L1 11V1Z" fill="#c97a2e"/></svg>
-          </div>
-          <span class="vid-duration">34:12</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">Tutorial · Unreal Engine 5</div>
-          <div class="card-title">Building a full material pipeline from scratch</div>
-        </div>
-      </a>
-      <div class="vid-col">
-        <a href="#" class="card">
-          <div class="card-thumb vid-thumb" style="background:var(--bg3);">
-            <div class="play-btn" style="width:28px;height:28px;">
-              <svg width="9" height="11" viewBox="0 0 10 12" fill="none"><path d="M1 1L9 6L1 11V1Z" fill="#c97a2e"/></svg>
+export default function PortfolioConcept() {
+  return (
+    <div className="min-h-screen bg-[#0d0d0c] text-[#f2eee6]">
+      <div className="mx-auto max-w-7xl px-6 py-6 md:px-10">
+        <header className="mb-16 flex items-center justify-between border-b border-white/10 pb-5">
+          <div>
+            <div className="text-sm uppercase tracking-[0.28em] text-[#c97a2e]">
+              Andrei Nistor
             </div>
-            <span class="vid-duration">12:05</span>
+            <div className="mt-1 text-xs text-white/45">Technical Artist</div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Houdini</div>
-            <div class="card-title">Procedural stone wall</div>
-          </div>
-        </a>
-        <a href="#" class="card">
-          <div class="card-thumb vid-thumb" style="background:var(--bg2);">
-            <div class="play-btn" style="width:28px;height:28px;">
-              <svg width="9" height="11" viewBox="0 0 10 12" fill="none"><path d="M1 1L9 6L1 11V1Z" fill="#c97a2e"/></svg>
+          <nav className="hidden gap-8 text-sm text-white/60 md:flex">
+            <span>Work</span>
+            <span>Breakdowns</span>
+            <span>Blog</span>
+            <span>Contact</span>
+          </nav>
+        </header>
+
+        <section className="grid items-end gap-10 border-b border-white/10 pb-16 md:grid-cols-[1.4fr_0.8fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="mb-4 text-xs uppercase tracking-[0.28em] text-[#c97a2e]">
+              Systems-first portfolio
             </div>
-            <span class="vid-duration">08:44</span>
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+              Technical art focused on tools, workflows, and real-time problem solving.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/62 md:text-lg">
+              Not just pretty shots. Case studies that show constraints, decisions,
+              implementation, and measurable impact across engine, pipeline, and content.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button className="rounded-2xl bg-[#c97a2e] px-6 text-black hover:bg-[#d78a3f]">
+                View Case Studies
+              </Button>
+              <Button
+                variant="outline"
+                className="rounded-2xl border-white/15 bg-transparent px-6 text-white hover:bg-white/5"
+              >
+                Read Blog
+              </Button>
+            </div>
+          </motion.div>
+
+          <div className="grid gap-4 md:pl-8">
+            <Card className="rounded-3xl border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
+              <CardContent className="p-6">
+                <div className="mb-3 text-xs uppercase tracking-[0.22em] text-white/40">
+                  Why this direction works
+                </div>
+                <div className="space-y-4 text-sm leading-6 text-white/70">
+                  <p>Lead with outcomes, not tool logos.</p>
+                  <p>Use short videos as proof, screenshots as support.</p>
+                  <p>Keep blog secondary to portfolio case studies.</p>
+                </div>
+              </CardContent>
+            </Card>
+            <div className="grid grid-cols-3 gap-3 text-center">
+              {[
+                ["14+", "Years"],
+                ["AAA", "Shipped work"],
+                ["Tools", "Pipeline"],
+              ].map(([value, label]) => (
+                <Card key={label} className="rounded-2xl border-white/10 bg-white/[0.03]">
+                  <CardContent className="p-4">
+                    <div className="text-2xl font-semibold text-[#c97a2e]">{value}</div>
+                    <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/35">
+                      {label}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">Blender</div>
-            <div class="card-title">Shader graph breakdown</div>
+        </section>
+
+        <section className="py-16">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-2xl font-semibold tracking-[-0.03em]">Featured Case Studies</h2>
+            <span className="text-xs uppercase tracking-[0.2em] text-white/35">Show impact</span>
           </div>
-        </a>
+          <div className="grid gap-6 md:grid-cols-3">
+            {caseStudies.map((item) => (
+              <Card key={item.title} className="rounded-3xl border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:bg-white/[0.05]">
+                <CardContent className="p-5">
+                  <div className="mb-4 aspect-video rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02]" />
+                  <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#c97a2e]">
+                    {item.meta}
+                  </div>
+                  <h3 className="text-lg font-medium leading-6">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/60">{item.desc}</p>
+                  <div className="mt-4 text-xs uppercase tracking-[0.16em] text-white/35">
+                    {item.impact}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-8 border-t border-white/10 py-16 md:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <h2 className="mb-6 text-2xl font-semibold tracking-[-0.03em]">Breakdown Preview</h2>
+            <Card className="rounded-3xl border-white/10 bg-white/[0.03]">
+              <CardContent className="p-5">
+                <div className="mb-4 aspect-[16/9] rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1814] to-[#11100e]" />
+                <div className="grid gap-4 md:grid-cols-3">
+                  {[
+                    "Problem",
+                    "Approach",
+                    "Result",
+                  ].map((label) => (
+                    <div key={label} className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#c97a2e]">{label}</div>
+                      <p className="text-sm leading-6 text-white/58">
+                        Replace vague descriptions with tight technical explanation and a concrete outcome.
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div>
+            <h2 className="mb-6 text-2xl font-semibold tracking-[-0.03em]">Blog</h2>
+            <div className="space-y-4">
+              {posts.map((post) => (
+                <div key={post} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                  <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-white/35">Article</div>
+                  <div className="text-sm leading-6 text-white/75">{post}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <footer className="border-t border-white/10 py-6 text-xs text-white/35">
+          © 2026 Andrei Nistor
+        </footer>
       </div>
     </div>
-  </section>
-
-  <!-- ═══ GALLERY ═══ -->
-  <section id="gallery">
-    <div class="section-head">
-      <div class="section-label">Screenshots &amp; stills</div>
-      <a href="#" class="view-all">View all →</a>
-    </div>
-    <div class="shots">
-      <div class="shot shot-main" style="background:linear-gradient(145deg,var(--bg2),var(--bg3));">
-        <span class="shot-fn">env_cave_final.png</span>
-      </div>
-      <div style="display:grid;gap:10px;">
-        <div class="shot" style="background:linear-gradient(135deg,var(--bg3),var(--bg2));">
-          <span class="shot-fn">shader_test_04</span>
-        </div>
-        <div class="shot" style="background:linear-gradient(135deg,var(--bg2),var(--bg3));">
-          <span class="shot-fn">niagara_fluid</span>
-        </div>
-      </div>
-      <div style="display:grid;gap:10px;">
-        <div class="shot" style="background:linear-gradient(135deg,var(--bg3),var(--bg2));">
-          <span class="shot-fn">material_graph</span>
-        </div>
-        <div class="shot" style="background:linear-gradient(135deg,var(--bg2),var(--bg3));">
-          <span class="shot-fn">lod_breakdown</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ RESUME ═══ -->
-  <section id="resume">
-    <div class="section-head">
-      <div class="section-label">Experience</div>
-      <a href="#" class="view-all">Download CV →</a>
-    </div>
-    <div class="resume-scroll-wrap" id="resumeScroll">
-
-      <div class="resume-entry focused">
-        <div class="resume-left">
-          <div class="resume-banner">
-            <div class="resume-logo" style="background:rgba(201,122,46,.12);color:#c97a2e;">EP</div>
-            <div class="resume-co">Epic Games</div>
-          </div>
-          <div class="resume-dates">2023 — Present</div>
-        </div>
-        <div>
-          <div class="resume-role">Senior Technical Artist</div>
-          <div class="resume-tags">
-            <span class="resume-skill">UE5</span>
-            <span class="resume-skill">Niagara</span>
-            <span class="resume-skill">HLSL</span>
-            <span class="resume-skill">Python</span>
-            <span class="resume-skill">Blueprint</span>
-          </div>
-          <p class="resume-desc">Led material pipeline development for a AAA open-world title. Designed a procedural biome shader system used across 120km² of terrain, reducing artist iteration time by 40%.</p>
-        </div>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-left">
-          <div class="resume-banner">
-            <div class="resume-logo" style="background:rgba(40,80,120,.15);color:#6a9fd4;">CD</div>
-            <div class="resume-co">CD Projekt Red</div>
-          </div>
-          <div class="resume-dates">2020 — 2023</div>
-        </div>
-        <div>
-          <div class="resume-role">Technical Artist</div>
-          <div class="resume-tags">
-            <span class="resume-skill">Houdini</span>
-            <span class="resume-skill">Substance</span>
-            <span class="resume-skill">MEL</span>
-          </div>
-          <p class="resume-desc">Developed Houdini procedural tools for environmental asset generation. Built a custom LOD pipeline that automated 80% of manual geometry work for the team.</p>
-        </div>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-left">
-          <div class="resume-banner">
-            <div class="resume-logo" style="background:rgba(80,160,80,.12);color:#6ab870;">AV</div>
-            <div class="resume-co">Avalanche Studios</div>
-          </div>
-          <div class="resume-dates">2018 — 2020</div>
-        </div>
-        <div>
-          <div class="resume-role">Junior Technical Artist</div>
-          <div class="resume-tags">
-            <span class="resume-skill">Maya</span>
-            <span class="resume-skill">Unity</span>
-            <span class="resume-skill">GLSL</span>
-          </div>
-          <p class="resume-desc">Supported shader and material work across two shipped titles. Created Maya pipeline scripts adopted studio-wide for batch export and texture baking.</p>
-        </div>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-left">
-          <div class="resume-banner">
-            <div class="resume-logo" style="background:rgba(150,100,200,.12);color:#a07ad4;">FR</div>
-            <div class="resume-co">Freelance</div>
-          </div>
-          <div class="resume-dates">2016 — 2018</div>
-        </div>
-        <div>
-          <div class="resume-role">VFX &amp; Shader Artist</div>
-          <div class="resume-tags">
-            <span class="resume-skill">Blender</span>
-            <span class="resume-skill">Substance Designer</span>
-          </div>
-          <p class="resume-desc">Independent contract work for indie studios and motion design projects. Specialised in stylised VFX and hand-crafted PBR material sets.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══ CONTACT ═══ -->
-  <section id="contact" style="padding-top:48px;padding-bottom:48px;">
-    <div class="eyebrow">Get in touch</div>
-    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--tx);margin-bottom:14px;">Let's work<br>together.</h2>
-    <p style="font-size:14px;color:var(--tx2);max-width:420px;line-height:1.75;margin-bottom:28px;">Open to freelance projects, collaborations, and full-time opportunities in technical art.</p>
-    <a href="mailto:you@example.com" class="btn">Send a message →</a>
-  </section>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <span class="footer-copy">© 2026 YourName — All work original</span>
-    <div class="socials">
-      <a href="https://artstation.com" target="_blank">Artstation</a>
-      <a href="https://twitter.com" target="_blank">Twitter/X</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
-    </div>
-  </footer>
-
-  <script>
-    // ── Theme toggle ──
-    function toggleTheme() {
-      const isLight = document.body.classList.toggle('light');
-      document.getElementById('toggle-label').textContent = isLight ? 'Light' : 'Dark';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-    // persist preference
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light');
-      document.getElementById('toggle-label').textContent = 'Light';
-    }
-
-    // ── Resume scroll-scale ──
-    const resumeScroll = document.getElementById('resumeScroll');
-    const resumeEntries = Array.from(resumeScroll.querySelectorAll('.resume-entry'));
-
-    function updateResume() {
-      const sr = resumeScroll.getBoundingClientRect();
-      const center = sr.top + sr.height * 0.36;
-      let closest = null, closestDist = Infinity;
-      resumeEntries.forEach(e => {
-        const er = e.getBoundingClientRect();
-        const mid = er.top + er.height / 2;
-        const dist = Math.abs(mid - center);
-        if (dist < closestDist) { closestDist = dist; closest = e; }
-      });
-      resumeEntries.forEach(e => e.classList.toggle('focused', e === closest));
-    }
-
-    resumeScroll.addEventListener('scroll', updateResume, { passive: true });
-    // also update when the page scrolls (for non-scrollbox layouts on mobile)
-    window.addEventListener('scroll', updateResume, { passive: true });
-    updateResume();
-  </script>
-</body>
-</html>
+  );
+}
