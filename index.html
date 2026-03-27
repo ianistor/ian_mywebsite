@@ -1,180 +1,104 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-
-const caseStudies = [
-  {
-    title: "Procedural Destruction Pipeline",
-    meta: "Houdini · Unreal · Python",
-    desc: "Built reusable destruction tooling for fast iteration, cleaner authoring, and gameplay-ready results.",
-    impact: "Faster setup · scalable output",
-  },
-  {
-    title: "Editor Workflow Automation",
-    meta: "Unreal · Blueprint · Python",
-    desc: "Reduced repetitive environment setup through scripted actions and artist-facing tools.",
-    impact: "Lower manual overhead",
-  },
-  {
-    title: "Gameplay-Driven Shader Systems",
-    meta: "UE5 · HLSL · Materials",
-    desc: "Designed visual systems that support readability, performance, and design intent in real time.",
-    impact: "Runtime-conscious visuals",
-  },
-];
-
-const posts = [
-  "What makes a TA case study actually useful",
-  "When proceduralism saves time—and when it does not",
-  "Debug views, breakdowns, and showing the real work",
-];
-
-export default function PortfolioConcept() {
-  return (
-    <div className="min-h-screen bg-[#0d0d0c] text-[#f2eee6]">
-      <div className="mx-auto max-w-7xl px-6 py-6 md:px-10">
-        <header className="mb-16 flex items-center justify-between border-b border-white/10 pb-5">
-          <div>
-            <div className="text-sm uppercase tracking-[0.28em] text-[#c97a2e]">
-              Andrei Nistor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ioan-Andrei Nistor | Senior Technical Artist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0a0a0a; color: #ededed; font-family: 'Inter', sans-serif; }
+        .bento-card {
+            background: #121212;
+            border: 1px solid #1f1f1f;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover { border-color: #333; background: #161616; }
+        .text-muted { color: #a1a1a1; }
+        .tech-pill {
+            background: #1f1f1f;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            border: 1px solid #2a2a2a;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+        
+        <div class="md:col-span-3 bento-card p-8 flex flex-col justify-between">
+            <div>
+                <h1 class="text-4xl font-medium mb-2">Ioan-Andrei Nistor</h1>
+                <p class="text-xl text-muted">Senior Technical Artist</p>
             </div>
-            <div className="mt-1 text-xs text-white/45">Technical Artist</div>
-          </div>
-          <nav className="hidden gap-8 text-sm text-white/60 md:flex">
-            <span>Work</span>
-            <span>Breakdowns</span>
-            <span>Blog</span>
-            <span>Contact</span>
-          </nav>
-        </header>
-
-        <section className="grid items-end gap-10 border-b border-white/10 pb-16 md:grid-cols-[1.4fr_0.8fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-          >
-            <div className="mb-4 text-xs uppercase tracking-[0.28em] text-[#c97a2e]">
-              Systems-first portfolio
-            </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
-              Technical art focused on tools, workflows, and real-time problem solving.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-white/62 md:text-lg">
-              Not just pretty shots. Case studies that show constraints, decisions,
-              implementation, and measurable impact across engine, pipeline, and content.
+            <p class="mt-8 text-muted max-w-2xl">
+                Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance-optimized real-time visuals.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button className="rounded-2xl bg-[#c97a2e] px-6 text-black hover:bg-[#d78a3f]">
-                View Case Studies
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-2xl border-white/15 bg-transparent px-6 text-white hover:bg-white/5"
-              >
-                Read Blog
-              </Button>
+        </div>
+
+        <div class="bento-card p-8 flex flex-col items-center justify-center text-center">
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse mb-4"></div>
+            <span class="text-sm font-medium">Currently at Amazon Games</span>
+            <span class="text-xs text-muted mt-2">Bucharest, Romania</span>
+        </div>
+
+        <div class="md:col-span-2 bento-card p-8">
+            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Experience</h3>
+            <div class="space-y-6">
+                <div>
+                    <p class="font-medium text-white">Technical Artist — Amazon Games</p>
+                    <p class="text-sm text-muted">2024 - Present</p>
+                </div>
+                <div>
+                    <p class="font-medium text-white">Senior Tech Artist — Ubisoft Romania</p>
+                    <p class="text-sm text-muted">2023 - 2024</p>
+                </div>
+                <div>
+                    <p class="font-medium text-white">Senior Tech Artist — Massive Entertainment</p>
+                    <p class="text-sm text-muted">2018 - 2023</p>
+                </div>
             </div>
-          </motion.div>
+        </div>
 
-          <div className="grid gap-4 md:pl-8">
-            <Card className="rounded-3xl border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
-              <CardContent className="p-6">
-                <div className="mb-3 text-xs uppercase tracking-[0.22em] text-white/40">
-                  Why this direction works
-                </div>
-                <div className="space-y-4 text-sm leading-6 text-white/70">
-                  <p>Lead with outcomes, not tool logos.</p>
-                  <p>Use short videos as proof, screenshots as support.</p>
-                  <p>Keep blog secondary to portfolio case studies.</p>
-                </div>
-              </CardContent>
-            </Card>
-            <div className="grid grid-cols-3 gap-3 text-center">
-              {[
-                ["14+", "Years"],
-                ["AAA", "Shipped work"],
-                ["Tools", "Pipeline"],
-              ].map(([value, label]) => (
-                <Card key={label} className="rounded-2xl border-white/10 bg-white/[0.03]">
-                  <CardContent className="p-4">
-                    <div className="text-2xl font-semibold text-[#c97a2e]">{value}</div>
-                    <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-white/35">
-                      {label}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+        <div class="md:col-span-2 bento-card p-8">
+            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Expertise</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="tech-pill">Houdini</span>
+                <span class="tech-pill">Unreal Engine</span>
+                <span class="tech-pill">Python Scripting</span>
+                <span class="tech-pill">Node-based systems</span>
+                <span class="tech-pill">Asset Pipeline</span>
+                <span class="tech-pill">Performance Optimization</span>
+                <span class="tech-pill">Physics Simulation (RBD)</span>
+                <span class="tech-pill">Real-Time Rendering</span>
             </div>
-          </div>
-        </section>
+        </div>
 
-        <section className="py-16">
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold tracking-[-0.03em]">Featured Case Studies</h2>
-            <span className="text-xs uppercase tracking-[0.2em] text-white/35">Show impact</span>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {caseStudies.map((item) => (
-              <Card key={item.title} className="rounded-3xl border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:bg-white/[0.05]">
-                <CardContent className="p-5">
-                  <div className="mb-4 aspect-video rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02]" />
-                  <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#c97a2e]">
-                    {item.meta}
-                  </div>
-                  <h3 className="text-lg font-medium leading-6">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/60">{item.desc}</p>
-                  <div className="mt-4 text-xs uppercase tracking-[0.16em] text-white/35">
-                    {item.impact}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-8 border-t border-white/10 py-16 md:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <h2 className="mb-6 text-2xl font-semibold tracking-[-0.03em]">Breakdown Preview</h2>
-            <Card className="rounded-3xl border-white/10 bg-white/[0.03]">
-              <CardContent className="p-5">
-                <div className="mb-4 aspect-[16/9] rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1814] to-[#11100e]" />
-                <div className="grid gap-4 md:grid-cols-3">
-                  {[
-                    "Problem",
-                    "Approach",
-                    "Result",
-                  ].map((label) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                      <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#c97a2e]">{label}</div>
-                      <p className="text-sm leading-6 text-white/58">
-                        Replace vague descriptions with tight technical explanation and a concrete outcome.
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div>
-            <h2 className="mb-6 text-2xl font-semibold tracking-[-0.03em]">Blog</h2>
-            <div className="space-y-4">
-              {posts.map((post) => (
-                <div key={post} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                  <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-white/35">Article</div>
-                  <div className="text-sm leading-6 text-white/75">{post}</div>
-                </div>
-              ))}
+        <div class="md:col-span-4 bento-card p-8">
+            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Shipped Titles</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+                <div class="p-4 border border-zinc-800 rounded-xl">Star Wars Outlaws</div>
+                <div class="p-4 border border-zinc-800 rounded-xl">The Division 1 & 2</div>
+                <div class="p-4 border border-zinc-800 rounded-xl">Assassin's Creed Unity</div>
+                <div class="p-4 border border-zinc-800 rounded-xl">New World Aeternum</div>
             </div>
-          </div>
-        </section>
+        </div>
 
-        <footer className="border-t border-white/10 py-6 text-xs text-white/35">
-          © 2026 Andrei Nistor
-        </footer>
-      </div>
+        <div class="md:col-span-4 bento-card p-8 flex justify-between items-center">
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="https://www.linkedin.com/in/ioan-andreinistor" class="hover:text-white transition">LinkedIn</a>
+                <a href="https://www.artstation.com/nistorandrei" class="hover:text-white transition">ArtStation</a>
+                <a href="https://www.fab.com/sellers/IANistor" class="hover:text-white transition">Fab Store</a>
+            </div>
+            <p class="text-sm text-muted">ioan.andrei.nistor@gmail.com</p>
+        </div>
+
     </div>
-  );
-}
+
+    <footer class="mt-12 text-center text-xs text-muted">
+        &copy; 2026 Ioan-Andrei Nistor
+    </footer>
+</body>
+</html>
