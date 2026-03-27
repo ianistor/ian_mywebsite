@@ -5,100 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ioan-Andrei Nistor | Senior Technical Artist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0a0a0a; color: #ededed; font-family: 'Inter', sans-serif; }
-        .bento-card {
-            background: #121212;
-            border: 1px solid #1f1f1f;
-            border-radius: 24px;
-            transition: all 0.3s ease;
-        }
-        .bento-card:hover { border-color: #333; background: #161616; }
-        .text-muted { color: #a1a1a1; }
-        .tech-pill {
-            background: #1f1f1f;
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            border: 1px solid #2a2a2a;
-        }
+        :root { --bg: #000; --card: #09090b; --border: #1d1d20; --text: #fff; --muted: #a1a1aa; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .bento-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: border-color 0.3s ease; }
+        .bento-card:hover { border-color: #3f3f46; }
+        .video-container { position: relative; width: 100%; height: 100%; overflow: hidden; background: #111; }
+        video { object-fit: cover; width: 100%; height: 100%; opacity: 0.6; }
+        .tech-tag { font-size: 0.7rem; padding: 2px 8px; border: 1px solid #27272a; border-radius: 6px; color: var(--muted); }
     </style>
 </head>
-<body class="p-6 md:p-12">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+<body class="p-4 md:p-10">
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
         
-        <div class="md:col-span-3 bento-card p-8 flex flex-col justify-between">
-            <div>
-                <h1 class="text-4xl font-medium mb-2">Ioan-Andrei Nistor</h1>
-                <p class="text-xl text-muted">Senior Technical Artist</p>
+        <div class="md:col-span-3 bento-card p-8 flex flex-col justify-between min-h-[300px]">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-4xl font-semibold">Ioan-Andrei Nistor</h1> [cite: 23]
+                    <p class="text-xl text-zinc-500 mt-1">Senior Technical Artist</p> [cite: 23, 35]
+                </div>
+                <div class="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-medium">Available for AAA Projects</span>
+                </div>
             </div>
-            <p class="mt-8 text-muted max-w-2xl">
-                Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance-optimized real-time visuals.
+            <p class="text-zinc-400 text-lg max-w-2xl mt-6">
+                14+ years of AAA experience specializing in **Unreal Engine** and **Snowdrop** workflows[cite: 8]. 
+                Expert in procedural content, destruction systems, and performance-optimized real-time visuals[cite: 8].
             </p>
         </div>
 
-        <div class="bento-card p-8 flex flex-col items-center justify-center text-center">
-            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse mb-4"></div>
-            <span class="text-sm font-medium">Currently at Amazon Games</span>
-            <span class="text-xs text-muted mt-2">Bucharest, Romania</span>
+        <div class="bento-card p-6 flex flex-col justify-between">
+            <h3 class="text-xs uppercase tracking-widest text-zinc-600">Connect</h3>
+            <div class="flex flex-col gap-3 mt-4">
+                <a href="mailto:ioan.andrei.nistor@gmail.com" class="text-sm hover:text-blue-400 transition underline underline-offset-4">Email</a> [cite: 3]
+                <a href="https://www.linkedin.com/in/ioan-andreinistor" class="text-sm hover:text-blue-400 transition underline underline-offset-4">LinkedIn</a> [cite: 5, 6]
+                <a href="https://www.artstation.com/nistorandrei" class="text-sm hover:text-blue-400 transition underline underline-offset-4">ArtStation</a> [cite: 6]
+                <a href="https://www.fab.com/sellers/IANistor" class="text-sm hover:text-blue-400 transition underline underline-offset-4">Fab Store</a> [cite: 6]
+            </div>
+            <p class="text-[10px] text-zinc-600 mt-6 uppercase">Based in Bucharest, RO</p> [cite: 4]
         </div>
 
-        <div class="md:col-span-2 bento-card p-8">
-            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Experience</h3>
-            <div class="space-y-6">
-                <div>
-                    <p class="font-medium text-white">Technical Artist — Amazon Games</p>
-                    <p class="text-sm text-muted">2024 - Present</p>
-                </div>
-                <div>
-                    <p class="font-medium text-white">Senior Tech Artist — Ubisoft Romania</p>
-                    <p class="text-sm text-muted">2023 - 2024</p>
-                </div>
-                <div>
-                    <p class="font-medium text-white">Senior Tech Artist — Massive Entertainment</p>
-                    <p class="text-sm text-muted">2018 - 2023</p>
-                </div>
+        <div class="md:col-span-2 md:row-span-2 bento-card relative group">
+            <div class="video-container h-full min-h-[400px]">
+                <div class="absolute inset-0 flex items-center justify-center text-zinc-800 font-bold uppercase tracking-tighter text-6xl select-none">REEL</div>
+                <video autoplay muted loop playsinline class="group-hover:opacity-100 transition-opacity">
+                    <source src="your-technical-art-reel.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="absolute bottom-6 left-6 right-6">
+                <span class="text-xs uppercase bg-white text-black px-2 py-1 font-bold rounded mb-2 inline-block">Featured Work</span>
+                <h2 class="text-2xl font-bold">Star Wars Outlaws</h2> [cite: 13]
+                <p class="text-sm text-zinc-300">Destruction systems & Houdini integration[cite: 38, 49].</p>
             </div>
         </div>
 
         <div class="md:col-span-2 bento-card p-8">
-            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Expertise</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="tech-pill">Houdini</span>
-                <span class="tech-pill">Unreal Engine</span>
-                <span class="tech-pill">Python Scripting</span>
-                <span class="tech-pill">Node-based systems</span>
-                <span class="tech-pill">Asset Pipeline</span>
-                <span class="tech-pill">Performance Optimization</span>
-                <span class="tech-pill">Physics Simulation (RBD)</span>
-                <span class="tech-pill">Real-Time Rendering</span>
+            <h3 class="text-xs uppercase tracking-widest text-zinc-600 mb-6">Expertise Stack</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="flex flex-col gap-1"><span class="text-sm">Houdini</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[95%]"></div></div></div> [cite: 16]
+                <div class="flex flex-col gap-1"><span class="text-sm">Unreal Engine</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[98%]"></div></div></div> [cite: 17]
+                <div class="flex flex-col gap-1"><span class="text-sm">Python</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[90%]"></div></div></div> [cite: 18]
+                <div class="flex flex-col gap-1"><span class="text-sm">Niagara</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[85%]"></div></div></div> [cite: 32]
+                <div class="flex flex-col gap-1"><span class="text-sm">Optimization</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[95%]"></div></div></div> [cite: 22]
+                <div class="flex flex-col gap-1"><span class="text-sm">Physics/RBD</span><div class="h-1 bg-zinc-800 rounded-full"><div class="h-1 bg-blue-500 w-[92%]"></div></div></div> [cite: 22, 31]
             </div>
+        </div>
+
+        <div class="bento-card p-6 flex flex-col justify-end bg-gradient-to-t from-zinc-900 to-transparent min-h-[200px]">
+            <h4 class="font-medium">New World Aeternum</h4> [cite: 12]
+            <p class="text-xs text-zinc-500">Unreal Engine & Pipeline</p> [cite: 30, 34]
+        </div>
+
+        <div class="bento-card p-6 flex flex-col justify-end bg-gradient-to-t from-zinc-900 to-transparent min-h-[200px]">
+            <h4 class="font-medium">The Division 2</h4> 
+            <p class="text-xs text-zinc-500">Snowdrop & Performance</p> [cite: 44, 45, 56]
         </div>
 
         <div class="md:col-span-4 bento-card p-8">
-            <h3 class="text-sm uppercase tracking-widest text-muted mb-6">Shipped Titles</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-                <div class="p-4 border border-zinc-800 rounded-xl">Star Wars Outlaws</div>
-                <div class="p-4 border border-zinc-800 rounded-xl">The Division 1 & 2</div>
-                <div class="p-4 border border-zinc-800 rounded-xl">Assassin's Creed Unity</div>
-                <div class="p-4 border border-zinc-800 rounded-xl">New World Aeternum</div>
+            <h3 class="text-xs uppercase tracking-widest text-zinc-600 mb-8">Professional Journey</h3>
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row justify-between gap-2 border-b border-zinc-900 pb-4">
+                    <div>
+                        <p class="font-semibold">Amazon Games</p> [cite: 26]
+                        <p class="text-sm text-zinc-400 italic">Technical Artist — Supporting studio growth & Blueprints</p> [cite: 27, 30]
+                    </div>
+                    <span class="text-sm text-zinc-600 font-mono">2024 — PRESENT</span> [cite: 26]
+                </div>
+                <div class="flex flex-col md:flex-row justify-between gap-2 border-b border-zinc-900 pb-4">
+                    <div>
+                        <p class="font-semibold">Ubisoft Romania / Massive Entertainment</p> [cite: 36, 47]
+                        <p class="text-sm text-zinc-400 italic">Senior Technical Artist — Lead destruction & engine systems</p> [cite: 38, 45]
+                    </div>
+                    <span class="text-sm text-zinc-600 font-mono">2015 — 2024</span> [cite: 36, 47, 59, 69]
+                </div>
             </div>
-        </div>
-
-        <div class="md:col-span-4 bento-card p-8 flex justify-between items-center">
-            <div class="flex gap-8 text-sm font-medium">
-                <a href="https://www.linkedin.com/in/ioan-andreinistor" class="hover:text-white transition">LinkedIn</a>
-                <a href="https://www.artstation.com/nistorandrei" class="hover:text-white transition">ArtStation</a>
-                <a href="https://www.fab.com/sellers/IANistor" class="hover:text-white transition">Fab Store</a>
-            </div>
-            <p class="text-sm text-muted">ioan.andrei.nistor@gmail.com</p>
         </div>
 
     </div>
 
-    <footer class="mt-12 text-center text-xs text-muted">
-        &copy; 2026 Ioan-Andrei Nistor
+    <footer class="mt-20 pb-10 text-center">
+        <p class="text-zinc-700 text-[10px] tracking-[0.3em] uppercase italic">
+            Building the future of real-time visuals &copy; 2026 IOAN-ANDREI NISTOR
+        </p>
     </footer>
+
 </body>
 </html>
