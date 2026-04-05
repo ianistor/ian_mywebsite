@@ -44,14 +44,14 @@ I need a rock asset, an archway made with it, a wooden door made of vertical pla
 **Rock**
 This was easy, and I cheated a bit, I downloaded a rock from Megascans. While Houdini can easily generate some, I thought this is not the real focus here.
 
-[Rock1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/715/medium/rock.jpg?1707943754)
+![Rock1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/715/medium/rock.jpg?1707943754)
 
 **Archway**
 
 For the archway, I created a spline that i mirrored and remeshed, where a copy to points was used to duplicate and scatter the rock asset. To make it look less repetitive I'm adding some random scale and a random rotation, while still trying to maintain the rocks rotation towards the curve interior.
 
-[Arch1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/717/medium/arch.jpg?1707943794)
-[Arch2](https://cdna.artstation.com/p/media_assets/images/images/001/250/722/original/arch_timelapse.gif?1707944067)
+![Arch1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/717/medium/arch.jpg?1707943794)
+![Arch2](https://cdna.artstation.com/p/media_assets/images/images/001/250/722/original/arch_timelapse.gif?1707944067)
 
 **Wooden Door**
 Since I knew I would need to fracture the wooden door, I wanted to have separate planks created from the start, so I don't have issues with newly created faces. For plank creation, I created a shape from the archway initial curves, bridged the missing gap, and using a boolean from the door shape with boxes created as planks it results in planks following the archway shape.
