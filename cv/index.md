@@ -1,29 +1,24 @@
 ---
 layout: default
 title: CV
-permalink: /cv/
 ---
-<section class="page-header narrow">
-  <p class="eyebrow">CV</p>
-  <h1>Quick CV</h1>
-  <p class="lead">Replace this placeholder text with your real CV summary, work history, shipped titles, tools, and contact links.</p>
-</section>
+<h1>Curriculum Vitae</h1>
 
-<section class="prose narrow">
-  <h2>Profile</h2>
-  <p>Senior Technical Artist focused on workflows, tooling, VFX, procedural systems, and production-facing problem solving.</p>
+<p><strong>Name:</strong> [Your Name]</p>
+<p><strong>Role:</strong> Technical Artist / Game Developer</p>
 
-  <h2>Experience</h2>
-  <ul>
-    <li><strong>Amazon Games</strong> — Senior Technical Artist</li>
-    <li><strong>Massive Entertainment / Ubisoft</strong> — Technical Artist</li>
-  </ul>
+<h2>Experience</h2>
+<ul>
+  <li><strong>Studio Name</strong>, Technical Artist, 2023–Present: Work description and accomplishments.</li>
+  <li><strong>Another Studio</strong>, Technical Artist, 2020–2023: Work description and accomplishments.</li>
+</ul>
 
-  <h2>Core tools</h2>
-  <ul>
-    <li>Houdini</li>
-    <li>Unreal Engine</li>
-    <li>Python</li>
-    <li>Niagara</li>
-  </ul>
-</section>
+<h2>Education</h2>
+<ul>
+  <li><strong>University Name</strong>, Bachelor of Arts in Computer Graphics, 2019</li>
+</ul>
+
+<h2>Skills</h2>
+<ul>
+  <li>Unreal Engine, Houdini, Python, C++</li>
+</ul>

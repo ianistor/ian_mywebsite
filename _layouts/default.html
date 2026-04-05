@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        {% for item in site.nav %}
-          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
-        {% endfor %}
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    {{ content }}
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <p>{{ site.description }}</p>
-      <p>Hosted on GitHub Pages with Jekyll</p>
-    </div>
-  </footer>
+<header>
+  <nav class="container">
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a href="{{ '/tools/' | relative_url }}">Tools</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/cv/' | relative_url }}">CV</a>
+  </nav>
+</header>
+<main class="container">
+  {{ content }}
+</main>
+<footer>
+  <div class="container">© {{ 'now' | date: '%Y' }} {{ site.title }}</div>
+</footer>
 </body>
 </html>

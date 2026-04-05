@@ -1,31 +1,8 @@
-title: Andrei Nistor
-email: you@example.com
-description: >-
-  Technical Artist and Game Developer. Tools, workflows, blog posts, and CV.
-baseurl: "/ian_mywebsite"
-url: "https://ianistor.github.io"
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+title: My Technical Artist Blog
+description: Tools and posts by a Technical Artist
+baseurl: "" # set to repository subpath if hosted in a project repo (e.g. /ian_mywebsite)
+url: "" # set to your custom domain or GitHub Pages URL
 collections:
   tools:
     output: true
-    permalink: /tools/:name/
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: tools
-    values:
-      layout: tool
-nav:
-  - title: Home
-    url: /
-  - title: Blog
-    url: /blog/
-  - title: Tools
-    url: /tools/
-  - title: CV
-    url: /cv/
+permalink: pretty
