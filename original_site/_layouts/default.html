@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a href="{{ '/tools/' | relative_url }}">Tools</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/cv/' | relative_url }}">CV</a>
+  </nav>
+</header>
+<main class="container">
+  {{ content }}
+</main>
+<footer>
+  <div class="container">© {{ 'now' | date: '%Y' }} {{ site.title }}</div>
+</footer>
+</body>
+</html>
