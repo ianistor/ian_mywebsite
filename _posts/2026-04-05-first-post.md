@@ -1,22 +1,13 @@
 ---
 layout: post
-title: "First post"
+title: "Karma Building VFX Breakdown"
 date: 2026-04-05
-tags: [blog, setup]
-image: /assets/images/placeholder.png
+tags: [vfx, houdini]
+image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233"
 ---
-This is a sample post.
 
-To add a new blog post, create a new file in the `_posts` folder using this format:
+In this post I’ll walk through how I used Houdini and Karma to simulate a building crumbling.
 
-```text
-YEAR-MONTH-DAY-title.md
-```
+![Karma building VFX](https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233)
 
-Example:
-
-```text
-2026-04-06-houdini-notes.md
-```
-
-Then write the content in Markdown and push it to GitHub.
+The rest of your post content goes here…
