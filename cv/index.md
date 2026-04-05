@@ -22,7 +22,6 @@ permalink: /cv/
   <h2>Contact</h2>
   <ul class="contact-list">
     <li><a href="mailto:Ioan.andrei.nistor@gmail.com">Ioan.andrei.nistor@gmail.com</a></li>
-    <li>Bucharest, Romania &middot; +40 750 713 448</li>
     <li><a href="https://www.linkedin.com/in/ioanandreinistor" target="_blank">linkedin.com/in/ioanandreinistor</a></li>
     <li><a href="https://www.artstation.com/nistorandrei" target="_blank">artstation.com/nistorandrei</a></li>
     <li><a href="https://www.fab.com/sellers/IANistor" target="_blank">fab.com/sellers/IANistor</a></li>
