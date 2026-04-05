@@ -7,8 +7,6 @@ image: /assets/images/placeholder.png
 ---
 This is a sample post.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
 To add a new blog post, create a new file in the `_posts` folder using this format:
 
 ```text
