@@ -1,34 +1,188 @@
+:root {
+  --bg: #0d1016;
+  --panel: #141924;
+  --panel-2: #1b2130;
+  --text: #eef2f7;
+  --muted: #a2adbd;
+  --line: #283142;
+  --accent: #8cc2ff;
+  --accent-2: #d9e9ff;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #162033 0%, var(--bg) 38%);
+  color: var(--text);
   line-height: 1.6;
 }
-a { color: #007acc; text-decoration: none; }
-a:hover { text-decoration: underline; }
-header {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
-}
-header nav a {
-  margin-right: 15px;
-  font-weight: bold;
-  color: #333;
-}
-header nav a:hover {
-  text-decoration: underline;
-}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); }
+
 .container {
-  max-width: 800px;
+  width: min(calc(100% - 2rem), var(--max));
   margin: 0 auto;
-  padding: 20px;
 }
-footer {
-  background-color: #f5f5f5;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 1px solid #e0e0e0;
+
+.site-header, .site-footer {
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 15, 22, 0.75);
+  backdrop-filter: blur(10px);
+}
+.site-footer {
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  margin-top: 4rem;
+}
+.header-row, .footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.brand {
+  font-weight: 700;
+  color: var(--text);
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-nav a {
+  color: var(--muted);
+}
+.site-nav a.active,
+.site-nav a:hover {
+  color: var(--text);
+}
+
+.hero, .page-header {
+  padding: 4rem 0 1rem;
+}
+.hero h1, .page-header h1 {
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  margin: 0.3rem 0 1rem;
+  max-width: 12ch;
+}
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+  max-width: 62ch;
+}
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  margin: 0;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.narrow {
+  max-width: 760px;
+}
+
+.section-block {
+  padding: 1.25rem 0 0;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.section-head h2 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.card-grid.two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.card, .list-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+.card h3, .card h2, .list-card h2, .list-card h3 {
+  margin: 0.25rem 0 0.6rem;
+}
+.list-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.1rem;
+  background: var(--accent);
+  color: #09111d;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.prose {
+  color: var(--text);
+}
+.prose h2, .prose h3 {
+  margin-top: 2rem;
+}
+.prose p, .prose li {
+  color: #d5deea;
+}
+.prose code {
+  background: #0b1320;
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+}
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: #0b1320;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .card-grid,
+  .card-grid.two-up,
+  .header-row,
+  .footer-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-nav {
+    gap: 0.75rem;
+  }
 }

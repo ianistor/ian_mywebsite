@@ -1,25 +1,29 @@
 ---
 layout: default
 title: CV
+permalink: /cv/
 ---
-# Curriculum Vitae
+<section class="page-header narrow">
+  <p class="eyebrow">CV</p>
+  <h1>Quick CV</h1>
+  <p class="lead">Replace this placeholder text with your real CV summary, work history, shipped titles, tools, and contact links.</p>
+</section>
 
-**Name:** Andrei Nistor
+<section class="prose narrow">
+  <h2>Profile</h2>
+  <p>Senior Technical Artist focused on workflows, tooling, VFX, procedural systems, and production-facing problem solving.</p>
 
-**Role:** Senior Technical Artist / Game Developer
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Amazon Games</strong> — Senior Technical Artist</li>
+    <li><strong>Massive Entertainment / Ubisoft</strong> — Technical Artist</li>
+  </ul>
 
-## Experience
-
-- **Ubisoft – Massive Entertainment**, Senior Technical Artist (2021 – Present):
-  Developed and maintained technical art pipelines for *Star Wars Outlaws*, focusing on environment destruction, VFX, and tool creation. Built custom Houdini workflows and Unreal Engine plugins to streamline production.
-
-- **Ubisoft – Massive Entertainment**, Technical Artist (2018 – 2021):
-  Created procedural tools and shaders for *Tom Clancy’s The Division 2* and its expansion *Warlords of New York*. Supported artists with automation tools and optimized real‑time VFX for a large open‑world game.
-
-## Education
-
-- **[University Placeholder]**, Bachelor’s degree in Computer Graphics or related field (Year)
-
-## Skills
-
-- Unreal Engine, Houdini, Python, C++, Shader development, Procedural workflows, Pipeline automation
+  <h2>Core tools</h2>
+  <ul>
+    <li>Houdini</li>
+    <li>Unreal Engine</li>
+    <li>Python</li>
+    <li>Niagara</li>
+  </ul>
+</section>

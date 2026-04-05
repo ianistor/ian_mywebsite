@@ -1,15 +1,20 @@
 ---
 layout: default
 title: Blog
+permalink: /blog/
 ---
-# Blog
+<section class="page-header">
+  <p class="eyebrow">Blog</p>
+  <h1>Posts</h1>
+  <p class="lead">Write new posts as Markdown files inside <code>_posts</code>. Jekyll will automatically place them here.</p>
+</section>
 
-{% for post in site.posts %}
-## [{{ post.title }}]({{ post.url | relative_url }})
-
-*{{ post.date | date: '%B %d, %Y' }}{% if post.tags %} • {{ post.tags | join: ', ' }}{% endif %}*
-
-{{ post.excerpt | strip_html | truncatewords: 40 }}
-
----
-{% endfor %}
+<section class="list-stack">
+  {% for post in site.posts %}
+    <article class="list-card">
+      <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
+    </article>
+  {% endfor %}
+</section>

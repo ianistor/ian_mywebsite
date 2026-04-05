@@ -1,10 +1,31 @@
-title: Technical Artist Hub
-description: Blog posts and tools from a technical artist
-baseurl: "/ian_mywebsite"
-url: "https://ianistor.github.io"
+title: Andrei Nistor
+email: you@example.com
+description: >-
+  Technical Artist and Game Developer. Tools, workflows, blog posts, and CV.
+baseurl: ""
+url: ""
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
 collections:
   tools:
     output: true
-  projects:
-    output: true
-permalink: pretty
+    permalink: /tools/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: tools
+    values:
+      layout: tool
+nav:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Tools
+    url: /tools/
+  - title: CV
+    url: /cv/
