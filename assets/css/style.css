@@ -186,3 +186,32 @@ a:hover { color: var(--accent-2); }
     gap: 0.75rem;
   }
 }
+
+/* Custom additions */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-content {
+  flex: 1 1 400px;
+}
+.hero-image-container {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  border-radius: 18px;
+}
+.card-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}

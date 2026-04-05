@@ -3,6 +3,7 @@ layout: post
 title: "First post"
 date: 2026-04-05
 tags: [blog, setup]
+image: /assets/images/placeholder.png
 ---
 This is a sample post.
 

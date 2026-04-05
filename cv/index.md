@@ -4,9 +4,9 @@ title: CV
 permalink: /cv/
 ---
 <section class="page-header narrow">
-  <p class="eyebrow">CV</p>
-  <h1>Quick CV</h1>
-  <p class="lead">Replace this placeholder text with your real CV summary, work history, shipped titles, tools, and contact links.</p>
+  <p class="eyebrow">Resume</p>
+  <h1>Quick resume</h1>
+  <p class="lead">Replace this placeholder text with your real resume summary, work history, shipped titles, tools, and contact links.</p>
 </section>
 
 <section class="prose narrow">

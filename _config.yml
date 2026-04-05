@@ -1,7 +1,7 @@
 title: Andrei Nistor
 email: you@example.com
 description: >-
-  Technical Artist and Game Developer. Tools, workflows, blog posts, and CV.
+  Technical Artist and Game Developer. Tools, workflows, blog posts, and resume.
 baseurl: "/ian_mywebsite"
 url: "https://ianistor.github.io"
 markdown: kramdown
@@ -10,6 +10,9 @@ collections:
   tools:
     output: true
     permalink: /tools/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
 defaults:
   - scope:
       path: ""
@@ -20,6 +23,11 @@ defaults:
       type: tools
     values:
       layout: tool
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 nav:
   - title: Home
     url: /
@@ -27,5 +35,7 @@ nav:
     url: /blog/
   - title: Tools
     url: /tools/
-  - title: CV
+  - title: Projects
+    url: /projects/
+  - title: Resume
     url: /cv/
