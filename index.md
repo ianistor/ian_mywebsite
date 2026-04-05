@@ -2,40 +2,24 @@
 layout: default
 title: Home
 ---
-<div class="hero">
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.description }}</p>
-</div>
+# Welcome
 
-<section id="tools">
-  <h2 class="section-title">Featured Tools</h2>
-  <div class="card-grid">
-    {% assign featured_tools = site.tools | where: 'featured', true | slice: 0, 4 %}
-    {% for tool in featured_tools %}
-    <div class="card">
-      <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-      <p>{{ tool.summary }}</p>
-    </div>
-    {% endfor %}
-    {% if featured_tools == empty %}
-    <p>No featured tools yet.</p>
-    {% endif %}
-  </div>
-</section>
+Welcome to my technical artist site. Here you'll find blog posts about the processes behind tools and art, as well as links to the tools themselves.
 
-<section id="blog">
-  <h2 class="section-title">Latest Posts</h2>
-  <div class="card-grid">
-    {% assign posts = site.posts | slice: 0, 4 %}
-    {% for post in posts %}
-    <div class="card">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="meta">{{ post.date | date: "%B %d, %Y" }}{% if post.tags %} | {{ post.tags | join: ', ' }}{% endif %}</p>
-      <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-    </div>
-    {% endfor %}
-    {% if posts == empty %}
-    <p>No posts yet.</p>
-    {% endif %}
-  </div>
-</section>
+## Tools
+
+{% for tool in site.tools %}
+- [{{ tool.title }}]({{ tool.url | relative_url }}): {{ tool.summary }}
+{% endfor %}
+
+## Projects
+
+{% for project in site.projects %}
+- [{{ project.title }}]({{ project.url | relative_url }}): {{ project.summary }}
+{% endfor %}
+
+## Blog Posts
+
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | relative_url }}) – {{ post.date | date: "%B %d, %Y" }}
+{% endfor %}
