@@ -79,7 +79,7 @@ permalink: /cv/
   <div class="cv-entry">
     <div class="cv-entry-header">
       <a href="https://www.massive.se" target="_blank" class="cv-logo-link">
-        <img src="{{ '/assets/images/logos/massive.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
+        <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
       </a>
       <div class="cv-entry-meta">
         <span class="cv-role">Senior Technical Artist</span>
@@ -100,7 +100,7 @@ permalink: /cv/
   <div class="cv-entry">
     <div class="cv-entry-header">
       <a href="https://www.massive.se" target="_blank" class="cv-logo-link">
-        <img src="{{ '/assets/images/logos/massive.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
+        <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
       </a>
       <div class="cv-entry-meta">
         <span class="cv-role">Technical Artist</span>
@@ -124,7 +124,7 @@ permalink: /cv/
   <div class="cv-entry">
     <div class="cv-entry-header">
       <a href="https://www.massive.se" target="_blank" class="cv-logo-link">
-        <img src="{{ '/assets/images/logos/massive.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
+        <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment" class="cv-logo" />
       </a>
       <div class="cv-entry-meta">
         <span class="cv-role">Technical Content Validator</span>
