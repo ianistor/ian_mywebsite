@@ -2,8 +2,8 @@ title: Andrei Nistor
 email: you@example.com
 description: >-
   Technical Artist and Game Developer. Tools, workflows, blog posts, and CV.
-baseurl: ""
-url: ""
+"baseurl: "/ian_mywebsite" 
+url: "https://ianistor.github.io"
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 collections:
