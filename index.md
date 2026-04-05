@@ -15,7 +15,7 @@ title: Home
     </div>
   </div>
   <div class="hero-image-container">
-    <img src="{{ '/assets/images/45632814.jpg' | relative_url }}" alt="" class="hero-image">
+    <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="" class="hero-image">
   </div>
 </section>
 
