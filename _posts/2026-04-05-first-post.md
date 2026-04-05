@@ -2,7 +2,7 @@
 layout: post
 title: "Break it down - God of War Mystic Gateway"
 date: 2026-04-05
-tags: [vfx, houdini]
+tags: [VFX, Houdini, Fracturing, RBD]
 image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233"
 ---
 
@@ -21,7 +21,7 @@ Before I ramble onwards, two disclaimers:
 
 This past year I've been learning Houdini, so my breakdown will focus on a Houdini workflow(although similar concepts exist in other DCCs as well).
 This is a fast prototype, where i don't care about polish or quality, its just to prove a concept.
-First step, references!
+/First step, references!
 
 ![LastFrame](https://cdnb.artstation.com/p/media_assets/images/images/001/250/709/medium/IMG_6465-1200x675.jpg?1707942584)
 ![FirstFrame](https://cdna.artstation.com/p/media_assets/images/images/001/250/708/medium/IMG_6464-1200x675.jpg?1707942533)
