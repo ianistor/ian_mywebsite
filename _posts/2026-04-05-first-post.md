@@ -55,19 +55,18 @@ For the archway, I created a spline that i mirrored and remeshed, where a copy t
 
 **Wooden Door**
 Since I knew I would need to fracture the wooden door, I wanted to have separate planks created from the start, so I don't have issues with newly created faces. For plank creation, I created a shape from the archway initial curves, bridged the missing gap, and using a boolean from the door shape with boxes created as planks it results in planks following the archway shape.
-
-[Door1](https://cdna.artstation.com/p/media_assets/images/images/001/250/724/original/wod_plank_timelapse.gif?1707944097)
+![Door1](https://cdna.artstation.com/p/media_assets/images/images/001/250/724/original/wod_plank_timelapse.gif?1707944097)
 
 **Wood Fracturing**
 Fracturing the wood planks, I went with the old approach of scaling down the mesh into a Voronoi fracture and then scaling it back. This workflow creates some wood-like splinter fragments. Afterward, I handled the cluster creation manually by grouping up splinters that are close by.
 
-[Fracture](https://cdnb.artstation.com/p/media_assets/images/images/001/250/725/original/fracture_timelapse.gif?1707944123)
+![Fracture](https://cdnb.artstation.com/p/media_assets/images/images/001/250/725/original/fracture_timelapse.gif?1707944123)
 
 **Simulation**
 Tearing down using a RBD Bullet solver, just an RBD Solver with gravity on.
-[Sim1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/719/original/karma_breaking_down-ezgif.com-resize.gif?1707943881)
+![Sim1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/719/original/karma_breaking_down-ezgif.com-resize.gif?1707943881)
 And now final step, reversing the simulation so it feels like its building up and not destroying.
-[ReverseSim](https://cdnb.artstation.com/p/media_assets/images/images/001/250/713/original/karma_building_up-ezgif.com-resize.gif?1707943172)
+![ReverseSim](https://cdnb.artstation.com/p/media_assets/images/images/001/250/713/original/karma_building_up-ezgif.com-resize.gif?1707943172)
 
 **Closing**
 
@@ -81,6 +80,6 @@ Rock generator that adds that visual noise as repetition is still pretty noticea
 I would like to find a nice way to check intersection between the rock points, as the current setup i was just lucky with the seeds and scale of rocks that i used, my current setup was NOT production friendly, and would have required more work if an art director or shot supervisor would have requested lets say...add 1 more rock. *flip table*
 What are your thoughts on this approach?
 
-[HoudiniNetwork](https://cdna.artstation.com/p/media_assets/images/images/001/250/706/medium/houdini_graph_view4.jpg?1707942241)
+![HoudiniNetwork](https://cdna.artstation.com/p/media_assets/images/images/001/250/706/medium/houdini_graph_view4.jpg?1707942241)
 
 
