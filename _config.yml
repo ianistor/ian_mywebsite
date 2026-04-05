@@ -1,0 +1,31 @@
+title: Andrei Nistor
+email: you@example.com
+description: >-
+  Technical Artist and Game Developer. Tools, workflows, blog posts, and CV.
+baseurl: ""
+url: ""
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: tools
+    values:
+      layout: tool
+nav:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Tools
+    url: /tools/
+  - title: CV
+    url: /cv/
