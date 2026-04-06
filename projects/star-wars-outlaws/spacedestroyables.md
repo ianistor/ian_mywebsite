@@ -5,6 +5,7 @@ permalink: /projects/star-wars-outlaws/technical-art-and-pipelines/
 parent_project: "Star Wars Outlaws"
 parent_slug: "star-wars-outlaws"
 parent_permalink: /projects/star-wars-outlaws/
+youtube_id: AAsoF04dDdY
 image: /assets/images/projectcovers/AC3.png
 summary: "Focused breakdown page for technical art and pipeline work on Star Wars Outlaws."
 ---
