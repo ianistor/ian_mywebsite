@@ -1,6 +1,6 @@
 ---
 title: "Star Wars Outlaws"
-role: "Senior Technical Artist"
+role: "Senior Technical Artist @ Massive Entertainment"
 summary: "Built destruction workflows, Houdini tools, and gameplay-integrated visual systems for production."
 image: "/assets/images/projectcovers/SWO.png"
 release_year: 2023
