@@ -14,6 +14,8 @@ permalink: /blog/
     <article class="card">
       {% if post.image %}
         <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+      {% elsif post.youtube_id %}
+        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
       {% else %}
         <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
       {% endif %}

@@ -7,17 +7,12 @@ title: Home
     <p class="eyebrow">Technical Artist · Game Developer</p>
     <h1>Tools, workflows, and notes from production.</h1>
     <p class="lead">This site is built around two priorities: useful writing and practical tools. The resume and project history stay easy to find, but they do not dominate the homepage.</p>
-    <div class="link-row">
-      <a class="button" href="{{ '/blog/' | relative_url }}">Read blog</a>
-      <a class="button secondary" href="{{ '/projects/' | relative_url }}">View projects</a>
-      <a class="button secondary" href="{{ '/tools/' | relative_url }}">Browse tools</a>
-      <a class="button secondary" href="{{ '/cv/' | relative_url }}">View Resume</a>
-    </div>
   </div>
   <div class="hero-image-container">
     <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="" class="hero-image">
   </div>
 </section>
+
 <section class="section-block">
   <div class="section-head">
     <h2>Tools</h2>
@@ -49,6 +44,8 @@ title: Home
       <article class="card">
         {% if post.image %}
           <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+        {% elsif post.youtube_id %}
+          <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
         {% else %}
           <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
         {% endif %}
