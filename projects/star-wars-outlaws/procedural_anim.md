@@ -4,6 +4,7 @@ title: "Star Wars Outlaws - Procedural Animation"
 permalink: /projects/star-wars-outlaws/environment-art-and-set-dressing/
 parent_project: "Star Wars Outlaws"
 parent_permalink: /projects/star-wars-outlaws/
+parent_slug: "star-wars-outlaws"
 image: /assets/images/projects/star-wars-outlaws/environment-art-and-set-dressing.png
 summary: " Procedural Animation for the main character ship"
 ---
