@@ -1,6 +1,6 @@
 ---
 title: " The Division 2 - Warlords of New York"
-role: "Technical Artist"
+role: "Technical Artist \n @ Massive Entertainment"
 summary: "Expansion-focused content support with tool and workflow contributions for live production."
 image: "/assets/images/projectcovers/TCTD2WONY.png"
 release_year: 2020
