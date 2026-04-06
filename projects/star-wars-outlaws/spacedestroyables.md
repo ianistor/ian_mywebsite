@@ -11,10 +11,6 @@ summary: "Focused breakdown page for technical art and pipeline work on Star War
 
 ![Technical Art and Pipelines]({{ 'assets/images/projectcovers/AC3.png' | relative_url }})
 
-## Technical Art and Pipelines
+Space destroyable asset logic and implementation.
 
-Add the content for this subpage here.
-
-### What this page is for
-
-Use this page for workflows, procedural setups, validation, optimization, or any production facing technical work tied to the project.
+<iframe width="714" height="400" src="[https://www.youtube.com/embed/EImicR2Vlfk](https://www.youtube.com/watch?v=AAsoF04dDdY)" frameborder="0" allowfullscreen></iframe>
