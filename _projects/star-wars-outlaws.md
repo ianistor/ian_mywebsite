@@ -1,4 +1,5 @@
 ---
+layout: project
 title: "Star Wars Outlaws"
 role: "Senior Technical Artist"
 company: "Massive Entertainment"
