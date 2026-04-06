@@ -84,7 +84,7 @@ title: Home
     <div class="projects-row-hint">Scroll for more</div>
 
     <div class="projects-row">
-      {% assign sorted_projects = site.projects | sort: 'title' %}
+      {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         <article class="project-row-card">
           {% if project.image %}
