@@ -7,6 +7,7 @@ parent_slug: "star-wars-outlaws"
 parent_permalink: /projects/star-wars-outlaws/
 image: /assets/images/projectcovers/AC3.png
 summary: "Focused breakdown page for technical art and pipeline work on Star Wars Outlaws."
+youtube_id: "AAsoF04dDdY"
 ---
 
 ![Technical Art and Pipelines]({{ 'assets/images/projectcovers/AC3.png' | relative_url }})
