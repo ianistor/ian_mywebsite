@@ -18,7 +18,6 @@ permalink: /projects/
       {% else %}
         <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
       {% endif %}
-      <p class="eyebrow">Project</p>
       <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
       {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
       <p>{{ project.summary }}</p>
