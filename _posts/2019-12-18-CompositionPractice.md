@@ -2,7 +2,7 @@
 layout: post
 title: "Python - Composition Helper"
 date: 2019-12-18
-tags: [Python]
+tags: [python]
 youtube_id: "EImicR2Vlfk"
 
 ---
