@@ -14,4 +14,4 @@ youtube_id: "AAsoF04dDdY"
 
 Space destroyable asset logic and implementation.
 
-<iframe width="714" height="400" src="[https://www.youtube.com/embed/EImicR2Vlfk](https://www.youtube.com/watch?v=AAsoF04dDdY)" frameborder="0" allowfullscreen></iframe>
+<iframe width="1037" height="583" src="https://www.youtube.com/embed/AAsoF04dDdY" title="Star Wars Outlaws Technical Art - Dynamics&amp;Destroyables" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
