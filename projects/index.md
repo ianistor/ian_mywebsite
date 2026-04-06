@@ -10,7 +10,7 @@ permalink: /projects/
 </section>
 
 <section class="card-grid">
-  {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
+  {% assign sorted_projects = site.projects | sort: 'title' %}
   {% for project in sorted_projects %}
     <article class="card">
       {% if project.image %}
@@ -18,6 +18,7 @@ permalink: /projects/
       {% else %}
         <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
       {% endif %}
+      <p class="eyebrow">Project</p>
       <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
       {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
       <p>{{ project.summary }}</p>
