@@ -126,6 +126,4 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 ---
 
-## Notes
 
-This page is adapted from the 2026 PDF CV and formatted for the website. Source CV: [IANIstor_TechArt_2026.pdf](sandbox:/mnt/data/IANIstor_TechArt_2026.pdf) :contentReference[oaicite:8]{index=8}
