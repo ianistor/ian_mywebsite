@@ -26,6 +26,8 @@ Star Wars Outlaws is presented here as a main project page with several focused 
       <a href="{{ subpage.url | relative_url }}">
         {% if subpage.image %}
           <img src="{{ subpage.image | relative_url }}" alt="" class="card-thumb">
+        {% elsif subpage.youtube_id %}
+          <img src="https://img.youtube.com/vi/{{ subpage.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
         {% else %}
           <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
         {% endif %}
