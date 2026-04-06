@@ -2,14 +2,37 @@
 layout: default
 title: Home
 ---
+
 <section class="hero">
   <div class="hero-content">
     <p class="eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1>Tools, workflows, and random experiments.</h1>
-    <p class="lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows,procedural content and real-time visuals. Proven track record developing tools,destruction systems, and gameplayintegrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines..</p>
+    <p class="lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows, procedural content and real-time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
+  </div>
 
   <div class="hero-image-container">
     <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="" class="hero-image">
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Tools</h2>
+    <a href="{{ '/tools/' | relative_url }}">See all</a>
+  </div>
+  <div class="card-grid">
+    {% for tool in site.tools limit: 6 %}
+      <article class="card">
+        {% if tool.image %}
+          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+        {% else %}
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        {% endif %}
+        <p class="eyebrow">Tool</p>
+        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <p>{{ tool.summary }}</p>
+      </article>
+    {% endfor %}
   </div>
 </section>
 
@@ -38,27 +61,6 @@ title: Home
           </div>
         {% endif %}
         <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="section-block">
-  <div class="section-head">
-    <h2>Tools</h2>
-    <a href="{{ '/tools/' | relative_url }}">See all</a>
-  </div>
-  <div class="card-grid">
-    {% for tool in site.tools limit: 6 %}
-      <article class="card">
-        {% if tool.image %}
-          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
-        {% else %}
-          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-        {% endif %}
-        <p class="eyebrow">Tool</p>
-        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-        <p>{{ tool.summary }}</p>
       </article>
     {% endfor %}
   </div>
