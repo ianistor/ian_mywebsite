@@ -9,7 +9,7 @@ release_year: 2024
 permalink: /projects/star-wars-outlaws/
 links:
   - label: "ArtStation"
-    url: "https://nistorandrei.artstation.com"
+    url: "https://www.artstation.com/nistorandrei/albums/10848560"
 ---
 
 ## Overview
