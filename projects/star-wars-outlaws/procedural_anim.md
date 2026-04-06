@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Star Wars Outlaws - Procedural Animation"
+title: "Ship Procedural Animation"
 permalink: /projects/star-wars-outlaws/environment-art-and-set-dressing/
 parent_project: "Star Wars Outlaws"
 parent_permalink: /projects/star-wars-outlaws/
