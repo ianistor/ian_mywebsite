@@ -1,18 +1,9 @@
 ---
 layout: post
-title: "Python practice - Composition Helper"
+title: "Python - Composition Helper"
 date: 2019-12-18
 tags: [Python, Tools, UI, PySide]
 youtube_id: "EImicR2Vlfk"
----
-
-## Python practice
-
-This was created / 18 December 2019
-
----
-
-Got a cold/flu last week so I stayed home... so obviously like any other sick person out there I decided with this occasion to invest some time on my python skills.
 
 ---
 
