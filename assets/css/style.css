@@ -144,6 +144,12 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.meta-company {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 .narrow {
   max-width: 760px;
 }
