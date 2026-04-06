@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Houdini TO-DO Tool"
 summary: "A simple TO-DO system inside Houdini using Python, designed for notes and team feedback."
 image: /assets/images/placeholder.png
