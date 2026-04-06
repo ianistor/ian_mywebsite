@@ -25,27 +25,6 @@ title: Home
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Tools</h2>
-    <a href="{{ '/tools/' | relative_url }}">See all</a>
-  </div>
-  <div class="card-grid">
-    {% for tool in site.tools limit: 6 %}
-      <article class="card">
-        {% if tool.image %}
-          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
-        {% else %}
-          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-        {% endif %}
-        <p class="eyebrow">Tool</p>
-        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-        <p>{{ tool.summary }}</p>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="section-block">
-  <div class="section-head">
     <h2>Blog</h2>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
@@ -76,6 +55,27 @@ title: Home
 
 <section class="section-block">
   <div class="section-head">
+    <h2>Tools</h2>
+    <a href="{{ '/tools/' | relative_url }}">See all</a>
+  </div>
+  <div class="card-grid">
+    {% for tool in site.tools limit: 6 %}
+      <article class="card">
+        {% if tool.image %}
+          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+        {% else %}
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        {% endif %}
+        <p class="eyebrow">Tool</p>
+        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <p>{{ tool.summary }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
     <h2>Projects</h2>
     <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
@@ -93,9 +93,16 @@ title: Home
             <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-row-image">
           {% endif %}
           <div class="project-row-copy">
-            <p class="eyebrow">Project</p>
             <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-            {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
+
+            {% if project.company or project.role %}
+              <p class="meta">
+                {% if project.company %}{{ project.company }}{% endif %}
+                {% if project.company and project.role %} · {% endif %}
+                {% if project.role %}{{ project.role }}{% endif %}
+              </p>
+            {% endif %}
+
             <p>{{ project.summary }}</p>
           </div>
         </article>
