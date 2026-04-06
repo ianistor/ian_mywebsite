@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: Snippet
+title: SNIPPET
 permalink: /tags/snippet/
 tag: snippet
 ---

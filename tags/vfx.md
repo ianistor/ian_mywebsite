@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: Vfx
+title: VFX
 permalink: /tags/vfx/
 tag: vfx
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: Vex
+title: VEX
 permalink: /tags/vex/
 tag: vex
 ---

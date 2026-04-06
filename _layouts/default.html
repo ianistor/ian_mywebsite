@@ -39,7 +39,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       const prose = document.querySelector('.prose');
 
-      // Copy buttons for code blocks
       document.querySelectorAll('pre > code').forEach((codeBlock) => {
         const pre = codeBlock.parentElement;
         const wrapper = document.createElement('div');
@@ -66,7 +65,6 @@
         });
       });
 
-      // Anchor links on prose headings
       if (prose) {
         prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
           if (!heading.id) {
@@ -86,7 +84,6 @@
         });
       }
 
-      // Lightbox for prose images
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
       const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;

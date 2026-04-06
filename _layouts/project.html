@@ -5,6 +5,7 @@ layout: default
   <header class="page-header narrow">
     <p class="eyebrow">Project</p>
     <h1>{{ page.title }}</h1>
+    {% if page.role %}<p class="meta">{{ page.role }}</p>{% endif %}
     {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
     {% if page.links %}
       <div class="link-row">

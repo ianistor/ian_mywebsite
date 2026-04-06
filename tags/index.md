@@ -12,8 +12,8 @@ permalink: /tags/
   {% assign sorted_tags = site.tags | sort %}
   {% for tag in sorted_tags %}
     {% assign tag_name = tag[0] %}
-    <a class="tag-chip" href="{{ '/tags/' | append: tag_name | append: '/' | relative_url }}">
-      {{ tag_name }} <span>{{ tag[1].size }}</span>
+    <a class="tag-chip" href="{{ '/tags/' | append: tag_name | downcase | append: '/' | relative_url }}">
+      {{ tag_name | upcase }} <span>{{ tag[1].size }}</span>
     </a>
   {% endfor %}
 </section>

@@ -39,8 +39,6 @@ a:hover {
   margin: 0 auto;
 }
 
-/* Header / Footer */
-
 .site-header,
 .site-footer {
   border-bottom: 1px solid var(--line);
@@ -88,8 +86,6 @@ a:hover {
 .site-nav a:hover {
   color: var(--text);
 }
-
-/* Hero / Page header */
 
 .hero,
 .page-header {
@@ -152,8 +148,6 @@ a:hover {
   max-width: 760px;
 }
 
-/* Sections */
-
 .section-block {
   padding: 1.25rem 0 0;
 }
@@ -170,8 +164,6 @@ a:hover {
   margin: 0;
   font-size: 1.55rem;
 }
-
-/* Cards */
 
 .card-grid {
   display: grid;
@@ -203,8 +195,6 @@ a:hover {
   gap: 1rem;
 }
 
-/* Buttons */
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -230,8 +220,6 @@ a:hover {
   margin-top: 1.5rem;
 }
 
-/* Thumbnails */
-
 .card-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -241,8 +229,6 @@ a:hover {
   margin-bottom: 0.5rem;
   display: block;
 }
-
-/* Prose */
 
 .prose {
   color: var(--text);
@@ -311,8 +297,6 @@ a:hover {
   opacity: 1;
 }
 
-/* Code copy */
-
 .code-block {
   position: relative;
   margin: 1.5rem 0;
@@ -335,8 +319,6 @@ a:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
-
-/* Callouts */
 
 .callout {
   margin: 1.5rem 0;
@@ -374,8 +356,6 @@ a:hover {
   background: rgba(140, 194, 255, 0.12);
 }
 
-/* Post pagination */
-
 .post-pagination {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -401,8 +381,6 @@ a:hover {
   font-size: 0.85rem;
   margin-bottom: 0.3rem;
 }
-
-/* Tags */
 
 .hero-project-links {
   margin-top: 1.5rem;
@@ -448,8 +426,6 @@ a:hover {
   padding: 0.28rem 0.6rem;
   font-size: 0.82rem;
 }
-
-/* Projects row */
 
 .projects-row-wrap {
   position: relative;
@@ -516,8 +492,6 @@ a:hover {
   display: inline-block;
 }
 
-/* Lightbox */
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -551,8 +525,6 @@ a:hover {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-/* Responsive */
 
 @media (max-width: 900px) {
   .card-grid,

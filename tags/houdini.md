@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: Houdini
+title: HOUDINI
 permalink: /tags/houdini/
 tag: houdini
 ---

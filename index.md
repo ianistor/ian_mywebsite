@@ -64,7 +64,7 @@ title: Home
         {% if post.tags %}
           <div class="post-tags">
             {% for tag in post.tags %}
-              <a class="tag-chip small" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
+              <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
             {% endfor %}
           </div>
         {% endif %}

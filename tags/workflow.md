@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: Workflow
+title: WORKFLOW
 permalink: /tags/workflow/
 tag: workflow
 ---

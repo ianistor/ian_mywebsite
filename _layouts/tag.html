@@ -3,8 +3,8 @@ layout: default
 ---
 <section class="page-header">
   <p class="eyebrow">Tag</p>
-  <h1>{{ page.tag }}</h1>
-  <p class="lead">Posts tagged with <code>{{ page.tag }}</code>.</p>
+  <h1>{{ page.tag | upcase }}</h1>
+  <p class="lead">Posts tagged with <code>{{ page.tag | upcase }}</code>.</p>
 </section>
 
 <section class="section-block">
@@ -27,7 +27,7 @@ layout: default
       {% if post.tags %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a class="tag-chip small" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
+            <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
           {% endfor %}
         </div>
       {% endif %}
