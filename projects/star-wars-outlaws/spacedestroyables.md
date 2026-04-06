@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Star Wars Outlaws - Space Dynamics & Destroyables"
+title: "Space Dynamics & Destroyables"
 permalink: /projects/star-wars-outlaws/technical-art-and-pipelines/
 parent_project: "Star Wars Outlaws"
 parent_slug: "star-wars-outlaws"
