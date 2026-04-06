@@ -10,7 +10,7 @@ permalink: /projects/
 </section>
 
 <section class="card-grid">
-  {% assign sorted_projects = site.projects | sort: 'title' %}
+  {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
     <article class="card">
       {% if project.image %}
