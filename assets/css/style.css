@@ -528,6 +528,37 @@ a:hover {
   cursor: pointer;
 }
 
+.hero-eyebrow,
+.hero-title,
+.hero-lead {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroReveal 0.9s ease-out forwards;
+}
+
+.hero-eyebrow {
+  animation-delay: 0.05s;
+}
+
+.hero-title {
+  animation-delay: 0.15s;
+}
+
+.hero-lead {
+  animation-delay: 0.28s;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 900px) {
   .card-grid,
   .card-grid.two-up,
