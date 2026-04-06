@@ -2,7 +2,8 @@
 title: "The Division"
 role: "Technical Content Validator"
 summary: "Checking in-engine content"
-image: "/assets/images/placeholder.png"
+image: "/assets/images/projectcovers/TCTD.png"
+release_year: 2016
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
