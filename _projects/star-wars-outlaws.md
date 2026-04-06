@@ -5,7 +5,7 @@ role: "Senior Technical Artist"
 company: "Massive Entertainment"
 summary: "Built destruction workflows, Houdini tools, and gameplay-integrated visual systems for production."
 image: "/assets/images/projectcovers/SWO.png"
-release_year: 2023
+release_year: 2024
 permalink: /projects/star-wars-outlaws/
 links:
   - label: "ArtStation"
@@ -18,13 +18,22 @@ Star Wars Outlaws is presented here as a main project page with several focused 
 
 ## Deep dives
 
-- [Environment Art and Set Dressing]({{ '/projects/star-wars-outlaws/environment-art-and-set-dressing/' | relative_url }})
-- [Technical Art and Pipelines]({{ '/projects/star-wars-outlaws/technical-art-and-pipelines/' | relative_url }})
-- [Destruction and Simulation]({{ '/projects/star-wars-outlaws/destruction-and-simulation/' | relative_url }})
-- [VFX and Real Time Presentation]({{ '/projects/star-wars-outlaws/vfx-and-real-time-presentation/' | relative_url }})
-- [Tools and Workflow Support]({{ '/projects/star-wars-outlaws/tools-and-workflow-support/' | relative_url }})
+{% assign sw_pages = site.pages | where: "parent_slug", "star-wars-outlaws" | sort: "title" %}
 
-## Notes
-
-Replace the placeholder titles, summaries, and images with the exact ArtStation entry names and content you want to show.
-
+<div class="card-grid">
+  {% for subpage in sw_pages %}
+    <article class="card">
+      <a href="{{ subpage.url | relative_url }}">
+        {% if subpage.image %}
+          <img src="{{ subpage.image | relative_url }}" alt="" class="card-thumb">
+        {% else %}
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        {% endif %}
+      </a>
+      <h3><a href="{{ subpage.url | relative_url }}">{{ subpage.title }}</a></h3>
+      {% if subpage.summary %}
+        <p>{{ subpage.summary }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
