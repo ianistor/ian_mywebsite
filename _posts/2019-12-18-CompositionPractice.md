@@ -3,6 +3,7 @@ layout: post
 title: "Python practice - Composition Helper"
 date: 2019-12-18
 tags: [Python, Tools, UI, PySide]
+youtube_id: "EImicR2Vlfk"
 ---
 
 ## Python practice
