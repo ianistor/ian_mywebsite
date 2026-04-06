@@ -15,6 +15,18 @@ Developed procedural animations for our main vehicle, Trailblazer, taking gamepl
 
 https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4
 
-https://cdn.artstation.com/p/video_sources/002/194/739/ianistor-trailblazerengines.mp4
+<video width="714" height="400" controls preload="metadata">
+  <source src="https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4" type="video/mp4">
+</video>
 
-https://cdn.artstation.com/p/video_sources/002/194/742/ianistor-trailblazerengines-side-still.mp4
+<video width="714" height="400" controls preload="metadata">
+  <source src="https://cdn.artstation.com/p/video_sources/002/194/739/ianistor-trailblazerengines.mp4" type="video/mp4">
+</video>
+
+<video width="714" height="400" controls preload="metadata">
+  <source src="https://cdn.artstation.com/p/video_sources/002/194/742/ianistor-trailblazerengines-side-still.mp4" type="video/mp4">
+</video>
+
+
+
+
