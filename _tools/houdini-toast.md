@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Houdini Windows Toast pop up notification"
 summary: "A toast notification tool for Houdini that alerts you when nodes finish cooking."
 image: /assets/images/placeholder.png
