@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Star Wars Outlaws - Environment Art and Set Dressing"
 permalink: /projects/star-wars-outlaws/environment-art-and-set-dressing/
 parent_project: "Star Wars Outlaws"
