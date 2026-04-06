@@ -5,6 +5,7 @@ company: "Massive Entertainment"
 summary: "Built destruction workflows, Houdini tools, and gameplay-integrated visual systems for production."
 image: "/assets/images/projectcovers/SWO.png"
 release_year: 2023
+permalink: /projects/star-wars-outlaws/
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
