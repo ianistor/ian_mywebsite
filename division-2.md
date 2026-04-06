@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<section class="page-header">
+  <p class="eyebrow">Tag</p>
+  <h1>{{ page.tag }}</h1>
+  <p class="lead">Posts tagged with <code>{{ page.tag }}</code>.</p>
+</section>
+
+<section class="section-block">
+  <a class="button secondary" href="{{ '/blog/' | relative_url }}">Back to blog</a>
+</section>
+
+<section class="card-grid">
+  {% assign posts_for_tag = site.tags[page.tag] %}
+  {% for post in posts_for_tag %}
+    <article class="card">
+      {% if post.image %}
+        <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+      {% elsif post.youtube_id %}
+        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
+      {% else %}
+        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+      {% endif %}
+      <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+            <a class="tag-chip small" href="{{ '/tags/' | append: tag | append: '/' | relative_url }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
+    </article>
+  {% endfor %}
+</section>
