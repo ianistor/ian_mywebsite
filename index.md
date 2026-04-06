@@ -5,9 +5,9 @@ title: Home
 
 <section class="hero">
   <div class="hero-content">
-    <p class="eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
-    <h1>Tools, workflows, and random experiments.</h1>
-    <p class="lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows, procedural content and real-time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
+    <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
+    <h1 class="hero-title">Tools, workflows, and random experiments.</h1>
+    <p class="lead hero-lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows, procedural content and real-time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
   </div>
 
   <div class="hero-image-container">
