@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python practice"
+title: "Python practice - Composition Helper"
 date: 2019-12-18
 tags: [Python, Tools, UI, PySide]
 ---
