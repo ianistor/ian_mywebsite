@@ -2,7 +2,7 @@
 layout: post
 title: "Break it down - God of War Mystic Gateway"
 date: 2024-02-14
-tags: [houdini, vex, workflow, vfx]
+tags: [houdini, workflow, vfx]
 image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233"
 ---
 
