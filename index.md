@@ -9,7 +9,7 @@ title: Home
     <p class="lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows,procedural content and real-time visuals. Proven track record developing tools,destruction systems, and gameplayintegrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines..</p>
 
     <div class="hero-project-links">
-      <p class="eyebrow">Production projects</p>
+      <p class="eyebrow">AAA projects</p>
       <div class="post-tags">
         {% assign featured_projects = site.projects | sort: 'title' %}
         {% for project in featured_projects %}
