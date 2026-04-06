@@ -13,7 +13,6 @@ summary: " Procedural Animation for the main character ship"
 
 Developed procedural animations for our main vehicle, Trailblazer, taking gameplay driven values and animating parts of the ship to enhance the feel of speed and turning. The logic was communicating with other systems and it was driving light intensity, vfx intensity, animation and some gameplay elements (like shields, collisions and some damaged states)
 
-https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4
 
 <video width="714" height="400" controls preload="metadata">
   <source src="https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4" type="video/mp4">
