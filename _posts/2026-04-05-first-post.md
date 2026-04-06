@@ -20,14 +20,13 @@ While this won't be anything fancy or uncommon, I think it's interesting to see 
 Before I ramble onwards, two disclaimers:
 
 This past year I've been learning Houdini, so my breakdown will focus on a Houdini workflow(although similar concepts exist in other DCCs as well).
-This is a fast prototype, where i don't care about polish or quality, its just to prove a concept.
-/First step, references!
+This is a fast prototype, where i don't care about polish or quality, its just to prove a concept.  
+First step, references!
 
 ![LastFrame](https://cdnb.artstation.com/p/media_assets/images/images/001/250/709/medium/IMG_6465-1200x675.jpg?1707942584)
 ![FirstFrame](https://cdna.artstation.com/p/media_assets/images/images/001/250/708/medium/IMG_6464-1200x675.jpg?1707942533)
-![FullAnim](https://cdna.artstation.com/p/media_assets/images/images/001/250/710/original/reference_door_anim-ezgif.com-optimize_%281%29.gif?1707942861)
-**
-Break down part**
+![FullAnim](https://cdna.artstation.com/p/media_assets/images/images/001/250/710/original/reference_door_anim-ezgif.com-optimize_%281%29.gif?1707942861)  
+**Break down part**  
 Looking at the references I noticed:
 
 There are 2 states (Active and Inactive), we can also see that there's an archway shape and some rocks following this shape.
