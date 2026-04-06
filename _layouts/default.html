@@ -23,11 +23,108 @@
     {{ content }}
   </main>
 
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <img class="lightbox-image" src="" alt="">
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-row">
       <p>{{ site.description }}</p>
       <p>Hosted on GitHub Pages with Jekyll</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const prose = document.querySelector('.prose');
+
+      // Copy buttons for code blocks
+      document.querySelectorAll('pre > code').forEach((codeBlock) => {
+        const pre = codeBlock.parentElement;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+
+        const button = document.createElement('button');
+        button.className = 'copy-button';
+        button.type = 'button';
+        button.textContent = 'Copy';
+
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(button);
+        wrapper.appendChild(pre);
+
+        button.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(codeBlock.innerText);
+            button.textContent = 'Copied';
+            setTimeout(() => button.textContent = 'Copy', 1600);
+          } catch (err) {
+            button.textContent = 'Failed';
+            setTimeout(() => button.textContent = 'Copy', 1600);
+          }
+        });
+      });
+
+      // Anchor links on prose headings
+      if (prose) {
+        prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
+          if (!heading.id) {
+            heading.id = heading.textContent
+              .toLowerCase()
+              .trim()
+              .replace(/[^a-z0-9\s-]/g, '')
+              .replace(/\s+/g, '-');
+          }
+
+          const anchor = document.createElement('a');
+          anchor.className = 'heading-anchor';
+          anchor.href = `#${heading.id}`;
+          anchor.setAttribute('aria-label', `Link to section ${heading.textContent}`);
+          anchor.textContent = '#';
+          heading.appendChild(anchor);
+        });
+      }
+
+      // Lightbox for prose images
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
+      const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+
+      if (prose && lightbox && lightboxImage) {
+        prose.querySelectorAll('img').forEach((img) => {
+          img.classList.add('zoomable-image');
+          img.addEventListener('click', () => {
+            lightboxImage.src = img.currentSrc || img.src;
+            lightboxImage.alt = img.alt || '';
+            lightbox.hidden = false;
+            document.body.classList.add('lightbox-open');
+          });
+        });
+      }
+
+      const closeLightbox = () => {
+        if (!lightbox) return;
+        lightbox.hidden = true;
+        if (lightboxImage) {
+          lightboxImage.src = '';
+          lightboxImage.alt = '';
+        }
+        document.body.classList.remove('lightbox-open');
+      };
+
+      if (lightbox) {
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+      }
+      if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+      }
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeLightbox();
+      });
+    });
+  </script>
 </body>
 </html>

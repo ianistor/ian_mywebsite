@@ -20,6 +20,10 @@ body {
   line-height: 1.6;
 }
 
+body.lightbox-open {
+  overflow: hidden;
+}
+
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-2); }
 
@@ -32,6 +36,11 @@ a:hover { color: var(--accent-2); }
   border-bottom: 1px solid var(--line);
   background: rgba(11, 15, 22, 0.75);
   backdrop-filter: blur(10px);
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -154,8 +163,9 @@ a:hover { color: var(--accent-2); }
 .prose {
   color: var(--text);
 }
-.prose h2, .prose h3 {
+.prose h2, .prose h3, .prose h4 {
   margin-top: 2rem;
+  position: relative;
 }
 .prose p, .prose li {
   color: #d5deea;
@@ -165,19 +175,155 @@ a:hover { color: var(--accent-2); }
   padding: 0.15rem 0.35rem;
   border-radius: 6px;
 }
+.prose img, .prose video, .prose iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin: 1.25rem 0;
+}
+.prose img.zoomable-image {
+  cursor: zoom-in;
+}
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
 .prose pre {
+  margin: 0;
   overflow-x: auto;
   padding: 1rem;
   background: #0b1320;
   border-radius: 14px;
   border: 1px solid var(--line);
 }
+.prose .heading-anchor {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  font-weight: 500;
+}
+.prose h2:hover .heading-anchor,
+.prose h3:hover .heading-anchor,
+.prose h4:hover .heading-anchor {
+  opacity: 1;
+}
+
+.code-block {
+  position: relative;
+  margin: 1.5rem 0;
+}
+.copy-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: 1px solid var(--line);
+  background: rgba(20, 25, 36, 0.95);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  cursor: pointer;
+}
+.copy-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+}
+.callout > :first-child {
+  margin-top: 0;
+}
+.callout > :last-child {
+  margin-bottom: 0;
+}
+.callout.note {
+  border-color: #3c5f8f;
+  background: rgba(60, 95, 143, 0.14);
+}
+.callout.tip {
+  border-color: #2f7d57;
+  background: rgba(47, 125, 87, 0.14);
+}
+.callout.warning {
+  border-color: #9a6a1d;
+  background: rgba(154, 106, 29, 0.14);
+}
+.callout.tldr {
+  border-color: var(--accent);
+  background: rgba(140, 194, 255, 0.12);
+}
+
+.post-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.post-pagination-card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+.post-pagination-card.next {
+  text-align: right;
+}
+.post-pagination-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 14, 0.92);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  z-index: 200;
+}
+.lightbox[hidden] {
+  display: none;
+}
+.lightbox-image {
+  max-width: min(1200px, calc(100vw - 4rem));
+  max-height: calc(100vh - 4rem);
+  border-radius: 18px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(20, 25, 36, 0.95);
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
 @media (max-width: 860px) {
   .card-grid,
   .card-grid.two-up,
   .header-row,
-  .footer-row {
+  .footer-row,
+  .post-pagination {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
@@ -187,7 +333,7 @@ a:hover { color: var(--accent-2); }
   }
 }
 
-/* Custom additions */
+/* Existing custom additions */
 .hero {
   display: flex;
   flex-wrap: wrap;

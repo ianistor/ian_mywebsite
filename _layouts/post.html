@@ -11,4 +11,19 @@ layout: default
   <div class="prose narrow">
     {{ content }}
   </div>
+
+  <nav class="post-pagination narrow" aria-label="Post navigation">
+    {% if page.previous %}
+      <a class="post-pagination-card prev" href="{{ page.previous.url | relative_url }}">
+        <span class="post-pagination-label">Previous post</span>
+        <strong>{{ page.previous.title }}</strong>
+      </a>
+    {% endif %}
+    {% if page.next %}
+      <a class="post-pagination-card next" href="{{ page.next.url | relative_url }}">
+        <span class="post-pagination-label">Next post</span>
+        <strong>{{ page.next.title }}</strong>
+      </a>
+    {% endif %}
+  </nav>
 </article>
