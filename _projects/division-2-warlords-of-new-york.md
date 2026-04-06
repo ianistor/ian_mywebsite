@@ -1,9 +1,10 @@
 ---
-title: "The Division 2 – Warlords of New York"
-summary: "Seasonal expansions and end‑game content for The Division 2."
-image: /assets/images/placeholder.png
+title: "Warlords of New York"
+role: "Technical Artist"
+summary: "Expansion-focused content support with tool and workflow contributions for live production."
+image: "/assets/images/placeholder.png"
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
 ---
-Placeholder description for the Warlords of New York expansion. Add details about tools and effects you worked on.
+Add your full breakdown here.
