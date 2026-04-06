@@ -97,6 +97,9 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: pageReveal 0.9s ease-out forwards;
 }
 
 .hero-content {
@@ -107,6 +110,10 @@ a:hover {
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  animation: pageReveal 0.95s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 .hero h1,
@@ -156,7 +163,16 @@ a:hover {
 
 .section-block {
   padding: 1.25rem 0 0;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: pageReveal 0.9s ease-out forwards;
 }
+
+.section-block:nth-of-type(2) { animation-delay: 0.28s; }
+.section-block:nth-of-type(3) { animation-delay: 0.4s; }
+.section-block:nth-of-type(4) { animation-delay: 0.52s; }
+.section-block:nth-of-type(5) { animation-delay: 0.64s; }
+.section-block:nth-of-type(6) { animation-delay: 0.76s; }
 
 .section-head {
   display: flex;
@@ -470,7 +486,7 @@ a:hover {
 
 .project-row-image {
   width: 100%;
-  aspect-ratio: 7 / 8; /* close to 140x160 */
+  aspect-ratio: 7 / 8;
   object-fit: cover;
   object-position: center;
 }
@@ -533,25 +549,36 @@ a:hover {
 .hero-lead {
   opacity: 0;
   transform: translateY(14px);
-  animation: heroReveal 0.9s ease-out forwards;
+  animation: heroTextReveal 0.9s ease-out forwards;
 }
 
 .hero-eyebrow {
-  animation-delay: 0.05s;
+  animation-delay: 0.08s;
 }
 
 .hero-title {
-  animation-delay: 0.15s;
+  animation-delay: 0.18s;
 }
 
 .hero-lead {
-  animation-delay: 0.28s;
+  animation-delay: 0.3s;
 }
 
-@keyframes heroReveal {
+@keyframes heroTextReveal {
   from {
     opacity: 0;
     transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
