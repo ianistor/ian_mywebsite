@@ -404,6 +404,10 @@ a:hover {
 
 /* Tags */
 
+.hero-project-links {
+  margin-top: 1.5rem;
+}
+
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -444,6 +448,51 @@ a:hover {
   padding: 0.28rem 0.6rem;
   font-size: 0.82rem;
 }
+
+.projects-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 1rem;
+}
+
+.project-feature-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+
+.project-feature-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.project-feature-copy h3 {
+  margin: 0.25rem 0 0.6rem;
+}
+
+.project-side-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-mini-card {
+  height: fit-content;
+}
+
+@media (max-width: 900px) {
+  .projects-showcase,
+  .project-feature-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Lightbox */
 
