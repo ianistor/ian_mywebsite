@@ -79,40 +79,31 @@ title: Home
     <h2>Projects</h2>
     <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
-  <div class="projects-showcase">
-    {% assign sorted_projects = site.projects | sort: 'title' %}
-    {% for project in sorted_projects %}
-      {% if forloop.first %}
-        <article class="project-feature-card">
+
+  <div class="projects-row-wrap">
+    <div class="projects-row-hint">Scroll for more</div>
+
+    <div class="projects-row">
+      {% assign sorted_projects = site.projects | sort: 'title' %}
+      {% for project in sorted_projects %}
+        <article class="project-row-card">
           {% if project.image %}
-            <img src="{{ project.image | relative_url }}" alt="" class="project-feature-image">
+            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-feature-image">
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-row-image">
           {% endif %}
-          <div class="project-feature-copy">
-            <p class="eyebrow">Featured project</p>
+          <div class="project-row-copy">
+            <p class="eyebrow">Project</p>
             <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
             {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
             <p>{{ project.summary }}</p>
           </div>
         </article>
-      {% endif %}
-    {% endfor %}
-
-    <div class="project-side-stack">
-      {% for project in sorted_projects offset:1 limit:2 %}
-        <article class="card project-mini-card">
-          {% if project.image %}
-            <img src="{{ project.image | relative_url }}" alt="" class="card-thumb">
-          {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-          {% endif %}
-          <p class="eyebrow">Project</p>
-          <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-          {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
-          <p>{{ project.summary }}</p>
-        </article>
       {% endfor %}
+    </div>
+
+    <div class="projects-row-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
     </div>
   </div>
 </section>
