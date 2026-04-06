@@ -451,14 +451,17 @@ a:hover {
   position: fixed;
   inset: 0;
   background: rgba(5, 8, 14, 0.92);
-  display: grid;
   place-items: center;
   padding: 2rem;
   z-index: 200;
 }
 
+.lightbox:not([hidden]) {
+  display: grid;
+}
+
 .lightbox[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .lightbox-image {
