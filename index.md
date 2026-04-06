@@ -4,9 +4,9 @@ title: Home
 ---
 <section class="hero">
   <div class="hero-content">
-    <p class="eyebrow">Technical Artist · Game Developer</p>
-    <h1>Tools, workflows, and notes from production.</h1>
-    <p class="lead">This site is built around two priorities: useful writing and practical tools. The resume and project history stay easy to find, but they do not dominate the homepage.</p>
+    <p class="eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
+    <h1>Tools, workflows, and random experiments.</h1>
+    <p class="lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows,procedural content and real-time visuals. Proven track record developing tools,destruction systems, and gameplayintegrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines..</p>
 
     <div class="hero-project-links">
       <p class="eyebrow">Production projects</p>
