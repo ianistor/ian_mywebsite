@@ -6,7 +6,7 @@
   --muted: #a2adbd;
   --line: #283142;
   --accent: #8cc2ff;
-  --accent-2: #d9e9ff;
+  
   --max: 1120px;
 }
 
@@ -194,12 +194,15 @@ a:hover {
 }
 
 .company-logo-inline {
-  width: 28px;
-  height: 28px;
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
   object-fit: contain;
   display: inline-block;
   vertical-align: middle;
-  border-radius: 4px;
 }
 
 .narrow {
