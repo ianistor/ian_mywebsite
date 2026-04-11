@@ -32,13 +32,13 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Performance Optimization
 - Physics Simulation (RBD)
 - Real Time Rendering
-- Complex problem solving 
+- Problem solving 
 
 ---
 
 ## Professional Experience
 
-### Technical Artist  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/amazon-games.png' | relative_url }}" alt="Amazon Games logo" class="company-logo-inline"> Technical Artist</span>  
 **Amazon Games**  
 *2024 - Current*
 
@@ -50,9 +50,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Built Chaos based destruction systems integrated with Houdini simulations, supporting gameplay driven visual moments.
 - Created Houdini cloth and RBD simulations, preparing optimized assets for Niagara and real time integration.
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
-- Documented Unreal workflows and mentored team members during engine transition. 
+- Documented Unreal workflows and mentored team members during engine transition.
 
-### Senior Technical Artist  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/ubisoft-romania.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline"> Senior Technical Artist</span>  
 **Ubisoft Romania**  
 *2023 - 2024*
 
@@ -64,9 +64,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Identified and fixed performance and visual issues early in production by participating in weekly art leads meetings focused on optimizing content creation.
 - Provided technical solutions to support game design, level design, and art direction, improving project quality and reducing potential work loss.
 - Conducted performance profiling and optimization to support game performance and player experience.
-- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming. 
+- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
-### Senior Technical Artist  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline"> Senior Technical Artist</span>  
 **Massive Entertainment, A Ubisoft Studio**  
 *2022 - 2023*
 
@@ -80,7 +80,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
-### Technical Artist  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline"> Technical Artist</span>  
 **Massive Entertainment, A Ubisoft Studio**  
 *2018 - 2022*
 
@@ -93,9 +93,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Used Python and internal tools to identify and replace expensive assets.
 - Assisted with more complex graph setups.
 - Debugged streaming issues and set up culling.
-- Supported DCC tools and pipeline workflows. 
+- Supported DCC tools and pipeline workflows.
 
-### Technical Content Validator  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline"> Technical Content Validator</span>  
 **Massive Entertainment, A Ubisoft Studio**  
 *2015 - 2018*
 
@@ -103,9 +103,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Collaborated closely with outsourcing teams and provided feedback on delivered art.
 - Assisted in developing a new asset art pipeline.
 - Coordinated the role across other studios and helped onboard other Content Validators.
-- Provided reports to the Tech Art team. 
-
----
+- Provided reports to the Tech Art team.
 
 ## Selected Projects
 
