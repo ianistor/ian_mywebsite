@@ -289,7 +289,13 @@ a:hover {
 }
 
 .project-card-thumb {
+  width: 100%;
+  height: auto;
   object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  display: block;
   background: rgba(255,255,255,0.03);
 }
 
