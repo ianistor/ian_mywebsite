@@ -133,9 +133,6 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: pageReveal 0.9s ease-out forwards;
 }
 
 .hero-content {
@@ -146,10 +143,6 @@ a:hover {
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(18px) scale(0.985);
-  animation: pageReveal 0.95s ease-out forwards;
-  animation-delay: 0.2s;
 }
 
 .hero h1,
@@ -230,6 +223,19 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 1.25rem;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.card:hover,
+.list-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(140, 194, 255, 0.42);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
 }
 
 .card h2,
@@ -254,6 +260,11 @@ a:hover {
   color: #09111d;
   border-radius: 999px;
   font-weight: 700;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
 }
 
 .button.secondary {
@@ -277,6 +288,12 @@ a:hover {
   border-radius: 14px;
   margin-bottom: 0.5rem;
   display: block;
+  transition: transform 0.28s ease;
+}
+
+.card:hover .card-thumb,
+.list-card:hover .card-thumb {
+  transform: scale(1.02);
 }
 
 .project-card-thumb {
@@ -288,6 +305,12 @@ a:hover {
   margin-bottom: 0.75rem;
   display: block;
   background: rgba(255,255,255,0.03);
+  transition: transform 0.28s ease;
+}
+
+.card:hover .project-card-thumb,
+.list-card:hover .project-card-thumb {
+  transform: scale(1.015);
 }
 
 .prose {
@@ -527,6 +550,11 @@ a:hover {
   aspect-ratio: 7 / 8;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.28s ease;
+}
+
+.project-row-card:hover .project-row-image {
+  transform: scale(1.02);
 }
 
 .project-row-copy h3 {
@@ -602,7 +630,6 @@ a:hover {
   animation-delay: 0.3s;
 }
 
-/* Generic page reveal targets */
 .page-header,
 .section-block,
 .card-grid,
@@ -656,8 +683,6 @@ a:hover {
     scroll-behavior: auto !important;
   }
 
-  .hero,
-  .hero-image-container,
   .hero-eyebrow,
   .hero-title,
   .hero-lead,
