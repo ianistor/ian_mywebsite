@@ -43,8 +43,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 *2024 - Current*
 
 - Contributed to studio growth from 3 to 40 developers, participating in interviews and hiring loops.
-- Collaborated with animators, designers, and character artists to support complex skinning and rigging workflows for live expansions, including gear, weapons, and mounts.
-- Learned a new in-house engine Azoth (also called Lumberyard)
+- Skinning, Rigging and VO generation using in-house tools.
 - Designed and maintained pipeline and editor tools using Python to improve content iteration speed and production stability.
 - Developed Unreal Engine scripted action tools and Blueprint based workflows to streamline content integration.
 - Built Chaos based destruction systems integrated with Houdini simulations, supporting gameplay driven visual moments.
