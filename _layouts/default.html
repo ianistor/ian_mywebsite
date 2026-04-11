@@ -11,7 +11,20 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav class="site-nav" aria-label="Main navigation">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         {% for item in site.nav %}
           <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
         {% endfor %}
@@ -38,6 +51,51 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const prose = document.querySelector('.prose');
+      const navToggle = document.querySelector('.nav-toggle');
+      const siteNav = document.getElementById('site-nav');
+
+      if (navToggle && siteNav) {
+        navToggle.addEventListener('click', function () {
+          const isOpen = siteNav.classList.toggle('is-open');
+          navToggle.classList.toggle('is-open', isOpen);
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        });
+
+        siteNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', function () {
+            if (window.innerWidth <= 860) {
+              siteNav.classList.remove('is-open');
+              navToggle.classList.remove('is-open');
+              navToggle.setAttribute('aria-expanded', 'false');
+              navToggle.setAttribute('aria-label', 'Open navigation');
+            }
+          });
+        });
+
+        document.addEventListener('click', function (event) {
+          if (
+            window.innerWidth <= 860 &&
+            siteNav.classList.contains('is-open') &&
+            !siteNav.contains(event.target) &&
+            !navToggle.contains(event.target)
+          ) {
+            siteNav.classList.remove('is-open');
+            navToggle.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open navigation');
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 860) {
+            siteNav.classList.remove('is-open');
+            navToggle.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'Open navigation');
+          }
+        });
+      }
 
       document.querySelectorAll('pre > code').forEach((codeBlock) => {
         const pre = codeBlock.parentElement;
