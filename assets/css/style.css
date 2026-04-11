@@ -186,6 +186,22 @@ a:hover {
   font-size: 0.85rem;
 }
 
+.company-role-with-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.company-logo-inline {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
 .narrow {
   max-width: 760px;
 }
