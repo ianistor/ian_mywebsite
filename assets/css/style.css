@@ -315,6 +315,32 @@ a:hover {
   transform: scale(1.02);
 }
 
+.experience-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.experience-head-copy h3 {
+  margin: 0 0 0.2rem;
+}
+
+.experience-head-copy p {
+  margin: 0.1rem 0;
+}
+
+.company-logo-inline {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px;
+  min-height: 56px;
+  max-width: 56px;
+  max-height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
 .project-card-thumb {
   width: 100%;
   height: auto;
