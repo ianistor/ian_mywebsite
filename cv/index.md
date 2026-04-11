@@ -95,7 +95,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
 <div class="experience-head">
-  <img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline">
+  <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline">
   <div class="experience-head-copy">
     <h3>Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
@@ -115,7 +115,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Supported DCC tools and pipeline workflows.
 
 <div class="experience-head">
-  <img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline">
+  <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline">
   <div class="experience-head-copy">
     <h3>Technical Content Validator</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
