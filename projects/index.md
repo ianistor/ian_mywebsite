@@ -6,8 +6,8 @@ permalink: /projects/
 
 <section class="page-header">
   <p class="eyebrow">Projects</p>
-  <h1>Selected projects</h1>
-  <p class="lead">A focused selection of shipped or production work, each with its own dedicated page.</p>
+  <h1>AAA Projects</h1>
+  <p class="lead">Projects I had the opportunity to ship along my career.</p>
 </section>
 
 <section class="card-grid">
