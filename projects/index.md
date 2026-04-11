@@ -15,9 +15,9 @@ permalink: /projects/
   {% for project in sorted_projects %}
     <article class="card">
       {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="" class="card-thumb project-card-thumb">
+        <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
       {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb project-card-thumb">
+        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-card-thumb">
       {% endif %}
 
       <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
