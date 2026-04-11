@@ -199,16 +199,7 @@ a:hover {
 
 .section-block {
   padding: 1.25rem 0 0;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: pageReveal 0.9s ease-out forwards;
 }
-
-.section-block:nth-of-type(2) { animation-delay: 0.28s; }
-.section-block:nth-of-type(3) { animation-delay: 0.4s; }
-.section-block:nth-of-type(4) { animation-delay: 0.52s; }
-.section-block:nth-of-type(5) { animation-delay: 0.64s; }
-.section-block:nth-of-type(6) { animation-delay: 0.76s; }
 
 .section-head {
   display: flex;
@@ -611,6 +602,29 @@ a:hover {
   animation-delay: 0.3s;
 }
 
+/* Generic page reveal targets */
+.page-header,
+.section-block,
+.card-grid,
+.tag-cloud,
+.list-stack,
+.prose,
+.projects-row-wrap,
+.link-row {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: pageReveal 0.85s ease-out forwards;
+}
+
+.page-header { animation-delay: 0.05s; }
+.section-block { animation-delay: 0.14s; }
+.tag-cloud { animation-delay: 0.18s; }
+.card-grid { animation-delay: 0.22s; }
+.list-stack { animation-delay: 0.22s; }
+.prose { animation-delay: 0.18s; }
+.projects-row-wrap { animation-delay: 0.24s; }
+.link-row { animation-delay: 0.16s; }
+
 @keyframes heroTextReveal {
   from {
     opacity: 0;
@@ -630,6 +644,33 @@ a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero,
+  .hero-image-container,
+  .hero-eyebrow,
+  .hero-title,
+  .hero-lead,
+  .page-header,
+  .section-block,
+  .card-grid,
+  .tag-cloud,
+  .list-stack,
+  .prose,
+  .projects-row-wrap,
+  .link-row {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
