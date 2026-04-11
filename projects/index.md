@@ -3,6 +3,7 @@ layout: default
 title: Projects
 permalink: /projects/
 ---
+
 <section class="page-header">
   <p class="eyebrow">Projects</p>
   <h1>Selected projects</h1>
@@ -10,17 +11,25 @@ permalink: /projects/
 </section>
 
 <section class="card-grid">
-  {% assign sorted_projects = site.projects | sort: 'title' %}
+  {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
     <article class="card">
       {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="" class="card-thumb">
+        <img src="{{ project.image | relative_url }}" alt="" class="card-thumb project-card-thumb">
       {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb project-card-thumb">
       {% endif %}
-      <p class="eyebrow">Project</p>
+
       <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-      {% if project.role %}<p class="meta">{{ project.role }}</p>{% endif %}
+
+      {% if project.company or project.role %}
+        <p class="meta">
+          {% if project.company %}{{ project.company }}{% endif %}
+          {% if project.company and project.role %} · {% endif %}
+          {% if project.role %}{{ project.role }}{% endif %}
+        </p>
+      {% endif %}
+
       <p>{{ project.summary }}</p>
     </article>
   {% endfor %}
