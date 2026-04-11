@@ -32,7 +32,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Performance Optimization
 - Physics Simulation (RBD)
 - Real Time Rendering
-- Complex problem solving :contentReference[oaicite:1]{index=1}
+- Complex problem solving 
 
 ---
 
@@ -49,7 +49,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Built Chaos based destruction systems integrated with Houdini simulations, supporting gameplay driven visual moments.
 - Created Houdini cloth and RBD simulations, preparing optimized assets for Niagara and real time integration.
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
-- Documented Unreal workflows and mentored team members during engine transition. :contentReference[oaicite:2]{index=2}
+- Documented Unreal workflows and mentored team members during engine transition. 
 
 ### Senior Technical Artist  
 **Ubisoft Romania**  
@@ -63,7 +63,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Identified and fixed performance and visual issues early in production by participating in weekly art leads meetings focused on optimizing content creation.
 - Provided technical solutions to support game design, level design, and art direction, improving project quality and reducing potential work loss.
 - Conducted performance profiling and optimization to support game performance and player experience.
-- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming. :contentReference[oaicite:3]{index=3}
+- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming. 
 
 ### Senior Technical Artist  
 **Massive Entertainment, A Ubisoft Studio**  
@@ -77,7 +77,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Identified and fixed performance and visual issues early in production by participating in weekly art leads meetings focused on optimizing content creation.
 - Provided technical solutions to support game design, level design, and art direction, improving project quality and reducing potential work loss.
 - Conducted performance profiling and optimization to support game performance and player experience.
-- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming. :contentReference[oaicite:4]{index=4}
+- Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
 ### Technical Artist  
 **Massive Entertainment, A Ubisoft Studio**  
@@ -92,7 +92,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Used Python and internal tools to identify and replace expensive assets.
 - Assisted with more complex graph setups.
 - Debugged streaming issues and set up culling.
-- Supported DCC tools and pipeline workflows. :contentReference[oaicite:5]{index=5}
+- Supported DCC tools and pipeline workflows. 
 
 ### Technical Content Validator  
 **Massive Entertainment, A Ubisoft Studio**  
@@ -102,7 +102,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Collaborated closely with outsourcing teams and provided feedback on delivered art.
 - Assisted in developing a new asset art pipeline.
 - Coordinated the role across other studios and helped onboard other Content Validators.
-- Provided reports to the Tech Art team. :contentReference[oaicite:6]{index=6}
+- Provided reports to the Tech Art team. 
 
 ---
 
@@ -114,7 +114,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Tom Clancy's The Division
 - Assassin's Creed Unity
 - Assassin's Creed Black Flag
-- Assassin's Creed III :contentReference[oaicite:7]{index=7}
+- Assassin's Creed III 
 
 ---
 
