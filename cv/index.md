@@ -14,11 +14,13 @@ Bucharest, Romania
 [ArtStation](https://www.artstation.com/nistorandrei)  
 [Fab](https://www.fab.com/sellers/IANistor)
 
+
+
 ---
 
 ## Profile
 
-Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance optimized real time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines. :contentReference[oaicite:0]{index=0}
+Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance optimized real time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.
 
 ---
 
