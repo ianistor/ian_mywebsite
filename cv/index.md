@@ -38,7 +38,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 ## Professional Experience
 
-### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/amazon-games.png' | relative_url }}" alt="Amazon Games logo" class="company-logo-inline"> Technical Artist</span>  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/ags_white_logo.png' | relative_url }}" alt="Amazon Games logo" class="company-logo-inline"> Technical Artist</span>  
 **Amazon Games**  
 *2024 - Current*
 
@@ -52,7 +52,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
 - Documented Unreal workflows and mentored team members during engine transition.
 
-### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/ubisoft-romania.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline"> Senior Technical Artist</span>  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/ubi_white_logo.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline"> Senior Technical Artist</span>  
 **Ubisoft Romania**  
 *2023 - 2024*
 
@@ -66,7 +66,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
-### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/massive-entertainment.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline"> Senior Technical Artist</span>  
+### <span class="company-role-with-logo"><img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline"> Senior Technical Artist</span>  
 **Massive Entertainment, A Ubisoft Studio**  
 *2022 - 2023*
 
