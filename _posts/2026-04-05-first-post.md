@@ -65,13 +65,13 @@ For the archway, I created a spline that i mirrored and remeshed, where a copy t
 
 Since I knew I would need to fracture the wooden door, I wanted to have separate planks created from the start, so I don't have issues with newly created faces. For plank creation, I created a shape from the archway initial curves, bridged the missing gap, and using a boolean from the door shape with boxes created as planks it results in planks following the archway shape.
 
-![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250724)
+![Image](https://cdna.artstation.com/p/media_assets/images/images/001/250/724/original/wod_plank_timelapse.gif?1707944097)
 
 ### Wood Fracturing
 
 Fracturing the wood planks, I went with the old approach of scaling down the mesh into a Voronoi fracture and then scaling it back. This workflow creates some wood-like splinter fragments. Afterward, I handled the cluster creation manually by grouping up splinters that are close by.
 
-![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250725)
+![Image](https://cdnb.artstation.com/p/media_assets/images/images/001/250/725/original/fracture_timelapse.gif?1707944123)
 
 ### Simulation
 
