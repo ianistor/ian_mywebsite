@@ -77,11 +77,11 @@ Fracturing the wood planks, I went with the old approach of scaling down the mes
 
 Tearing down using a RBD Bullet solver, just an RBD Solver with gravity on.
 
-![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250719)
+![Image](https://cdnb.artstation.com/p/media_assets/images/images/001/250/719/original/karma_breaking_down-ezgif.com-resize.gif?1707943881)
 
 And now final step, reversing the simulation of the RBD solver.
 
-![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250713)
+![Image](https://cdnb.artstation.com/p/media_assets/images/images/001/250/713/original/karma_building_up-ezgif.com-resize.gif?1707943172)
 
 This was a fun thing to tackle, especially since I didn't have to worry about the final quality/polish of it being in a real production environment.
 
@@ -96,6 +96,4 @@ What are your thoughts on this approach?
 
 /Andrei
 
-P.S: Adding also the Houdini network view.
-
-![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250706)
+![Image](https://cdna.artstation.com/p/media_assets/images/images/001/250/706/medium/houdini_graph_view4.jpg?1707942241)
