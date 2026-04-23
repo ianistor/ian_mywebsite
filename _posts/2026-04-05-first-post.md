@@ -25,9 +25,9 @@ Before I ramble onwards, two disclaimers:
 
 First step, references!
 
-![Image 1](https://nistorandrei.artstation.com/blog/rDDNV/1250709)  
-![Image 2](https://nistorandrei.artstation.com/blog/rDDNV/1250708)  
-![Image 3](https://nistorandrei.artstation.com/blog/rDDNV/1250710)
+![Image 1](https://cdnb.artstation.com/p/media_assets/images/images/001/250/709/medium/IMG_6465-1200x675.jpg?1707942584)  
+![Image 2](https://cdna.artstation.com/p/media_assets/images/images/001/250/708/medium/IMG_6464-1200x675.jpg?1707942533)  
+![Image 3](https://cdna.artstation.com/p/media_assets/images/images/001/250/710/original/reference_door_anim-ezgif.com-optimize_%281%29.gif?1707942861)
 
 ## Break down part
 
