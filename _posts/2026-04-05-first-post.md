@@ -25,9 +25,9 @@ Before I ramble onwards, two disclaimers:
 
 First step, references!
 
-[Image 1](https://nistorandrei.artstation.com/blog/rDDNV/1250709)  
-[Image 2](https://nistorandrei.artstation.com/blog/rDDNV/1250708)  
-[Image 3](https://nistorandrei.artstation.com/blog/rDDNV/1250710)
+![Image 1](https://nistorandrei.artstation.com/blog/rDDNV/1250709)  
+![Image 2](https://nistorandrei.artstation.com/blog/rDDNV/1250708)  
+![Image 3](https://nistorandrei.artstation.com/blog/rDDNV/1250710)
 
 ## Break down part
 
@@ -50,37 +50,37 @@ I need a rock asset, an archway made with it, a wooden door made of vertical pla
 
 This was easy, and I cheated a bit, I downloaded a rock from Megascans. While Houdini can easily generate some, I thought this is not the real focus here.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250715)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250715)
 
 ### Archway
 
 For the archway, I created a spline that i mirrored and remeshed, where a copy to points was used to duplicate and scatter the rock asset. To make it look less repetitive I'm adding some random scale and a random rotation, while still trying to maintain the rocks rotation towards the curve interior.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250717)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250717)
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250722)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250722)
 
 ### Wooden Door
 
 Since I knew I would need to fracture the wooden door, I wanted to have separate planks created from the start, so I don't have issues with newly created faces. For plank creation, I created a shape from the archway initial curves, bridged the missing gap, and using a boolean from the door shape with boxes created as planks it results in planks following the archway shape.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250724)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250724)
 
 ### Wood Fracturing
 
 Fracturing the wood planks, I went with the old approach of scaling down the mesh into a Voronoi fracture and then scaling it back. This workflow creates some wood-like splinter fragments. Afterward, I handled the cluster creation manually by grouping up splinters that are close by.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250725)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250725)
 
 ### Simulation
 
 Tearing down using a RBD Bullet solver, just an RBD Solver with gravity on.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250719)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250719)
 
 And now final step, reversing the simulation of the RBD solver.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250713)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250713)
 
 This was a fun thing to tackle, especially since I didn't have to worry about the final quality/polish of it being in a real production environment.
 
@@ -97,4 +97,4 @@ What are your thoughts on this approach?
 
 P.S: Adding also the Houdini network view.
 
-[Image](https://nistorandrei.artstation.com/blog/rDDNV/1250706)
+![Image](https://nistorandrei.artstation.com/blog/rDDNV/1250706)
