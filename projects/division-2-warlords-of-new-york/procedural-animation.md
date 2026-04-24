@@ -19,7 +19,7 @@ I was in charge of graph setup and creating the swinging animation for this asse
 # Drill
 
 An amazing gif showcasing the drill animation and vfx I did for the Lowline Drill, thanks Rene Mitchell-Lambert for the gif and presentation.
-<img src="{{ '/assets/images/projects_showcase/ian_drill.gif' | relative_url }}" alt="GIF">
+<img src="/assets/images/projects_showcase/ian_drill.gif" alt="GIF">
 
 # Wooden Bridge
 
