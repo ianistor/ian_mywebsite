@@ -2,7 +2,7 @@ title: Ioan-Andrei Nistor
 email: ioan.andrei.nistor@gmail.com
 description: >-
   Technical Artist and Game Developer. Tools, workflows, blog posts, and resume.
-baseurl: "/ian_mywebsite"
+baseurl: "/ian_website"
 url: "https://ianistor.github.io"
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
