@@ -11,7 +11,7 @@ permalink: /cv/
 Quick Links  
 [ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
 [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
-[ArtStation](https://www.artstation.com/nistorandrei)  
+<a class="cv-artstation-link" href="https://www.artstation.com/nistorandrei"><img src="https://www.artstation.com/assets/about/logo/logo-artstation-plain-f084302dffa448a1582a8f7afb171673d1a420f9eddd5baeacbdb88e65089599.png" alt="ArtStation logo" class="cv-artstation-logo">ArtStation</a>  
 [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
@@ -146,7 +146,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 ## Links
 
 - [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)
-- [ArtStation](https://www.artstation.com/nistorandrei)
+- <a class="cv-artstation-link" href="https://www.artstation.com/nistorandrei"><img src="https://www.artstation.com/assets/about/logo/logo-artstation-plain-f084302dffa448a1582a8f7afb171673d1a420f9eddd5baeacbdb88e65089599.png" alt="ArtStation logo" class="cv-artstation-logo">ArtStation</a>
 - [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
