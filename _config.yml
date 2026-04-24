@@ -5,6 +5,9 @@ description: >-
 baseurl: "/ian_website"
 url: "https://ianistor.github.io"
 markdown: kramdown
+syntax_highlighter: rouge
+kramdown:
+  input: GFM
 permalink: /blog/:year/:month/:day/:title/
 collections:
   tools:
