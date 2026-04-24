@@ -6,6 +6,8 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -173,9 +175,36 @@
         button.type = 'button';
         button.textContent = 'Copy';
 
+        const classNames = Array.from(codeBlock.classList);
+        const languageClass = classNames.find((name) => name.startsWith('language-'));
+        const detectedLanguage = languageClass ? languageClass.replace('language-', '') : '';
+        const languageMap = {
+          py: 'python',
+          python: 'python',
+          vex: 'vex',
+          c: 'vex'
+        };
+        const normalizedLanguage = languageMap[detectedLanguage.toLowerCase()] || detectedLanguage.toLowerCase();
+
+        if (normalizedLanguage === 'python' || normalizedLanguage === 'vex') {
+          const badge = document.createElement('span');
+          badge.className = 'code-language-badge';
+          badge.textContent = normalizedLanguage.toUpperCase();
+          wrapper.appendChild(badge);
+        }
+
+        if (normalizedLanguage === 'vex') {
+          codeBlock.classList.remove('language-vex');
+          codeBlock.classList.add('language-cpp');
+        }
+
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(button);
         wrapper.appendChild(pre);
+
+        if (window.hljs) {
+          window.hljs.highlightElement(codeBlock);
+        }
 
         button.addEventListener('click', async () => {
           try {

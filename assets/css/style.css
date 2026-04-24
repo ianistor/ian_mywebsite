@@ -437,9 +437,30 @@ a:hover {
   opacity: 1;
 }
 
+
+.prose pre code.hljs {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
 .code-block {
   position: relative;
   margin: 1.5rem 0;
+}
+
+.code-language-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  border: 1px solid var(--line);
+  background: rgba(20, 25, 36, 0.95);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .copy-button {
