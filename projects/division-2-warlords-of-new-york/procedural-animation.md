@@ -19,7 +19,7 @@ I was in charge of graph setup and creating the swinging animation for this asse
 # Drill
 
 An amazing gif showcasing the drill animation and vfx I did for the Lowline Drill, thanks Rene Mitchell-Lambert for the gif and presentation.
-![GIF](https://cdnb.artstation.com/p/assets/images/images/025/476/383/original/ioan-andrei-nistor-ezgif-7-e86b3fe2691e.gif?1585915111)
+<img src="https://cdnb.artstation.com/p/assets/images/images/025/476/383/original/ioan-andrei-nistor-ezgif-7-e86b3fe2691e.gif?1585915111" alt="GIF">
 
 # Wooden Bridge
 
