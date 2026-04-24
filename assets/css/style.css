@@ -444,7 +444,13 @@ a:hover {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.25;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.project-card-thumb.project-text-placeholder {
+  aspect-ratio: 2 / 3;
 }
 
 .card:hover .project-card-thumb,
@@ -726,7 +732,7 @@ a:hover {
 }
 
 .project-row-image.project-text-placeholder {
-  min-height: 100%;
+  aspect-ratio: 7 / 8;
 }
 
 .project-row-card:hover .project-row-image {

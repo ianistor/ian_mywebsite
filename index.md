@@ -79,12 +79,13 @@ title: Home
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         <article class="project-row-card">
-          {% if project.image != blank %}
-            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
-          {% else %}
-            <div class="project-row-image project-text-placeholder" aria-label="{{ project.title }}">
-              <span>{{ project.title }}</span>
+          {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
+          {% if project.show_text_placeholder == true or project.image == blank %}
+            <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
             </div>
+          {% else %}
+            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
           {% endif %}
           <div class="project-row-copy">
             <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
