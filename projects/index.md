@@ -31,6 +31,14 @@ permalink: /projects/
       {% endif %}
 
       <p class="project-card-summary">{{ project.summary }}</p>
+
+      {% if project.links %}
+        <div class="link-row project-card-links">
+          {% for link in project.links %}
+            <a class="button secondary{% if link.label == "ArtStation" %} project-link-artstation{% endif %}" href="{{ link.url }}">{% if link.label == "ArtStation" %}<img src="https://www.artstation.com/assets/about/logo/logo-artstation-plain-f084302dffa448a1582a8f7afb171673d1a420f9eddd5baeacbdb88e65089599.png" alt="ArtStation logo" class="project-link-artstation-logo">{% endif %}{{ link.label }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </article>
   {% endfor %}
 </section>
