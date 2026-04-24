@@ -634,10 +634,16 @@ a:hover {
 
 .project-card-title a {
   font-weight: 700;
+  color: var(--text);
 }
 
 .project-card-meta {
   font-weight: 700;
+  color: var(--text);
+}
+
+.project-card-summary {
+  color: var(--muted);
 }
 
 .projects-row-dots {
