@@ -6,6 +6,8 @@ tags: [houdini, workflow, vfx]
 image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233"
 ---
 
+Recreation of the God of war Mystic Gateway interaction animation using Houdini
+
 ## Why though?
 
 ![Mystic gateway prototype](https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233)

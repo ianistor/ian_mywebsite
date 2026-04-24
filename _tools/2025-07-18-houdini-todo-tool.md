@@ -11,6 +11,8 @@ links:
 
 ## Houdini TO-DO Tool
 
+![IMG](https://public-files.gumroad.com/gcjb0t3xasiy3ng0bzttktyav8yy)
+
 ---
 
 ## Problem
@@ -41,7 +43,7 @@ It is designed to help you stay organized and also support team workflows where 
 
 ## Screenshots or GIFs
 
-<img src="/assets/images/placeholder.png" width="714" height="400" />
+![IMG](https://public-files.gumroad.com/gcjb0t3xasiy3ng0bzttktyav8yy)
 
 ---
 
