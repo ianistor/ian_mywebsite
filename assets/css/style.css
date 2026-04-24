@@ -34,6 +34,7 @@ a:hover {
   color: var(--accent-2);
 }
 
+
 .container {
   width: min(calc(100% - 2rem), var(--max));
   margin: 0 auto;
@@ -292,12 +293,38 @@ a:hover {
   border: 1px solid var(--line);
 }
 
+
+.button.secondary.project-link-artstation {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 1.5px;
+}
+
+.button.secondary.project-link-artstation:hover {
+  color: #60a5fa;
+}
+
+.project-link-artstation .project-link-artstation-logo {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  vertical-align: -0.1em;
+}
+
 .link-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
+
+
+.projects-index-grid .project-link-artstation,
+.projects-index-grid .project-link-artstation-logo {
+  display: none !important;
+}
+
 
 .card-thumb {
   width: 100%;
