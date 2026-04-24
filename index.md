@@ -85,10 +85,10 @@ title: Home
             <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-row-image">
           {% endif %}
           <div class="project-row-copy">
-            <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
 
             {% if project.company or project.role %}
-              <p class="meta">
+              <p class="meta project-card-meta">
                 {% if project.company %}{{ project.company }}{% endif %}
                 {% if project.company and project.role %} · {% endif %}
                 {% if project.role %}{{ project.role }}{% endif %}

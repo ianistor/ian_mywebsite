@@ -606,6 +606,14 @@ a:hover {
   margin: 0.25rem 0 0.6rem;
 }
 
+.project-card-title a {
+  font-weight: 700;
+}
+
+.project-card-meta {
+  font-weight: 700;
+}
+
 .projects-row-dots {
   display: flex;
   justify-content: center;
