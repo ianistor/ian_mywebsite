@@ -79,7 +79,7 @@ The sound and icon will only play or show if their toggles are enabled.
 ---
 
 ## Screenshots or GIFs
-[GIF](https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4)
+![GIF](https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4)
 
 ---
 
