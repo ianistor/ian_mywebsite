@@ -83,7 +83,7 @@ title: Home
             <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
           {% else %}
             <div class="project-row-image project-text-placeholder" aria-label="{{ project.title }}">
-              <span>{{ project.placeholder_text | default: project.title }}</span>
+              <span>{{ project.title }}</span>
             </div>
           {% endif %}
           <div class="project-row-copy">

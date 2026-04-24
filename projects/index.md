@@ -18,7 +18,7 @@ permalink: /projects/
         <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
       {% else %}
         <div class="project-card-thumb project-text-placeholder" aria-label="{{ project.title }}">
-          <span>{{ project.placeholder_text | default: project.title }}</span>
+          <span>{{ project.title }}</span>
         </div>
       {% endif %}
 
