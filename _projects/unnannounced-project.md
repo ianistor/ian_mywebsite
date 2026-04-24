@@ -1,5 +1,5 @@
 ---
-title: "Unnannounced Project"
+title: "Unnannouanced Project"
 company: "Amazon Games"
 title: "Technical Artist"
 summary: "TBD"
