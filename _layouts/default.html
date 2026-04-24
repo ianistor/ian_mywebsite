@@ -173,6 +173,24 @@
         button.type = 'button';
         button.textContent = 'Copy';
 
+        const classNames = Array.from(codeBlock.classList);
+        const languageClass = classNames.find((name) => name.startsWith('language-'));
+        const detectedLanguage = languageClass ? languageClass.replace('language-', '') : '';
+        const languageMap = {
+          py: 'python',
+          python: 'python',
+          vex: 'vex',
+          c: 'vex'
+        };
+        const normalizedLanguage = languageMap[detectedLanguage.toLowerCase()] || detectedLanguage.toLowerCase();
+
+        if (normalizedLanguage === 'python' || normalizedLanguage === 'vex') {
+          const badge = document.createElement('span');
+          badge.className = 'code-language-badge';
+          badge.textContent = normalizedLanguage.toUpperCase();
+          wrapper.appendChild(badge);
+        }
+
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(button);
         wrapper.appendChild(pre);
