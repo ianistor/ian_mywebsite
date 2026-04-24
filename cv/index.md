@@ -11,14 +11,14 @@ permalink: /cv/
 Quick Links  
 [ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
 [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
-<a class="cv-artstation-link" href="https://www.artstation.com/nistorandrei"><img src="https://www.artstation.com/assets/about/logo/logo-artstation-plain-f084302dffa448a1582a8f7afb171673d1a420f9eddd5baeacbdb88e65089599.png" alt="ArtStation logo" class="cv-artstation-logo">ArtStation</a>  
+[ArtStation](https://www.artstation.com/nistorandrei)  
 [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
 
 ## Profile
 
-Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance optimized real time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.
+Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance-optimized real-time visuals. Proven track record of developing tools, destruction systems, and gameplay-integrated visual solutions while mentoring teams, establishing best practices, and creating clear documentation to scale production across disciplines.
 
 ---
 
@@ -33,6 +33,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Physics Simulation (RBD)
 - Real Time Rendering
 - Problem solving
+{: .cv-core-skills}
 
 ---
 
@@ -48,11 +49,11 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 </div>
 
 - Contributed to studio growth from 3 to 40 developers, participating in interviews and hiring loops.
-- Skinning, Rigging and VO generation using in-house tools.
+- Created skinning, rigging, and VO generation setups using in-house tools.
 - Designed and maintained pipeline and editor tools using Python to improve content iteration speed and production stability.
-- Developed Unreal Engine scripted action tools and Blueprint based workflows to streamline content integration.
-- Built Chaos based destruction systems integrated with Houdini simulations, supporting gameplay driven visual moments.
-- Created Houdini cloth and RBD simulations, preparing optimized assets for Niagara and real time integration.
+- Developed Unreal Engine scripted action tools and Blueprint-based workflows to streamline content integration.
+- Built Chaos-based destruction systems integrated with Houdini simulations to support gameplay-driven visual moments.
+- Created Houdini cloth and RBD simulations, preparing optimized assets for Niagara and real-time integration.
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
 - Documented Unreal workflows and mentored team members during engine transition.
 
@@ -65,13 +66,13 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </div>
 </div>
 
-- Mentored and guided the local Technical Art and art team on issues and workflows related to the proprietary engine, ensuring technical proficiency.
+- Mentored and guided the local Technical Art and Art teams on proprietary engine issues and workflows, ensuring technical proficiency.
 - Developed and integrated destruction simulations in Houdini into the engine.
-- Coordinated and oversaw deliverables for destruction set pieces across multiple teams, including VFX, tech, and art, ensuring alignment and timely completion of milestones.
+- Coordinated and oversaw destruction set-piece deliverables across VFX, Tech, and Art teams, ensuring alignment and milestone completion.
 - Served as a key liaison for the implementation of features and tools within the engine, facilitating clear communication and collaboration.
-- Managed project DCC tools maintenance, ensuring operational efficiency and reliability.
-- Identified and fixed performance and visual issues early in production by participating in weekly art leads meetings focused on optimizing content creation.
-- Provided technical solutions to support game design, level design, and art direction, improving project quality and reducing potential work loss.
+- Maintained project DCC tools to ensure operational efficiency and reliability.
+- Identified and fixed performance and visual issues early in production through weekly Art Leads meetings focused on content optimization.
+- Provided technical solutions for game design, level design, and art direction, improving project quality and reducing potential work loss.
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
@@ -84,13 +85,13 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </div>
 </div>
 
-- Mentored and guided the local Technical Art and art team on issues and workflows related to the proprietary engine, ensuring technical proficiency.
+- Mentored and guided the local Technical Art and Art teams on proprietary engine issues and workflows, ensuring technical proficiency.
 - Developed and integrated destruction simulations in Houdini into the engine.
-- Coordinated and oversaw deliverables for destruction set pieces across multiple teams, including VFX, tech, and art, ensuring alignment and timely completion of milestones.
+- Coordinated and oversaw destruction set-piece deliverables across VFX, Tech, and Art teams, ensuring alignment and milestone completion.
 - Served as a key liaison for the implementation of features and tools within the engine, facilitating clear communication and collaboration.
-- Managed project DCC tools maintenance, ensuring operational efficiency and reliability.
-- Identified and fixed performance and visual issues early in production by participating in weekly art leads meetings focused on optimizing content creation.
-- Provided technical solutions to support game design, level design, and art direction, improving project quality and reducing potential work loss.
+- Maintained project DCC tools to ensure operational efficiency and reliability.
+- Identified and fixed performance and visual issues early in production through weekly Art Leads meetings focused on content optimization.
+- Provided technical solutions for game design, level design, and art direction, improving project quality and reducing potential work loss.
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
@@ -146,7 +147,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 ## Links
 
 - [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)
-- <a class="cv-artstation-link" href="https://www.artstation.com/nistorandrei"><img src="https://www.artstation.com/assets/about/logo/logo-artstation-plain-f084302dffa448a1582a8f7afb171673d1a420f9eddd5baeacbdb88e65089599.png" alt="ArtStation logo" class="cv-artstation-logo">ArtStation</a>
+- [ArtStation](https://www.artstation.com/nistorandrei)
 - [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
