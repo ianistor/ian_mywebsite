@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Houdini Windows Toast pop up notification"
+overlay_text: "Get Windows toast alerts in Houdini when long node cooks finish."
 summary: "A toast notification tool for Houdini that alerts you when nodes finish cooking."
 image: https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4
 featured: true
