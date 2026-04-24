@@ -10,7 +10,7 @@ permalink: /projects/
   <p class="lead">Projects I had the opportunity to ship along my career.</p>
 </section>
 
-<section class="card-grid">
+<section class="card-grid projects-index-grid">
   {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
     <article class="card">
