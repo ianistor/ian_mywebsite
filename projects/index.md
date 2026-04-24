@@ -20,17 +20,17 @@ permalink: /projects/
         <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-card-thumb">
       {% endif %}
 
-      <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+      <h2 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
 
       {% if project.company or project.role %}
-        <p class="meta">
+        <p class="meta project-card-meta">
           {% if project.company %}{{ project.company }}{% endif %}
           {% if project.company and project.role %} · {% endif %}
           {% if project.role %}{{ project.role }}{% endif %}
         </p>
       {% endif %}
 
-      <p>{{ project.summary }}</p>
+      <p class="project-card-summary">{{ project.summary }}</p>
     </article>
   {% endfor %}
 </section>

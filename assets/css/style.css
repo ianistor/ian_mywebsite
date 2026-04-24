@@ -606,6 +606,20 @@ a:hover {
   margin: 0.25rem 0 0.6rem;
 }
 
+.project-card-title a {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-card-meta {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-card-summary {
+  color: var(--muted);
+}
+
 .projects-row-dots {
   display: flex;
   justify-content: center;
