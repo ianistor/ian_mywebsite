@@ -54,6 +54,72 @@
       const navToggle = document.querySelector('.nav-toggle');
       const siteNav = document.getElementById('site-nav');
 
+      const autoLinkTextNodes = (root) => {
+        if (!root) return;
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!node.nodeValue || !node.nodeValue.includes('http')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest('a, code, pre, script, style')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+
+        const textNodes = [];
+        while (walker.nextNode()) {
+          textNodes.push(walker.currentNode);
+        }
+
+        const urlRegex = /(https?:\/\/[^\s<]+)/g;
+        textNodes.forEach((textNode) => {
+          const originalText = textNode.nodeValue;
+          if (!urlRegex.test(originalText)) return;
+          urlRegex.lastIndex = 0;
+
+          const fragment = document.createDocumentFragment();
+          let lastIndex = 0;
+          let match;
+
+          while ((match = urlRegex.exec(originalText)) !== null) {
+            let urlText = match[0];
+            const trailing = urlText.match(/[),.;!?]+$/);
+            let trailingText = '';
+            if (trailing) {
+              trailingText = trailing[0];
+              urlText = urlText.slice(0, -trailingText.length);
+            }
+
+            if (match.index > lastIndex) {
+              fragment.appendChild(document.createTextNode(originalText.slice(lastIndex, match.index)));
+            }
+
+            const link = document.createElement('a');
+            link.href = urlText;
+            link.textContent = urlText;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            fragment.appendChild(link);
+
+            if (trailingText) {
+              fragment.appendChild(document.createTextNode(trailingText));
+            }
+
+            lastIndex = match.index + match[0].length;
+          }
+
+          if (lastIndex < originalText.length) {
+            fragment.appendChild(document.createTextNode(originalText.slice(lastIndex)));
+          }
+
+          textNode.parentNode.replaceChild(fragment, textNode);
+        });
+      };
+
       if (navToggle && siteNav) {
         navToggle.addEventListener('click', function () {
           const isOpen = siteNav.classList.toggle('is-open');
@@ -124,6 +190,8 @@
       });
 
       if (prose) {
+        autoLinkTextNodes(prose);
+
         prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
           if (!heading.id) {
             heading.id = heading.textContent
