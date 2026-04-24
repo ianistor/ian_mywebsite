@@ -3,6 +3,6 @@ title: "Unnannounced Project"
 company: "Amazon Games"
 title: "Technical Artist"
 summary: "TBD"
-image: "/assets/images/projectcovers/TBD.png"
+image: ""
 release_year: 2090
 ---
