@@ -1,7 +1,7 @@
 ---
-title: "Unnannouanced Project"
+title: "Unannounced Project"
 company: "Amazon Games"
-title: "Technical Artist"
+role: "Technical Artist"
 summary: "TBD"
 image: ""
 release_year: 2090
