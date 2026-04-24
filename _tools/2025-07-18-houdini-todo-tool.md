@@ -15,21 +15,11 @@ links:
 
 ---
 
-## Problem
+## Description
 
-When working in Houdini, there are times where you want to add more context or notes directly in your scene.
+It's easy to loose track of where you were previous in your work, and i dont want a lot of sticky notes in my setup.
+So i created a to-do tool that lets me add "task" and notes to each individual task.
 
-The built in notes are not always enough, especially when you want something more structured or shareable across a team.
-
----
-
-## Solution
-
-A TO-DO tool built in Python that allows you to create and manage notes directly inside Houdini.
-
-It is designed to help you stay organized and also support team workflows where feedback needs to be shared.
-
----
 
 ## Features
 
