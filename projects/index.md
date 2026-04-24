@@ -14,7 +14,7 @@ permalink: /projects/
   {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
     <article class="card">
-      {% if project.image %}
+      {% if project.image != blank %}
         <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
       {% else %}
         <div class="project-card-thumb project-text-placeholder" aria-label="{{ project.title }}">
