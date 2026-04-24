@@ -17,7 +17,9 @@ permalink: /projects/
       {% if project.image %}
         <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
       {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-card-thumb">
+        <div class="project-card-thumb project-text-placeholder" aria-label="{{ project.title }}">
+          <span>{{ project.title }}</span>
+        </div>
       {% endif %}
 
       <h2 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>

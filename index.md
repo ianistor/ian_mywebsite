@@ -82,7 +82,9 @@ title: Home
           {% if project.image %}
             <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-row-image">
+            <div class="project-row-image project-text-placeholder" aria-label="{{ project.title }}">
+              <span>{{ project.title }}</span>
+            </div>
           {% endif %}
           <div class="project-row-copy">
             <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
