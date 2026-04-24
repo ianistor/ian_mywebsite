@@ -437,6 +437,13 @@ a:hover {
   opacity: 1;
 }
 
+
+.prose pre code.hljs {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
 .code-block {
   position: relative;
   margin: 1.5rem 0;

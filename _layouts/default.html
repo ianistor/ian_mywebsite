@@ -6,6 +6,8 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -194,6 +196,10 @@
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(button);
         wrapper.appendChild(pre);
+
+        if (window.hljs) {
+          window.hljs.highlightElement(codeBlock);
+        }
 
         button.addEventListener('click', async () => {
           try {
