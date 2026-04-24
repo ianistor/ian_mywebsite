@@ -398,6 +398,30 @@ a:hover {
   transition: transform 0.28s ease;
 }
 
+.project-text-placeholder {
+  display: grid;
+  place-items: center;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.project-text-placeholder span {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.25;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.project-card-thumb.project-text-placeholder {
+  aspect-ratio: 2 / 3;
+}
+
 .card:hover .project-card-thumb,
 .list-card:hover .project-card-thumb {
   transform: scale(1.015);
@@ -674,6 +698,10 @@ a:hover {
   object-fit: cover;
   object-position: center;
   transition: transform 0.28s ease;
+}
+
+.project-row-image.project-text-placeholder {
+  aspect-ratio: 7 / 8;
 }
 
 .project-row-card:hover .project-row-image {
