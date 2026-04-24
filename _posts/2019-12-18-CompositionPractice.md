@@ -7,7 +7,7 @@ youtube_id: "EImicR2Vlfk"
 
 ---
 
- 
+A tool created in Python to help with the scene composition, it displays a grid, "squint test" by blurring and quick mirroring.
 
 ## Overview
 
