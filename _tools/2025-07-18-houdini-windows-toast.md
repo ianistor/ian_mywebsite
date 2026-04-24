@@ -79,8 +79,7 @@ The sound and icon will only play or show if their toggles are enabled.
 ---
 
 ## Screenshots or GIFs
-
-<img src="/assets/images/placeholder.png" width="714" height="400" />
+[GIF](https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4)
 
 ---
 
