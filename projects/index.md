@@ -31,6 +31,7 @@ permalink: /projects/
       {% endif %}
 
       <p class="project-card-summary">{{ project.summary }}</p>
+
     </article>
   {% endfor %}
 </section>
