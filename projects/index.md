@@ -14,10 +14,13 @@ permalink: /projects/
   {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
     <article class="card">
-      {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
+      {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
+      {% if project.show_text_placeholder == true or project.image == blank %}
+        <div class="project-card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+          <span>{{ placeholder_label }}</span>
+        </div>
       {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-card-thumb">
+        <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
       {% endif %}
 
       <h2 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
