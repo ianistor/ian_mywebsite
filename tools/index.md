@@ -13,11 +13,16 @@ permalink: /tools/
   {% assign sorted_tools = site.tools | sort: 'title' %}
   {% for tool in sorted_tools %}
     <article class="card">
-      {% if tool.image %}
-        <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
-      {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-      {% endif %}
+      <div class="card-media">
+        {% if tool.image %}
+          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+        {% else %}
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        {% endif %}
+        <div class="card-overlay">
+          <p>{{ tool.overlay_text | default: tool.summary }}</p>
+        </div>
+      </div>
       <p class="eyebrow">Tool</p>
       <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
       <p>{{ tool.summary }}</p>
