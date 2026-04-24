@@ -91,14 +91,8 @@ def remap(value, in_min, in_max, out_min, out_max):
 print(remap(0.5, 0.0, 1.0, 0.0, 255.0))
 ```
 
-#### VEX example (explicit `vex`)
 
-```vex
-f@mask = fit(@P.y, 0.0, 1.0, 0.0, 1.0);
-@Cd = set(f@mask, f@mask, f@mask);
-```
-
-#### VEX example (fallback `c` highlighter)
+#### VEX example
 
 ```c
 // Use this if your renderer/highlighter treats VEX as C-like syntax.
