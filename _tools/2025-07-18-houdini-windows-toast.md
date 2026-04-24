@@ -11,6 +11,7 @@ links:
 
 ## Houdini Windows Toast pop up notification
 
+![GIF](https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4)
 ---
 
 ## Problem
