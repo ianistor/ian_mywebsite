@@ -9,7 +9,7 @@ release_year: 2020
 permalink: /projects/division-2-warlords-of-new-york/
 links:
   - label: "ArtStation"
-    url: "https://nistorandrei.artstation.com"
+    url: "https://nistorandrei.artstation.com/albums/915382"
 ---
 
 ## Overview
