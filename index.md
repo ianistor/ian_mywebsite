@@ -79,10 +79,12 @@ title: Home
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         <article class="project-row-card">
-          {% if project.image %}
+          {% if project.image != blank %}
             <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="project-row-image">
+            <div class="project-row-image project-text-placeholder" aria-label="{{ project.title }}">
+              <span>{{ project.placeholder_text | default: project.title }}</span>
+            </div>
           {% endif %}
           <div class="project-row-copy">
             <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
