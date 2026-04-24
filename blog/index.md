@@ -27,13 +27,18 @@ permalink: /blog/
 <section class="card-grid">
   {% for post in site.posts %}
     <article class="card">
-      {% if post.image %}
-        <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
-      {% elsif post.youtube_id %}
-        <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
-      {% else %}
-        <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-      {% endif %}
+      <div class="card-media">
+        {% if post.image %}
+          <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+        {% elsif post.youtube_id %}
+          <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
+        {% else %}
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+        {% endif %}
+        <div class="card-overlay">
+          <p>{{ post.overlay_text | default: post.excerpt | strip_html | truncate: 140 }}</p>
+        </div>
+      </div>
       <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       {% if post.tags %}
