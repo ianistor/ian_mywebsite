@@ -30,7 +30,7 @@ permalink: /projects/
         </p>
       {% endif %}
 
-      <p>{{ project.summary }}</p>
+      <p class="project-card-summary">{{ project.summary }}</p>
     </article>
   {% endfor %}
 </section>

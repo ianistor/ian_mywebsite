@@ -10,10 +10,40 @@ image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/ori
 <p><strong>TLDR</strong></p>
 <ul>
   <li>Use this as a starter template for <strong>blog posts</strong> and <strong>tools</strong>.</li>
-  <li>It includes tags, callouts, code blocks, heading anchors, thumbnails, and navigation.</li>
+  <li>It includes frontmatter examples, tags, callouts, code blocks, heading anchors, thumbnails, and navigation.</li>
   <li>For code language selection, use fenced blocks with <code>python</code> or <code>vex</code> (or <code>c</code> for VEX-compatible highlighting).</li>
 </ul>
 </div>
+
+## Blog post frontmatter template
+
+```yml
+---
+layout: post
+title: "Your post title"
+date: 2026-04-06
+tags: [houdini, vex, python, snippet, workflow]
+image: "https://example.com/thumbnail.jpg" # optional but recommended
+youtube_id: "dQw4w9WgXcQ" # optional fallback if no image
+---
+```
+
+## Tool frontmatter template
+
+```yml
+---
+layout: tool
+title: "Your tool name"
+summary: "One-line tool summary"
+tags: [tool, houdini, workflow] # optional but now supported in tool pages
+image: "https://example.com/tool-thumb.jpg"
+links:
+  - label: "GitHub"
+    url: "https://github.com/..."
+  - label: "Download"
+    url: "https://..."
+---
+```
 
 ## Tags you can use right now
 

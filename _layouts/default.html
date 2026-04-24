@@ -193,11 +193,6 @@
           wrapper.appendChild(badge);
         }
 
-        if (normalizedLanguage === 'vex') {
-          codeBlock.classList.remove('language-vex');
-          codeBlock.classList.add('language-cpp');
-        }
-
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(button);
         wrapper.appendChild(pre);
