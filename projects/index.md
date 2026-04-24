@@ -31,6 +31,17 @@ permalink: /projects/
       {% endif %}
 
       <p class="project-card-summary">{{ project.summary }}</p>
+
+      {% if project.links %}
+        <div class="link-row project-card-links">
+          {% for link in project.links %}
+            {% assign normalized_label = link.label | downcase %}
+            <a class="button secondary{% if normalized_label == "artstation" %} project-link-artstation{% endif %}" href="{{ link.url }}">
+              {% if normalized_label == "artstation" %}<img src="{{ '/assets/images/logos/artstation-logo.svg' | relative_url }}" alt="ArtStation logo" class="project-link-artstation-logo">{% endif %}{{ link.label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </article>
   {% endfor %}
 </section>
