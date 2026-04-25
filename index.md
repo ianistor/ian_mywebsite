@@ -3,24 +3,12 @@ layout: default
 title: Home
 ---
 
-<section class="hero hero-with-animation">
-  <div class="hero-animation-shell" aria-hidden="true">
-    <canvas id="hero-geometry-canvas" class="hero-geometry-canvas"></canvas>
-  </div>
-
+<section class="hero">
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Tools, workflows, and random experiments.</h1>
     <p class="lead hero-lead">Senior Technical Artist with 14+ years of AAA experience, with a passion for workflows, procedural content and real-time visuals. Proven track record developing tools, destruction systems, and gameplay integrated visual solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
 
-    <div class="animation-picker-wrap">
-      <label for="hero-animation-select" class="animation-picker-label">Background animation</label>
-      <select id="hero-animation-select" class="theme-select animation-picker-select" aria-label="Choose a geometric background animation">
-        <option value="orbit">Orbit Rings</option>
-        <option value="triangles">Triangle Drift</option>
-        <option value="off">Off</option>
-      </select>
-    </div>
   </div>
 
   <div class="hero-image-container hero-content-elevated">
