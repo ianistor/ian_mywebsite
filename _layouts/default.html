@@ -36,6 +36,7 @@
         <label class="theme-control" for="theme-select">Theme</label>
         <select id="theme-select" class="theme-select" aria-label="Preview color themes">
           <option value="midnight">Midnight</option>
+          <option value="black">Black</option>
           <option value="ember">Ember</option>
           <option value="forest">Forest</option>
           <option value="sunset">Sunset</option>
@@ -72,7 +73,7 @@
       const root = document.documentElement;
       const themeParam = new URLSearchParams(window.location.search).get('theme');
       const themeStorageKey = 'site-theme';
-      const validThemes = ['midnight', 'ember', 'forest', 'sunset', 'ocean', 'violet', 'paper'];
+      const validThemes = ['midnight', 'black', 'ember', 'forest', 'sunset', 'ocean', 'violet', 'paper'];
 
       const applyTheme = (themeName) => {
         const normalizedTheme = validThemes.includes(themeName) ? themeName : 'midnight';
@@ -276,6 +277,257 @@
           heading.appendChild(anchor);
         });
       }
+
+
+      const heroCanvas = document.getElementById('hero-geometry-canvas');
+      const heroAnimationSelect = document.getElementById('hero-animation-select');
+      const heroAnimationStorageKey = 'hero-animation-mode';
+
+      const initHeroGeometryAnimation = () => {
+        if (!heroCanvas) return;
+
+        const context = heroCanvas.getContext('2d');
+        if (!context) return;
+
+        const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const modes = ['constellation', 'orbit', 'triangles', 'off'];
+        let mode = localStorage.getItem(heroAnimationStorageKey);
+        if (!modes.includes(mode)) mode = reducedMotion ? 'off' : 'constellation';
+
+        if (heroAnimationSelect) {
+          heroAnimationSelect.value = mode;
+          heroAnimationSelect.addEventListener('change', (event) => {
+            mode = event.target.value;
+            localStorage.setItem(heroAnimationStorageKey, mode);
+          });
+        }
+
+        const state = {
+          particles: [],
+          orbits: [],
+          triangles: [],
+          pointer: { x: null, y: null },
+          width: 1,
+          height: 1,
+          rafId: null,
+          lastTime: 0
+        };
+
+        const getAccentRgb = () => {
+          const styles = getComputedStyle(document.documentElement);
+          const accent = styles.getPropertyValue('--accent').trim() || '#8cc2ff';
+          const normalized = accent.startsWith('#') ? accent.slice(1) : '8cc2ff';
+          const fullHex = normalized.length === 3
+            ? normalized.split('').map((char) => `${char}${char}`).join('')
+            : normalized.padEnd(6, 'f').slice(0, 6);
+
+          const r = parseInt(fullHex.slice(0, 2), 16) || 140;
+          const g = parseInt(fullHex.slice(2, 4), 16) || 194;
+          const b = parseInt(fullHex.slice(4, 6), 16) || 255;
+
+          return `${r}, ${g}, ${b}`;
+        };
+
+        let accentRgb = getAccentRgb();
+
+        const resetConstellation = () => {
+          const area = state.width * state.height;
+          const count = Math.max(24, Math.min(96, Math.floor(area / 14000)));
+          state.particles = Array.from({ length: count }, () => ({
+            x: Math.random() * state.width,
+            y: Math.random() * state.height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 1.7 + 0.6
+          }));
+        };
+
+        const resetOrbits = () => {
+          const centerX = state.width * 0.5;
+          const centerY = state.height * 0.5;
+          const ringCount = Math.max(4, Math.min(10, Math.floor(state.width / 140)));
+          state.orbits = Array.from({ length: ringCount }, (_, index) => ({
+            radius: 42 + index * 24,
+            speed: (index % 2 === 0 ? 1 : -1) * (0.0007 + index * 0.00016),
+            size: 2 + (index % 3),
+            angle: Math.random() * Math.PI * 2,
+            centerX,
+            centerY
+          }));
+        };
+
+        const resetTriangles = () => {
+          const step = Math.max(70, Math.floor(state.width / 11));
+          state.triangles = [];
+
+          for (let y = -step; y <= state.height + step; y += step) {
+            for (let x = -step; x <= state.width + step; x += step) {
+              state.triangles.push({
+                x,
+                y,
+                offset: Math.random() * Math.PI * 2,
+                phase: Math.random() * Math.PI * 2
+              });
+            }
+          }
+        };
+
+        const resetAll = () => {
+          accentRgb = getAccentRgb();
+          resetConstellation();
+          resetOrbits();
+          resetTriangles();
+        };
+
+        const resize = () => {
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          const { width, height } = heroCanvas.getBoundingClientRect();
+          state.width = Math.max(1, Math.floor(width));
+          state.height = Math.max(1, Math.floor(height));
+          heroCanvas.width = Math.floor(state.width * ratio);
+          heroCanvas.height = Math.floor(state.height * ratio);
+          context.setTransform(ratio, 0, 0, ratio, 0, 0);
+          resetAll();
+        };
+
+        const drawConstellation = () => {
+          const threshold = 130;
+
+          state.particles.forEach((particle) => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+            if (particle.x < 0 || particle.x > state.width) particle.vx *= -1;
+            if (particle.y < 0 || particle.y > state.height) particle.vy *= -1;
+
+            context.beginPath();
+            context.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+            context.fillStyle = `rgba(${accentRgb}, 0.8)`;
+            context.fill();
+          });
+
+          for (let i = 0; i < state.particles.length; i += 1) {
+            for (let j = i + 1; j < state.particles.length; j += 1) {
+              const p1 = state.particles[i];
+              const p2 = state.particles[j];
+              const dx = p1.x - p2.x;
+              const dy = p1.y - p2.y;
+              const distance = Math.hypot(dx, dy);
+
+              if (distance < threshold) {
+                const alpha = 1 - distance / threshold;
+                context.beginPath();
+                context.moveTo(p1.x, p1.y);
+                context.lineTo(p2.x, p2.y);
+                context.strokeStyle = `rgba(${accentRgb}, ${alpha * 0.35})`;
+                context.lineWidth = 1;
+                context.stroke();
+              }
+            }
+          }
+
+          if (state.pointer.x !== null && state.pointer.y !== null) {
+            state.particles.forEach((particle) => {
+              const distance = Math.hypot(particle.x - state.pointer.x, particle.y - state.pointer.y);
+              if (distance < 160) {
+                context.beginPath();
+                context.moveTo(particle.x, particle.y);
+                context.lineTo(state.pointer.x, state.pointer.y);
+                context.strokeStyle = `rgba(${accentRgb}, ${0.32 - distance / 500})`;
+                context.stroke();
+              }
+            });
+          }
+        };
+
+        const drawOrbit = (elapsed) => {
+          context.lineWidth = 1;
+          state.orbits.forEach((ring, index) => {
+            const radiusWobble = Math.sin(elapsed * 0.0014 + index) * 4;
+            const radius = ring.radius + radiusWobble;
+            context.beginPath();
+            context.arc(ring.centerX, ring.centerY, radius, 0, Math.PI * 2);
+            context.strokeStyle = `rgba(${accentRgb}, 0.16)`;
+            context.stroke();
+
+            ring.angle += ring.speed;
+            const dotX = ring.centerX + Math.cos(ring.angle) * radius;
+            const dotY = ring.centerY + Math.sin(ring.angle) * radius;
+            context.beginPath();
+            context.arc(dotX, dotY, ring.size, 0, Math.PI * 2);
+            context.fillStyle = `rgba(${accentRgb}, 0.88)`;
+            context.fill();
+          });
+        };
+
+        const drawTriangles = (elapsed) => {
+          const side = Math.max(50, Math.floor(state.width / 14));
+          state.triangles.forEach((point, index) => {
+            const pulse = Math.sin(elapsed * 0.0012 + point.phase) * 12;
+            const x = point.x + Math.cos(elapsed * 0.0005 + point.offset) * 10;
+            const y = point.y + Math.sin(elapsed * 0.0006 + point.offset) * 10;
+            const up = index % 2 === 0;
+            const p1 = { x, y: y + pulse * 0.2 };
+            const p2 = { x: x + side * 0.5, y: y + (up ? -side * 0.68 : side * 0.68) + pulse * 0.2 };
+            const p3 = { x: x + side, y: y + pulse * 0.2 };
+
+            context.beginPath();
+            context.moveTo(p1.x, p1.y);
+            context.lineTo(p2.x, p2.y);
+            context.lineTo(p3.x, p3.y);
+            context.closePath();
+            context.strokeStyle = `rgba(${accentRgb}, 0.14)`;
+            context.lineWidth = 1;
+            context.stroke();
+          });
+        };
+
+        const render = (now) => {
+          state.rafId = window.requestAnimationFrame(render);
+          const elapsed = now || performance.now();
+          const delta = elapsed - state.lastTime;
+
+          if (delta < 14) return;
+          state.lastTime = elapsed;
+
+          context.clearRect(0, 0, state.width, state.height);
+          context.fillStyle = 'rgba(0, 0, 0, 0.14)';
+          context.fillRect(0, 0, state.width, state.height);
+
+          if (mode === 'off') return;
+          if (mode === 'constellation') drawConstellation();
+          if (mode === 'orbit') drawOrbit(elapsed);
+          if (mode === 'triangles') drawTriangles(elapsed);
+        };
+
+        heroCanvas.addEventListener('mousemove', (event) => {
+          const bounds = heroCanvas.getBoundingClientRect();
+          state.pointer.x = event.clientX - bounds.left;
+          state.pointer.y = event.clientY - bounds.top;
+        });
+
+        heroCanvas.addEventListener('mouseleave', () => {
+          state.pointer.x = null;
+          state.pointer.y = null;
+        });
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(resize, 120);
+        });
+
+        const observer = new MutationObserver(() => {
+          accentRgb = getAccentRgb();
+        });
+
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+        resize();
+        render();
+      };
+
+      initHeroGeometryAnimation();
 
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
