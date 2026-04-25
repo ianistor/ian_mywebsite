@@ -33,6 +33,18 @@
       </nav>
 
       <div class="header-controls">
+        <form class="header-search" role="search" aria-label="Site search">
+          <label class="sr-only" for="site-search-input">Search site</label>
+          <input
+            id="site-search-input"
+            class="header-search-input"
+            name="q"
+            type="search"
+            placeholder="Search this site"
+            autocomplete="off"
+          >
+          <button class="header-search-button" type="submit">Search</button>
+        </form>
         <label class="theme-control" for="theme-select">Theme</label>
         <select id="theme-select" class="theme-select" aria-label="Preview color themes">
           <option value="midnight">Midnight</option>
@@ -70,6 +82,8 @@
       const navToggle = document.querySelector('.nav-toggle');
       const siteNav = document.getElementById('site-nav');
       const themeSelect = document.getElementById('theme-select');
+      const headerSearch = document.querySelector('.header-search');
+      const headerSearchInput = document.getElementById('site-search-input');
       const root = document.documentElement;
       const themeParam = new URLSearchParams(window.location.search).get('theme');
       const themeStorageKey = 'site-theme';
@@ -97,6 +111,19 @@
           const nextTheme = event.target.value;
           applyTheme(nextTheme);
           localStorage.setItem(themeStorageKey, nextTheme);
+        });
+      }
+
+      if (headerSearch && headerSearchInput) {
+        headerSearch.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const query = headerSearchInput.value.trim();
+          if (!query) return;
+
+          const host = window.location.hostname;
+          const scopedQuery = host ? `site:${host} ${query}` : query;
+          const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(scopedQuery)}`;
+          window.open(searchUrl, '_blank', 'noopener');
         });
       }
 
