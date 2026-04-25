@@ -24,7 +24,16 @@ title: Home
   <div class="card-grid">
     {% for post in site.posts limit: 6 %}
       <article class="card">
-        {% if post.image %}
+        {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
+        {% if post.show_text_placeholder == true %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif post.image == blank and post.youtube_id == blank %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif post.image %}
           <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
         {% elsif post.youtube_id %}
           <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
@@ -54,7 +63,12 @@ title: Home
   <div class="card-grid">
     {% for tool in site.tools limit: 6 %}
       <article class="card">
-        {% if tool.image %}
+        {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
+        {% if tool.show_text_placeholder == true or tool.image == blank %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif tool.image %}
           <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
         {% else %}
           <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
