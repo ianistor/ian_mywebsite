@@ -15,19 +15,12 @@ links:
 ![GIF](https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4)
 ---
 
-## Problem
+## Description
 
-When Houdini takes a longer time to process something, you either wait or alt tab and lose track of when it finishes.
+This tool allows you to safely alt-tab to a different window while Houdini is processing a node change or cooking.
+It's something that I found myself doing a lot lately, the moment Houdini takes a longer time to process something, I alt tab and get lost in endless scrolling or just simply wait with no visual/audio cue its done. (Yes I have a golden retriever attention span)
 
-There is no visual or audio cue that the cook is done, which makes it easy to get distracted or waste time.
-
----
-
-## Solution
-
-A toast notification tool that alerts you when Houdini finishes processing a node.
-
-It allows you to safely alt tab and still know exactly when your work is done.
+So here comes my tool that I've been using for a while now... its a toast notification tool that installs its dependent python library, you can customize it and add an icon and an audio cue to it if you want. I personally use a sound notification as well as a funny warcraft 3 peon as my personal assistant toaster.
 
 ---
 
