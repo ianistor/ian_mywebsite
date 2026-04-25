@@ -31,6 +31,16 @@
           <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
         {% endfor %}
       </nav>
+
+      <div class="header-controls">
+        <label class="theme-control" for="theme-select">Theme</label>
+        <select id="theme-select" class="theme-select" aria-label="Preview color themes">
+          <option value="midnight">Midnight</option>
+          <option value="forest">Forest</option>
+          <option value="sunset">Sunset</option>
+          <option value="paper">Paper</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -55,6 +65,36 @@
       const prose = document.querySelector('.prose');
       const navToggle = document.querySelector('.nav-toggle');
       const siteNav = document.getElementById('site-nav');
+      const themeSelect = document.getElementById('theme-select');
+      const root = document.documentElement;
+      const themeParam = new URLSearchParams(window.location.search).get('theme');
+      const themeStorageKey = 'site-theme';
+      const validThemes = ['midnight', 'forest', 'sunset', 'paper'];
+
+      const applyTheme = (themeName) => {
+        const normalizedTheme = validThemes.includes(themeName) ? themeName : 'midnight';
+        root.setAttribute('data-theme', normalizedTheme);
+        if (themeSelect) {
+          themeSelect.value = normalizedTheme;
+        }
+      };
+
+      const storedTheme = localStorage.getItem(themeStorageKey);
+      if (themeParam && validThemes.includes(themeParam)) {
+        applyTheme(themeParam);
+      } else if (storedTheme && validThemes.includes(storedTheme)) {
+        applyTheme(storedTheme);
+      } else {
+        applyTheme('midnight');
+      }
+
+      if (themeSelect) {
+        themeSelect.addEventListener('change', (event) => {
+          const nextTheme = event.target.value;
+          applyTheme(nextTheme);
+          localStorage.setItem(themeStorageKey, nextTheme);
+        });
+      }
 
       const autoLinkTextNodes = (root) => {
         if (!root) return;
