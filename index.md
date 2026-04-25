@@ -19,6 +19,7 @@ title: Home
         <option value="constellation">Constellation (cvless-style)</option>
         <option value="orbit">Orbit Rings</option>
         <option value="triangles">Triangle Drift</option>
+        <option value="text-build">Text Build (particles)</option>
         <option value="off">Off</option>
       </select>
     </div>

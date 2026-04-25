@@ -290,7 +290,7 @@
         if (!context) return;
 
         const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const modes = ['constellation', 'orbit', 'triangles', 'off'];
+        const modes = ['constellation', 'orbit', 'triangles', 'text-build', 'off'];
         let mode = localStorage.getItem(heroAnimationStorageKey);
         if (!modes.includes(mode)) mode = reducedMotion ? 'off' : 'constellation';
 
@@ -298,6 +298,10 @@
           heroAnimationSelect.value = mode;
           heroAnimationSelect.addEventListener('change', (event) => {
             mode = event.target.value;
+            state.modeStart = performance.now();
+            if (mode === 'text-build') {
+              resetTextBuild();
+            }
             localStorage.setItem(heroAnimationStorageKey, mode);
           });
         }
@@ -306,9 +310,12 @@
           particles: [],
           orbits: [],
           triangles: [],
+          textParticles: [],
+          textTargets: [],
           pointer: { x: null, y: null },
           width: 1,
           height: 1,
+          modeStart: 0,
           rafId: null,
           lastTime: 0
         };
@@ -372,11 +379,69 @@
           }
         };
 
+        const getTextTargets = () => {
+          const text = 'IAN\\nMUNUERA';
+          const offscreen = document.createElement('canvas');
+          const offCtx = offscreen.getContext('2d');
+          if (!offCtx) return [];
+
+          offscreen.width = state.width;
+          offscreen.height = state.height;
+
+          const fontSize = Math.max(40, Math.floor(state.width / 10));
+          const lineHeight = Math.floor(fontSize * 1.05);
+          const lines = text.split('\\n');
+          const totalHeight = lineHeight * lines.length;
+          const startY = Math.floor((state.height - totalHeight) * 0.5 + fontSize * 0.8);
+
+          offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
+          offCtx.fillStyle = '#ffffff';
+          offCtx.textAlign = 'center';
+          offCtx.textBaseline = 'alphabetic';
+          offCtx.font = `700 ${fontSize}px Inter, ui-sans-serif, system-ui, sans-serif`;
+
+          lines.forEach((line, index) => {
+            offCtx.fillText(line, state.width * 0.5, startY + index * lineHeight);
+          });
+
+          const image = offCtx.getImageData(0, 0, offscreen.width, offscreen.height);
+          const step = Math.max(4, Math.floor(state.width / 280));
+          const targets = [];
+
+          for (let y = 0; y < image.height; y += step) {
+            for (let x = 0; x < image.width; x += step) {
+              const index = (y * image.width + x) * 4 + 3;
+              const alpha = image.data[index];
+              if (alpha > 140) {
+                targets.push({ x, y });
+              }
+            }
+          }
+
+          return targets;
+        };
+
+        const resetTextBuild = () => {
+          state.textTargets = getTextTargets();
+          const cappedTargets = state.textTargets.slice(0, 1200);
+          state.textParticles = cappedTargets.map((target) => ({
+            x: Math.random() * state.width,
+            y: Math.random() * state.height,
+            tx: target.x,
+            ty: target.y,
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+            alpha: 0
+          }));
+        };
+
         const resetAll = () => {
           accentRgb = getAccentRgb();
           resetConstellation();
           resetOrbits();
           resetTriangles();
+          resetTextBuild();
+          state.modeStart = performance.now();
         };
 
         const resize = () => {
@@ -482,6 +547,38 @@
           });
         };
 
+        const drawTextBuild = (elapsed) => {
+          const fadeProgress = Math.min(1, (elapsed - state.modeStart) / 1400);
+          const settleStrength = 0.018 + fadeProgress * 0.024;
+
+          state.textParticles.forEach((particle) => {
+            const dx = particle.tx - particle.x;
+            const dy = particle.ty - particle.y;
+
+            particle.vx += dx * settleStrength;
+            particle.vy += dy * settleStrength;
+            particle.vx *= 0.82;
+            particle.vy *= 0.82;
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.alpha = Math.min(1, particle.alpha + 0.03);
+
+            context.beginPath();
+            context.arc(particle.x, particle.y, 1.45, 0, Math.PI * 2);
+            context.fillStyle = `rgba(${accentRgb}, ${0.25 + particle.alpha * 0.75 * fadeProgress})`;
+            context.fill();
+          });
+
+          if (fadeProgress > 0.45) {
+            context.fillStyle = `rgba(${accentRgb}, ${Math.min(0.65, (fadeProgress - 0.45) * 1.2)})`;
+            context.font = `700 ${Math.max(42, Math.floor(state.width / 10))}px Inter, ui-sans-serif, system-ui, sans-serif`;
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText('IAN', state.width * 0.5, state.height * 0.44);
+            context.fillText('MUNUERA', state.width * 0.5, state.height * 0.59);
+          }
+        };
+
         const render = (now) => {
           state.rafId = window.requestAnimationFrame(render);
           const elapsed = now || performance.now();
@@ -498,6 +595,7 @@
           if (mode === 'constellation') drawConstellation();
           if (mode === 'orbit') drawOrbit(elapsed);
           if (mode === 'triangles') drawTriangles(elapsed);
+          if (mode === 'text-build') drawTextBuild(elapsed);
         };
 
         heroCanvas.addEventListener('mousemove', (event) => {
