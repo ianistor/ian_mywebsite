@@ -28,7 +28,16 @@ permalink: /blog/
   {% for post in site.posts %}
     <article class="card">
       <div class="card-media">
-        {% if post.image %}
+        {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
+        {% if post.show_text_placeholder == true %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif post.image == blank and post.youtube_id == blank %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif post.image %}
           <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
         {% elsif post.youtube_id %}
           <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
