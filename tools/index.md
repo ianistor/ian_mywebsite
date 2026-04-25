@@ -14,7 +14,12 @@ permalink: /tools/
   {% for tool in sorted_tools %}
     <article class="card">
       <div class="card-media">
-        {% if tool.image %}
+        {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
+        {% if tool.show_text_placeholder == true or tool.image == blank %}
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif tool.image %}
           <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
         {% else %}
           <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
