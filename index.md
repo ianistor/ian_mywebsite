@@ -16,10 +16,8 @@ title: Home
     <div class="animation-picker-wrap">
       <label for="hero-animation-select" class="animation-picker-label">Background animation</label>
       <select id="hero-animation-select" class="theme-select animation-picker-select" aria-label="Choose a geometric background animation">
-        <option value="constellation">Constellation (cvless-style)</option>
         <option value="orbit">Orbit Rings</option>
         <option value="triangles">Triangle Drift</option>
-        <option value="text-build">Text Build (particles)</option>
         <option value="off">Off</option>
       </select>
     </div>
