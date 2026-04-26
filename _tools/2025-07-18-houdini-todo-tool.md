@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: tool
 title: "Houdini TO-DO Tool"
 overlay_text: "Manage Houdini tasks per .hip file with notes and team-friendly JSON sync."
 summary: "A simple TO-DO system inside Houdini using Python, designed for notes and team feedback."
