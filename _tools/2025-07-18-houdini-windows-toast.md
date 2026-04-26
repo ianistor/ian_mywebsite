@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: tool
 title: "Houdini Windows Toast pop up notification"
 overlay_text: "Get Windows toast alerts in Houdini when long node cooks finish."
 summary: "A toast notification tool for Houdini that alerts you when nodes finish cooking."
