@@ -16,7 +16,21 @@ image: "/assets/images/projectcovers/TCTD2.png"
 During the production of The Division 2 I was lucky enough to be in charge of the Nudge system for covers development.
 Basically its a "procedural" node graph logic that after (a quick) setup from the user no matter where you take cover from/vault location it will move the other way, also works with nearby explosions.
 This helps getting the player more immersed and make the world feel less static.
-I was in charge of setting up initial props, communicating issues with Code, fixing graph setups and making it as easy for the artists to use it. That also included documentation and keeping track of how this feature is being used while improving/adding new features to it.
+Setting up initial props, communicating issues with Code, fixing graph setups and making it as easy for the artists to use it. That also included documentation and keeping track of how this feature is being used while improving/adding new features to it.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4757045f-cdb4-4336-9512-ddad99ccbbae" />
+"Procedural System" that rotates the prop based on the cover/vault position to simulate actual movement created by the player.
+
+Prop created by: Jack Edwards
+Nudge and graph setup by myself.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/933a1850-3397-4e29-ac51-83f30e5db1aa" />
+Using the same principle made me able to create "one offs" with prop when taking cover.
+A good example would be the emergency beds mattress.
+
+Prop created by : Jill Ralmark
+Nudge/animation setup created by myself.
+
 
 This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.
 ○Code: Michiel Meesters
