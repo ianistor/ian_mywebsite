@@ -13,7 +13,17 @@ image: "/assets/images/projectcovers/TCTD2.png"
 
 ## Nudge System
 
-Procedural cover nudge system setup and implementation for The Division 2.
+During the production of The Division 2 I was lucky enough to be in charge of the Nudge system for covers development.
+Basically its a "procedural" node graph logic that after (a quick) setup from the user no matter where you take cover from/vault location it will move the other way, also works with nearby explosions.
+This helps getting the player more immersed and make the world feel less static.
+I was in charge of setting up initial props, communicating issues with Code, fixing graph setups and making it as easy for the artists to use it. That also included documentation and keeping track of how this feature is being used while improving/adding new features to it.
+
+This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.
+○Code: Michiel Meesters
+○Technical Art: Magnus Ander
+○Technical Art: Ioan-Andrei Nistor
+
+
 
 <img src="/assets/images/projectcovers/TCTD2.png" alt="The Division 2 - Nudge System preview">
 

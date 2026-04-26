@@ -14,7 +14,7 @@ links:
 
 ## Overview
 
-The Division 2 is presented here with focused deep dives for specific technical-art workflows and implementation details.
+The Division 2 work featured technical-art support across environment systems and gameplay-facing setups, with a focus on reusable workflows for production content.
 
 ## Deep dives
 
