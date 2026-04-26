@@ -465,6 +465,7 @@
       if (prose) {
         autoLinkTextNodes(prose);
         convertYoutubeLinksToEmbeds(prose);
+        initializeVideoPosters(prose);
         prose.querySelectorAll('iframe').forEach(ensureResponsiveEmbedFrame);
 
         prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
