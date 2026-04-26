@@ -339,6 +339,47 @@
         frame.appendChild(iframe);
       };
 
+
+      const initializeVideoPosters = (root) => {
+        if (!root) return;
+
+        const videos = root.querySelectorAll('video');
+        videos.forEach((video) => {
+          if (video.hasAttribute('poster') || video.dataset.posterReady === 'true') return;
+
+          video.dataset.posterReady = 'pending';
+          video.setAttribute('preload', 'auto');
+          if (!video.hasAttribute('crossorigin')) {
+            video.setAttribute('crossorigin', 'anonymous');
+          }
+
+          const captureFirstFrame = () => {
+            if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
+
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth || video.clientWidth || 1280;
+            canvas.height = video.videoHeight || video.clientHeight || 720;
+            if (!canvas.width || !canvas.height) return;
+
+            const context = canvas.getContext('2d');
+            if (!context) return;
+
+            try {
+              context.drawImage(video, 0, 0, canvas.width, canvas.height);
+              const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+              if (!dataUrl) return;
+              video.setAttribute('poster', dataUrl);
+              video.dataset.posterReady = 'true';
+            } catch (error) {
+              video.dataset.posterReady = 'failed';
+            }
+          };
+
+          video.addEventListener('loadeddata', captureFirstFrame, { once: true });
+          video.load();
+        });
+      };
+
       const convertYoutubeLinksToEmbeds = (root) => {
         if (!root) return;
 
@@ -464,6 +505,7 @@
       if (prose) {
         autoLinkTextNodes(prose);
         convertYoutubeLinksToEmbeds(prose);
+        initializeVideoPosters(prose);
         prose.querySelectorAll('iframe').forEach(ensureResponsiveEmbedFrame);
 
         prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
