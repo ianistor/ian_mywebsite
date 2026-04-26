@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Procedural animation"
 permalink: /projects/division-2-warlords-of-new-york/procedural-animation/
 parent_project: "The Division 2 - Warlords of New York"
