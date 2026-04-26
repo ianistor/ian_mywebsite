@@ -329,12 +329,11 @@
         const width = Number(iframe.getAttribute('width'));
         const height = Number(iframe.getAttribute('height'));
         const hasValidRatio = Number.isFinite(width) && Number.isFinite(height) && width > 0 && height > 0;
+        if (!hasValidRatio) return;
+
         const frame = document.createElement('div');
         frame.className = 'embed-frame';
-
-        if (hasValidRatio) {
-          frame.style.setProperty('--embed-aspect-ratio', `${width} / ${height}`);
-        }
+        frame.style.setProperty('--embed-aspect-ratio', `${width} / ${height}`);
 
         iframe.parentNode.insertBefore(frame, iframe);
         frame.appendChild(iframe);
@@ -359,6 +358,8 @@
           const iframe = document.createElement('iframe');
           iframe.src = embedUrl;
           iframe.title = `YouTube video: ${onlyLink.textContent.trim()}`;
+          iframe.width = '16';
+          iframe.height = '9';
           iframe.loading = 'lazy';
           iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
           iframe.referrerPolicy = 'strict-origin-when-cross-origin';

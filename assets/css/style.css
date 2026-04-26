@@ -745,8 +745,8 @@ a:hover {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0;
-  min-height: 220px;
-  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 0;
 }
 
 .prose .embed-frame {
@@ -758,7 +758,7 @@ a:hover {
   border-radius: 14px;
   overflow: hidden;
   background: #0b1320;
-  aspect-ratio: var(--embed-aspect-ratio, 16 / 9);
+  aspect-ratio: var(--embed-aspect-ratio);
 }
 
 .prose .embed-frame iframe {
@@ -770,12 +770,6 @@ a:hover {
   margin: 0;
   border: 0;
   border-radius: 0;
-}
-
-@media (max-width: 860px) {
-  .prose iframe {
-    min-height: 180px;
-  }
 }
 
 .prose img.zoomable-image {
