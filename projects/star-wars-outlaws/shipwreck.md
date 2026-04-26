@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Shipwreck Level Destruction"
 permalink: /projects/star-wars-outlaws/vfx-and-real-time-presentation/
 parent_project: "Star Wars Outlaws"
