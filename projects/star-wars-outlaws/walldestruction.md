@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Wall Destruction"
 permalink: /projects/star-wars-outlaws/tools-and-workflow-support/
 parent_project: "Star Wars Outlaws"

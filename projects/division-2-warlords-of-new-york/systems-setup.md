@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "VFX System - Rubble"
 permalink: /projects/division-2-warlords-of-new-york/systems-setup/
 parent_project: "The Division 2 - Warlords of New York"
