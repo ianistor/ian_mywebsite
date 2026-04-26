@@ -101,6 +101,21 @@ html { scroll-behavior: smooth; }
   --hero-glow: #34245c;
 }
 
+
+:root[data-theme="vscode"] {
+  --bg: #1e1e1e;
+  --panel: #252526;
+  --panel-2: #2d2d30;
+  --text: #d4d4d4;
+  --muted: #9da0a6;
+  --line: #3f3f46;
+  --accent: #4fc1ff;
+  --accent-2: #89ddff;
+  --header-bg: rgba(30, 30, 30, 0.84);
+  --surface-glass: rgba(37, 37, 38, 0.95);
+  --hero-glow: #283142;
+}
+
 :root[data-theme="paper"] {
   --bg: #f5f2ea;
   --panel: #ffffff;
@@ -719,7 +734,6 @@ a:hover {
 .prose img,
 .prose video {
   max-width: 100%;
-  height: auto;
   border-radius: 14px;
   display: block;
   margin: 1.25rem 0;
