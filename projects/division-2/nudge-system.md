@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Nudge System"
 permalink: /projects/division-2/nudge-system/
 parent_project: "The Division 2"
