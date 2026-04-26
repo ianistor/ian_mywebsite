@@ -17,14 +17,14 @@ The dust and small particles were made by our VFX Artist
 
 Shipwreck mission has some debris falling and blocking the player right as it passes through. Houdini was used for this for a higher fidelity simulation.
 
-<video width="714" height="400" controls preload="metadata">
-  <source src="https://cdn.artstation.com/p/video_sources/002/194/648/ianistor-mq060-debrisseq.mp4" type="video/mp4">
+<video width="714" height="400" controls preload="metadata" playsinline>
+  <source src="https://cdn.artstation.com/p/video_sources/002/194/648/ianistor-mq060-debrisseq.mp4#t=0.001" type="video/mp4">
 </video>
 
 Houdini was used for the door snapping simulation as well.
 
-<video width="714" height="400" controls preload="metadata">
-  <source src="https://cdn.artstation.com/p/video_sources/002/194/649/ianistor-mq060-doorseq.mp4" type="video/mp4">
+<video width="714" height="400" controls preload="metadata" playsinline>
+  <source src="https://cdn.artstation.com/p/video_sources/002/194/649/ianistor-mq060-doorseq.mp4#t=0.001" type="video/mp4">
 </video>
 
 

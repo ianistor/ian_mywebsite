@@ -18,8 +18,8 @@ Basically its a "procedural" node graph logic that after (a quick) setup from th
 This helps getting the player more immersed and make the world feel less static.
 Setting up initial props, communicating issues with Code, fixing graph setups and making it as easy for the artists to use it. That also included documentation and keeping track of how this feature is being used while improving/adding new features to it.
 
-<video width="714" height="400" controls preload="metadata">
-  <source src="https://cdn.artstation.com/p/video_sources/000/000/612/IoanAndreiNistor_Nudge1.mp4" type="video/mp4">
+<video width="714" height="400" controls preload="metadata" playsinline>
+  <source src="https://cdn.artstation.com/p/video_sources/000/000/612/IoanAndreiNistor_Nudge1.mp4#t=0.001" type="video/mp4">
 </video>
 
 "Procedural System" that rotates the prop based on the cover/vault position to simulate actual movement created by the player.
@@ -28,8 +28,8 @@ Prop created by: Jack Edwards
 Nudge and graph setup by myself.
 
 
-<video width="714" height="400" controls preload="metadata">
-  <source src="https://cdn.artstation.com/p/video_sources/000/000/613/IoanAndreiNistor_Nudge2.mp4" type="video/mp4">
+<video width="714" height="400" controls preload="metadata" playsinline>
+  <source src="https://cdn.artstation.com/p/video_sources/000/000/613/IoanAndreiNistor_Nudge2.mp4#t=0.001" type="video/mp4">
 </video>
 Using the same principle made me able to create "one offs" with prop when taking cover.
 A good example would be the emergency beds mattress.
