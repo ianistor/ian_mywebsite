@@ -472,6 +472,12 @@ a:hover {
   font-size: 1.55rem;
 }
 
+.section-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
