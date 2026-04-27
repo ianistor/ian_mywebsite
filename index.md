@@ -57,10 +57,16 @@ title: Home
     {% endfor %}
   </div>
   {% if site.posts.size > 3 %}
-    <div class="section-more-callout">
-      <p class="section-more-text">There are {{ site.posts.size }} blog posts in total—browse the full archive for more.</p>
-      <a class="button secondary" href="{{ '/blog/' | relative_url }}">Explore all posts</a>
-    </div>
+    {% assign hidden_posts_count = site.posts.size | minus: 3 %}
+    <a class="blog-more-wheel" href="{{ '/blog/' | relative_url }}" aria-label="Browse the remaining {{ hidden_posts_count }} blog posts">
+      <span class="blog-wheel-stack" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="blog-wheel-copy">
+        <strong>+{{ hidden_posts_count }} more posts</strong>
+        <span>Spin through the full blog archive</span>
+      </span>
+    </a>
   {% endif %}
 </section>
 
