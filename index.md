@@ -18,11 +18,14 @@ title: Home
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Blog</h2>
+    <div>
+      <h2>Blog</h2>
+      <p class="section-subtitle">Showing the latest 3 posts.</p>
+    </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
   <div class="card-grid">
-    {% for post in site.posts limit: 6 %}
+    {% for post in site.posts limit: 3 %}
       <article class="card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
         {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
         {% if post.show_text_placeholder == true %}
@@ -53,6 +56,12 @@ title: Home
       </article>
     {% endfor %}
   </div>
+  {% if site.posts.size > 3 %}
+    <div class="section-more-callout">
+      <p class="section-more-text">There are {{ site.posts.size }} blog posts in total—browse the full archive for more.</p>
+      <a class="button secondary" href="{{ '/blog/' | relative_url }}">Explore all posts</a>
+    </div>
+  {% endif %}
 </section>
 
 <section class="section-block">
