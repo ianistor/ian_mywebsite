@@ -559,11 +559,15 @@ a:hover {
   color: #60a5fa;
 }
 
-.project-link-artstation .project-link-artstation-logo {
+.button-logo {
   width: 1em;
   height: 1em;
   object-fit: contain;
   vertical-align: -0.1em;
+}
+
+.project-link-artstation .project-link-artstation-logo {
+  filter: none;
 }
 
 .link-row {
