@@ -40,7 +40,12 @@ permalink: /projects/
           {% for link in project.links %}
             {% assign normalized_label = link.label | downcase %}
             {% unless normalized_label == "artstation" %}
-              <a class="button secondary" href="{{ link.url }}">{{ link.label }}</a>
+              <a class="button secondary" href="{{ link.url }}">
+                {% if link.logo_path %}
+                  <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
+                {% endif %}
+                {{ link.label }}
+              </a>
             {% endunless %}
           {% endfor %}
         </div>
