@@ -26,7 +26,7 @@ permalink: /blog/
 
 <section class="card-grid">
   {% for post in site.posts %}
-    <article class="card">
+    <article class="card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
       <div class="card-media">
         {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
         {% if post.show_text_placeholder == true %}

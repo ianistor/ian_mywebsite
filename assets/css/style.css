@@ -495,6 +495,15 @@ a:hover {
     background 0.22s ease;
 }
 
+.js-clickable-card {
+  cursor: pointer;
+}
+
+.js-clickable-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .card:hover,
 .list-card:hover {
   transform: translateY(-4px);

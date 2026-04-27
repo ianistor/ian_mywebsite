@@ -13,7 +13,7 @@ permalink: /projects/
 <section class="card-grid projects-index-grid">
   {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
-    <article class="card">
+    <article class="card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
       {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
       {% if project.show_text_placeholder == true or project.image == blank %}
         <div class="project-card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
