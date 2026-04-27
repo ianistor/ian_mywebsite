@@ -28,7 +28,6 @@ permalink: /tools/
           <p>{{ tool.overlay_text | default: tool.summary }}</p>
         </div>
       </div>
-      <p class="eyebrow">Tool</p>
       <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
       <p>{{ tool.summary }}</p>
     </article>
