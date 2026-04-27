@@ -23,7 +23,7 @@ title: Home
   </div>
   <div class="card-grid">
     {% for post in site.posts limit: 6 %}
-      <article class="card">
+      <article class="card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
         {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
         {% if post.show_text_placeholder == true %}
           <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
@@ -62,7 +62,7 @@ title: Home
   </div>
   <div class="card-grid">
     {% for tool in site.tools limit: 6 %}
-      <article class="card">
+      <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
         {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
         {% if tool.show_text_placeholder == true or tool.image == blank %}
           <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
@@ -93,7 +93,7 @@ title: Home
     <div class="projects-row">
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
-        <article class="project-row-card">
+        <article class="project-row-card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
           {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
           {% if project.show_text_placeholder == true or project.image == blank %}
             <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">

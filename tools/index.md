@@ -12,7 +12,7 @@ permalink: /tools/
 <section class="card-grid">
   {% assign sorted_tools = site.tools | sort: 'title' %}
   {% for tool in sorted_tools %}
-    <article class="card">
+    <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
       <div class="card-media">
         {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
         {% if tool.show_text_placeholder == true or tool.image == blank %}

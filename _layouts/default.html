@@ -232,6 +232,25 @@
         });
       }
 
+      const interactiveSelector = 'a, button, input, select, textarea, summary, [role="button"], [role="link"]';
+      const clickableCards = document.querySelectorAll('.js-clickable-card[data-href]');
+      clickableCards.forEach((card) => {
+        const href = card.dataset.href;
+        if (!href) return;
+
+        card.addEventListener('click', function (event) {
+          if (event.target.closest(interactiveSelector)) return;
+          window.location.href = href;
+        });
+
+        card.addEventListener('keydown', function (event) {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          if (event.target.closest(interactiveSelector)) return;
+          event.preventDefault();
+          window.location.href = href;
+        });
+      });
+
       const autoLinkTextNodes = (root) => {
         if (!root) return;
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
