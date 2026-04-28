@@ -18,7 +18,10 @@ title: Home
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Blog</h2>
+    <div>
+      <h2>Blog</h2>
+      <p class="section-subtitle">Showing the latest 3 posts.</p>
+    </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
   <div class="projects-row-wrap">
@@ -59,6 +62,12 @@ title: Home
       <span></span><span></span><span></span>
     </div>
   </div>
+  {% if site.posts.size > 3 %}
+    <a class="blog-scroll-hint" href="{{ '/blog/' | relative_url }}" aria-label="Go to older blog posts">
+      <span>Scroll right for older posts</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  {% endif %}
 </section>
 
 <section class="section-block">
