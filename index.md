@@ -57,15 +57,9 @@ title: Home
     {% endfor %}
   </div>
   {% if site.posts.size > 3 %}
-    {% assign hidden_posts_count = site.posts.size | minus: 3 %}
-    <a class="blog-more-wheel" href="{{ '/blog/' | relative_url }}" aria-label="Browse the remaining {{ hidden_posts_count }} blog posts">
-      <span class="blog-wheel-stack" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
-      <span class="blog-wheel-copy">
-        <strong>+{{ hidden_posts_count }} more posts</strong>
-        <span>Spin through the full blog archive</span>
-      </span>
+    <a class="blog-scroll-hint" href="{{ '/blog/' | relative_url }}" aria-label="Go to older blog posts">
+      <span>Scroll right for older posts</span>
+      <span aria-hidden="true">→</span>
     </a>
   {% endif %}
 </section>
