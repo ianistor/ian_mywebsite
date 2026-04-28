@@ -21,37 +21,43 @@ title: Home
     <h2>Blog</h2>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
-  <div class="card-grid">
-    {% for post in site.posts limit: 6 %}
-      <article class="card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
-        {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
-        {% if post.show_text_placeholder == true %}
-          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
-            <span>{{ placeholder_label }}</span>
-          </div>
-        {% elsif post.image == blank and post.youtube_id == blank %}
-          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
-            <span>{{ placeholder_label }}</span>
-          </div>
-        {% elsif post.image %}
-          <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
-        {% elsif post.youtube_id %}
-          <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
-        {% else %}
-          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-        {% endif %}
-        <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        {% if post.tags %}
-          <div class="post-tags">
-            {% for tag in post.tags %}
-              <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
-        <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-      </article>
-    {% endfor %}
+  <div class="projects-row-wrap">
+    <div class="projects-row-hint">Scroll for older posts</div>
+    <div class="projects-row blog-row">
+      {% for post in site.posts %}
+        <article class="card blog-row-card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
+          {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
+          {% if post.show_text_placeholder == true %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif post.image == blank and post.youtube_id == blank %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif post.image %}
+            <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+          {% elsif post.youtube_id %}
+            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
+          {% else %}
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+          {% endif %}
+          <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.tags %}
+            <div class="post-tags">
+              {% for tag in post.tags %}
+                <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="projects-row-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </section>
 
