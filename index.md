@@ -18,7 +18,10 @@ title: Home
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Blog</h2>
+    <div>
+      <h2>Blog</h2>
+      <p class="section-subtitle">Showing the latest 3 posts.</p>
+    </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
   <div class="card-grid">
