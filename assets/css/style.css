@@ -23,7 +23,6 @@
 
   --max: 1120px;
   --header-gap: 10px;
-  --header-offset: 96px;
 }
 
 * { box-sizing: border-box; }
@@ -98,13 +97,13 @@ a:hover {
 }
 
 .site-header {
-  position: fixed;
-  top: 10px;
-  left: 0;
-  width: 100%;
+  position: sticky;
+  top: 0;
   z-index: 60;
   background: transparent;
   border: 0;
+  padding-top: 10px;
+  margin-bottom: var(--header-gap);
 }
 
 .site-footer {
@@ -1243,10 +1242,6 @@ a:hover {
 }
 
 
-main.container {
-  scroll-margin-top: calc(var(--header-offset) + var(--header-gap));
-}
-
 [id] {
-  scroll-margin-top: calc(var(--header-offset) + var(--header-gap));
+  scroll-margin-top: 110px;
 }
