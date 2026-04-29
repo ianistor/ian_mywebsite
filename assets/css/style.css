@@ -1463,3 +1463,19 @@ a:hover {
   border: 2px solid var(--text);
   background: var(--accent);
 }
+
+.cv-contact-list {
+  margin-top: 0.6rem;
+}
+
+.cv-contact-icon {
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  border-radius: 8px;
+}
+
+.cv-contact-icon-img {
+  width: 3.8rem;
+  height: 3.8rem;
+}
