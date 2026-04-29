@@ -24,15 +24,6 @@
         <div class="theme-control">
           <label class="sr-only" for="theme-select">Theme</label>
           <select id="theme-select" aria-label="Theme">
-            <option value="midnight">Midnight</option>
-            <option value="paper">Paper</option>
-            <option value="forest">Forest</option>
-            <option value="ember">Ember</option>
-            <option value="black">Black</option>
-            <option value="sunset">Sunset</option>
-            <option value="ocean">Ocean</option>
-            <option value="violet">Violet</option>
-            <option value="vscode">VS Code</option>
             <option value="houdini">Houdini</option>
           </select>
         </div>
@@ -68,7 +59,7 @@
       const root = document.documentElement;
       const themeParam = new URLSearchParams(window.location.search).get('theme');
       const themeStorageKey = 'site-theme';
-      const validThemes = ['midnight', 'paper', 'forest', 'ember', 'black', 'sunset', 'ocean', 'violet', 'vscode', 'houdini'];
+      const validThemes = ['houdini'];
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
@@ -84,7 +75,7 @@
       ];
 
       const applyTheme = (themeName) => {
-        const normalizedTheme = validThemes.includes(themeName) ? themeName : 'midnight';
+        const normalizedTheme = validThemes.includes(themeName) ? themeName : 'houdini';
         root.setAttribute('data-theme', normalizedTheme);
         if (themeSelect) {
           themeSelect.value = normalizedTheme;
@@ -97,7 +88,7 @@
       } else if (storedTheme && validThemes.includes(storedTheme)) {
         applyTheme(storedTheme);
       } else {
-        applyTheme('midnight');
+        applyTheme('houdini');
       }
 
       if (themeSelect) {
