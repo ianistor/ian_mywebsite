@@ -13,53 +13,14 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Open navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        {% for item in site.nav %}
-          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
-        {% endfor %}
-      </nav>
-
-      <div class="header-controls">
-        <form class="header-search" role="search" aria-label="Site search">
-          <label class="sr-only" for="site-search-input">Search site</label>
-          <input
-            id="site-search-input"
-            class="header-search-input"
-            name="q"
-            type="search"
-            placeholder="Search this site"
-            autocomplete="off"
-          >
-          <button class="header-search-button" type="submit">Search</button>
-          <ul class="header-search-results" id="header-search-results" hidden></ul>
-        </form>
-        <label class="theme-control" for="theme-select">Theme</label>
-        <select id="theme-select" class="theme-select" aria-label="Preview color themes">
-          <option value="midnight">Midnight</option>
-          <option value="black">Black</option>
-          <option value="ember">Ember</option>
-          <option value="forest">Forest</option>
-          <option value="sunset">Sunset</option>
-          <option value="ocean">Ocean</option>
-          <option value="violet">Violet</option>
-          <option value="vscode">VS Code</option>
-          <option value="paper">Paper</option>
-        </select>
+    <div class="container">
+      <div class="floating-header" role="navigation" aria-label="Main navigation">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          {% for item in site.nav %}
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
       </div>
     </div>
   </header>
