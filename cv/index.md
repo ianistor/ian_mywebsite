@@ -9,10 +9,28 @@ permalink: /cv/
 ## Senior Technical Artist
 
 Quick Links  
-[ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
-[LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
-[ArtStation](https://www.artstation.com/nistorandrei)  
-<img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large"> [Fab](https://www.fab.com/sellers/IANistor)
+<ul class="contact-list cv-contact-list">
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
+    <a href="mailto:ioan.andrei.nistor@gmail.com">ioan.andrei.nistor@gmail.com</a>
+  </li>
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">in</span>
+    <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </li>
+  <li>
+    <span class="contact-icon contact-icon-artstation cv-contact-icon" aria-hidden="true">
+      <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+    </span>
+    <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">ArtStation</a>
+  </li>
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">
+      <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+    </span>
+    <a href="https://www.fab.com/sellers/IANistor" target="_blank" rel="noopener noreferrer">Fab</a>
+  </li>
+</ul>
 
 ---
 
@@ -146,8 +164,27 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 ## Links
 
-- [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)
-- [ArtStation](https://www.artstation.com/nistorandrei)
-- <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large"> [Fab](https://www.fab.com/sellers/IANistor)
+<ul class="contact-list cv-contact-list">
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
+    <a href="mailto:ioan.andrei.nistor@gmail.com">Email</a>
+  </li>
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">in</span>
+    <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </li>
+  <li>
+    <span class="contact-icon contact-icon-artstation cv-contact-icon" aria-hidden="true">
+      <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+    </span>
+    <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">ArtStation</a>
+  </li>
+  <li>
+    <span class="contact-icon cv-contact-icon" aria-hidden="true">
+      <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+    </span>
+    <a href="https://www.fab.com/sellers/IANistor" target="_blank" rel="noopener noreferrer">Fab</a>
+  </li>
+</ul>
 
 ---

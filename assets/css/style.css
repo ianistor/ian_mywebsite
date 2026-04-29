@@ -1463,3 +1463,29 @@ a:hover {
   border: 2px solid var(--text);
   background: var(--accent);
 }
+
+.cv-contact-list {
+  margin-top: 0.6rem;
+}
+
+.cv-contact-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 8px;
+}
+
+.cv-contact-icon-img {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+
+.experience-head .company-logo-inline {
+  width: 200px !important;
+  height: 200px !important;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+}
