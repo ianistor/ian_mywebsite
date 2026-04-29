@@ -155,7 +155,7 @@ title: Home
       <li>
         <span class="contact-icon" aria-hidden="true">in</span>
         <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andreinistor</a>
+        <a href="https://www.linkedin.com/in/ioan-andrei-nistor/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andrei-nistor</a>
       </li>
       <li>
         <span class="contact-icon contact-icon-artstation" aria-hidden="true">
