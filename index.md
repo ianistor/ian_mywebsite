@@ -20,58 +20,20 @@ title: Home
   <div class="section-head landing-variations-head">
     <div>
       <h2>Landing Page Variations</h2>
-      <p class="section-subtitle">Pick a variant to preview alternate hero card layouts.</p>
+      <p class="section-subtitle">Variation 5 kept as the preferred landing direction.</p>
     </div>
     <label class="variation-select-label" for="landing-variation-select">Layout</label>
     <select id="landing-variation-select" class="variation-select" aria-label="Choose landing page variation">
-      <option value="v1">Variation 1 · Three-column cards</option>
-      <option value="v2">Variation 2 · Spotlight + side stack</option>
-      <option value="v3">Variation 3 · Horizontal strips</option>
-      <option value="v4">Variation 4 · Minimal tiles</option>
       <option value="v5">Variation 5 · CTA cards</option>
     </select>
   </div>
 
   <div class="landing-variation-gallery">
-    <div class="landing-variation-panel is-active" data-variation="v1">
-      <div class="variation-grid variation-grid-3col">
-        <article class="card variation-card"><p class="eyebrow">Read</p><h3><a href="{{ '/blog/' | relative_url }}">Blog</a></h3><p>Latest notes, workflows and technical breakdowns.</p></article>
-        <article class="card variation-card"><p class="eyebrow">Build</p><h3><a href="{{ '/projects/' | relative_url }}">Projects</a></h3><p>Production-proven systems and real-time experiments.</p></article>
-        <article class="card variation-card"><p class="eyebrow">Use</p><h3><a href="{{ '/tools/' | relative_url }}">Tools</a></h3><p>Practical utilities created to speed up pipelines.</p></article>
-      </div>
-    </div>
-
-    <div class="landing-variation-panel" data-variation="v2">
-      <div class="variation-grid variation-grid-spotlight">
-        <article class="card variation-card variation-spotlight"><p class="eyebrow">Spotlight</p><h3><a href="{{ '/projects/' | relative_url }}">Projects</a></h3><p>Lead with flagship work and surface achievements first.</p></article>
-        <div class="variation-stack">
-          <article class="card variation-card"><p class="eyebrow">Updates</p><h3><a href="{{ '/blog/' | relative_url }}">Blog</a></h3><p>Behind-the-scenes process journals and ideas.</p></article>
-          <article class="card variation-card"><p class="eyebrow">Downloads</p><h3><a href="{{ '/tools/' | relative_url }}">Tools</a></h3><p>Tooling and scripts ready for quick adoption.</p></article>
-        </div>
-      </div>
-    </div>
-
-    <div class="landing-variation-panel" data-variation="v3">
-      <div class="variation-grid variation-grid-strips">
-        <article class="card variation-card strip-card"><h3><a href="{{ '/blog/' | relative_url }}">Blog</a></h3><p>Read short technical entries.</p></article>
-        <article class="card variation-card strip-card"><h3><a href="{{ '/projects/' | relative_url }}">Projects</a></h3><p>Browse game-feature case studies.</p></article>
-        <article class="card variation-card strip-card"><h3><a href="{{ '/tools/' | relative_url }}">Tools</a></h3><p>Explore production helpers.</p></article>
-      </div>
-    </div>
-
-    <div class="landing-variation-panel" data-variation="v4">
-      <div class="variation-grid variation-grid-minimal">
-        <article class="card variation-card compact"><h3><a href="{{ '/blog/' | relative_url }}">Blog →</a></h3></article>
-        <article class="card variation-card compact"><h3><a href="{{ '/projects/' | relative_url }}">Projects →</a></h3></article>
-        <article class="card variation-card compact"><h3><a href="{{ '/tools/' | relative_url }}">Tools →</a></h3></article>
-      </div>
-    </div>
-
-    <div class="landing-variation-panel" data-variation="v5">
+    <div class="landing-variation-panel is-active" data-variation="v5">
       <div class="variation-grid variation-grid-cta">
-        <article class="card variation-card cta-card"><p class="eyebrow">Writeups</p><h3><a href="{{ '/blog/' | relative_url }}">Open Blog</a></h3><a class="button secondary" href="{{ '/blog/' | relative_url }}">View posts</a></article>
-        <article class="card variation-card cta-card"><p class="eyebrow">Showcase</p><h3><a href="{{ '/projects/' | relative_url }}">Open Projects</a></h3><a class="button secondary" href="{{ '/projects/' | relative_url }}">View projects</a></article>
-        <article class="card variation-card cta-card"><p class="eyebrow">Pipeline</p><h3><a href="{{ '/tools/' | relative_url }}">Open Tools</a></h3><a class="button secondary" href="{{ '/tools/' | relative_url }}">View tools</a></article>
+        <article class="card variation-card cta-card"><h3><a href="{{ '/blog/' | relative_url }}">Open Blog</a></h3><a class="button secondary" href="{{ '/blog/' | relative_url }}">View posts</a></article>
+        <article class="card variation-card cta-card"><h3><a href="{{ '/projects/' | relative_url }}">Open Projects</a></h3><a class="button secondary" href="{{ '/projects/' | relative_url }}">View projects</a></article>
+        <article class="card variation-card cta-card"><h3><a href="{{ '/tools/' | relative_url }}">Open Tools</a></h3><a class="button secondary" href="{{ '/tools/' | relative_url }}">View tools</a></article>
       </div>
     </div>
   </div>
