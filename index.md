@@ -148,17 +148,23 @@ title: Home
     <p>Feel free to reach out for collaboration, opportunities, or questions.</p>
     <ul class="contact-list">
       <li>
-        <span class="contact-icon" aria-hidden="true">□</span>
+        <span class="contact-icon" aria-hidden="true">✉</span>
         <strong>Email:</strong>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       </li>
       <li>
-        <span class="contact-icon" aria-hidden="true">□</span>
+        <span class="contact-icon" aria-hidden="true">in</span>
         <strong>LinkedIn:</strong>
         <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andreinistor</a>
       </li>
       <li>
-        <span class="contact-icon" aria-hidden="true">□</span>
+        <span class="contact-icon contact-icon-artstation" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false" class="contact-icon-svg">
+            <path d="M0 18.9l2.1 3.6h19.8L17.9 16H7.1z" />
+            <path d="M12.4 1.5h4.2l7.4 21h-4.2z" />
+            <path d="M7.8 1.5l8.3 14H7.8V1.5z" />
+          </svg>
+        </span>
         <strong>ArtStation:</strong>
         <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">artstation.com/nistorandrei</a>
       </li>
