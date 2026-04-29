@@ -144,10 +144,24 @@ title: Home
   <div class="section-head">
     <h2>Contact</h2>
   </div>
-  <div class="card">
+  <div class="card contact-box">
     <p>Feel free to reach out for collaboration, opportunities, or questions.</p>
-    <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    <p><strong>ArtStation:</strong> <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">artstation.com/nistorandrei</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andreinistor</a></p>
+    <ul class="contact-list">
+      <li>
+        <span class="contact-icon" aria-hidden="true">□</span>
+        <strong>Email:</strong>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </li>
+      <li>
+        <span class="contact-icon" aria-hidden="true">□</span>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andreinistor</a>
+      </li>
+      <li>
+        <span class="contact-icon" aria-hidden="true">□</span>
+        <strong>ArtStation:</strong>
+        <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">artstation.com/nistorandrei</a>
+      </li>
+    </ul>
   </div>
 </section>
