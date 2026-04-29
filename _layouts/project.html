@@ -28,7 +28,7 @@ layout: default
             {% if link.logo_path %}
               <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
             {% elsif normalized_label == "artstation" %}
-              <img src="{{ '/assets/images/logos/artstation-logo.svg' | relative_url }}" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
+              <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
             {% endif %}
             {{ link.label }}
           </a>
