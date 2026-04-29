@@ -594,6 +594,12 @@ a:hover {
   border-radius: 6px;
 }
 
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
 .prose img,
 .prose video {
   max-width: 100%;
@@ -657,6 +663,10 @@ a:hover {
   border: 1px solid var(--code-border);
 }
 
+.code-block pre {
+  padding-top: 3rem;
+}
+
 .prose .heading-anchor {
   margin-left: 0.5rem;
   color: var(--muted);
@@ -673,9 +683,9 @@ a:hover {
 
 
 .prose pre code.hljs {
-  border-radius: 14px;
-  border: 1px solid var(--code-border);
-  padding: 1rem;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 
@@ -712,6 +722,7 @@ a:hover {
 .code-block {
   position: relative;
   margin: 1.5rem 0;
+  clear: both;
 }
 
 .code-language-badge {
