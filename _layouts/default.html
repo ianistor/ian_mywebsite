@@ -415,13 +415,23 @@
         const classNames = Array.from(codeBlock.classList);
         const languageClass = classNames.find((name) => name.startsWith('language-'));
         const detectedLanguage = languageClass ? languageClass.replace('language-', '') : '';
-        const languageMap = {
+        const highlightLanguageMap = {
+          py: 'python',
+          vex: 'c'
+        };
+        const displayLanguageMap = {
           py: 'python',
           python: 'python',
           vex: 'vex',
           c: 'vex'
         };
-        const normalizedLanguage = languageMap[detectedLanguage.toLowerCase()] || detectedLanguage.toLowerCase();
+        const normalizedLanguage = displayLanguageMap[detectedLanguage.toLowerCase()] || detectedLanguage.toLowerCase();
+        const highlightLanguage = highlightLanguageMap[detectedLanguage.toLowerCase()] || detectedLanguage.toLowerCase();
+
+        if (languageClass && highlightLanguage && highlightLanguage !== detectedLanguage.toLowerCase()) {
+          codeBlock.classList.remove(languageClass);
+          codeBlock.classList.add(`language-${highlightLanguage}`);
+        }
 
         if (normalizedLanguage === 'python' || normalizedLanguage === 'vex') {
           const badge = document.createElement('span');
