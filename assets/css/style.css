@@ -224,6 +224,17 @@ a:hover {
   background: var(--panel-2);
 }
 
+
+.header-contact-button {
+  color: var(--text) !important;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+}
+
+.header-contact-button:hover {
+  background: var(--panel);
+}
+
 .nav-toggle,
 .header-controls,
 .header-search {
