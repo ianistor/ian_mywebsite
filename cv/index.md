@@ -4,17 +4,36 @@ title: "Resume"
 permalink: /cv/
 ---
 
+<div id="cv-root" class="cv-variant-v1">
+
 # Ioan Andrei Nistor
 
 ## Senior Technical Artist
 
-Quick Links  
-[ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
-[LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
-[ArtStation](https://www.artstation.com/nistorandrei)  
-[Fab](https://www.fab.com/sellers/IANistor)
+<div class="cv-toolbar">
+  <label for="cv-variation-select"><strong>View variation:</strong></label>
+  <select id="cv-variation-select" class="cv-variation-select">
+    <option value="cv-variant-v1">Variation 1 — Clean</option>
+    <option value="cv-variant-v2">Variation 2 — Compact</option>
+    <option value="cv-variant-v3">Variation 3 — Card Blocks</option>
+    <option value="cv-variant-v4">Variation 4 — Timeline</option>
+    <option value="cv-variant-v5">Variation 5 — Zebra Read</option>
+    <option value="cv-variant-v6">Variation 6 — Skills Spotlight</option>
+    <option value="cv-variant-v7">Variation 7 — Project Spotlight</option>
+    <option value="cv-variant-v8">Variation 8 — Experience Dense</option>
+    <option value="cv-variant-v9">Variation 9 — Section Dividers</option>
+    <option value="cv-variant-v10">Variation 10 — Logo First</option>
+  </select>
+</div>
 
----
+<section class="cv-section cv-links">
+
+### Quick Links
+[ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor) · [ArtStation](https://www.artstation.com/nistorandrei) · [Fab](https://www.fab.com/sellers/IANistor)
+
+</section>
+
+<section class="cv-section cv-profile">
 
 ## Resume Draft Variations
 
@@ -45,17 +64,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Performance Optimization
 {: .cv-core-skills}
 
-## Professional Experience
-- <img src="{{ '/assets/images/companieslogos/ags_white_logo.png' | relative_url }}" alt="Amazon Games logo" class="company-logo-inline-inline"> **Technical Artist — Amazon Games (2024 - Current)**
-- <img src="{{ '/assets/images/companieslogos/ubi_white_logo.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline-inline"> **Senior Technical Artist — Ubisoft Romania (2023 - 2024)**
-- <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline-inline"> **Senior Technical Artist — Massive Entertainment (2022 - 2023)**
-- <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline-inline"> **Technical Artist — Massive Entertainment (2018 - 2022)**
-- <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline-inline"> **Technical Content Validator — Massive Entertainment (2015 - 2018)**
-</div>
+</section>
 
-<div class="cv-variation" data-variation="v2">
-## Profile
-Senior Technical Artist. Unreal Engine. Snowdrop workflows. Procedural content. Performance-optimized real-time visuals.
+<section class="cv-section cv-skills">
 
 ## Core Skills
 - Houdini
@@ -79,9 +90,9 @@ Senior Technical Artist. Unreal Engine. Snowdrop workflows. Procedural content. 
 - Problem solving
 {: .cv-core-skills}
 
-## Profile
-Senior Technical Artist with 14+ years of AAA experience.
-</div>
+</section>
+
+<section class="cv-section cv-experience">
 
 <div class="cv-variation" data-variation="v4">
 ## Professional Experience
@@ -137,8 +148,9 @@ Senior Technical Artist with 14+ years of AAA experience.
 ## Minimal
 Senior Technical Artist with 14+ years of AAA experience.
 
-Houdini • Unreal Engine • Python Scripting • Performance Optimization
-</div>
+</section>
+
+<section class="cv-section cv-projects">
 
 <div class="cv-variation" data-variation="v10">
 ## Selected Projects
@@ -165,10 +177,28 @@ Houdini • Unreal Engine • Python Scripting • Performance Optimization
   });
 </script>
 
----
+</section>
+
+<section class="cv-section cv-links-bottom">
 
 ## Links
 
 - [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)
 - [ArtStation](https://www.artstation.com/nistorandrei)
 - [Fab](https://www.fab.com/sellers/IANistor)
+
+</section>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('cv-root');
+  const select = document.getElementById('cv-variation-select');
+  const classes = Array.from({ length: 10 }, (_, i) => `cv-variant-v${i + 1}`);
+  select.addEventListener('change', (event) => {
+    root.classList.remove(...classes);
+    root.classList.add(event.target.value);
+  });
+});
+</script>
