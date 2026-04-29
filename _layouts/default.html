@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 </head>
 <body>
+  <div class="page-shell">
   <header class="site-header">
     <div class="container">
       <div class="floating-header" role="navigation" aria-label="Main navigation">
@@ -25,21 +26,24 @@
     </div>
   </header>
 
-  <main class="container">
-    {{ content }}
-  </main>
+  <div class="page-scroll">
+    <main class="container">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>{{ site.description }}</p>
+        <p>Hosted on GitHub Pages with Jekyll</p>
+      </div>
+    </footer>
+  </div>
 
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
     <img class="lightbox-image" src="" alt="">
   </div>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <p>{{ site.description }}</p>
-      <p>Hosted on GitHub Pages with Jekyll</p>
-    </div>
-  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -52,13 +56,14 @@
       const root = document.documentElement;
       const siteHeader = document.querySelector('.site-header');
 
-      const syncHeaderOffset = () => {
+      const syncHeaderZoneHeight = () => {
         if (!siteHeader) return;
-        root.style.setProperty('--header-offset', `${siteHeader.offsetHeight}px`);
+        const zoneHeight = siteHeader.offsetHeight + 10;
+        root.style.setProperty('--header-zone-height', `${zoneHeight}px`);
       };
 
-      syncHeaderOffset();
-      window.addEventListener('resize', syncHeaderOffset);
+      syncHeaderZoneHeight();
+      window.addEventListener('resize', syncHeaderZoneHeight);
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
@@ -673,5 +678,6 @@
       });
     });
   </script>
+  </div>
 </body>
 </html>
