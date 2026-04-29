@@ -4,23 +4,44 @@ title: "Resume"
 permalink: /cv/
 ---
 
+<div id="cv-root" class="cv-variant-v1">
+
 # Ioan Andrei Nistor
 
 ## Senior Technical Artist
 
-Quick Links  
-[ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
-[LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
-[ArtStation](https://www.artstation.com/nistorandrei)  
-[Fab](https://www.fab.com/sellers/IANistor)
+<div class="cv-toolbar">
+  <label for="cv-variation-select"><strong>View variation:</strong></label>
+  <select id="cv-variation-select" class="cv-variation-select">
+    <option value="cv-variant-v1">Variation 1 — Clean</option>
+    <option value="cv-variant-v2">Variation 2 — Compact</option>
+    <option value="cv-variant-v3">Variation 3 — Card Blocks</option>
+    <option value="cv-variant-v4">Variation 4 — Timeline</option>
+    <option value="cv-variant-v5">Variation 5 — Zebra Read</option>
+    <option value="cv-variant-v6">Variation 6 — Skills Spotlight</option>
+    <option value="cv-variant-v7">Variation 7 — Project Spotlight</option>
+    <option value="cv-variant-v8">Variation 8 — Experience Dense</option>
+    <option value="cv-variant-v9">Variation 9 — Section Dividers</option>
+    <option value="cv-variant-v10">Variation 10 — Logo First</option>
+  </select>
+</div>
 
----
+<section class="cv-section cv-links">
+
+### Quick Links
+[ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com) · [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor) · [ArtStation](https://www.artstation.com/nistorandrei) · [Fab](https://www.fab.com/sellers/IANistor)
+
+</section>
+
+<section class="cv-section cv-profile">
 
 ## Profile
 
 Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal Engine and Snowdrop workflows, procedural content, and performance-optimized real-time visuals. Proven track record of developing tools, destruction systems, and gameplay-integrated visual solutions while mentoring teams, establishing best practices, and creating clear documentation to scale production across disciplines.
 
----
+</section>
+
+<section class="cv-section cv-skills">
 
 ## Core Skills
 
@@ -35,7 +56,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Problem solving
 {: .cv-core-skills}
 
----
+</section>
+
+<section class="cv-section cv-experience">
 
 ## Professional Experience
 
@@ -130,7 +153,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Coordinated the role across other studios and helped onboard other Content Validators.
 - Provided reports to the Tech Art team.
 
----
+</section>
+
+<section class="cv-section cv-projects">
 
 ## Selected Projects
 
@@ -142,7 +167,9 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Assassin's Creed Black Flag
 - Assassin's Creed III
 
----
+</section>
+
+<section class="cv-section cv-links-bottom">
 
 ## Links
 
@@ -150,4 +177,18 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - [ArtStation](https://www.artstation.com/nistorandrei)
 - [Fab](https://www.fab.com/sellers/IANistor)
 
----
+</section>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('cv-root');
+  const select = document.getElementById('cv-variation-select');
+  const classes = Array.from({ length: 10 }, (_, i) => `cv-variant-v${i + 1}`);
+  select.addEventListener('change', (event) => {
+    root.classList.remove(...classes);
+    root.classList.add(event.target.value);
+  });
+});
+</script>
