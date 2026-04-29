@@ -990,7 +990,11 @@ a:hover {
 
 .project-card-title a {
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);
+}
+
+.project-card-title a:hover {
+  color: var(--accent-2);
 }
 
 .project-card-meta {
