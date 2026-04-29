@@ -1,4 +1,8 @@
-<figure class="image-compare" data-image-compare>
+<figure
+  class="image-compare"
+  data-image-compare
+  style="--compare-position: {{ include.position | default: 50 }}%;"
+>
   <img
     class="image-compare-base"
     src="{{ include.before | relative_url }}"
@@ -19,6 +23,7 @@
     min="0"
     max="100"
     value="{{ include.position | default: 50 }}"
+    oninput="this.closest('[data-image-compare]').style.setProperty('--compare-position', this.value + '%')"
     aria-label="{{ include.label | default: 'Drag to compare images' }}"
   >
 </figure>
