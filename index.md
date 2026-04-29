@@ -66,7 +66,6 @@ title: Home
   <div class="section-head">
     <div>
       <h2>Blog</h2>
-      <p class="section-subtitle">Showing the latest 3 posts.</p>
     </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
@@ -134,7 +133,6 @@ title: Home
         {% else %}
           <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
         {% endif %}
-        <p class="eyebrow">Tool</p>
         <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
         <p>{{ tool.summary }}</p>
       </article>
