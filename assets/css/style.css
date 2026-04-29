@@ -1406,9 +1406,12 @@ a:hover {
   position: absolute;
   inset: 0;
   clip-path: inset(0 calc(100% - var(--compare-position)) 0 0);
+  pointer-events: none;
 }
 
 .image-compare-overlay img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
