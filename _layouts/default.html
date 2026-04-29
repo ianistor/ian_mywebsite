@@ -59,6 +59,8 @@
       const root = document.documentElement;
       const siteHeader = document.querySelector('.site-header');
       const floatingHeader = document.querySelector('.floating-header');
+      const pageScroll = document.querySelector('.page-scroll');
+      const isHomePage = {{ page.url == '/' | jsonify }};
       const mobileCondenseBreakpoint = window.matchMedia('(max-width: 860px)');
 
       const syncHeaderZoneHeight = () => {
@@ -72,12 +74,14 @@
 
       const syncMobileBrandState = () => {
         if (!floatingHeader) return;
-        const shouldCondense = mobileCondenseBreakpoint.matches && window.scrollY > 12;
+        const scrollPosition = pageScroll ? pageScroll.scrollTop : window.scrollY;
+        const shouldCondense = mobileCondenseBreakpoint.matches && (scrollPosition > 12 || !isHomePage);
         floatingHeader.classList.toggle('is-condensed', shouldCondense);
       };
 
       syncMobileBrandState();
-      window.addEventListener('scroll', syncMobileBrandState, { passive: true });
+      const mobileScrollTarget = pageScroll || window;
+      mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
       mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
