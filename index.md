@@ -159,7 +159,7 @@ title: Home
       </li>
       <li>
         <span class="contact-icon contact-icon-artstation" aria-hidden="true">
-          <img src="{{ '/assets/images/logos/artstation_png_black.png' | relative_url }}" alt="" class="contact-icon-img" loading="lazy" decoding="async">
+          <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img" loading="lazy" decoding="async">
         </span>
         <strong>ArtStation:</strong>
         <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">artstation.com/nistorandrei</a>
