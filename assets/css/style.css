@@ -1469,13 +1469,23 @@ a:hover {
 }
 
 .cv-contact-icon {
-  width: 5rem;
-  height: 5rem;
-  font-size: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
   border-radius: 8px;
 }
 
 .cv-contact-icon-img {
-  width: 3.8rem;
-  height: 3.8rem;
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+
+.experience-head .company-logo-inline {
+  width: 200px !important;
+  height: 200px !important;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
 }
