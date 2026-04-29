@@ -16,6 +16,29 @@ title: Home
   </div>
 </section>
 
+<section class="section-block landing-variations">
+  <div class="section-head landing-variations-head">
+    <div>
+      <h2>Landing Page Variations</h2>
+      <p class="section-subtitle">Variation 5 kept as the preferred landing direction.</p>
+    </div>
+    <label class="variation-select-label" for="landing-variation-select">Layout</label>
+    <select id="landing-variation-select" class="variation-select" aria-label="Choose landing page variation">
+      <option value="v5">Variation 5 · CTA cards</option>
+    </select>
+  </div>
+
+  <div class="landing-variation-gallery">
+    <div class="landing-variation-panel is-active" data-variation="v5">
+      <div class="variation-grid variation-grid-cta">
+        <article class="card variation-card cta-card"><h3><a href="{{ '/blog/' | relative_url }}">Open Blog</a></h3><a class="button secondary" href="{{ '/blog/' | relative_url }}">View posts</a></article>
+        <article class="card variation-card cta-card"><h3><a href="{{ '/projects/' | relative_url }}">Open Projects</a></h3><a class="button secondary" href="{{ '/projects/' | relative_url }}">View projects</a></article>
+        <article class="card variation-card cta-card"><h3><a href="{{ '/tools/' | relative_url }}">Open Tools</a></h3><a class="button secondary" href="{{ '/tools/' | relative_url }}">View tools</a></article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-block">
   <div class="section-head">
     <div>
@@ -69,6 +92,25 @@ title: Home
     </a>
   {% endif %}
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const variationSelect = document.getElementById('landing-variation-select');
+    const variationPanels = document.querySelectorAll('.landing-variation-panel');
+    if (!variationSelect || !variationPanels.length) return;
+
+    const activateVariation = (variation) => {
+      variationPanels.forEach((panel) => {
+        panel.classList.toggle('is-active', panel.dataset.variation === variation);
+      });
+    };
+
+    activateVariation(variationSelect.value);
+    variationSelect.addEventListener('change', function (event) {
+      activateVariation(event.target.value);
+    });
+  });
+</script>
 
 <section class="section-block">
   <div class="section-head">
