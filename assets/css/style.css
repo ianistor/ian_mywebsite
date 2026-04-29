@@ -981,7 +981,7 @@ a:hover {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.28s ease, filter 0.28s ease;
+  transition: transform 0.56s ease, filter 0.56s ease;
 }
 
 .project-row-image.project-text-placeholder {
@@ -1025,7 +1025,7 @@ a:hover {
   font-weight: 500;
   opacity: 0;
   transform: translateY(6px);
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition: opacity 0.44s ease, transform 0.44s ease;
   pointer-events: none;
 }
 
