@@ -8,8 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="alternate icon" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -26,7 +25,10 @@
           <label class="sr-only" for="theme-select">Theme</label>
           <select id="theme-select" aria-label="Theme">
             <option value="midnight">Dark</option>
-            <option value="paper">White</option>
+            <option value="paper">Paper</option>
+            <option value="vscode">VS Code</option>
+            <option value="houdini">Houdini</option>
+            <option value="ember">Ember</option>
           </select>
         </div>
       </div>
@@ -61,7 +63,7 @@
       const root = document.documentElement;
       const themeParam = new URLSearchParams(window.location.search).get('theme');
       const themeStorageKey = 'site-theme';
-      const validThemes = ['midnight', 'paper'];
+      const validThemes = ['midnight', 'paper', 'vscode', 'houdini', 'ember'];
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
