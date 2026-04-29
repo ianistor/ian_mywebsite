@@ -308,6 +308,49 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.landing-variations-head {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.variation-select-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.variation-select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  min-width: 260px;
+}
+
+.landing-variation-gallery {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+}
+
+.landing-variation-panel { display: none; }
+.landing-variation-panel.is-active { display: block; }
+
+.variation-grid { display: grid; gap: 1rem; }
+.variation-grid-3col,
+.variation-grid-minimal,
+.variation-grid-cta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.variation-grid-spotlight { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+.variation-stack { display: grid; gap: 1rem; }
+.variation-grid-strips { grid-template-columns: 1fr; }
+.variation-card h3 { margin-top: 0.1rem; }
+.variation-spotlight { min-height: 100%; }
+.strip-card { display: flex; justify-content: space-between; align-items: center; }
+.compact { text-align: center; padding: 1.8rem 1rem; }
+.cta-card .button { margin-top: 0.4rem; width: fit-content; }
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1090,6 +1133,13 @@ a:hover {
   .card-grid,
   .card-grid.two-up,
   .post-pagination {
+    grid-template-columns: 1fr;
+  }
+
+  .variation-grid-3col,
+  .variation-grid-minimal,
+  .variation-grid-cta,
+  .variation-grid-spotlight {
     grid-template-columns: 1fr;
   }
 
