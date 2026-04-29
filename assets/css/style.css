@@ -657,6 +657,10 @@ a:hover {
   border: 1px solid var(--code-border);
 }
 
+.code-block pre {
+  padding-top: 3rem;
+}
+
 .prose .heading-anchor {
   margin-left: 0.5rem;
   color: var(--muted);
@@ -712,6 +716,7 @@ a:hover {
 .code-block {
   position: relative;
   margin: 1.5rem 0;
+  clear: both;
 }
 
 .code-language-badge {
