@@ -914,7 +914,7 @@ a:hover {
 .projects-row {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(220px, 260px);
+  grid-auto-columns: minmax(280px, 340px);
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
@@ -931,6 +931,7 @@ a:hover {
 }
 
 .project-row-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -938,17 +939,18 @@ a:hover {
 
 .project-row-image {
   width: 100%;
-  aspect-ratio: 7 / 8;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   transition: transform 0.28s ease;
 }
 
 .project-row-image.project-text-placeholder {
-  aspect-ratio: 7 / 8;
+  aspect-ratio: 4 / 5;
 }
 
-.project-row-card:hover .project-row-image {
+.project-row-card:hover .project-row-image,
+.project-row-card:focus-within .project-row-image {
   transform: scale(1.02);
 }
 
@@ -967,7 +969,26 @@ a:hover {
 }
 
 .project-card-summary {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(8, 10, 15, 0.78);
+  backdrop-filter: blur(2px);
   color: var(--muted);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  pointer-events: none;
+}
+
+.project-row-card:hover .project-card-summary,
+.project-row-card:focus-within .project-card-summary {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-row-dots {
