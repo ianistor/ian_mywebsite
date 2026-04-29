@@ -457,6 +457,11 @@ a:hover {
   vertical-align: -0.1em;
 }
 
+.fab-logo-large {
+  width: 1.35em;
+  height: 1.35em;
+}
+
 .project-link-artstation .project-link-artstation-logo {
   filter: none;
 }
