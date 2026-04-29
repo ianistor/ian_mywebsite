@@ -905,6 +905,28 @@ a:hover {
   position: relative;
 }
 
+.projects-row-wrap::after {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  right: 0;
+  width: 84px;
+  height: calc(100% - 2.6rem);
+  background: linear-gradient(to left, var(--bg) 0%, rgba(8, 10, 15, 0) 100%);
+  pointer-events: none;
+}
+
+.projects-row-wrap::before {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+  width: 84px;
+  height: calc(100% - 2.6rem);
+  background: linear-gradient(to right, var(--bg) 0%, rgba(8, 10, 15, 0) 100%);
+  pointer-events: none;
+}
+
 .projects-row-hint {
   color: var(--muted);
   font-size: 0.9rem;
@@ -914,7 +936,7 @@ a:hover {
 .projects-row {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(220px, 260px);
+  grid-auto-columns: minmax(280px, 340px);
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 0.5rem;
@@ -936,20 +958,27 @@ a:hover {
   gap: 0.5rem;
 }
 
+.project-row-media {
+  position: relative;
+  overflow: hidden;
+}
+
 .project-row-image {
   width: 100%;
-  aspect-ratio: 7 / 8;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.28s ease;
+  transition: transform 0.28s ease, filter 0.28s ease;
 }
 
 .project-row-image.project-text-placeholder {
-  aspect-ratio: 7 / 8;
+  aspect-ratio: 4 / 5;
 }
 
-.project-row-card:hover .project-row-image {
+.project-row-card:hover .project-row-image,
+.project-row-card:focus-within .project-row-image {
   transform: scale(1.02);
+  filter: brightness(0.42);
 }
 
 .project-row-copy h3 {
@@ -967,7 +996,26 @@ a:hover {
 }
 
 .project-card-summary {
-  color: var(--muted);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  pointer-events: none;
+}
+
+.project-row-card:hover .project-card-summary,
+.project-row-card:focus-within .project-card-summary {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-row-dots {
