@@ -228,9 +228,10 @@
         let rafId = null;
         let lastTimestamp = 0;
         let isPaused = false;
-        const pixelsPerSecond = 18;
+        const pixelsPerSecond = 28;
         const restartDelayMs = 1000;
         let restartAt = 0;
+        let hasClonedCards = false;
 
         const step = (timestamp) => {
           if (!lastTimestamp) lastTimestamp = timestamp;
@@ -244,6 +245,16 @@
 
           const maxScrollLeft = projectsRow.scrollWidth - projectsRow.clientWidth;
           if (maxScrollLeft <= 0) {
+            if (!hasClonedCards) {
+              const cards = Array.from(projectsRow.querySelectorAll('.project-row-card'));
+              cards.forEach((card) => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                clone.tabIndex = -1;
+                projectsRow.appendChild(clone);
+              });
+              hasClonedCards = true;
+            }
             rafId = window.requestAnimationFrame(step);
             return;
           }
