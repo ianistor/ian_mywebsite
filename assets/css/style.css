@@ -1111,23 +1111,30 @@ a:hover {
     border-radius: 20px;
     flex-direction: row;
     align-items: center;
+    flex-wrap: nowrap;
     gap: 0.55rem;
     padding: 0.6rem 0.75rem;
   }
 
   .site-nav {
     width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
     flex-wrap: nowrap;
     gap: 0.15rem;
   }
 
   .site-nav a {
-    padding: 0.3rem 0.55rem;
-    font-size: 0.82rem;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    padding: 0.25rem 0.45rem;
+    font-size: clamp(0.62rem, 1.45vw, 0.8rem);
   }
 
   .brand {
-    font-size: 0.94rem;
+    flex: 0 0 auto;
+    font-size: clamp(0.72rem, 1.75vw, 0.92rem);
   }
 }
 
