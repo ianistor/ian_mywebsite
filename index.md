@@ -16,25 +16,46 @@ title: Home
   </div>
 </section>
 
-<section class="section-block landing-variations">
-  <div class="section-head landing-variations-head">
-    <div>
-      <h2>Landing Page Variations</h2>
-      <p class="section-subtitle">Variation 5 kept as the preferred landing direction.</p>
-    </div>
-    <label class="variation-select-label" for="landing-variation-select">Layout</label>
-    <select id="landing-variation-select" class="variation-select" aria-label="Choose landing page variation">
-      <option value="v5">Variation 5 · CTA cards</option>
-    </select>
+<section class="section-block">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
 
-  <div class="landing-variation-gallery">
-    <div class="landing-variation-panel is-active" data-variation="v5">
-      <div class="variation-grid variation-grid-cta">
-        <article class="card variation-card cta-card"><h3><a href="{{ '/blog/' | relative_url }}">Open Blog</a></h3><a class="button secondary" href="{{ '/blog/' | relative_url }}">View posts</a></article>
-        <article class="card variation-card cta-card"><h3><a href="{{ '/projects/' | relative_url }}">Open Projects</a></h3><a class="button secondary" href="{{ '/projects/' | relative_url }}">View projects</a></article>
-        <article class="card variation-card cta-card"><h3><a href="{{ '/tools/' | relative_url }}">Open Tools</a></h3><a class="button secondary" href="{{ '/tools/' | relative_url }}">View tools</a></article>
-      </div>
+  <div class="projects-row-wrap">
+    <div class="projects-row-hint">Scroll for more</div>
+
+    <div class="projects-row">
+      {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
+      {% for project in sorted_projects %}
+        <article class="project-row-card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
+          {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
+          {% if project.show_text_placeholder == true or project.image == blank %}
+            <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% else %}
+            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
+          {% endif %}
+          <div class="project-row-copy">
+            <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+
+            {% if project.company or project.role %}
+              <p class="meta project-card-meta">
+                {% if project.company %}{{ project.company }}{% endif %}
+                {% if project.company and project.role %} · {% endif %}
+                {% if project.role %}{{ project.role }}{% endif %}
+              </p>
+            {% endif %}
+
+            <p class="project-card-summary">{{ project.summary }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="projects-row-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
     </div>
   </div>
 </section>
@@ -93,25 +114,6 @@ title: Home
   {% endif %}
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const variationSelect = document.getElementById('landing-variation-select');
-    const variationPanels = document.querySelectorAll('.landing-variation-panel');
-    if (!variationSelect || !variationPanels.length) return;
-
-    const activateVariation = (variation) => {
-      variationPanels.forEach((panel) => {
-        panel.classList.toggle('is-active', panel.dataset.variation === variation);
-      });
-    };
-
-    activateVariation(variationSelect.value);
-    variationSelect.addEventListener('change', function (event) {
-      activateVariation(event.target.value);
-    });
-  });
-</script>
-
 <section class="section-block">
   <div class="section-head">
     <h2>Tools</h2>
@@ -135,50 +137,6 @@ title: Home
         <p>{{ tool.summary }}</p>
       </article>
     {% endfor %}
-  </div>
-</section>
-
-<section class="section-block">
-  <div class="section-head">
-    <h2>Projects</h2>
-    <a href="{{ '/projects/' | relative_url }}">See all</a>
-  </div>
-
-  <div class="projects-row-wrap">
-    <div class="projects-row-hint">Scroll for more</div>
-
-    <div class="projects-row">
-      {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
-      {% for project in sorted_projects %}
-        <article class="project-row-card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
-          {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
-          {% if project.show_text_placeholder == true or project.image == blank %}
-            <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">
-              <span>{{ placeholder_label }}</span>
-            </div>
-          {% else %}
-            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
-          {% endif %}
-          <div class="project-row-copy">
-            <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-
-            {% if project.company or project.role %}
-              <p class="meta project-card-meta">
-                {% if project.company %}{{ project.company }}{% endif %}
-                {% if project.company and project.role %} · {% endif %}
-                {% if project.role %}{{ project.role }}{% endif %}
-              </p>
-            {% endif %}
-
-            <p class="project-card-summary">{{ project.summary }}</p>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-
-    <div class="projects-row-dots" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
   </div>
 </section>
 
