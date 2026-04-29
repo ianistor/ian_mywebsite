@@ -1,15 +1,15 @@
 :root {
-  --bg: #0d1016;
-  --panel: #141924;
-  --panel-2: #1b2130;
+  --bg: #080a0f;
+  --panel: #0f131d;
+  --panel-2: #161c2a;
   --text: #eef2f7;
   --muted: #a2adbd;
-  --line: #283142;
+  --line: #222b3c;
   --accent: #8cc2ff;
   --accent-2: #b9dbff;
-  --header-bg: rgba(11, 15, 22, 0.75);
-  --surface-glass: rgba(20, 25, 36, 0.95);
-  --hero-glow: #162033;
+  --header-bg: rgba(6, 9, 14, 0.88);
+  --surface-glass: rgba(13, 17, 26, 0.95);
+  --hero-glow: #0d1423;
   --code-bg: #0b1320;
   --code-inline-bg: #111827;
   --code-border: #2a3448;
@@ -1228,4 +1228,15 @@ a:hover {
   border-radius: 4px;
   font-size: 0.75rem;
   flex-shrink: 0;
+}
+
+.contact-icon-artstation {
+  border: 0;
+}
+
+.contact-icon-artstation img {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  filter: grayscale(1) brightness(2.6);
 }
