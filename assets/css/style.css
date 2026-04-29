@@ -22,6 +22,7 @@
   --code-meta: #c4b5fd;
 
   --max: 1120px;
+  --header-gap: 10px;
 }
 
 * { box-sizing: border-box; }
@@ -96,10 +97,12 @@ a:hover {
 
 .site-header {
   position: sticky;
-  top: 1rem;
+  top: 0;
   z-index: 60;
   background: transparent;
   border: 0;
+  padding-top: 10px;
+  margin-bottom: var(--header-gap);
 }
 
 .site-footer {
@@ -1235,4 +1238,9 @@ a:hover {
   height: 0.95rem;
   display: block;
   object-fit: contain;
+}
+
+
+[id] {
+  scroll-margin-top: 110px;
 }
