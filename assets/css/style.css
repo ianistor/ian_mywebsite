@@ -100,10 +100,11 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: transparent;
+  background: var(--bg);
   border: 0;
   padding-top: 10px;
   margin-bottom: var(--header-gap);
+  isolation: isolate;
 }
 
 .site-footer {
@@ -374,7 +375,7 @@ a:hover {
 }
 
 .button.secondary {
-  background: transparent;
+  background: var(--bg);
   color: var(--text);
   border: 1px solid var(--line);
 }
@@ -577,7 +578,7 @@ a:hover {
 }
 
 .prose pre code {
-  background: transparent;
+  background: var(--bg);
   padding: 0;
   border-radius: 0;
 }
