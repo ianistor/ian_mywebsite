@@ -910,9 +910,9 @@ a:hover {
   position: absolute;
   top: 1.8rem;
   right: 0;
-  width: 56px;
+  width: 68px;
   height: calc(100% - 2.6rem);
-  background: linear-gradient(to left, rgba(8, 10, 15, 0.7) 0%, rgba(8, 10, 15, 0) 100%);
+  background: linear-gradient(to left, rgba(8, 10, 15, 0.82) 0%, rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -922,9 +922,9 @@ a:hover {
   position: absolute;
   top: 1.8rem;
   left: 0;
-  width: 56px;
+  width: 68px;
   height: calc(100% - 2.6rem);
-  background: linear-gradient(to right, rgba(8, 10, 15, 0.7) 0%, rgba(8, 10, 15, 0) 100%);
+  background: linear-gradient(to right, rgba(8, 10, 15, 0.82) 0%, rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
   z-index: 2;
 }

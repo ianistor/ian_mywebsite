@@ -223,26 +223,16 @@
       const initProjectsAutoScroll = () => {
         const projectsRow = document.querySelector('.projects-row:not(.blog-row)');
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        let rafId = null;
-        let lastTimestamp = 0;
         let isPaused = false;
-        const pixelsPerSecond = 28;
-        const restartDelayMs = 1000;
-        let restartAt = 0;
+        const stepPx = 1;
+        const intervalMs = 28;
+        const restartDelayMs = 900;
         let hasClonedCards = false;
+        let intervalId = null;
+        let restartTimeoutId = null;
 
-        const step = (timestamp) => {
-          if (!lastTimestamp) lastTimestamp = timestamp;
-          const deltaMs = timestamp - lastTimestamp;
-          lastTimestamp = timestamp;
-
-          if (isPaused) {
-            rafId = window.requestAnimationFrame(step);
-            return;
-          }
-
+        const tick = () => {
+          if (isPaused) return;
           const maxScrollLeft = projectsRow.scrollWidth - projectsRow.clientWidth;
           if (maxScrollLeft <= 0) {
             if (!hasClonedCards) {
@@ -255,27 +245,23 @@
               });
               hasClonedCards = true;
             }
-            rafId = window.requestAnimationFrame(step);
             return;
           }
 
           if (projectsRow.scrollLeft >= maxScrollLeft - 1) {
-            if (!restartAt) restartAt = timestamp + restartDelayMs;
-            if (timestamp >= restartAt) {
-              projectsRow.scrollLeft = 0;
-              restartAt = 0;
+            if (!restartTimeoutId) {
+              restartTimeoutId = window.setTimeout(() => {
+                projectsRow.scrollLeft = 0;
+                restartTimeoutId = null;
+              }, restartDelayMs);
             }
-          } else {
-            const deltaPx = (deltaMs / 1000) * pixelsPerSecond;
-            projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + deltaPx);
+            return;
           }
-
-          rafId = window.requestAnimationFrame(step);
+          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + stepPx);
         };
 
         const resume = () => {
           isPaused = false;
-          lastTimestamp = 0;
         };
 
         projectsRow.addEventListener('mouseenter', () => { isPaused = true; });
@@ -287,9 +273,10 @@
         projectsRow.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
         projectsRow.addEventListener('touchend', resume, { passive: true });
 
-        rafId = window.requestAnimationFrame(step);
+        intervalId = window.setInterval(tick, intervalMs);
         window.addEventListener('beforeunload', () => {
-          if (rafId) window.cancelAnimationFrame(rafId);
+          if (intervalId) window.clearInterval(intervalId);
+          if (restartTimeoutId) window.clearTimeout(restartTimeoutId);
         });
       };
 
