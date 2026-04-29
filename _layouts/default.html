@@ -15,7 +15,10 @@
   <header class="site-header">
     <div class="container">
       <div class="floating-header" role="navigation" aria-label="Main navigation">
-        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-full">{{ site.title }}</span>
+          <span class="brand-short" aria-hidden="true">IAN • TA</span>
+        </a>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
           {% for item in site.nav %}
             <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
@@ -55,6 +58,8 @@
       const headerSearchResults = document.getElementById('header-search-results');
       const root = document.documentElement;
       const siteHeader = document.querySelector('.site-header');
+      const floatingHeader = document.querySelector('.floating-header');
+      const mobileCondenseBreakpoint = window.matchMedia('(max-width: 860px)');
 
       const syncHeaderZoneHeight = () => {
         if (!siteHeader) return;
@@ -64,6 +69,16 @@
 
       syncHeaderZoneHeight();
       window.addEventListener('resize', syncHeaderZoneHeight);
+
+      const syncMobileBrandState = () => {
+        if (!floatingHeader) return;
+        const shouldCondense = mobileCondenseBreakpoint.matches && window.scrollY > 12;
+        floatingHeader.classList.toggle('is-condensed', shouldCondense);
+      };
+
+      syncMobileBrandState();
+      window.addEventListener('scroll', syncMobileBrandState, { passive: true });
+      mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
