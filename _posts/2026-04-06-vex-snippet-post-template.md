@@ -107,6 +107,33 @@ vector uvw = relbbox(0, @P);
   2. `youtube_id` thumbnail
   3. default placeholder
 - Inline images are zoomable via lightbox when clicked.
+- Before/after image comparisons are available with an include-based slider.
+
+### Before/after comparison slider
+
+Use this snippet:
+
+```liquid
+{% raw %}{% include image-compare.html
+  before='/assets/images/projectcovers/TCTD2.png'
+  before_alt='The Division 2 cover'
+  after='/assets/images/projectcovers/TCTD2WONY.png'
+  after_alt='The Division 2: Warlords of New York cover'
+  position=50
+  label='Slide to compare the two covers'
+%}{% endraw %}
+```
+
+Example output:
+
+{% include image-compare.html
+  before='/assets/images/projectcovers/TCTD2.png'
+  before_alt='The Division 2 cover'
+  after='/assets/images/projectcovers/TCTD2WONY.png'
+  after_alt='The Division 2: Warlords of New York cover'
+  position=50
+  label='Slide to compare the two covers'
+%}
 
 ![Example image](https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233)
 
