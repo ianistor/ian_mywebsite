@@ -220,6 +220,68 @@
         });
       });
 
+      const initProjectsAutoScroll = () => {
+        const projectsRow = document.querySelector('.projects-row:not(.blog-row)');
+        if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
+        let isPaused = false;
+        const stepPx = 1;
+        const intervalMs = 28;
+        const restartDelayMs = 900;
+        let hasClonedCards = false;
+        let intervalId = null;
+        let restartTimeoutId = null;
+
+        const tick = () => {
+          if (isPaused) return;
+          const maxScrollLeft = projectsRow.scrollWidth - projectsRow.clientWidth;
+          if (maxScrollLeft <= 0) {
+            if (!hasClonedCards) {
+              const cards = Array.from(projectsRow.querySelectorAll('.project-row-card'));
+              cards.forEach((card) => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                clone.tabIndex = -1;
+                projectsRow.appendChild(clone);
+              });
+              hasClonedCards = true;
+            }
+            return;
+          }
+
+          if (projectsRow.scrollLeft >= maxScrollLeft - 1) {
+            if (!restartTimeoutId) {
+              restartTimeoutId = window.setTimeout(() => {
+                projectsRow.scrollLeft = 0;
+                restartTimeoutId = null;
+              }, restartDelayMs);
+            }
+            return;
+          }
+          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + stepPx);
+        };
+
+        const resume = () => {
+          isPaused = false;
+        };
+
+        projectsRow.addEventListener('mouseenter', () => { isPaused = true; });
+        projectsRow.addEventListener('mouseleave', resume);
+        projectsRow.addEventListener('focusin', () => { isPaused = true; });
+        projectsRow.addEventListener('focusout', () => {
+          if (!projectsRow.contains(document.activeElement)) resume();
+        });
+        projectsRow.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+        projectsRow.addEventListener('touchend', resume, { passive: true });
+
+        intervalId = window.setInterval(tick, intervalMs);
+        window.addEventListener('beforeunload', () => {
+          if (intervalId) window.clearInterval(intervalId);
+          if (restartTimeoutId) window.clearTimeout(restartTimeoutId);
+        });
+      };
+
+      initProjectsAutoScroll();
+
       const autoLinkTextNodes = (root) => {
         if (!root) return;
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
