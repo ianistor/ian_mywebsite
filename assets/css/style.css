@@ -969,9 +969,8 @@ a:hover {
 .hero-eyebrow,
 .hero-title,
 .hero-lead {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: heroTextReveal 0.9s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-eyebrow {
@@ -994,9 +993,8 @@ a:hover {
 .prose,
 .projects-row-wrap,
 .link-row {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: pageReveal 0.85s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .page-header { animation-delay: 0.05s; }
@@ -1007,6 +1005,29 @@ a:hover {
 .prose { animation-delay: 0.18s; }
 .projects-row-wrap { animation-delay: 0.24s; }
 .link-row { animation-delay: 0.16s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-lead {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: heroTextReveal 0.9s ease-out forwards;
+  }
+
+  .page-header,
+  .section-block,
+  .card-grid,
+  .tag-cloud,
+  .list-stack,
+  .prose,
+  .projects-row-wrap,
+  .link-row {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: pageReveal 0.85s ease-out forwards;
+  }
+}
 
 @keyframes heroTextReveal {
   from {
