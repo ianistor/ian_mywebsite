@@ -152,9 +152,15 @@ a:hover {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
+}
+
+.brand-short {
+  display: none;
 }
 
 .site-nav {
@@ -174,17 +180,6 @@ a:hover {
 .site-nav a:hover {
   color: var(--text);
   background: var(--panel-2);
-}
-
-
-.header-contact-button {
-  color: var(--text) !important;
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-}
-
-.header-contact-button:hover {
-  background: var(--panel);
 }
 
 .nav-toggle,
@@ -1150,6 +1145,14 @@ a:hover {
   .brand {
     flex: 0 0 auto;
     font-size: clamp(0.72rem, 1.75vw, 0.92rem);
+  }
+
+  .floating-header.is-condensed .brand-full {
+    display: none;
+  }
+
+  .floating-header.is-condensed .brand-short {
+    display: inline;
   }
 }
 
