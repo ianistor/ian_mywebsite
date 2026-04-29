@@ -182,6 +182,10 @@ a:hover {
   background: var(--panel-2);
 }
 
+.header-contact-button {
+  flex-shrink: 0;
+}
+
 .nav-toggle,
 .header-controls,
 .header-search {
@@ -1252,12 +1256,18 @@ a:hover {
     font-size: clamp(0.72rem, 1.75vw, 0.92rem);
   }
 
+  .brand-full,
   .floating-header.is-condensed .brand-full {
     display: none;
   }
 
+  .brand-short,
   .floating-header.is-condensed .brand-short {
     display: inline;
+  }
+
+  .header-contact-button {
+    display: none;
   }
 }
 
