@@ -330,6 +330,7 @@
         });
         projectsRow.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
         projectsRow.addEventListener('touchend', resume, { passive: true });
+        projectsRow.addEventListener('touchcancel', resume, { passive: true });
         projectsRow.addEventListener('scroll', () => {
           if (!projectsRowWrap) return;
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
