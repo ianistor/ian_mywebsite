@@ -12,7 +12,7 @@ Quick Links
 [ioan.andrei.nistor@gmail.com](mailto:ioan.andrei.nistor@gmail.com)  
 [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)  
 [ArtStation](https://www.artstation.com/nistorandrei)  
-[Fab](https://www.fab.com/sellers/IANistor)
+<img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo"> [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
 
@@ -148,6 +148,6 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 - [LinkedIn](https://www.linkedin.com/in/ioan-andreinistor)
 - [ArtStation](https://www.artstation.com/nistorandrei)
-- [Fab](https://www.fab.com/sellers/IANistor)
+- <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo"> [Fab](https://www.fab.com/sellers/IANistor)
 
 ---
