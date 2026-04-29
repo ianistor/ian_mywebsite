@@ -243,7 +243,10 @@
           }
 
           const maxScrollLeft = projectsRow.scrollWidth - projectsRow.clientWidth;
-          if (maxScrollLeft <= 0) return;
+          if (maxScrollLeft <= 0) {
+            rafId = window.requestAnimationFrame(step);
+            return;
+          }
 
           if (projectsRow.scrollLeft >= maxScrollLeft - 1) {
             if (!restartAt) restartAt = timestamp + restartDelayMs;

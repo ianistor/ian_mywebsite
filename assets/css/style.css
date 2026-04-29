@@ -914,6 +914,7 @@ a:hover {
   height: calc(100% - 2.6rem);
   background: linear-gradient(to left, var(--bg) 0%, rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
+  z-index: 2;
 }
 
 .projects-row-wrap::before {
@@ -925,6 +926,7 @@ a:hover {
   height: calc(100% - 2.6rem);
   background: linear-gradient(to right, var(--bg) 0%, rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
+  z-index: 2;
 }
 
 .projects-row-hint {
