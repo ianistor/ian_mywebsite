@@ -572,6 +572,12 @@ a:hover {
   border-radius: 6px;
 }
 
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
 .prose img,
 .prose video {
   max-width: 100%;
@@ -655,9 +661,9 @@ a:hover {
 
 
 .prose pre code.hljs {
-  border-radius: 14px;
-  border: 1px solid var(--code-border);
-  padding: 1rem;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 
