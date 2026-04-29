@@ -29,14 +29,17 @@ title: Home
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         <article class="project-row-card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
-          {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
-          {% if project.show_text_placeholder == true or project.image == blank %}
-            <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">
-              <span>{{ placeholder_label }}</span>
-            </div>
-          {% else %}
-            <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
-          {% endif %}
+          <div class="project-row-media">
+            {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
+            {% if project.show_text_placeholder == true or project.image == blank %}
+              <div class="project-row-image project-text-placeholder" aria-label="{{ placeholder_label }}">
+                <span>{{ placeholder_label }}</span>
+              </div>
+            {% else %}
+              <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
+            {% endif %}
+            <p class="project-card-summary">{{ project.summary }}</p>
+          </div>
           <div class="project-row-copy">
             <h3 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
 
@@ -48,7 +51,6 @@ title: Home
               </p>
             {% endif %}
 
-            <p class="project-card-summary">{{ project.summary }}</p>
           </div>
         </article>
       {% endfor %}
