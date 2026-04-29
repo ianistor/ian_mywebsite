@@ -10,7 +10,17 @@
   --header-bg: rgba(11, 15, 22, 0.75);
   --surface-glass: rgba(20, 25, 36, 0.95);
   --hero-glow: #162033;
-  
+  --code-bg: #0b1320;
+  --code-inline-bg: #111827;
+  --code-border: #2a3448;
+  --code-text: #dbe7ff;
+  --code-keyword: #ff7ab8;
+  --code-string: #a5d6ff;
+  --code-number: #d0bcff;
+  --code-title: #8cc2ff;
+  --code-comment: #7f8da6;
+  --code-meta: #c4b5fd;
+
   --max: 1120px;
 }
 
@@ -116,6 +126,31 @@ html { scroll-behavior: smooth; }
   --hero-glow: #283142;
 }
 
+
+:root[data-theme="houdini"] {
+  --bg: #14171f;
+  --panel: #1a1f2a;
+  --panel-2: #242b39;
+  --text: #edf2ff;
+  --muted: #9eabc6;
+  --line: #35405a;
+  --accent: #ff9f43;
+  --accent-2: #ffd08d;
+  --header-bg: rgba(20, 23, 31, 0.84);
+  --surface-glass: rgba(26, 31, 42, 0.95);
+  --hero-glow: #262e43;
+  --code-bg: #1b202c;
+  --code-inline-bg: #242b39;
+  --code-border: #3c4866;
+  --code-text: #e7ecff;
+  --code-keyword: #ffb454;
+  --code-string: #bae67e;
+  --code-number: #d2a6ff;
+  --code-title: #73d0ff;
+  --code-comment: #7f8ea8;
+  --code-meta: #f29f9f;
+}
+
 :root[data-theme="paper"] {
   --bg: #f5f2ea;
   --panel: #ffffff;
@@ -128,6 +163,16 @@ html { scroll-behavior: smooth; }
   --header-bg: rgba(247, 245, 239, 0.82);
   --surface-glass: rgba(255, 255, 255, 0.95);
   --hero-glow: #d7e6ff;
+  --code-bg: #f3f6ff;
+  --code-inline-bg: #e9eefb;
+  --code-border: #ced9f0;
+  --code-text: #1f2733;
+  --code-keyword: #8f2ca8;
+  --code-string: #0f6d3c;
+  --code-number: #7a3e00;
+  --code-title: #2f69c5;
+  --code-comment: #6f7a8f;
+  --code-meta: #b02f5f;
 }
 
 body {
@@ -658,7 +703,7 @@ a:hover {
 }
 
 .prose code {
-  background: #0b1320;
+  background: var(--code-inline-bg);
   padding: 0.15rem 0.35rem;
   border-radius: 6px;
 }
@@ -690,7 +735,7 @@ a:hover {
   margin: 1.25rem 0;
   border-radius: 14px;
   overflow: hidden;
-  background: #0b1320;
+  background: var(--code-inline-bg);
   aspect-ratio: var(--embed-aspect-ratio);
 }
 
@@ -721,9 +766,9 @@ a:hover {
   margin: 0;
   overflow-x: auto;
   padding: 1rem;
-  background: #0b1320;
+  background: var(--code-bg);
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--code-border);
 }
 
 .prose .heading-anchor {
@@ -743,9 +788,40 @@ a:hover {
 
 .prose pre code.hljs {
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--code-border);
   padding: 1rem;
 }
+
+
+.hljs {
+  color: var(--code-text);
+  background: var(--code-bg);
+}
+
+.hljs-comment,
+.hljs-quote { color: var(--code-comment); font-style: italic; }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name { color: var(--code-keyword); }
+.hljs-string,
+.hljs-attr,
+.hljs-regexp,
+.hljs-addition { color: var(--code-string); }
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet { color: var(--code-number); }
+.hljs-title,
+.hljs-section,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-type { color: var(--code-title); }
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-doctag { color: var(--code-meta); }
+.hljs-deletion { color: #ff6b81; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 700; }
 
 .code-block {
   position: relative;
