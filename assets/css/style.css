@@ -1231,12 +1231,12 @@ a:hover {
 }
 
 .contact-icon-artstation {
-  border: 0;
+  color: #13aff0;
 }
 
-.contact-icon-artstation img {
-  width: 1rem;
-  height: 1rem;
+.contact-icon-svg {
+  width: 0.95rem;
+  height: 0.95rem;
   display: block;
-  filter: grayscale(1) brightness(2.6);
+  fill: currentColor;
 }
