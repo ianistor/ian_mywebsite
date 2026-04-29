@@ -916,6 +916,17 @@ a:hover {
   pointer-events: none;
 }
 
+.projects-row-wrap::before {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+  width: 84px;
+  height: calc(100% - 2.6rem);
+  background: linear-gradient(to right, var(--bg) 0%, rgba(8, 10, 15, 0) 100%);
+  pointer-events: none;
+}
+
 .projects-row-hint {
   color: var(--muted);
   font-size: 0.9rem;
