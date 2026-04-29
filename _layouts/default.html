@@ -83,6 +83,60 @@
       const mobileScrollTarget = pageScroll || window;
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
       mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
+
+      const initTouchScrollClickGuard = () => {
+        const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+        if (!coarsePointer) return;
+
+        const state = {
+          x: 0,
+          y: 0,
+          moved: false,
+          active: false,
+          until: 0
+        };
+        const moveThreshold = 8;
+        const guardDurationMs = 350;
+        const guardedSelector = 'a[href], button, [role="button"], [role="link"], .js-clickable-card[data-href]';
+
+        document.addEventListener('touchstart', (event) => {
+          const touch = event.changedTouches && event.changedTouches[0];
+          if (!touch) return;
+          state.x = touch.clientX;
+          state.y = touch.clientY;
+          state.moved = false;
+          state.active = true;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (event) => {
+          if (!state.active) return;
+          const touch = event.changedTouches && event.changedTouches[0];
+          if (!touch) return;
+          const dx = Math.abs(touch.clientX - state.x);
+          const dy = Math.abs(touch.clientY - state.y);
+          if (dx > moveThreshold || dy > moveThreshold) {
+            state.moved = true;
+          }
+        }, { passive: true });
+
+        document.addEventListener('touchend', () => {
+          if (state.active && state.moved) {
+            state.until = Date.now() + guardDurationMs;
+          }
+          state.active = false;
+          state.moved = false;
+        }, { passive: true });
+
+        document.addEventListener('click', (event) => {
+          if (Date.now() > state.until) return;
+          if (!event.target.closest(guardedSelector)) return;
+          event.preventDefault();
+          event.stopPropagation();
+        }, true);
+      };
+
+      initTouchScrollClickGuard();
+
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
