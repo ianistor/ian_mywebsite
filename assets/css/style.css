@@ -931,6 +931,12 @@ a:hover {
   background: linear-gradient(to right, rgba(8, 10, 15, 0.82) 0%, rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
   z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.projects-row-wrap.is-scrolled::before {
+  opacity: 1;
 }
 
 .projects-row-hint {
