@@ -1230,13 +1230,9 @@ a:hover {
   flex-shrink: 0;
 }
 
-.contact-icon-artstation {
-  color: #13aff0;
-}
-
-.contact-icon-svg {
+.contact-icon-img {
   width: 0.95rem;
   height: 0.95rem;
   display: block;
-  fill: currentColor;
+  object-fit: contain;
 }
