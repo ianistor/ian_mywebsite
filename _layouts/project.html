@@ -20,58 +20,79 @@ layout: default
         </iframe>
       {% endif %}
       <div class="project-trailer-overlay" aria-hidden="true"></div>
-      <div class="project-fade-control hero-content-elevated">
-        <label for="project-fade-slider">Black fade</label>
-        <input id="project-fade-slider" type="range" min="0" max="1.2" step="0.02" value="0.6" aria-label="Project trailer black fade strength">
-        <output id="project-fade-slider-value" for="project-fade-slider">0.60</output>
-      </div>
     </section>
   {% endif %}
 
-  <header class="page-header narrow">
-    <h1>{{ page.title }}</h1>
-    <div class="project-fade-control">
-      <label for="project-fade-slider">Black fade</label>
-      <input id="project-fade-slider" type="range" min="0" max="1" step="0.02" value="0.6" aria-label="Project trailer black fade strength" oninput="window.setProjectHeroFade && window.setProjectHeroFade(this.value)">
-      <output id="project-fade-slider-value" for="project-fade-slider">0.60</output>
-    </div>
-
-    <div class="project-header-body">
-      <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
-
-    {% if page.role or page.company %}
-      <p class="meta">
-        {% if page.role %}{{ page.role }}{% endif %}
-        {% if page.company %}
-          <br>
-          <span class="meta-company">@ {{ page.company }}</span>
-        {% endif %}
-      </p>
-    {% endif %}
-
-    {% if page.summary %}
-      <p class="lead">{{ page.summary }}</p>
-    {% endif %}
-
-    {% if page.links %}
-      <div class="link-row">
-        {% for link in page.links %}
-          {% assign normalized_label = link.label | downcase %}
-          <a class="button secondary{% if normalized_label == "artstation" %} project-link-artstation{% endif %}" href="{{ link.url }}">
-            {% if link.logo_path %}
-              <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
-            {% elsif normalized_label == "artstation" %}
-              <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
-            {% endif %}
-            {{ link.label }}
-          </a>
-        {% endfor %}
+  <header class="project-hero-shell">
+    <div class="project-hero-top">
+      <p class="eyebrow">Technical Art</p>
+      <h1>{{ page.title }}</h1>
+      <div class="project-fade-control">
+        <label for="project-fade-slider">Black fade</label>
+        <input id="project-fade-slider" type="range" min="0" max="1" step="0.02" value="0.6" aria-label="Project trailer black fade strength" oninput="window.setProjectHeroFade && window.setProjectHeroFade(this.value)">
+        <output id="project-fade-slider-value" for="project-fade-slider">0.60</output>
       </div>
-    {% endif %}
     </div>
   </header>
 
-  <div class="prose narrow">
-    {{ content }}
-  </div>
+  <section class="project-detail-layout">
+    <aside class="project-sidebar">
+      <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
+
+      {% if page.role %}
+      <div class="project-fact">
+        <h3>Role</h3>
+        <p>{{ page.role }}</p>
+      </div>
+      {% endif %}
+
+      {% if page.company %}
+      <div class="project-fact">
+        <h3>Studio</h3>
+        <p>{{ page.company }}</p>
+      </div>
+      {% endif %}
+
+      {% if page.platforms %}
+      <div class="project-fact">
+        <h3>Platform</h3>
+        <p>{{ page.platforms | join: ' • ' }}</p>
+      </div>
+      {% endif %}
+
+      {% if page.release_year %}
+      <div class="project-fact">
+        <h3>Year</h3>
+        <p>{{ page.release_year }}</p>
+      </div>
+      {% endif %}
+
+      {% if page.project_type %}
+      <div class="project-fact">
+        <h3>Project type</h3>
+        <p>{{ page.project_type }}</p>
+      </div>
+      {% endif %}
+
+      {% if page.links %}
+        <div class="link-row project-links-stack">
+          {% for link in page.links %}
+            {% assign normalized_label = link.label | downcase %}
+            <a class="button secondary{% if normalized_label == "artstation" %} project-link-artstation{% endif %}" href="{{ link.url }}">
+              {% if link.logo_path %}
+                <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
+              {% elsif normalized_label == "artstation" %}
+                <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
+              {% endif %}
+              {{ link.label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </aside>
+
+    <div class="prose project-main-content">
+      {{ content }}
+    </div>
+  </section>
 </article>
