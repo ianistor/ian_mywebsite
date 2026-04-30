@@ -1508,10 +1508,8 @@ a:hover {
 }
 
 .experience-head .company-logo-massive {
-  width: 150px !important;
-  height: 150px !important;
-  min-width: 150px;
-  min-height: 150px;
-  max-width: 150px;
-  max-height: 150px;
+  width: 200px !important;
+  height: auto !important;
+  min-height: 0;
+  max-height: 92px;
 }
