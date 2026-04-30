@@ -3,7 +3,6 @@ layout: project
 title: "The Division 2"
 role: "Technical Artist"
 company: "Massive Entertainment"
-summary: "Procedural environment tools and gameplay-facing VFX work for large-scale production."
 image: "assets/images/projectcovers/TCTD2.png"
 release_year: 2019
 permalink: /projects/division-2/
