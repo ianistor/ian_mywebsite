@@ -8,31 +8,34 @@ permalink: /cv/
 
 ## Senior Technical Artist
 
-<img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Ioan Andrei Nistor profile photo" class="cv-profile-photo" loading="lazy" decoding="async">
-
-Quick Links  
-<ul class="contact-list cv-contact-list cv-quick-links-grid">
-  <li>
-    <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
-    <a href="mailto:ioan.andrei.nistor@gmail.com">ioan.andrei.nistor@gmail.com</a>
-  </li>
-  <li>
-    <span class="contact-icon cv-contact-icon" aria-hidden="true">in</span>
-    <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </li>
-  <li>
-    <span class="contact-icon contact-icon-artstation cv-contact-icon" aria-hidden="true">
-      <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
-    </span>
-    <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">ArtStation</a>
-  </li>
-  <li>
-    <span class="contact-icon cv-contact-icon" aria-hidden="true">
-      <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
-    </span>
-    <a href="https://www.fab.com/sellers/IANistor" target="_blank" rel="noopener noreferrer">Fab</a>
-  </li>
-</ul>
+<div class="cv-intro-row">
+  <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Ioan Andrei Nistor profile photo" class="cv-profile-photo" loading="lazy" decoding="async">
+  <div class="cv-quick-links-wrap">
+    Quick Links  
+    <ul class="contact-list cv-contact-list cv-quick-links-grid">
+      <li>
+        <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
+        <a href="mailto:ioan.andrei.nistor@gmail.com">ioan.andrei.nistor@gmail.com</a>
+      </li>
+      <li>
+        <span class="contact-icon cv-contact-icon" aria-hidden="true">in</span>
+        <a href="https://www.linkedin.com/in/ioan-andreinistor" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </li>
+      <li>
+        <span class="contact-icon contact-icon-artstation cv-contact-icon" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+        </span>
+        <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">ArtStation</a>
+      </li>
+      <li>
+        <span class="contact-icon cv-contact-icon" aria-hidden="true">
+          <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="" class="contact-icon-img cv-contact-icon-img" loading="lazy" decoding="async">
+        </span>
+        <a href="https://www.fab.com/sellers/IANistor" target="_blank" rel="noopener noreferrer">Fab</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 ---
 
@@ -55,6 +58,18 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Problem solving
 {: .cv-core-skills}
 
+### Preffered Stack
+
+<ul class="cv-stack-icons" aria-label="Preffered Stack">
+  <li><img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Houdini</span></li>
+  <li><img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Maya</span></li>
+  <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
+  <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Python</span></li>
+  <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Blender</span></li>
+  <li><img src="https://cdn.myportfolio.com/ffd23b837c275a7a7cd3ce2fc7f69a01/bbfdf86d-a76d-4897-bffa-6f5554118864_rw_1920.png?h=2e83ed5a2fc6deeb98594c8267d6239f" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+  <li><img src="https://icon-icons.com/icons2/3053/PNG/512/autodesk_3dsmax_alt_macos_bigsur_icon_189489.png" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>3ds Max</span></li>
+</ul>
+
 ---
 
 ## Professional Experience
@@ -65,7 +80,12 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Amazon Games</strong></p>
     <p><em>2024 - Current</em></p>
-    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
+    <div class="experience-project-covers">
+      <div class="experience-project-cover project-text-placeholder" aria-label="Unannounced Project">
+        <span>Unannounced Project</span>
+      </div>
+      <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
+    </div>
   </div>
 </div>
 
@@ -183,8 +203,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
       <div class="cv-title-cover project-text-placeholder" aria-label="Unannounced Project">
         <span>Unannounced Project</span>
       </div>
-      <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
-      <span class="cv-title-role">Technical Artist</span>
+      <figcaption>Unannounced Project</figcaption>
     </a>
   </figure>
   <figure class="cv-title-card">
