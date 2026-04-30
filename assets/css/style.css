@@ -217,7 +217,7 @@ a:hover {
   top: 0;
   left: 50%;
   width: 100vw;
-  height: min(56vh, 560px);
+  height: min(62vh, 620px);
   transform: translateX(-50%);
   overflow: hidden;
   pointer-events: none;
@@ -229,16 +229,19 @@ a:hover {
   height: 100%;
   border: 0;
   object-fit: cover;
-  opacity: 0.34;
-  filter: saturate(0.8) contrast(0.9) brightness(0.62);
+  opacity: 0.58;
+  filter: saturate(1.05) contrast(1.02) brightness(0.8);
+  transform: scale(1.06);
 }
 
 .project-trailer-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 20%, rgba(8, 10, 15, 0.1) 0%, rgba(8, 10, 15, 0.78) 65%, rgba(8, 10, 15, 1) 100%),
-    linear-gradient(180deg, rgba(8, 10, 15, 0.45) 0%, rgba(8, 10, 15, 0.92) 86%, rgba(8, 10, 15, 1) 100%);
+    radial-gradient(ellipse at center, rgba(8, 10, 15, 0) 26%, rgba(8, 10, 15, 0.45) 62%, rgba(8, 10, 15, 0.9) 82%, rgba(8, 10, 15, 1) 100%),
+    linear-gradient(180deg, rgba(8, 10, 15, 0.2) 0%, rgba(8, 10, 15, 0.62) 64%, rgba(8, 10, 15, 0.95) 88%, rgba(8, 10, 15, 1) 100%);
+  mask-image: radial-gradient(ellipse at center, black 54%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 54%, transparent 100%);
 }
 
 .hero {
