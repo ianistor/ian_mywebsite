@@ -165,50 +165,86 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 ## Titles I Worked On
 
+{% assign p_unannounced = site.projects | where: "title", "Unannounced Project" | first %}
+{% assign p_nw = site.projects | where: "title", "New World Aeternum" | first %}
+{% assign p_swo = site.projects | where: "title", "Star Wars Outlaws" | first %}
+{% assign p_td2_wony = site.projects | where: "title", "The Division 2 - Warlords of New York" | first %}
+{% assign p_td2 = site.projects | where: "title", "The Division 2" | first %}
+{% assign p_td = site.projects | where: "title", "The Division" | first %}
+{% assign p_acu = site.projects | where: "title", "Assassin's Creed Unity" | first %}
+{% assign p_acbffc = site.projects | where: "title", "Assassin's Creed IV: Black Flag - Freedom Cry DLC" | first %}
+{% assign p_acbf = site.projects | where: "title", "Assassin's Creed IV: Black Flag" | first %}
+{% assign p_ac3 = site.projects | where: "title", "Assassin's Creed III" | first %}
+{% assign p_gr = site.projects | where: "title", "Ghost Recon Future Soldier" | first %}
+
 <div class="cv-title-grid">
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="cv-title-cover">
-    <figcaption>New World Aeternum</figcaption>
+    <a href="{{ p_unannounced.url | relative_url }}" class="cv-title-link">
+      <div class="cv-title-cover project-text-placeholder" aria-label="Unannounced Project">
+        <span>Unannounced Project</span>
+      </div>
+      <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="cv-title-cover">
-    <figcaption>Star Wars Outlaws</figcaption>
+    <a href="{{ p_nw.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="cv-title-cover">
+      <figcaption>New World Aeternum</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
-    <figcaption>The Division 2: Warlords of New York</figcaption>
+    <a href="{{ p_swo.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="cv-title-cover">
+      <figcaption>Star Wars Outlaws</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/TCTD2.png' | relative_url }}" alt="The Division 2 cover" class="cv-title-cover">
-    <figcaption>Tom Clancy's The Division 2</figcaption>
+    <a href="{{ p_td2_wony.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
+      <figcaption>The Division 2: Warlords of New York</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="cv-title-cover">
-    <figcaption>Tom Clancy's The Division</figcaption>
+    <a href="{{ p_td2.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/TCTD2.png' | relative_url }}" alt="The Division 2 cover" class="cv-title-cover">
+      <figcaption>Tom Clancy's The Division 2</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/ACUnity.png' | relative_url }}" alt="Assassin's Creed Unity cover" class="cv-title-cover">
-    <figcaption>Assassin's Creed Unity</figcaption>
+    <a href="{{ p_td.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="cv-title-cover">
+      <figcaption>Tom Clancy's The Division</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/ACBFFC.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
-    <figcaption>Assassin's Creed IV: Black Flag - Freedom Cry DLC</figcaption>
+    <a href="{{ p_acu.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/ACUnity.png' | relative_url }}" alt="Assassin's Creed Unity cover" class="cv-title-cover">
+      <figcaption>Assassin's Creed Unity</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/ACBF.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag cover" class="cv-title-cover">
-    <figcaption>Assassin's Creed IV: Black Flag</figcaption>
+    <a href="{{ p_acbffc.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/ACBFFC.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
+      <figcaption>Assassin's Creed IV: Black Flag - Freedom Cry DLC</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/AC3.png' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
-    <figcaption>Assassin's Creed III</figcaption>
+    <a href="{{ p_acbf.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/ACBF.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag cover" class="cv-title-cover">
+      <figcaption>Assassin's Creed IV: Black Flag</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/GR.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
-    <figcaption>Ghost Recon</figcaption>
+    <a href="{{ p_ac3.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/AC3.png' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
+      <figcaption>Assassin's Creed III</figcaption>
+    </a>
   </figure>
   <figure class="cv-title-card">
-    <img src="{{ '/assets/images/projectcovers/TBD.png' | relative_url }}" alt="Unannounced Amazon Games title cover" class="cv-title-cover">
-    <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
+    <a href="{{ p_gr.url | relative_url }}" class="cv-title-link">
+      <img src="{{ '/assets/images/projectcovers/GR.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
+      <figcaption>Ghost Recon Future Soldier</figcaption>
+    </a>
   </figure>
 </div>
 

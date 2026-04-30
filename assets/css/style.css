@@ -1579,3 +1579,16 @@ a:hover {
   background: linear-gradient(90deg, rgba(255,255,255,0), var(--line) 18%, var(--line) 82%, rgba(255,255,255,0));
   clear: both;
 }
+
+
+.cv-title-link {
+  display: block;
+}
+
+.cv-title-link:hover .cv-title-cover {
+  transform: translateY(-2px);
+}
+
+.cv-title-link .cv-title-cover {
+  transition: transform 0.2s ease;
+}
