@@ -813,6 +813,36 @@
 
       initHeroGeometryAnimation();
 
+      const initProjectTrailerFadeSlider = () => {
+        const projectPage = document.querySelector('.project-page');
+        const slider = document.getElementById('project-fade-slider');
+        const output = document.getElementById('project-fade-slider-value');
+        if (!projectPage || !slider || !output) return;
+
+        const storageKey = 'project-hero-fade-strength';
+        const min = Number(slider.min || 0);
+        const max = Number(slider.max || 1.2);
+
+        const applyValue = (value) => {
+          const numericValue = Number(value);
+          if (!Number.isFinite(numericValue)) return;
+          const clamped = Math.min(max, Math.max(min, numericValue));
+          projectPage.style.setProperty('--project-hero-fade-strength', clamped.toFixed(2));
+          slider.value = clamped.toFixed(2);
+          output.textContent = clamped.toFixed(2);
+        };
+
+        const stored = localStorage.getItem(storageKey);
+        applyValue(stored ?? slider.value);
+
+        slider.addEventListener('input', (event) => {
+          applyValue(event.target.value);
+          localStorage.setItem(storageKey, slider.value);
+        });
+      };
+
+      initProjectTrailerFadeSlider();
+
 
       const initImageCompare = () => {
         const compareBlocks = document.querySelectorAll('[data-image-compare]');
