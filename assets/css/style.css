@@ -1581,14 +1581,48 @@ a:hover {
 }
 
 
+
+.experience-head .company-logo-amazon,
+.experience-head .company-logo-ubisoft {
+  width: 200px !important;
+  height: auto !important;
+  min-height: 0;
+  max-height: 92px;
+}
+
 .cv-title-link {
-  display: block;
+  position: relative;
+  border-radius: 12px;
+}
+
+.cv-title-cover {
+  border-color: var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cv-title-link:hover .cv-title-cover {
-  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 16px rgba(255, 159, 67, 0.28);
 }
 
-.cv-title-link .cv-title-cover {
-  transition: transform 0.2s ease;
+.cv-title-role {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 2.1rem;
+  background: rgba(10, 14, 22, 0.9);
+  border: 1px solid var(--accent);
+  color: var(--accent-2);
+  border-radius: 8px;
+  padding: 0.3rem 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.cv-title-link:hover .cv-title-role {
+  opacity: 1;
+  transform: translateY(0);
 }
