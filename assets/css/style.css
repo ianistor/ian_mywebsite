@@ -1553,7 +1553,7 @@ a:hover {
 .experience-project-covers {
   display: flex;
   gap: 0.6rem;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 0.5rem;
 }
 

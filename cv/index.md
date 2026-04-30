@@ -66,8 +66,8 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
   <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Python</span></li>
   <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Blender</span></li>
-  <li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Snowdrop_logo.png/240px-Snowdrop_logo.png" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Snowdrop</span></li>
-  <li><img src="https://cdn.simpleicons.org/autodesk3dsmax/00A9E0" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>3ds Max</span></li>
+  <li><img src="https://cdn.myportfolio.com/ffd23b837c275a7a7cd3ce2fc7f69a01/bbfdf86d-a76d-4897-bffa-6f5554118864_rw_1920.png?h=2e83ed5a2fc6deeb98594c8267d6239f" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+  <li><img src="https://icon-icons.com/icons2/3053/PNG/512/autodesk_3dsmax_alt_macos_bigsur_icon_189489.png" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>3ds Max</span></li>
 </ul>
 
 ---
