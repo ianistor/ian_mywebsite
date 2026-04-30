@@ -528,6 +528,10 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: min(100%, 30rem);
+  min-height: 200px;
+  float: left;
+  clear: both;
   margin: 1.5rem 0 0.75rem;
 }
 
@@ -540,9 +544,12 @@ a:hover {
 }
 
 .experience-head + ul {
-  margin-top: 0.35rem;
-  margin-left: 4.75rem;
+  min-height: 200px;
+  margin: 1.5rem 0 0.75rem 31rem;
   padding-left: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cv-core-skills {
@@ -1225,9 +1232,17 @@ a:hover {
     columns: 1;
   }
 
+  .experience-head {
+    width: 100%;
+    min-height: 0;
+    float: none;
+  }
+
   .experience-head + ul {
-    margin-left: 1.25rem;
+    min-height: 0;
+    margin: 0.35rem 0 0.75rem 1.25rem;
     padding-left: 1.1rem;
+    display: block;
   }
 }
 
