@@ -24,8 +24,10 @@ layout: default
   {% endif %}
 
   <header class="page-header narrow">
-    <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
     <h1>{{ page.title }}</h1>
+
+    <div class="project-header-body">
+      <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
 
     {% if page.role or page.company %}
       <p class="meta">
@@ -56,6 +58,7 @@ layout: default
         {% endfor %}
       </div>
     {% endif %}
+    </div>
   </header>
 
   <div class="prose narrow">
