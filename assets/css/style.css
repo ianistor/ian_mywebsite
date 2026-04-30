@@ -546,7 +546,7 @@ a:hover {
 
 .experience-head + ul {
   min-height: 200px;
-  margin: 1.5rem 0 0.75rem 29.5rem;
+  margin: 1.5rem 0 0.75rem 28.75rem;
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
@@ -1241,7 +1241,7 @@ a:hover {
 
   .experience-head + ul {
     min-height: 0;
-    margin: 0.35rem 0 0.75rem 1.25rem;
+    margin: 0.35rem 0 0.75rem 0.75rem;
     padding-left: 1.1rem;
     display: block;
   }
@@ -1706,13 +1706,14 @@ a:hover {
 }
 
 .experience-head-copy {
-  text-align: center;
+  text-align: left;
   margin-left: 0;
   width: 100%;
 }
 
 .experience-head {
-  align-items: center;
+  align-items: flex-start;
+  margin-left: -0.75rem;
 }
 
 @media (max-width: 640px) {
