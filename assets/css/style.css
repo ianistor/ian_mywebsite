@@ -1561,6 +1561,17 @@ a:hover {
   margin-top: 0;
 }
 
+.experience-project-cover.project-text-placeholder {
+  padding: 0.2rem;
+  border-radius: 10px;
+}
+
+.experience-project-cover.project-text-placeholder span {
+  font-size: 0.52rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
 @media (max-width: 640px) {
   .cv-quick-links-grid {
     grid-template-columns: 1fr;
@@ -1696,7 +1707,12 @@ a:hover {
 
 .experience-head-copy {
   text-align: center;
-  margin-left: 0.9rem;
+  margin-left: 0;
+  width: 100%;
+}
+
+.experience-head {
+  align-items: center;
 }
 
 @media (max-width: 640px) {
