@@ -79,10 +79,21 @@
         floatingHeader.classList.toggle('is-condensed', shouldCondense);
       };
 
+      const addMediaQueryChangeListener = (queryList, handler) => {
+        if (!queryList || typeof handler !== 'function') return;
+        if (typeof queryList.addEventListener === 'function') {
+          queryList.addEventListener('change', handler);
+          return;
+        }
+        if (typeof queryList.addListener === 'function') {
+          queryList.addListener(handler);
+        }
+      };
+
       syncMobileBrandState();
       const mobileScrollTarget = pageScroll || window;
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
-      mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
+      addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
 
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
@@ -254,10 +265,12 @@
       }
 
       const interactiveSelector = 'a, button, input, select, textarea, summary, [role="button"], [role="link"]';
+      const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
       const clickableCards = document.querySelectorAll('.js-clickable-card[data-href]');
       clickableCards.forEach((card) => {
         const href = card.dataset.href;
         if (!href) return;
+        if (coarsePointer) return;
 
         card.addEventListener('click', function (event) {
           const interactiveTarget = event.target.closest(interactiveSelector);
@@ -278,6 +291,7 @@
         const projectsRow = document.querySelector('.projects-row:not(.blog-row)');
         const projectsRowWrap = projectsRow ? projectsRow.closest('.projects-row-wrap') : null;
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
+        if (coarsePointer) return;
         let isPaused = false;
         const stepPx = 0.6;
         const intervalMs = 28;
