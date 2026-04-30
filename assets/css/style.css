@@ -210,6 +210,7 @@ a:hover {
 
 .project-page {
   position: relative;
+  --project-hero-fade-strength: 0.6;
 }
 
 .project-trailer-hero {
@@ -220,7 +221,7 @@ a:hover {
   height: min(50vh, 510px);
   transform: translateX(-50%);
   overflow: hidden;
-  pointer-events: none;
+  pointer-events: auto;
   z-index: 0;
 }
 
@@ -239,6 +240,9 @@ a:hover {
   opacity: 0.82;
   filter: saturate(1.08) contrast(1.04) brightness(0.9);
   transform: scale(1.08);
+  pointer-events: none;
+  position: relative;
+  z-index: 0;
 }
 
 .project-trailer-overlay {
@@ -1269,7 +1273,7 @@ a:hover {
   }
 
   .project-page .page-header {
-    padding-top: 5.5rem;
+    padding-top: min(36vh, 280px);
   }
 
   .project-page .page-header h1 {
