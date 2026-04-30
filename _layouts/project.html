@@ -2,6 +2,15 @@
 layout: default
 ---
 <article class="content-page project-page">
+  {% if page.trailer_video %}
+    <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
+      <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
+        <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
+      </video>
+      <div class="project-trailer-overlay" aria-hidden="true"></div>
+    </section>
+  {% endif %}
+
   <header class="page-header narrow">
     <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
     <h1>{{ page.title }}</h1>
