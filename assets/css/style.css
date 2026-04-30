@@ -2038,3 +2038,8 @@ a:hover {
 .project-fact:first-child {
   margin-top: 0;
 }
+
+.project-back-link-box .button {
+  width: 100%;
+  justify-content: center;
+}
