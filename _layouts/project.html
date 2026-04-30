@@ -23,7 +23,7 @@ layout: default
     </section>
   {% endif %}
 
-  <header class="project-hero-shell">
+  <header class="project-hero-shell{% unless page.trailer_video or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
     <div class="project-hero-top">
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
