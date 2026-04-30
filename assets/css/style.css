@@ -1506,3 +1506,10 @@ a:hover {
   max-height: 200px;
   object-position: center top;
 }
+
+.experience-head .company-logo-massive {
+  width: 200px !important;
+  height: auto !important;
+  min-height: 0;
+  max-height: 92px;
+}
