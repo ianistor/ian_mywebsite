@@ -1180,6 +1180,10 @@ a:hover {
 .project-header-body {
   margin-top: 0;
 }
+
+.project-header-body {
+  margin-top: clamp(9rem, 16vh, 12.5rem);
+}
 .section-block { animation-delay: 0.14s; }
 .tag-cloud { animation-delay: 0.18s; }
 .card-grid { animation-delay: 0.22s; }
