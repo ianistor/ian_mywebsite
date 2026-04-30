@@ -18,9 +18,14 @@ layout: default
     {% if page.links %}
       <div class="link-row">
         {% for link in page.links %}
+          {% assign normalized_label = link.label | downcase %}
           <a class="button secondary" href="{{ link.url }}">
             {% if link.logo_path %}
               <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
+            {% elsif normalized_label == "gumroad" %}
+              <img src="{{ '/assets/images/companieslogos/gumroad.png' | relative_url }}" alt="Gumroad logo" class="button-logo">
+            {% elsif normalized_label == "fab" %}
+              <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large">
             {% endif %}
             {{ link.label }}
           </a>

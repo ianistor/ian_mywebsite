@@ -291,6 +291,7 @@
         const projectsRow = document.querySelector('.projects-row:not(.blog-row)');
         const projectsRowWrap = projectsRow ? projectsRow.closest('.projects-row-wrap') : null;
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
+        if (coarsePointer) return;
         let isPaused = false;
         const stepPx = coarsePointer ? 0.38 : 0.6;
         const intervalMs = coarsePointer ? 32 : 28;
