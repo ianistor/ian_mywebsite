@@ -10,6 +10,7 @@ permalink: /projects/division-2/
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
+trailer_video: "https://raw.githubusercontent.com/ianistor/ian_website/main/assets/videos/TCTD2.mp4"
 ---
 
 ## Overview
