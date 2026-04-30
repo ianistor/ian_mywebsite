@@ -20,6 +20,11 @@ layout: default
         </iframe>
       {% endif %}
       <div class="project-trailer-overlay" aria-hidden="true"></div>
+      <div class="project-fade-control hero-content-elevated">
+        <label for="project-fade-slider">Black fade</label>
+        <input id="project-fade-slider" type="range" min="0" max="1.2" step="0.02" value="0.6" aria-label="Project trailer black fade strength">
+        <output id="project-fade-slider-value" for="project-fade-slider">0.60</output>
+      </div>
     </section>
   {% endif %}
 
