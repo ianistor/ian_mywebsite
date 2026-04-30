@@ -6,7 +6,7 @@ layout: default
     <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
       {% if page.trailer_video %}
         <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
-          <source src="{{ page.trailer_video }}" type="video/mp4">
+          <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
         </video>
       {% elsif page.trailer_youtube_id %}
         <iframe
