@@ -1550,6 +1550,17 @@ a:hover {
   margin-top: 0.5rem;
 }
 
+.experience-project-covers {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.experience-project-covers .experience-project-cover {
+  margin-top: 0;
+}
+
 @media (max-width: 640px) {
   .cv-quick-links-grid {
     grid-template-columns: 1fr;
@@ -1562,7 +1573,7 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
-  margin-left: 0;
+  margin-left: -1.1rem;
 }
 
 .cv-title-card {
@@ -1673,8 +1684,27 @@ a:hover {
   letter-spacing: 0.04em;
 }
 
+.cv-stack-icon-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  object-fit: contain;
+  padding: 0.38rem;
+}
+
+.experience-head-copy {
+  text-align: center;
+  margin-left: 0.9rem;
+}
+
 @media (max-width: 640px) {
   .cv-intro-row {
     flex-direction: column;
+  }
+
+  .cv-title-grid {
+    margin-left: 0;
   }
 }

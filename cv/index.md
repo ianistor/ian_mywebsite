@@ -61,12 +61,13 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 ### Preffered Stack
 
 <ul class="cv-stack-icons" aria-label="Preffered Stack">
-  <li><span class="cv-stack-icon" aria-hidden="true">3D</span><span>3ds Max</span></li>
-  <li><span class="cv-stack-icon" aria-hidden="true">MY</span><span>Maya</span></li>
-  <li><span class="cv-stack-icon" aria-hidden="true">HD</span><span>Houdini</span></li>
-  <li><span class="cv-stack-icon" aria-hidden="true">Py</span><span>Python</span></li>
-  <li><span class="cv-stack-icon" aria-hidden="true">SD</span><span>Snowdrop</span></li>
-  <li><span class="cv-stack-icon" aria-hidden="true">UE</span><span>Unreal Engine</span></li>
+  <li><img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Houdini</span></li>
+  <li><img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Maya</span></li>
+  <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
+  <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Python</span></li>
+  <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Blender</span></li>
+  <li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Snowdrop_logo.png/240px-Snowdrop_logo.png" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+  <li><img src="https://cdn.simpleicons.org/autodesk3dsmax/00A9E0" alt="" class="cv-stack-icon-img" loading="lazy" decoding="async"><span>3ds Max</span></li>
 </ul>
 
 ---
@@ -79,7 +80,12 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Amazon Games</strong></p>
     <p><em>2024 - Current</em></p>
-    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
+    <div class="experience-project-covers">
+      <div class="experience-project-cover project-text-placeholder" aria-label="Unannounced Project">
+        <span>Unannounced Project</span>
+      </div>
+      <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
+    </div>
   </div>
 </div>
 
@@ -197,8 +203,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
       <div class="cv-title-cover project-text-placeholder" aria-label="Unannounced Project">
         <span>Unannounced Project</span>
       </div>
-      <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
-      <span class="cv-title-role">Technical Artist</span>
+      <figcaption>Unannounced Project</figcaption>
     </a>
   </figure>
   <figure class="cv-title-card">
