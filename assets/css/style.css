@@ -1361,7 +1361,7 @@ a:hover {
 
 
 .contact-box {
-  max-width: 760px;
+  width: 100%;
   border: 1px solid var(--line);
   background: var(--panel);
   border-radius: 16px;
