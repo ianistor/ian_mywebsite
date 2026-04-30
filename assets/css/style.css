@@ -265,30 +265,6 @@ a:hover {
   opacity: var(--project-hero-fade-strength);
 }
 
-.project-fade-control {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.25rem 0 1rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 12px;
-  background: rgba(8, 10, 15, 0.55);
-  backdrop-filter: blur(3px);
-  pointer-events: auto;
-}
-
-.project-fade-control label,
-.project-fade-control output {
-  font-size: 0.8rem;
-  color: var(--text);
-}
-
-.project-fade-control input[type="range"] {
-  width: 160px;
-}
-
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -1843,4 +1819,149 @@ a:hover {
   .cv-title-grid {
     margin-left: 0;
   }
+}
+
+/* Project layout refresh */
+.project-hero-shell {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(11rem, 28vw, 20rem);
+  margin-bottom: 1rem;
+}
+
+.project-hero-top h1 {
+  margin-bottom: 0.75rem;
+}
+
+.project-detail-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: start;
+}
+
+.project-sidebar {
+  position: sticky;
+  top: 5.5rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(6, 10, 18, 0.78), rgba(6, 10, 18, 0.46));
+  backdrop-filter: blur(2px);
+}
+
+.project-fact {
+  margin-top: 1rem;
+}
+
+.project-fact h3 {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.project-fact p {
+  margin: 0.35rem 0 0;
+  font-size: 1.2rem;
+}
+
+.project-links-stack {
+  margin-top: 1.1rem;
+}
+
+.project-main-content {
+  max-width: none;
+}
+
+.project-main-content h2:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  .project-hero-shell {
+    margin-top: clamp(8rem, 34vw, 12rem);
+  }
+
+  .project-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-sidebar {
+    position: static;
+  }
+}
+
+/* Project mockup alignment overrides */
+.project-page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+.project-page .project-trailer-hero {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+  height: clamp(360px, 56vw, 680px);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-hero-shell {
+  margin-top: -12.5rem;
+  margin-bottom: 0;
+  padding: 0 2rem;
+}
+
+.project-hero-top {
+  max-width: 520px;
+}
+
+
+.project-detail-layout {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+  background: linear-gradient(180deg, rgba(6, 10, 18, 0.86), rgba(6, 10, 18, 0.7));
+  border: 1px solid var(--line);
+  border-radius: 0 0 24px 24px;
+}
+
+.project-sidebar {
+  margin-top: -4.5rem;
+}
+
+@media (max-width: 980px) {
+  .project-page {
+    padding: 1rem 0.8rem 2.2rem;
+  }
+
+  .project-hero-shell {
+    margin-top: -7rem;
+    padding: 0 1rem;
+  }
+
+  .project-detail-layout {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .project-sidebar {
+    margin-top: 0;
+  }
+}
+
+.project-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
 }
