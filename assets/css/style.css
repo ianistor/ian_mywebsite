@@ -208,6 +208,39 @@ a:hover {
   padding: 4rem 0 1rem;
 }
 
+.project-page {
+  position: relative;
+}
+
+.project-trailer-hero {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: min(56vh, 560px);
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project-trailer-media {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  opacity: 0.34;
+  filter: saturate(0.8) contrast(0.9) brightness(0.62);
+}
+
+.project-trailer-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(8, 10, 15, 0.1) 0%, rgba(8, 10, 15, 0.78) 65%, rgba(8, 10, 15, 1) 100%),
+    linear-gradient(180deg, rgba(8, 10, 15, 0.45) 0%, rgba(8, 10, 15, 0.92) 86%, rgba(8, 10, 15, 1) 100%);
+}
+
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -1129,6 +1162,11 @@ a:hover {
 }
 
 .page-header { animation-delay: 0.05s; }
+.project-page .page-header {
+  position: relative;
+  z-index: 2;
+  padding-top: 7.5rem;
+}
 .section-block { animation-delay: 0.14s; }
 .tag-cloud { animation-delay: 0.18s; }
 .card-grid { animation-delay: 0.22s; }
@@ -1208,6 +1246,14 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .project-trailer-hero {
+    display: none;
+  }
+
+  .project-page .page-header {
+    padding-top: 5.5rem;
+  }
+
   .card-grid,
   .card-grid.two-up,
   .post-pagination {
