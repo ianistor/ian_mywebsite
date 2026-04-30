@@ -10,6 +10,7 @@ permalink: /projects/star-wars-outlaws/
 links:
   - label: "ArtStation"
     url: "https://www.artstation.com/nistorandrei/albums/10848560"
+trailer_video: "/assets/videos/SWO.mp4"
 ---
 
 ## Overview
