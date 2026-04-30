@@ -79,10 +79,21 @@
         floatingHeader.classList.toggle('is-condensed', shouldCondense);
       };
 
+      const addMediaQueryChangeListener = (queryList, handler) => {
+        if (!queryList || typeof handler !== 'function') return;
+        if (typeof queryList.addEventListener === 'function') {
+          queryList.addEventListener('change', handler);
+          return;
+        }
+        if (typeof queryList.addListener === 'function') {
+          queryList.addListener(handler);
+        }
+      };
+
       syncMobileBrandState();
       const mobileScrollTarget = pageScroll || window;
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
-      mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
+      addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
 
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
@@ -329,7 +340,8 @@
           if (!projectsRow.contains(document.activeElement)) resume();
         });
         projectsRow.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-        projectsRow.addEventListener('touchend', resume, { passive: true });
+        window.addEventListener('touchend', resume, { passive: true });
+        window.addEventListener('touchcancel', resume, { passive: true });
         projectsRow.addEventListener('scroll', () => {
           if (!projectsRowWrap) return;
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
