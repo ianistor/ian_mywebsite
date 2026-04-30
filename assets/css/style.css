@@ -1913,6 +1913,11 @@ a:hover {
   padding: 0 2rem;
 }
 
+.project-hero-shell--no-trailer {
+  margin-top: 0;
+  padding-top: 0.75rem;
+}
+
 .project-hero-top {
   max-width: 520px;
 }
@@ -1940,6 +1945,11 @@ a:hover {
     padding: 0 1rem;
   }
 
+  .project-hero-shell--no-trailer {
+    margin-top: 0;
+    padding-top: 0.25rem;
+  }
+
   .project-detail-layout {
     padding: 1rem;
     border-radius: 16px;
@@ -1960,4 +1970,9 @@ a:hover {
 
 .project-fact:first-child {
   margin-top: 0;
+}
+
+.project-back-link-box .button {
+  width: 100%;
+  justify-content: center;
 }

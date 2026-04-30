@@ -23,12 +23,11 @@ layout: default
     </section>
   {% endif %}
 
-  <header class="project-hero-shell">
+  <header class="project-hero-shell{% unless page.trailer_video or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
     <div class="project-hero-top">
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
       <div class="project-hero-actions">
-        <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
         {% if page.links %}
           {% for link in page.links %}
             {% assign normalized_label = link.label | downcase %}
@@ -51,6 +50,14 @@ layout: default
 
   <section class="project-detail-layout">
     <aside class="project-sidebar">
+      <div class="project-fact project-back-link-box">
+        {% if page.parent_permalink %}
+          <a class="button secondary" href="{{ page.parent_permalink | relative_url }}">Back to {{ page.parent_project | default: 'Project' }}</a>
+        {% else %}
+          <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
+        {% endif %}
+      </div>
+
       {% if page.role %}
       <div class="project-fact">
         <h3>Role</h3>
