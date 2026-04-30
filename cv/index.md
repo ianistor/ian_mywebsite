@@ -8,8 +8,10 @@ permalink: /cv/
 
 ## Senior Technical Artist
 
+<img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Ioan Andrei Nistor profile photo" class="cv-profile-photo" loading="lazy" decoding="async">
+
 Quick Links  
-<ul class="contact-list cv-contact-list">
+<ul class="contact-list cv-contact-list cv-quick-links-grid">
   <li>
     <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
     <a href="mailto:ioan.andrei.nistor@gmail.com">ioan.andrei.nistor@gmail.com</a>
@@ -63,6 +65,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Amazon Games</strong></p>
     <p><em>2024 - Current</em></p>
+    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -81,6 +84,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Senior Technical Artist</h3>
     <p><strong>Ubisoft Romania</strong></p>
     <p><em>2023 - 2024</em></p>
+    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -100,6 +104,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Senior Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2022 - 2023</em></p>
+    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -119,6 +124,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2018 - 2022</em></p>
+    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -139,6 +145,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Content Validator</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2015 - 2018</em></p>
+    <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="experience-project-cover">
   </div>
 </div>
 
