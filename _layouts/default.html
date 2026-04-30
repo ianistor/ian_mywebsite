@@ -815,6 +815,8 @@
 
       const initProjectTrailerFadeSlider = () => {
         const projectPage = document.querySelector('.project-page');
+        const trailerHero = document.querySelector('.project-trailer-hero');
+        const trailerOverlay = document.querySelector('.project-trailer-overlay');
         const slider = document.getElementById('project-fade-slider');
         const output = document.getElementById('project-fade-slider-value');
         if (!projectPage || !slider || !output) return;
@@ -828,6 +830,8 @@
           if (!Number.isFinite(numericValue)) return;
           const clamped = Math.min(max, Math.max(min, numericValue));
           projectPage.style.setProperty('--project-hero-fade-strength', clamped.toFixed(2));
+          if (trailerHero) trailerHero.style.setProperty('--project-hero-fade-strength', clamped.toFixed(2));
+          if (trailerOverlay) trailerOverlay.style.opacity = clamped.toFixed(2);
           slider.value = clamped.toFixed(2);
           output.textContent = clamped.toFixed(2);
           return clamped.toFixed(2);
