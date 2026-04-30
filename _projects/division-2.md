@@ -10,7 +10,7 @@ permalink: /projects/division-2/
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
-trailer_youtube_id: "jF9OG_2NH4M"
+trailer_video: "assets/videos/division-2-trailer.mp4"
 ---
 
 ## Overview
