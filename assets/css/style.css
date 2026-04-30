@@ -1989,6 +1989,10 @@ a:hover {
   max-width: 520px;
 }
 
+.project-inline-back {
+  margin-bottom: 0.9rem;
+}
+
 
 .project-detail-layout {
   margin-top: 1.5rem;
