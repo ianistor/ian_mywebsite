@@ -8,5 +8,6 @@ release_year: 2025
 links:
   - label: "ArtStation"
     url: "https://nistorandrei.artstation.com"
+trailer_video: "/assets/videos/NWA.mp4"
 ---
 Add your full breakdown here.
