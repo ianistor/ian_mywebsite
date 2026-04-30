@@ -144,26 +144,37 @@ title: Home
   <div class="section-head">
     <h2>Contact</h2>
   </div>
-  <div class="card contact-box">
-    <p>Feel free to reach out for collaboration, opportunities, or questions.</p>
-    <ul class="contact-list">
+  <div class="card contact-box contact-strip">
+    <div class="contact-copy">
+      <h3>Let's connect</h3>
+      <p>Always open to discussing new projects, tools, and technical art solutions.</p>
+    </div>
+
+    <ul class="contact-list contact-list-inline" aria-label="Social links">
       <li>
-        <span class="contact-icon" aria-hidden="true">✉</span>
-        <strong>Email:</strong>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="mailto:{{ site.email }}" class="contact-icon-link" aria-label="Email">
+          <span class="contact-icon" aria-hidden="true">✉</span>
+        </a>
       </li>
       <li>
-        <span class="contact-icon" aria-hidden="true">in</span>
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/ioan-andrei-nistor/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ioan-andrei-nistor</a>
+        <a href="https://www.linkedin.com/in/ioan-andrei-nistor/" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="LinkedIn">
+          <span class="contact-icon" aria-hidden="true">in</span>
+        </a>
       </li>
       <li>
-        <span class="contact-icon contact-icon-artstation" aria-hidden="true">
-          <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img" loading="lazy" decoding="async">
-        </span>
-        <strong>ArtStation:</strong>
-        <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer">artstation.com/nistorandrei</a>
+        <a href="https://www.artstation.com/nistorandrei" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="ArtStation">
+          <span class="contact-icon contact-icon-artstation" aria-hidden="true">
+            <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="" class="contact-icon-img" loading="lazy" decoding="async">
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/ianistor" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
+          <span class="contact-icon" aria-hidden="true">gh</span>
+        </a>
       </li>
     </ul>
+
+    <a href="mailto:{{ site.email }}" class="contact-cta">Say hello</a>
   </div>
 </section>
