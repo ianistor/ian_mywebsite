@@ -1272,7 +1272,8 @@ a:hover {
 
 @media (max-width: 900px) {
   .project-trailer-hero {
-    display: none;
+    width: 100vw;
+    height: min(36vh, 280px);
   }
 
   .project-page .page-header {
