@@ -6,7 +6,7 @@ layout: default
     <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
       {% if page.trailer_video %}
         <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
-          <source src="{{ page.trailer_video }}" type="video/mp4">
+          <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
         </video>
       {% elsif page.trailer_youtube_id %}
         <iframe
@@ -20,6 +20,11 @@ layout: default
         </iframe>
       {% endif %}
       <div class="project-trailer-overlay" aria-hidden="true"></div>
+      <div class="project-fade-control hero-content-elevated">
+        <label for="project-fade-slider">Black fade</label>
+        <input id="project-fade-slider" type="range" min="0" max="1.2" step="0.02" value="0.6" aria-label="Project trailer black fade strength">
+        <output id="project-fade-slider-value" for="project-fade-slider">0.60</output>
+      </div>
     </section>
   {% endif %}
 
