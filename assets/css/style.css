@@ -546,7 +546,7 @@ a:hover {
 
 .experience-head + ul {
   min-height: 200px;
-  margin: 1.5rem 0 0.75rem 29.5rem;
+  margin: 1.5rem 0 0.75rem 28.75rem;
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
@@ -1241,7 +1241,7 @@ a:hover {
 
   .experience-head + ul {
     min-height: 0;
-    margin: 0.35rem 0 0.75rem 1.25rem;
+    margin: 0.35rem 0 0.75rem 0.75rem;
     padding-left: 1.1rem;
     display: block;
   }
@@ -1516,12 +1516,23 @@ a:hover {
 
 
 .cv-profile-photo {
-  width: 132px;
-  height: 132px;
+  width: 164px;
+  height: 164px;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--line);
-  margin: 0.35rem 0 1rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.cv-intro-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.cv-quick-links-wrap {
+  flex: 1;
+  min-width: 0;
 }
 
 .cv-quick-links-grid {
@@ -1539,6 +1550,28 @@ a:hover {
   margin-top: 0.5rem;
 }
 
+.experience-project-covers {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.experience-project-covers .experience-project-cover {
+  margin-top: 0;
+}
+
+.experience-project-cover.project-text-placeholder {
+  padding: 0.2rem;
+  border-radius: 10px;
+}
+
+.experience-project-cover.project-text-placeholder span {
+  font-size: 0.52rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
 @media (max-width: 640px) {
   .cv-quick-links-grid {
     grid-template-columns: 1fr;
@@ -1551,6 +1584,7 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+  margin-left: -1.1rem;
 }
 
 .cv-title-card {
@@ -1596,12 +1630,12 @@ a:hover {
 }
 
 .cv-title-cover {
-  border-color: var(--accent);
+  border: 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cv-title-link:hover .cv-title-cover {
-  box-shadow: 0 0 0 1px var(--accent), 0 0 16px rgba(255, 159, 67, 0.28);
+  box-shadow: none;
 }
 
 .cv-title-role {
@@ -1610,8 +1644,8 @@ a:hover {
   right: 0.5rem;
   bottom: 2.1rem;
   background: rgba(10, 14, 22, 0.9);
-  border: 1px solid var(--accent);
-  color: var(--accent-2);
+  border: 0;
+  color: var(--accent);
   border-radius: 8px;
   padding: 0.3rem 0.45rem;
   font-size: 0.78rem;
@@ -1625,4 +1659,69 @@ a:hover {
 .cv-title-link:hover .cv-title-role {
   opacity: 1;
   transform: translateY(0);
+}
+
+.cv-title-card figcaption {
+  color: var(--accent);
+}
+
+.cv-stack-icons {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.6rem 1rem;
+}
+
+.cv-stack-icons li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.cv-stack-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.cv-stack-icon-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  object-fit: contain;
+  padding: 0.38rem;
+}
+
+.experience-head-copy {
+  text-align: left;
+  margin-left: 0;
+  width: 100%;
+}
+
+.experience-head {
+  align-items: flex-start;
+  margin-left: -0.75rem;
+}
+
+@media (max-width: 640px) {
+  .cv-intro-row {
+    flex-direction: column;
+  }
+
+  .cv-title-grid {
+    margin-left: 0;
+  }
 }
