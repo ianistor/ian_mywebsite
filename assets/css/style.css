@@ -217,7 +217,7 @@ a:hover {
   top: 0;
   left: 50%;
   width: min(1600px, 122vw);
-  height: min(66vh, 680px);
+  height: min(33vh, 340px);
   transform: translateX(-50%);
   overflow: hidden;
   pointer-events: none;
@@ -1179,13 +1179,13 @@ a:hover {
 .project-page .page-header {
   position: relative;
   z-index: 2;
-  padding-top: min(66vh, 680px);
+  padding-top: min(33vh, 340px);
 }
 
 .project-page .page-header h1 {
   position: absolute;
   left: 0;
-  bottom: calc(100% - min(66vh, 680px) + 1rem);
+  bottom: calc(100% - min(33vh, 340px) + 1rem);
   margin: 0;
 }
 
