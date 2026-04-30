@@ -25,6 +25,9 @@ layout: default
 
   <header class="project-hero-shell{% unless page.trailer_video or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
     <div class="project-hero-top">
+      {% if page.parent_permalink %}
+        <a class="button secondary project-inline-back" href="{{ page.parent_permalink | relative_url }}">← Back to {{ page.parent_project | default: 'Project' }}</a>
+      {% endif %}
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
       <div class="project-hero-actions">
