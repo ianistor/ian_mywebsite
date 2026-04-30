@@ -1513,3 +1513,34 @@ a:hover {
   min-height: 0;
   max-height: 92px;
 }
+
+
+.cv-profile-photo {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  margin: 0.35rem 0 1rem;
+}
+
+.cv-quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+}
+
+.experience-project-cover {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .cv-quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
