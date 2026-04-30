@@ -2,6 +2,27 @@
 layout: default
 ---
 <article class="content-page project-page">
+  {% if page.trailer_video or page.trailer_youtube_id %}
+    <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
+      {% if page.trailer_video %}
+        <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
+          <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
+        </video>
+      {% elsif page.trailer_youtube_id %}
+        <iframe
+          class="project-trailer-media"
+          src="https://www.youtube-nocookie.com/embed/{{ page.trailer_youtube_id }}?autoplay=1&mute=1&controls=0&loop=1&playlist={{ page.trailer_youtube_id }}&start={{ page.trailer_start | default: 30 }}&end={{ page.trailer_end | default: 60 }}&modestbranding=1&playsinline=1&rel=0"
+          title="{{ page.title }} trailer preview"
+          loading="lazy"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          aria-hidden="true">
+        </iframe>
+      {% endif %}
+      <div class="project-trailer-overlay" aria-hidden="true"></div>
+    </section>
+  {% endif %}
+
   <header class="page-header narrow">
     <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
     <h1>{{ page.title }}</h1>
