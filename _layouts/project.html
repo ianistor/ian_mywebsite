@@ -27,13 +27,30 @@ layout: default
     <div class="project-hero-top">
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
+      <div class="project-hero-actions">
+        <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
+        {% if page.links %}
+          {% for link in page.links %}
+            {% assign normalized_label = link.label | downcase %}
+            {% if normalized_label == "artstation" %}
+              <a class="button secondary project-link-artstation" href="{{ link.url }}">
+                {% if link.logo_path %}
+                  <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
+                {% else %}
+                  <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
+                {% endif %}
+                {{ link.label }}
+              </a>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
   </header>
 
   <section class="project-detail-layout">
     <aside class="project-sidebar">
-      <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
-
       {% if page.role %}
       <div class="project-fact">
         <h3>Role</h3>
@@ -67,22 +84,6 @@ layout: default
         <h3>Project type</h3>
         <p>{{ page.project_type }}</p>
       </div>
-      {% endif %}
-
-      {% if page.links %}
-        <div class="link-row project-links-stack">
-          {% for link in page.links %}
-            {% assign normalized_label = link.label | downcase %}
-            <a class="button secondary{% if normalized_label == "artstation" %} project-link-artstation{% endif %}" href="{{ link.url }}">
-              {% if link.logo_path %}
-                <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
-              {% elsif normalized_label == "artstation" %}
-                <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
-              {% endif %}
-              {{ link.label }}
-            </a>
-          {% endfor %}
-        </div>
       {% endif %}
     </aside>
 
