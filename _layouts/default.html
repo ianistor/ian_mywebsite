@@ -79,10 +79,21 @@
         floatingHeader.classList.toggle('is-condensed', shouldCondense);
       };
 
+      const addMediaQueryChangeListener = (queryList, handler) => {
+        if (!queryList || typeof handler !== 'function') return;
+        if (typeof queryList.addEventListener === 'function') {
+          queryList.addEventListener('change', handler);
+          return;
+        }
+        if (typeof queryList.addListener === 'function') {
+          queryList.addListener(handler);
+        }
+      };
+
       syncMobileBrandState();
       const mobileScrollTarget = pageScroll || window;
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
-      mobileCondenseBreakpoint.addEventListener('change', syncMobileBrandState);
+      addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
 
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
@@ -254,10 +265,12 @@
       }
 
       const interactiveSelector = 'a, button, input, select, textarea, summary, [role="button"], [role="link"]';
+      const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
       const clickableCards = document.querySelectorAll('.js-clickable-card[data-href]');
       clickableCards.forEach((card) => {
         const href = card.dataset.href;
         if (!href) return;
+        if (coarsePointer) return;
 
         card.addEventListener('click', function (event) {
           const interactiveTarget = event.target.closest(interactiveSelector);
@@ -279,12 +292,14 @@
         const projectsRowWrap = projectsRow ? projectsRow.closest('.projects-row-wrap') : null;
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
         let isPaused = false;
-        const stepPx = 0.6;
-        const intervalMs = 28;
+        const stepPx = coarsePointer ? 0.38 : 0.6;
+        const intervalMs = coarsePointer ? 32 : 28;
         const restartDelayMs = 900;
+        const touchResumeDelayMs = 850;
         let hasClonedCards = false;
         let intervalId = null;
         let restartTimeoutId = null;
+        let touchResumeTimeoutId = null;
 
         const tick = () => {
           if (isPaused) return;
@@ -321,6 +336,13 @@
         const resume = () => {
           isPaused = false;
         };
+        const scheduleResume = () => {
+          if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
+          touchResumeTimeoutId = window.setTimeout(() => {
+            resume();
+            touchResumeTimeoutId = null;
+          }, touchResumeDelayMs);
+        };
 
         projectsRow.addEventListener('mouseenter', () => { isPaused = true; });
         projectsRow.addEventListener('mouseleave', resume);
@@ -328,8 +350,12 @@
         projectsRow.addEventListener('focusout', () => {
           if (!projectsRow.contains(document.activeElement)) resume();
         });
-        projectsRow.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-        projectsRow.addEventListener('touchend', resume, { passive: true });
+        projectsRow.addEventListener('touchstart', () => {
+          isPaused = true;
+          if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
+        }, { passive: true });
+        window.addEventListener('touchend', scheduleResume, { passive: true });
+        window.addEventListener('touchcancel', scheduleResume, { passive: true });
         projectsRow.addEventListener('scroll', () => {
           if (!projectsRowWrap) return;
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
@@ -343,6 +369,7 @@
         window.addEventListener('beforeunload', () => {
           if (intervalId) window.clearInterval(intervalId);
           if (restartTimeoutId) window.clearTimeout(restartTimeoutId);
+          if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
         });
       };
 
