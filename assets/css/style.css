@@ -238,10 +238,10 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgba(8, 10, 15, 0) 34%, rgba(8, 10, 15, 0.32) 66%, rgba(8, 10, 15, 0.78) 86%, rgba(8, 10, 15, 1) 100%),
-    linear-gradient(180deg, rgba(8, 10, 15, 0.12) 0%, rgba(8, 10, 15, 0.48) 60%, rgba(8, 10, 15, 0.88) 86%, rgba(8, 10, 15, 1) 100%);
-  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    radial-gradient(ellipse at center, rgba(8, 10, 15, 0) 28%, rgba(8, 10, 15, 0.42) 58%, rgba(8, 10, 15, 0.86) 78%, rgba(8, 10, 15, 1) 100%),
+    linear-gradient(180deg, rgba(8, 10, 15, 0.18) 0%, rgba(8, 10, 15, 0.56) 56%, rgba(8, 10, 15, 0.92) 80%, rgba(8, 10, 15, 1) 100%);
+  mask-image: radial-gradient(ellipse at center, black 54%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 54%, transparent 100%);
 }
 
 .hero {
@@ -1170,6 +1170,10 @@ a:hover {
   z-index: 2;
   padding-top: 7.5rem;
 }
+
+.project-header-body {
+  margin-top: clamp(9rem, 16vh, 12.5rem);
+}
 .section-block { animation-delay: 0.14s; }
 .tag-cloud { animation-delay: 0.18s; }
 .card-grid { animation-delay: 0.22s; }
@@ -1255,6 +1259,10 @@ a:hover {
 
   .project-page .page-header {
     padding-top: 5.5rem;
+  }
+
+  .project-header-body {
+    margin-top: 0;
   }
 
   .card-grid,
