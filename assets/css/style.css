@@ -1277,7 +1277,7 @@ a:hover {
   }
 
   .project-page .page-header {
-    padding-top: 5.5rem;
+    padding-top: min(36vh, 280px);
   }
 
   .project-page .page-header h1 {
