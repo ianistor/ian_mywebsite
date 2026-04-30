@@ -289,30 +289,6 @@ a:hover {
   width: 160px;
 }
 
-.project-fade-control {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.25rem 0 1rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 12px;
-  background: rgba(8, 10, 15, 0.55);
-  backdrop-filter: blur(3px);
-  pointer-events: auto;
-}
-
-.project-fade-control label,
-.project-fade-control output {
-  font-size: 0.8rem;
-  color: var(--text);
-}
-
-.project-fade-control input[type="range"] {
-  width: 160px;
-}
-
 .hero {
   display: flex;
   flex-wrap: wrap;

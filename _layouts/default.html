@@ -830,14 +830,19 @@
           projectPage.style.setProperty('--project-hero-fade-strength', clamped.toFixed(2));
           slider.value = clamped.toFixed(2);
           output.textContent = clamped.toFixed(2);
+          return clamped.toFixed(2);
+        };
+
+        window.setProjectHeroFade = (value) => {
+          const applied = applyValue(value);
+          if (applied) localStorage.setItem(storageKey, applied);
         };
 
         const stored = localStorage.getItem(storageKey);
         applyValue(stored ?? slider.value);
 
         slider.addEventListener('input', (event) => {
-          applyValue(event.target.value);
-          localStorage.setItem(storageKey, slider.value);
+          window.setProjectHeroFade(event.target.value);
         });
       };
 
