@@ -78,6 +78,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
 - Documented Unreal workflows and mentored team members during engine transition.
 
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/ubi_white_logo.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline">
   <div class="experience-head-copy">
@@ -98,6 +99,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
@@ -118,6 +120,8 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
+
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
@@ -139,6 +143,8 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Debugged streaming issues and set up culling.
 - Supported DCC tools and pipeline workflows.
 
+
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
@@ -198,7 +204,11 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <img src="{{ '/assets/images/projectcovers/GR.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
-    <figcaption>Ghost Recon (Unannounced)</figcaption>
+    <figcaption>Ghost Recon</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/TBD.png' | relative_url }}" alt="Unannounced Amazon Games title cover" class="cv-title-cover">
+    <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
   </figure>
 </div>
 

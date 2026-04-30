@@ -1571,3 +1571,11 @@ a:hover {
   font-size: 0.9rem;
   color: var(--muted);
 }
+
+
+.cv-experience-separator {
+  height: 1px;
+  margin: 1.2rem 0 0.4rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0), var(--line) 18%, var(--line) 82%, rgba(255,255,255,0));
+  clear: both;
+}
