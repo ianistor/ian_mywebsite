@@ -8,8 +8,10 @@ permalink: /cv/
 
 ## Senior Technical Artist
 
+<img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Ioan Andrei Nistor profile photo" class="cv-profile-photo" loading="lazy" decoding="async">
+
 Quick Links  
-<ul class="contact-list cv-contact-list">
+<ul class="contact-list cv-contact-list cv-quick-links-grid">
   <li>
     <span class="contact-icon cv-contact-icon" aria-hidden="true">✉</span>
     <a href="mailto:ioan.andrei.nistor@gmail.com">ioan.andrei.nistor@gmail.com</a>
@@ -63,6 +65,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Amazon Games</strong></p>
     <p><em>2024 - Current</em></p>
+    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -75,12 +78,14 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Developed procedural HDAs to accelerate asset prototyping and gameplay experimentation.
 - Documented Unreal workflows and mentored team members during engine transition.
 
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/ubi_white_logo.png' | relative_url }}" alt="Ubisoft Romania logo" class="company-logo-inline">
   <div class="experience-head-copy">
     <h3>Senior Technical Artist</h3>
     <p><strong>Ubisoft Romania</strong></p>
     <p><em>2023 - 2024</em></p>
+    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -94,12 +99,14 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
     <h3>Senior Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2022 - 2023</em></p>
+    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -113,12 +120,15 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Conducted performance profiling and optimization to support game performance and player experience.
 - Led development improvements of engine systems, including physics, destruction, cloth simulation, and streaming.
 
+
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
     <h3>Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2018 - 2022</em></p>
+    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -133,12 +143,15 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Debugged streaming issues and set up culling.
 - Supported DCC tools and pipeline workflows.
 
+
+<div class="cv-experience-separator" aria-hidden="true"></div>
 <div class="experience-head">
   <img src="{{ '/assets/images/companieslogos/msv_logo.png' | relative_url }}" alt="Massive Entertainment logo" class="company-logo-inline company-logo-massive">
   <div class="experience-head-copy">
     <h3>Technical Content Validator</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2015 - 2018</em></p>
+    <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -150,15 +163,54 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 
 ---
 
-## Selected Projects
+## Titles I Worked On
 
-- New World Aeternum
-- Star Wars Outlaws
-- Tom Clancy's The Division 2
-- Tom Clancy's The Division
-- Assassin's Creed Unity
-- Assassin's Creed Black Flag
-- Assassin's Creed III
+<div class="cv-title-grid">
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="cv-title-cover">
+    <figcaption>New World Aeternum</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="cv-title-cover">
+    <figcaption>Star Wars Outlaws</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
+    <figcaption>The Division 2: Warlords of New York</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/TCTD2.png' | relative_url }}" alt="The Division 2 cover" class="cv-title-cover">
+    <figcaption>Tom Clancy's The Division 2</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="cv-title-cover">
+    <figcaption>Tom Clancy's The Division</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/ACUnity.png' | relative_url }}" alt="Assassin's Creed Unity cover" class="cv-title-cover">
+    <figcaption>Assassin's Creed Unity</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/ACBFFC.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
+    <figcaption>Assassin's Creed IV: Black Flag - Freedom Cry DLC</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/ACBF.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag cover" class="cv-title-cover">
+    <figcaption>Assassin's Creed IV: Black Flag</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/AC3.png' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
+    <figcaption>Assassin's Creed III</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/GR.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
+    <figcaption>Ghost Recon</figcaption>
+  </figure>
+  <figure class="cv-title-card">
+    <img src="{{ '/assets/images/projectcovers/TBD.png' | relative_url }}" alt="Unannounced Amazon Games title cover" class="cv-title-cover">
+    <figcaption>Unannounced Amazon Games Title (Current)</figcaption>
+  </figure>
+</div>
 
 ---
 
