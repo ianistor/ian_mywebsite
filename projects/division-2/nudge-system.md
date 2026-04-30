@@ -9,8 +9,6 @@ summary: "Procedural cover nudge system deep dive from The Division 2 production
 image: "/assets/images/projectcovers/TCTD2.png"
 ---
 
-[← Back to The Division 2]({{ '/projects/division-2/' | relative_url }})
-
 ## Nudge System
 
 During the production of The Division 2 I was lucky enough to be in charge of the Nudge system for covers development.
@@ -27,7 +25,6 @@ Setting up initial props, communicating issues with Code, fixing graph setups an
 Prop created by: Jack Edwards
 Nudge and graph setup by myself.
 
-
 <video width="714" height="400" controls preload="metadata" playsinline>
   <source src="https://cdn.artstation.com/p/video_sources/000/000/613/IoanAndreiNistor_Nudge2.mp4#t=0.001" type="video/mp4">
 </video>
@@ -37,13 +34,10 @@ A good example would be the emergency beds mattress.
 Prop created by : Jill Ralmark
 Nudge/animation setup created by myself.
 
-
 This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.
 ○Code: Michiel Meesters
 ○Technical Art: Magnus Ander
 ○Technical Art: Ioan-Andrei Nistor
-
-
 
 <img src="/assets/images/projectcovers/TCTD2.png" alt="The Division 2 - Nudge System preview">
 

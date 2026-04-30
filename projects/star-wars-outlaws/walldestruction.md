@@ -8,7 +8,6 @@ parent_permalink: /projects/star-wars-outlaws/
 image: https://cdnb.artstation.com/p/assets/images/images/080/279/731/large/ioan-andrei-nistor-ianistor-stonewall-freezemidframe.jpg?1727177047
 summary: "Focused breakdown page for tools and workflow support work on Star Wars Outlaws."
 ---
-[← Back to Star Wars Outlaws]({{ '/projects/star-wars-outlaws/' | relative_url }})
 
 Destroyable wall ingredient used in the entire game, simulation done in Houdini, implemented in Snowdrop using the VAT workflow.
 The dust and small particles were made by our VFX Artist
@@ -28,6 +27,4 @@ The dust and small particles were made by our VFX Artist
 <video width="714" height="400" controls preload="metadata" playsinline>
   <source src="https://cdn.artstation.com/p/video_sources/002/194/842/ianistor-brick-wall-destruction-main.mp4#t=0.001" type="video/mp4">
 </video>
-
-
 
