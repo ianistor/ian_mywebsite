@@ -12,4 +12,6 @@ links:
     url: "https://nistorandrei.artstation.com"
 trailer_video: "/assets/videos/TCTD.mp4"
 ---
-Add your full breakdown here.
+During this project I was tasked with identifying performance improvements opportunities and checking our 3d content to meet our guidelines.
+Learning the proprietary engine, learning about other disciplines and what we (as Tech Art team) can do to improve their workflow.
+I was embedded in the Technical Art team, thing that ultimetly lead to my transition as a Technical Artist.
