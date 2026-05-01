@@ -5,6 +5,7 @@ role: "Technical Artist"
 company: "Massive Entertainment"
 summary: "Expansion-focused content support with tool and workflow contributions for live production."
 image: "/assets/images/projectcovers/TCTD2WONY.png"
+trailer_video: "/assets/videos/TCTD2_WONY.mp4"
 release_year: 2020
 permalink: /projects/division-2-warlords-of-new-york/
 links:
