@@ -369,13 +369,15 @@
         });
       });
 
+      let projectsAutoScrollController = null;
+
       const initProjectsAutoScroll = () => {
         const projectsRow = document.querySelector('.projects-row:not(.blog-row)');
         const projectsRowWrap = projectsRow ? projectsRow.closest('.projects-row-wrap') : null;
-        if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return;
+        if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return null;
         projectsRow.classList.add('is-auto-scrolling');
         let isPaused = false;
-        const stepPx = coarsePointer ? 0.38 : 0.6;
+        const stepPx = coarsePointer ? 1.1 : 1;
         const intervalMs = coarsePointer ? 32 : 28;
         const restartDelayMs = 900;
         const touchResumeDelayMs = 850;
@@ -410,7 +412,7 @@
             }
             return;
           }
-          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + stepPx);
+          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + Math.max(1, Math.round(stepPx)));
           if (projectsRowWrap) {
             projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
           }
@@ -427,47 +429,71 @@
           }, touchResumeDelayMs);
         };
 
-        projectsRow.addEventListener('mouseenter', () => { isPaused = true; });
-        projectsRow.addEventListener('mouseleave', resume);
-        projectsRow.addEventListener('focusin', () => { isPaused = true; });
-        projectsRow.addEventListener('focusout', () => {
+        const onMouseEnter = () => { isPaused = true; };
+        const onMouseLeave = () => resume();
+        const onFocusIn = () => { isPaused = true; };
+        const onFocusOut = () => {
           if (!projectsRow.contains(document.activeElement)) resume();
-        });
-        projectsRow.addEventListener('touchstart', () => {
+        };
+        const onTouchStart = () => {
           isPaused = true;
           if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
-        }, { passive: true });
-        window.addEventListener('touchend', scheduleResume, { passive: true });
-        window.addEventListener('touchcancel', scheduleResume, { passive: true });
-        projectsRow.addEventListener('scroll', () => {
+        };
+        const onRowScroll = () => {
           if (!projectsRowWrap) return;
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
-        }, { passive: true });
+        };
+
+        projectsRow.addEventListener('mouseenter', onMouseEnter);
+        projectsRow.addEventListener('mouseleave', onMouseLeave);
+        projectsRow.addEventListener('focusin', onFocusIn);
+        projectsRow.addEventListener('focusout', onFocusOut);
+        projectsRow.addEventListener('touchstart', onTouchStart, { passive: true });
+        window.addEventListener('touchend', scheduleResume, { passive: true });
+        window.addEventListener('touchcancel', scheduleResume, { passive: true });
+        projectsRow.addEventListener('scroll', onRowScroll, { passive: true });
 
         if (projectsRowWrap) {
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
         }
 
         intervalId = window.setInterval(tick, intervalMs);
-        window.addEventListener('beforeunload', () => {
-          if (intervalId) window.clearInterval(intervalId);
-          if (restartTimeoutId) window.clearTimeout(restartTimeoutId);
-          if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
-        });
+
+        return {
+          destroy() {
+            if (intervalId) window.clearInterval(intervalId);
+            if (restartTimeoutId) window.clearTimeout(restartTimeoutId);
+            if (touchResumeTimeoutId) window.clearTimeout(touchResumeTimeoutId);
+            projectsRow.removeEventListener('mouseenter', onMouseEnter);
+            projectsRow.removeEventListener('mouseleave', onMouseLeave);
+            projectsRow.removeEventListener('focusin', onFocusIn);
+            projectsRow.removeEventListener('focusout', onFocusOut);
+            projectsRow.removeEventListener('touchstart', onTouchStart);
+            projectsRow.removeEventListener('scroll', onRowScroll);
+            window.removeEventListener('touchend', scheduleResume);
+            window.removeEventListener('touchcancel', scheduleResume);
+          }
+        };
       };
 
       const runProjectsAutoScroll = () => {
-        if (document.body && document.body.dataset.projectsAutoScrollInit === 'true') return;
-        if (document.body) document.body.dataset.projectsAutoScrollInit = 'true';
-        initProjectsAutoScroll();
+        if (projectsAutoScrollController) return;
+        projectsAutoScrollController = initProjectsAutoScroll();
       };
 
-      if (document.readyState === 'complete') {
-        runProjectsAutoScroll();
-      } else {
+      const stopProjectsAutoScroll = () => {
+        if (!projectsAutoScrollController) return;
+        projectsAutoScrollController.destroy();
+        projectsAutoScrollController = null;
+      };
+
+      runProjectsAutoScroll();
+      if (document.readyState !== 'complete') {
+        window.addEventListener('DOMContentLoaded', runProjectsAutoScroll, { once: true });
         window.addEventListener('load', runProjectsAutoScroll, { once: true });
       }
       window.addEventListener('pageshow', runProjectsAutoScroll);
+      window.addEventListener('pagehide', stopProjectsAutoScroll);
 
       const autoLinkTextNodes = (root) => {
         if (!root) return;
