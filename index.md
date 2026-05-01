@@ -3,13 +3,7 @@ layout: default
 title: Home
 ---
 
-<section class="hero hero-with-video-bg">
-  <div class="hero-video-shell" aria-hidden="true">
-    <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata">
-      <source src="{{ '/assets/videos/TCTD.mp4' | relative_url }}" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-  </div>
+<section class="hero">
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Senior Technical Artist with 14+ years of AAA game development.</h1>
@@ -21,39 +15,6 @@ title: Home
     <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Portrait of Ioan-Andrei Nistor" class="hero-image">
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const heroVideo = document.querySelector('.hero-bg-video');
-    if (!heroVideo) return;
-
-    const videoPool = [
-      "{{ '/assets/videos/TCTD.mp4' | relative_url }}",
-      "{{ '/assets/videos/TCTD2.mp4' | relative_url }}",
-      "{{ '/assets/videos/NWA.mp4' | relative_url }}",
-      "{{ '/assets/videos/SWO.mp4' | relative_url }}"
-    ];
-
-    if (videoPool.length < 2) return;
-
-    let currentIndex = Math.floor(Math.random() * videoPool.length);
-
-    const swapVideo = () => {
-      let nextIndex = currentIndex;
-      while (nextIndex === currentIndex) {
-        nextIndex = Math.floor(Math.random() * videoPool.length);
-      }
-
-      currentIndex = nextIndex;
-      heroVideo.src = videoPool[currentIndex];
-      heroVideo.load();
-      heroVideo.play().catch(() => {});
-    };
-
-    heroVideo.addEventListener('ended', swapVideo);
-    swapVideo();
-  });
-</script>
 
 <section class="section-block">
   <div class="section-head">
