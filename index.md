@@ -65,6 +65,7 @@ title: Home
   </div>
 </section>
 
+<!-- Restored original Blog/Tools layout to match earlier baseline -->
 <section class="section-block">
   <div class="section-head">
     <div>
