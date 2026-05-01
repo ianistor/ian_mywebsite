@@ -126,23 +126,29 @@ title: Home
     <h2>Tools</h2>
     <a href="{{ '/tools/' | relative_url }}">See all</a>
   </div>
-  <div class="card-grid">
-    {% for tool in site.tools limit: 6 %}
-      <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
-        {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
-        {% if tool.show_text_placeholder == true or tool.image == blank %}
-          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
-            <span>{{ placeholder_label }}</span>
-          </div>
-        {% elsif tool.image %}
-          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
-        {% else %}
-          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
-        {% endif %}
-        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-        <p>{{ tool.summary }}</p>
-      </article>
-    {% endfor %}
+  <div class="projects-row-wrap">
+    <div class="projects-row-hint">Scroll for more tools</div>
+    <div class="projects-row blog-row">
+      {% for tool in site.tools limit: 6 %}
+        <article class="card blog-row-card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
+          {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
+          {% if tool.show_text_placeholder == true or tool.image == blank %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif tool.image %}
+            <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+          {% else %}
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+          {% endif %}
+          <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+          <p>{{ tool.summary }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="projects-row-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </section>
 
