@@ -1104,6 +1104,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   scroll-snap-type: x proximity;
 }
 
+.projects-row.is-auto-scrolling {
+  scroll-snap-type: none;
+}
+
 .projects-row::-webkit-scrollbar {
   height: 10px;
 }
