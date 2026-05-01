@@ -14,16 +14,19 @@ trailer_video: "/assets/videos/SWO.mp4"
 ---
 
 ## Overview
+My time on this project was very broad as I was lucky enough to be in the team right from the start. A couple of mentionable acomplishments:
 
-○ Houdini VAT destroyable environment
-○ Houdini Fracturing for VFX setup
-○ Performance optimization (offsetting costs to GPU)
-○ Cloth interaction and simulation
-○ Main Ship and speeder procedural animation setup
-○ Turret look at procedural animation (deployment, vfx trigger, look ats and destroyed state logic)
-○ Grappling hook early implementation (this was later on polished by my colleague Kirill Arafev)
-○ Wanted Screens procedural logic and setup
-○ Trailblazer (main ship) ownership
+○ Houdini VAT destroyable environment  
+○ Houdini Fracturing for VFX setup  
+○ Performance optimization (offsetting costs to GPU)  
+○ Cloth interaction and simulation  
+○ Main Ship and speeder procedural animation setup  
+○ Turret look at procedural animation (deployment, vfx trigger, look ats and destroyed state logic)  
+○ Grappling hook early implementation (this was later on polished by my colleague Kirill Arafev)  
+○ Wanted Screens procedural logic and setup  
+○ Trailblazer (main ship) ownership  
+○ Speeders destruction
+○ Speeder destruction of environment assets (setup, development and entire workflow)
 
 ## Deep dives
 
