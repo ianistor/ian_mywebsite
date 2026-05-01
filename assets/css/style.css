@@ -2166,10 +2166,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(7, 10, 16, 0.95) 30%, rgba(7, 10, 16, 0.35) 60%, rgba(7, 10, 16, 0.62) 100%),
-    url('/assets/images/profile_photo.png') right center / cover no-repeat;
-  opacity: 0.78;
+  background: linear-gradient(90deg, rgba(7, 10, 16, 0.96) 20%, rgba(7, 10, 16, 0.76) 50%, rgba(7, 10, 16, 0.88) 100%);
 }
 
 .landing-hero .hero-content,
@@ -2183,10 +2180,15 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   align-items: flex-end;
 }
 
-.landing-hero .hero-image {
-  max-width: 520px;
-  border-radius: 0;
-  opacity: 0;
+.hero-feature-video {
+  width: min(700px, 56vw);
+  max-height: 520px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.84;
+  filter: saturate(0.92) contrast(1.02) brightness(0.84);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
 }
 
 .hero-title-accent {
@@ -2219,9 +2221,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   }
 
   .hero-backdrop {
-    background:
-      linear-gradient(180deg, rgba(7, 10, 16, 0.92) 20%, rgba(7, 10, 16, 0.76) 68%, rgba(7, 10, 16, 0.92) 100%),
-      url('/assets/images/profile_photo.png') center / cover no-repeat;
+    background: linear-gradient(180deg, rgba(7, 10, 16, 0.92) 20%, rgba(7, 10, 16, 0.8) 68%, rgba(7, 10, 16, 0.94) 100%);
+  }
+
+  .hero-feature-video {
+    width: 100%;
+    max-height: 380px;
+    margin-top: 0.5rem;
   }
 
   .hero-cta-row {
