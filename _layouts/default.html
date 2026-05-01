@@ -19,17 +19,11 @@
   {% if page.url == '/' %}
     <script id="site-bg-video-pool" type="application/json">
       [
-        {% assign comma = "" %}
-        {% for project in site.projects %}
-          {% if project.trailer_video %}
-            {{ comma }}"{{ project.trailer_video | relative_url }}"
-            {% assign comma = "," %}
-          {% endif %}
-        {% endfor %}
-        {{ comma }}"https://cdn.artstation.com/p/video_sources/002/194/715/ianistor-stone-wall-destruction3-2.mp4#t=0.001",
-        "https://cdn.artstation.com/p/video_sources/002/194/842/ianistor-brick-wall-destruction-main.mp4#t=0.001",
-        "https://cdn.artstation.com/p/video_sources/002/194/648/ianistor-mq060-debrisseq.mp4#t=0.001",
-        "https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4#t=0.001"
+        "{{ '/assets/videos/SWO.mp4' | relative_url }}",
+        "{{ '/assets/videos/NWA.mp4' | relative_url }}",
+        "{{ '/assets/videos/TCTD2.mp4' | relative_url }}",
+        "{{ '/assets/videos/TCTD2_WONY.mp4' | relative_url }}",
+        "{{ '/assets/videos/TCTD.mp4' | relative_url }}"
       ]
     </script>
   {% endif %}
@@ -134,6 +128,7 @@
 
         const backgroundVideo = document.createElement('video');
         backgroundVideo.className = 'site-bg-video';
+        const heroFeatureVideo = document.getElementById('hero-feature-video');
         backgroundVideo.autoplay = true;
         backgroundVideo.muted = true;
         backgroundVideo.playsInline = true;
@@ -149,9 +144,16 @@
         let currentIndex = Math.floor(Math.random() * videoPool.length);
 
         const playIndex = (index) => {
-          backgroundVideo.src = videoPool[index];
+          const selectedVideo = videoPool[index];
+          backgroundVideo.src = selectedVideo;
           backgroundVideo.load();
           backgroundVideo.play().catch(() => {});
+
+          if (heroFeatureVideo) {
+            heroFeatureVideo.src = selectedVideo;
+            heroFeatureVideo.load();
+            heroFeatureVideo.play().catch(() => {});
+          }
         };
 
         backgroundVideo.addEventListener('playing', () => {

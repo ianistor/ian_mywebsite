@@ -3,27 +3,32 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
+<section class="hero landing-hero">
+  <div class="hero-backdrop" aria-hidden="true"></div>
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
-    <h1 class="hero-title">Senior Technical Artist with 14+ years of AAA game development.</h1>
-    <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor, Senior Technical Artist with 14+ years of AAA experience, love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
-    <p class="stack-label">Preffered Stack</p>
-    <hr class="hero-stack-divider">
+    <h1 class="hero-title">Senior Technical Artist with 14+ years of <span class="hero-title-accent">AAA</span> game development.</h1>
+    <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor. I love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams and establishing best practices.</p>
+    <div class="hero-cta-row">
+      <a class="button" href="{{ '/projects/' | relative_url }}">View projects</a>
+      <a class="button secondary" href="{{ '/cv/' | relative_url }}">About me</a>
+    </div>
+    <p class="stack-label">Preferred Stack</p>
     <ul class="hero-stack-list" aria-label="Preferred technical stack">
-      <li><img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
-      <li><img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
+      <li><img src="https://cdn.simpleicons.org/houdini/FF6A00" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
+      <li><img src="https://cdn.simpleicons.org/autodeskmaya/2AB4E8" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
       <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
       <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
       <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Blender</span></li>
       <li><img src="https://static.wikia.nocookie.net/logopedia/images/4/40/Snowdrop-2016.png/revision/latest?cb=20250728162817" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
       <li><img src="https://images.seeklogo.com/logo-png/48/2/3ds-max-logo-png_seeklogo-482396.png" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>3ds Max</span></li>
     </ul>
-
   </div>
 
   <div class="hero-image-container hero-content-elevated">
-    <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Portrait of Ioan-Andrei Nistor" class="hero-image">
+    <video id="hero-feature-video" class="hero-feature-video" autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/images/profile_photo.png' | relative_url }}" aria-label="Showreel preview">
+      <source src="{{ '/assets/videos/SWO.mp4' | relative_url }}" type="video/mp4">
+    </video>
   </div>
 </section>
 
