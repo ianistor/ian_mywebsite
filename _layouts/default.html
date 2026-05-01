@@ -454,7 +454,18 @@
         });
       };
 
-      initProjectsAutoScroll();
+      const runProjectsAutoScroll = () => {
+        if (document.body && document.body.dataset.projectsAutoScrollInit === 'true') return;
+        if (document.body) document.body.dataset.projectsAutoScrollInit = 'true';
+        initProjectsAutoScroll();
+      };
+
+      if (document.readyState === 'complete') {
+        runProjectsAutoScroll();
+      } else {
+        window.addEventListener('load', runProjectsAutoScroll, { once: true });
+      }
+      window.addEventListener('pageshow', runProjectsAutoScroll);
 
       const autoLinkTextNodes = (root) => {
         if (!root) return;
