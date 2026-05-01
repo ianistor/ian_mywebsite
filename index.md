@@ -3,7 +3,13 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
+<section class="hero hero-with-video-bg">
+  <div class="hero-video-shell" aria-hidden="true">
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata">
+      <source src="{{ '/assets/videos/TCTD.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Senior Technical Artist with 14+ years of AAA game development.</h1>
@@ -15,6 +21,39 @@ title: Home
     <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Portrait of Ioan-Andrei Nistor" class="hero-image">
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroVideo = document.querySelector('.hero-bg-video');
+    if (!heroVideo) return;
+
+    const videoPool = [
+      "{{ '/assets/videos/TCTD.mp4' | relative_url }}",
+      "{{ '/assets/videos/TCTD2.mp4' | relative_url }}",
+      "{{ '/assets/videos/NWA.mp4' | relative_url }}",
+      "{{ '/assets/videos/SWO.mp4' | relative_url }}"
+    ];
+
+    if (videoPool.length < 2) return;
+
+    let currentIndex = Math.floor(Math.random() * videoPool.length);
+
+    const swapVideo = () => {
+      let nextIndex = currentIndex;
+      while (nextIndex === currentIndex) {
+        nextIndex = Math.floor(Math.random() * videoPool.length);
+      }
+
+      currentIndex = nextIndex;
+      heroVideo.src = videoPool[currentIndex];
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+    };
+
+    heroVideo.addEventListener('ended', swapVideo);
+    swapVideo();
+  });
+</script>
 
 <section class="section-block">
   <div class="section-head">
@@ -65,6 +104,7 @@ title: Home
   </div>
 </section>
 
+<!-- Restored original Blog/Tools layout to match earlier baseline -->
 <section class="section-block">
   <div class="section-head">
     <div>
@@ -175,7 +215,13 @@ title: Home
       </li>
       <li>
         <a href="https://github.com/ianistor" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
-          <span class="contact-icon" aria-hidden="true">GitHub</span>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.45-1.1-1.45-.9-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.88 1.52 2.31 1.08 2.87.83.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .85-.27 2.8 1.03a9.7 9.7 0 0 1 5.1 0c1.94-1.3 2.8-1.03 2.8-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.85-2.35 4.7-4.58 4.95.36.3.68.9.68 1.8v2.67c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+            </svg>
+          </span>
         </a>
       </li>
     </ul>
