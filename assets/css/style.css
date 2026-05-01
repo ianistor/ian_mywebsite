@@ -294,12 +294,21 @@ a:hover {
 
 body.home-with-bg-video.video-bg-ready .site-bg-video {
   opacity: 0.27;
+  visibility: visible;
 }
 
 .site-bg-video-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(8, 10, 15, 0.58), rgba(8, 10, 15, 0.74));
+}
+
+.home-with-bg-video .site-bg-video {
+  visibility: hidden;
+}
+
+.home-with-bg-video .project-trailer-hero {
+  display: none !important;
 }
 
 .page-shell {
