@@ -377,7 +377,7 @@
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return null;
         projectsRow.classList.add('is-auto-scrolling');
         let isPaused = false;
-        const stepPx = coarsePointer ? 1.1 : 0.1;
+        const stepPx = coarsePointer ? 1.1 : 0.2;
         const intervalMs = coarsePointer ? 32 : 28;
         const restartDelayMs = 900;
         const touchResumeDelayMs = 850;
