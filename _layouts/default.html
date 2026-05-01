@@ -377,7 +377,7 @@
         if (!projectsRow || !projectsRow.querySelector('.project-row-card')) return null;
         projectsRow.classList.add('is-auto-scrolling');
         let isPaused = false;
-        const stepPx = coarsePointer ? 0.38 : 0.6;
+        const stepPx = coarsePointer ? 1.1 : 1;
         const intervalMs = coarsePointer ? 32 : 28;
         const restartDelayMs = 900;
         const touchResumeDelayMs = 850;
@@ -412,7 +412,7 @@
             }
             return;
           }
-          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + stepPx);
+          projectsRow.scrollLeft = Math.min(maxScrollLeft, projectsRow.scrollLeft + Math.max(1, Math.round(stepPx)));
           if (projectsRowWrap) {
             projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
           }
@@ -487,9 +487,9 @@
         projectsAutoScrollController = null;
       };
 
-      if (document.readyState === 'complete') {
-        runProjectsAutoScroll();
-      } else {
+      runProjectsAutoScroll();
+      if (document.readyState !== 'complete') {
+        window.addEventListener('DOMContentLoaded', runProjectsAutoScroll, { once: true });
         window.addEventListener('load', runProjectsAutoScroll, { once: true });
       }
       window.addEventListener('pageshow', runProjectsAutoScroll);
