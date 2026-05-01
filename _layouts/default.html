@@ -17,10 +17,6 @@
 </head>
 <body{% if page.url == '/' %} class="home-with-bg-video"{% endif %}>
   {% if page.url == '/' %}
-    <div class="site-bg-video-wrap" aria-hidden="true">
-      <video class="site-bg-video" autoplay muted playsinline preload="metadata"></video>
-      <div class="site-bg-video-overlay"></div>
-    </div>
     <script id="site-bg-video-pool" type="application/json">
       [
         {% assign comma = "" %}
@@ -121,9 +117,8 @@
       addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
 
       const initSiteBackgroundVideo = () => {
-        const backgroundVideo = document.querySelector('.site-bg-video');
         const poolNode = document.getElementById('site-bg-video-pool');
-        if (!backgroundVideo || !poolNode) return;
+        if (!poolNode) return;
 
         let videoPool = [];
         try {
@@ -132,6 +127,24 @@
           return;
         }
         if (!videoPool.length) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'site-bg-video-wrap';
+        wrap.setAttribute('aria-hidden', 'true');
+
+        const backgroundVideo = document.createElement('video');
+        backgroundVideo.className = 'site-bg-video';
+        backgroundVideo.autoplay = true;
+        backgroundVideo.muted = true;
+        backgroundVideo.playsInline = true;
+        backgroundVideo.preload = 'metadata';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'site-bg-video-overlay';
+
+        wrap.appendChild(backgroundVideo);
+        wrap.appendChild(overlay);
+        document.body.prepend(wrap);
 
         let currentIndex = Math.floor(Math.random() * videoPool.length);
         const playIndex = (index) => {
