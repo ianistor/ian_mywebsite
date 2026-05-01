@@ -5,6 +5,16 @@ title: Home
 
 <section class="hero">
   <div class="hero-content hero-content-elevated">
+    <div class="bg-video-controls-panel" aria-label="Background video controls">
+      <label class="bg-video-toggle" for="bg-video-toggle">
+        <input id="bg-video-toggle" type="checkbox" checked>
+        <span>Background video</span>
+      </label>
+      <label class="bg-video-opacity" for="bg-video-opacity">
+        <span>Transparency</span>
+        <input id="bg-video-opacity" type="range" min="0" max="100" value="73">
+      </label>
+    </div>
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Senior Technical Artist with 14+ years of AAA game development.</h1>
     <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor, Senior Technical Artist with 14+ years of AAA experience, love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>

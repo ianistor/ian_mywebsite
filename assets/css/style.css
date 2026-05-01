@@ -317,14 +317,11 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   display: none !important;
 }
 
-.site-bg-video-controls {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 65;
+.bg-video-controls-panel {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
   border: 1px solid var(--line);
@@ -332,7 +329,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   backdrop-filter: blur(8px);
 }
 
-.site-bg-video-toggle {
+.bg-video-toggle {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -340,7 +337,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   font-size: 0.82rem;
 }
 
-.site-bg-video-opacity {
+.bg-video-opacity {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -348,7 +345,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   font-size: 0.78rem;
 }
 
-.site-bg-video-opacity input[type="range"] {
+.bg-video-opacity input[type="range"] {
   width: 100px;
 }
 

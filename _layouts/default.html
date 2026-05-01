@@ -142,37 +142,9 @@
         const overlay = document.createElement('div');
         overlay.className = 'site-bg-video-overlay';
 
-        const controls = document.createElement('div');
-        controls.className = 'site-bg-video-controls';
-
-        const toggleLabel = document.createElement('label');
-        toggleLabel.className = 'site-bg-video-toggle';
-
-        const toggleInput = document.createElement('input');
-        toggleInput.type = 'checkbox';
-        toggleInput.checked = true;
-        toggleInput.setAttribute('aria-label', 'Enable background video');
-
-        const toggleText = document.createElement('span');
-        toggleText.textContent = 'Background video';
-
-        toggleLabel.appendChild(toggleInput);
-        toggleLabel.appendChild(toggleText);
-
-        const opacityLabel = document.createElement('label');
-        opacityLabel.className = 'site-bg-video-opacity';
-        opacityLabel.textContent = 'Transparency';
-
-        const opacitySlider = document.createElement('input');
-        opacitySlider.type = 'range';
-        opacitySlider.min = '0';
-        opacitySlider.max = '100';
-        opacitySlider.value = '73';
-        opacitySlider.setAttribute('aria-label', 'Background video transparency');
-
-        opacityLabel.appendChild(opacitySlider);
-        controls.appendChild(toggleLabel);
-        controls.appendChild(opacityLabel);
+        const toggleInput = document.getElementById('bg-video-toggle');
+        const opacitySlider = document.getElementById('bg-video-opacity');
+        if (!toggleInput || !opacitySlider) return;
 
         wrap.appendChild(backgroundVideo);
         wrap.appendChild(overlay);
