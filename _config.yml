@@ -4,6 +4,7 @@ description: >-
   Technical Artist and Game Developer. Tools, workflows, blog posts, and resume.
 baseurl: "/ian_website"
 url: "https://ianistor.github.io"
+og_image: "/assets/images/profile_photo.png"
 markdown: kramdown
 syntax_highlighter: rouge
 kramdown:

@@ -361,6 +361,11 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.section-intro {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+}
+
 .landing-variations-head {
   align-items: center;
   flex-wrap: wrap;

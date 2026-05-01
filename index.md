@@ -6,13 +6,13 @@ title: Home
 <section class="hero">
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
-    <h1 class="hero-title">Tools, workflows, and random experiments.</h1>
+    <h1 class="hero-title">Senior Technical Artist — 14+ years of AAA game development.</h1>
     <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor, Senior Technical Artist with 14+ years of AAA experience, love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
 
   </div>
 
   <div class="hero-image-container hero-content-elevated">
-    <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="" class="hero-image">
+    <img src="{{ '/assets/images/profile_photo.png' | relative_url }}" alt="Portrait of Ioan-Andrei Nistor" class="hero-image">
   </div>
 </section>
 
@@ -21,6 +21,7 @@ title: Home
     <h2>Projects</h2>
     <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
+  <p class="section-intro">Here's what I've shipped across AAA productions, from gameplay-facing tools to procedural pipelines.</p>
 
   <div class="projects-row-wrap">
     <div class="projects-row-hint">Scroll for more</div>
@@ -28,6 +29,7 @@ title: Home
     <div class="projects-row">
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
+        {% if project.hidden != true %}
         <article class="project-row-card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
           <div class="project-row-media">
             {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
@@ -36,7 +38,7 @@ title: Home
                 <span>{{ placeholder_label }}</span>
               </div>
             {% else %}
-              <img src="{{ project.image | relative_url }}" alt="" class="project-row-image">
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }} thumbnail" class="project-row-image">
             {% endif %}
             <p class="project-card-summary">{{ project.summary }}</p>
           </div>
@@ -53,6 +55,7 @@ title: Home
 
           </div>
         </article>
+        {% endif %}
       {% endfor %}
     </div>
 
@@ -73,6 +76,7 @@ title: Home
     <div class="projects-row-hint">Scroll for older posts</div>
     <div class="projects-row blog-row">
       {% for post in site.posts %}
+        {% if post.hidden != true %}
         <article class="card blog-row-card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
           {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
           {% if post.show_text_placeholder == true %}
@@ -84,11 +88,11 @@ title: Home
               <span>{{ placeholder_label }}</span>
             </div>
           {% elsif post.image %}
-            <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }} thumbnail" class="card-thumb">
           {% elsif post.youtube_id %}
-            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
+            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }} video thumbnail" class="card-thumb">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="{{ post.title }} placeholder thumbnail" class="card-thumb">
           {% endif %}
           <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -101,6 +105,7 @@ title: Home
           {% endif %}
           <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
         </article>
+        {% endif %}
       {% endfor %}
     </div>
     <div class="projects-row-dots" aria-hidden="true">
@@ -170,11 +175,9 @@ title: Home
       </li>
       <li>
         <a href="https://github.com/ianistor" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
-          <span class="contact-icon" aria-hidden="true">gh</span>
+          <span class="contact-icon" aria-hidden="true">GitHub</span>
         </a>
       </li>
     </ul>
-
-    <a href="mailto:{{ site.email }}" class="contact-cta">Say hello</a>
   </div>
 </section>

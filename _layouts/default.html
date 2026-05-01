@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  {% assign social_image = page.image | default: site.og_image | default: '/assets/images/profile_photo.png' %}
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:image" content="{{ social_image | absolute_url }}">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="alternate icon" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -21,7 +26,7 @@
         </a>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
           {% for item in site.nav %}
-            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url or (item.url != '/' and page.url contains item.url) %} class="active"{% endif %}>{{ item.title }}</a>
           {% endfor %}
           <a class="header-contact-button" href="{{ '/#contact' | relative_url }}">Contact</a>
         </nav>
@@ -37,7 +42,6 @@
     <footer class="site-footer">
       <div class="container footer-row">
         <p>{{ site.description }}</p>
-        <p>Hosted on GitHub Pages with Jekyll</p>
       </div>
     </footer>
   </div>
@@ -151,7 +155,7 @@
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
-          {% if doc.title and doc.url %}
+          {% if doc.title and doc.url and doc.hidden != true %}
             {
               title: {{ doc.title | jsonify }},
               url: {{ doc.url | relative_url | jsonify }},

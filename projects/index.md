@@ -13,6 +13,7 @@ permalink: /projects/
 <section class="card-grid projects-index-grid">
   {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
   {% for project in sorted_projects %}
+    {% if project.hidden != true %}
     <article class="card js-clickable-card" data-href="{{ project.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ project.title }}">
       {% assign placeholder_label = project.placeholder_text | default: project.title | default: "Unannounced Project" %}
       {% if project.show_text_placeholder == true or project.image == blank %}
@@ -20,7 +21,7 @@ permalink: /projects/
           <span>{{ placeholder_label }}</span>
         </div>
       {% else %}
-        <img src="{{ project.image | relative_url }}" alt="" class="project-card-thumb">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }} thumbnail" class="project-card-thumb">
       {% endif %}
 
       <h2 class="project-card-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
@@ -51,5 +52,6 @@ permalink: /projects/
         </div>
       {% endif %}
     </article>
+    {% endif %}
   {% endfor %}
 </section>

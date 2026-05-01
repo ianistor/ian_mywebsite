@@ -3,6 +3,7 @@ layout: project
 title: "The Division 2"
 role: "Technical Artist"
 company: "Massive Entertainment"
+summary: "Technical-art ownership for reusable environment and gameplay workflows, with production tooling that sped up team iteration."
 image: "assets/images/projectcovers/TCTD2.png"
 release_year: 2019
 permalink: /projects/division-2/
