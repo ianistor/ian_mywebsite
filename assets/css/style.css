@@ -2168,8 +2168,8 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 body.home-with-bg-video .landing-hero,
 body.home-with-bg-video .section-block {
-  width: min(calc(100vw - 2rem), 1760px);
-  margin-left: calc(50% - (min(calc(100vw - 2rem), 1760px) / 2));
+  width: min(calc(100vw - 2rem), 1408px);
+  margin-left: calc(50% - (min(calc(100vw - 2rem), 1408px) / 2));
 }
 
 .hero-backdrop {
@@ -2209,13 +2209,13 @@ body.home-with-bg-video .section-block {
 .landing-hero .hero-image-container::before {
   content: "";
   position: absolute;
-  left: -42%;
+  left: 0;
   top: 0;
-  width: 76%;
+  width: 58%;
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(7, 10, 16, 0.99) 0%, rgba(7, 10, 16, 0.9) 34%, rgba(7, 10, 16, 0.64) 56%, rgba(7, 10, 16, 0) 100%);
+  background: linear-gradient(90deg, rgba(7, 10, 16, 0.98) 0%, rgba(7, 10, 16, 0.78) 32%, rgba(7, 10, 16, 0.3) 58%, rgba(7, 10, 16, 0) 100%);
 }
 
 .hero-title-accent {
