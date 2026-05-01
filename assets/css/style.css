@@ -72,6 +72,10 @@ body {
   line-height: 1.6;
 }
 
+body.home-with-bg-video {
+  background: radial-gradient(circle at top, rgba(13, 20, 35, 0.66) 0%, rgba(8, 10, 15, 0.72) 38%);
+}
+
 body.lightbox-open {
   overflow: hidden;
 }
@@ -262,6 +266,50 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
+}
+
+.site-bg-video-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.site-bg-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: saturate(0.9) contrast(0.95) brightness(0.72);
+  transform: scale(1.04);
+}
+
+body.home-with-bg-video.video-bg-ready .site-bg-video {
+  opacity: 0.27;
+  visibility: visible;
+}
+
+.site-bg-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 10, 15, 0.58), rgba(8, 10, 15, 0.74));
+}
+
+.home-with-bg-video .site-bg-video {
+  visibility: hidden;
+}
+
+.home-with-bg-video .project-trailer-hero {
+  display: none !important;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
