@@ -264,6 +264,40 @@ a:hover {
   gap: 2rem;
 }
 
+.hero-with-video-bg {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  margin-top: 1rem;
+  padding: 2.8rem 1.4rem;
+  isolation: isolate;
+}
+
+.hero-video-shell {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  filter: saturate(0.8) contrast(0.92) brightness(0.7);
+  transform: scale(1.05);
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(8, 10, 15, 0.1) 20%, rgba(8, 10, 15, 0.62) 100%),
+    linear-gradient(180deg, rgba(8, 10, 15, 0.45), rgba(8, 10, 15, 0.7));
+}
+
 .hero-content {
   flex: 1 1 400px;
 }
@@ -1311,6 +1345,10 @@ a:hover {
 
   .hero {
     flex-direction: column;
+  }
+
+  .hero-with-video-bg {
+    padding: 2rem 1rem;
   }
 
   .projects-row {
