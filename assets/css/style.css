@@ -2224,6 +2224,14 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   margin: 1rem 0 1.25rem;
 }
 
+
+.landing-hero .hero-content {
+  transform: scale(0.5);
+  transform-origin: top left;
+  width: 200%;
+  margin-bottom: -48%;
+}
+
 .landing-hero .hero-title {
   max-width: 13ch;
   font-size: clamp(2.6rem, 4.7vw, 5rem);
@@ -2248,6 +2256,12 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
   .hero-backdrop {
     background: linear-gradient(180deg, rgba(7, 10, 16, 0.92) 20%, rgba(7, 10, 16, 0.8) 68%, rgba(7, 10, 16, 0.94) 100%);
+  }
+
+  .landing-hero .hero-content {
+    transform: none;
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .hero-feature-video {
