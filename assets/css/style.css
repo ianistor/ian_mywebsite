@@ -2176,7 +2176,9 @@ body.home-with-bg-video .section-block {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 9, 14, 0.97) 20%, rgba(6, 9, 14, 0.78) 50%, rgba(6, 9, 14, 0.9) 100%);
+  background:
+    linear-gradient(180deg, rgba(6, 9, 14, 0.22) 0%, rgba(6, 9, 14, 0.58) 68%, rgba(6, 9, 14, 0.88) 100%),
+    linear-gradient(90deg, rgba(6, 9, 14, 0.97) 20%, rgba(6, 9, 14, 0.78) 50%, rgba(6, 9, 14, 0.9) 100%);
 }
 
 .landing-hero .hero-content,
