@@ -26,6 +26,7 @@ permalink: /blog/
 
 <section class="card-grid">
   {% for post in site.posts %}
+    {% if post.hidden != true %}
     <article class="card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
       <div class="card-media">
         {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
@@ -38,11 +39,11 @@ permalink: /blog/
             <span>{{ placeholder_label }}</span>
           </div>
         {% elsif post.image %}
-          <img src="{{ post.image | relative_url }}" alt="" class="card-thumb">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }} thumbnail" class="card-thumb">
         {% elsif post.youtube_id %}
-          <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="" class="card-thumb">
+          <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }} video thumbnail" class="card-thumb">
         {% else %}
-          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="{{ post.title }} placeholder thumbnail" class="card-thumb">
         {% endif %}
         <div class="card-overlay">
           <p>{{ post.overlay_text | default: post.excerpt | strip_html | truncate: 140 }}</p>
@@ -59,5 +60,6 @@ permalink: /blog/
       {% endif %}
       <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
     </article>
+    {% endif %}
   {% endfor %}
 </section>
