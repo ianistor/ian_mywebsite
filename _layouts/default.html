@@ -142,11 +142,57 @@
         const overlay = document.createElement('div');
         overlay.className = 'site-bg-video-overlay';
 
+        const controls = document.createElement('div');
+        controls.className = 'site-bg-video-controls';
+
+        const toggleLabel = document.createElement('label');
+        toggleLabel.className = 'site-bg-video-toggle';
+
+        const toggleInput = document.createElement('input');
+        toggleInput.type = 'checkbox';
+        toggleInput.checked = true;
+        toggleInput.setAttribute('aria-label', 'Enable background video');
+
+        const toggleText = document.createElement('span');
+        toggleText.textContent = 'Background video';
+
+        toggleLabel.appendChild(toggleInput);
+        toggleLabel.appendChild(toggleText);
+
+        const opacityLabel = document.createElement('label');
+        opacityLabel.className = 'site-bg-video-opacity';
+        opacityLabel.textContent = 'Transparency';
+
+        const opacitySlider = document.createElement('input');
+        opacitySlider.type = 'range';
+        opacitySlider.min = '0';
+        opacitySlider.max = '100';
+        opacitySlider.value = '73';
+        opacitySlider.setAttribute('aria-label', 'Background video transparency');
+
+        opacityLabel.appendChild(opacitySlider);
+        controls.appendChild(toggleLabel);
+        controls.appendChild(opacityLabel);
+
         wrap.appendChild(backgroundVideo);
         wrap.appendChild(overlay);
+        document.body.appendChild(controls);
         document.body.prepend(wrap);
 
         let currentIndex = Math.floor(Math.random() * videoPool.length);
+        const setVideoEnabled = (enabled) => {
+          document.body.classList.toggle('video-bg-disabled', !enabled);
+          opacitySlider.disabled = !enabled;
+        };
+        const setVideoOpacity = (value) => {
+          const clamped = Math.min(100, Math.max(0, Number(value)));
+          const opacity = ((100 - clamped) * 0.01) * 0.27;
+          document.body.style.setProperty('--site-bg-video-opacity', opacity.toFixed(3));
+        };
+
+        toggleInput.addEventListener('change', () => setVideoEnabled(toggleInput.checked));
+        opacitySlider.addEventListener('input', () => setVideoOpacity(opacitySlider.value));
+
         const playIndex = (index) => {
           backgroundVideo.src = videoPool[index];
           backgroundVideo.load();
@@ -171,6 +217,8 @@
         };
 
         backgroundVideo.addEventListener('ended', playNext);
+        setVideoEnabled(true);
+        setVideoOpacity(opacitySlider.value);
         playIndex(currentIndex);
       };
 
