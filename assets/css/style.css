@@ -2212,11 +2212,11 @@ body.home-with-bg-video .section-block {
   position: absolute;
   left: 0;
   top: 0;
-  width: 58%;
+  width: 54%;
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(7, 10, 16, 0.98) 0%, rgba(7, 10, 16, 0.78) 32%, rgba(7, 10, 16, 0.3) 58%, rgba(7, 10, 16, 0) 100%);
+  background: linear-gradient(90deg, rgba(7, 10, 16, 0.94) 0%, rgba(7, 10, 16, 0.7) 28%, rgba(7, 10, 16, 0.24) 56%, rgba(7, 10, 16, 0) 100%);
 }
 
 .hero-title-accent {
