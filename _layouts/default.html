@@ -142,11 +142,28 @@
         const overlay = document.createElement('div');
         overlay.className = 'site-bg-video-overlay';
 
+        const toggleInput = document.getElementById('bg-video-toggle');
+        const opacitySlider = document.getElementById('bg-video-opacity');
+        if (!toggleInput || !opacitySlider) return;
+
         wrap.appendChild(backgroundVideo);
         wrap.appendChild(overlay);
         document.body.prepend(wrap);
 
         let currentIndex = Math.floor(Math.random() * videoPool.length);
+        const setVideoEnabled = (enabled) => {
+          document.body.classList.toggle('video-bg-disabled', !enabled);
+          opacitySlider.disabled = !enabled;
+        };
+        const setVideoOpacity = (value) => {
+          const clamped = Math.min(100, Math.max(0, Number(value)));
+          const opacity = ((100 - clamped) * 0.01) * 0.27;
+          document.body.style.setProperty('--site-bg-video-opacity', opacity.toFixed(3));
+        };
+
+        toggleInput.addEventListener('change', () => setVideoEnabled(toggleInput.checked));
+        opacitySlider.addEventListener('input', () => setVideoOpacity(opacitySlider.value));
+
         const playIndex = (index) => {
           backgroundVideo.src = videoPool[index];
           backgroundVideo.load();
@@ -171,6 +188,8 @@
         };
 
         backgroundVideo.addEventListener('ended', playNext);
+        setVideoEnabled(true);
+        setVideoOpacity(opacitySlider.value);
         playIndex(currentIndex);
       };
 
