@@ -6,3 +6,5 @@ summary: "Provided QA support for DLC content with focused testing passes, stabi
 image: "/assets/images/projectcovers/ACBFFC.png"
 release_year: 2013
 ---
+
+Game Testing the game while also having responsability of task delegation in a small team and communicate team progress across entire QA teams.
