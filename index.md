@@ -104,8 +104,9 @@ title: Home
   </div>
 </section>
 
-<section class="section-block showcase-wall">
-  <div class="section-head showcase-head">
+<!-- Restored original Blog/Tools layout to match earlier baseline -->
+<section class="section-block">
+  <div class="section-head">
     <div>
       <h2>Blog</h2>
       <p class="section-subtitle">Breakdowns, tools, and technical deep-dives from the studio floor.</p>
