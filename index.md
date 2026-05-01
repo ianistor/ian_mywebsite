@@ -8,6 +8,7 @@ title: Home
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Senior Technical Artist with 14+ years of AAA game development.</h1>
     <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor, Senior Technical Artist with 14+ years of AAA experience, love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams, establishing best practices, and driving clear documentation to scale production across disciplines.</p>
+    <p class="stack-label">Preffered Stack</p>
     <hr class="hero-stack-divider">
     <ul class="hero-stack-list" aria-label="Preferred technical stack">
       <li><img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
