@@ -21,7 +21,7 @@ title: Home
     <h2>Projects</h2>
     <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
-  <p class="section-intro">Here's what I've shipped across AAA productions, from gameplay-facing tools to procedural pipelines.</p>
+  <p class="section-intro">Here's what I've shipped across AAA productions, from gameplay-facing systems to workflow and pipelines to performance improvements.</p>
 
   <div class="projects-row-wrap">
     <div class="projects-row-hint">Scroll for more</div>
