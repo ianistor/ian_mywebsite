@@ -1029,15 +1029,7 @@ body.home-with-bg-video.video-bg-ready .site-bg-video {
 }
 
 .projects-row-wrap::after {
-  content: "";
-  position: absolute;
-  top: 1.8rem;
-  right: 0;
-  width: 68px;
-  height: calc(100% - 2.6rem);
-  background: linear-gradient(to left, rgba(8, 10, 15, 0.82) 0%, rgba(8, 10, 15, 0) 100%);
-  pointer-events: none;
-  z-index: 2;
+  content: none;
 }
 
 .projects-row-wrap::before {
