@@ -140,6 +140,10 @@
           backgroundVideo.play().catch(() => {});
         };
 
+        backgroundVideo.addEventListener('playing', () => {
+          document.body.classList.add('video-bg-ready');
+        }, { once: true });
+
         const playNext = () => {
           if (videoPool.length === 1) {
             playIndex(0);
