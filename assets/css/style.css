@@ -1781,6 +1781,7 @@ a:hover {
 
 .experience-head .company-logo-ubisoft {
   width: 300px !important;
+  max-height: 138px;
 }
 
 .cv-title-link {
