@@ -15,7 +15,15 @@ trailer_video: "/assets/videos/SWO.mp4"
 
 ## Overview
 
-Star Wars Outlaws is presented here as a main project page with several focused breakdowns instead of one oversized page.
+○ Houdini VAT destroyable environment
+○ Houdini Fracturing for VFX setup
+○ Performance optimization (offsetting costs to GPU)
+○ Cloth interaction and simulation
+○ Main Ship and speeder procedural animation setup
+○ Turret look at procedural animation (deployment, vfx trigger, look ats and destroyed state logic)
+○ Grappling hook early implementation (this was later on polished by my colleague Kirill Arafev)
+○ Wanted Screens procedural logic and setup
+○ Trailblazer (main ship) ownership
 
 ## Deep dives
 
