@@ -109,60 +109,77 @@ title: Home
   <div class="section-head">
     <div>
       <h2>Blog</h2>
-      <p class="section-subtitle">Breakdowns, tools, and technical deep-dives from the studio floor.</p>
     </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
-
-  <div class="showcase-grid showcase-grid-blog">
-    {% for post in site.posts limit: 2 %}
-      {% if post.hidden != true %}
-      <article class="showcase-card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
-        {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Blog Post" %}
-        {% if post.show_text_placeholder == true or post.image == blank %}
-          <div class="showcase-thumb project-text-placeholder" aria-label="{{ placeholder_label }}"><span>{{ placeholder_label }}</span></div>
-        {% else %}
-          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="showcase-thumb">
-        {% endif %}
-        <div class="showcase-body">
-          {% if post.tags %}
-          <div class="showcase-tags">
-            {% for tag in post.tags limit: 3 %}<span>{{ tag | upcase }}</span>{% endfor %}
-          </div>
+  <div class="projects-row-wrap">
+    <div class="projects-row-hint">Scroll for older posts</div>
+    <div class="projects-row blog-row">
+      {% for post in site.posts %}
+        {% if post.hidden != true %}
+        <article class="card blog-row-card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
+          {% assign placeholder_label = post.placeholder_text | default: post.title | default: "Unannounced Project" %}
+          {% if post.show_text_placeholder == true %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif post.image == blank and post.youtube_id == blank %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }} thumbnail" class="card-thumb">
+          {% elsif post.youtube_id %}
+            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }} video thumbnail" class="card-thumb">
+          {% else %}
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="{{ post.title }} placeholder thumbnail" class="card-thumb">
           {% endif %}
-          <p class="showcase-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.tags %}
+            <div class="post-tags">
+              {% for tag in post.tags %}
+                <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
           <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-          <span class="showcase-link">Read post →</span>
-        </div>
-      </article>
-      {% endif %}
-    {% endfor %}
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="projects-row-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
   </div>
+  {% if site.posts.size > 3 %}
+    <a class="blog-scroll-hint" href="{{ '/blog/' | relative_url }}" aria-label="Go to older blog posts">
+      <span>Scroll right for older posts</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  {% endif %}
 </section>
 
-<section class="section-block showcase-wall">
-  <div class="section-head showcase-head">
-    <div>
-      <h2>Tools</h2>
-      <p class="section-subtitle">Custom tools built to solve real production problems — publicly available.</p>
-    </div>
+<section class="section-block">
+  <div class="section-head">
+    <h2>Tools</h2>
     <a href="{{ '/tools/' | relative_url }}">See all</a>
   </div>
-
-  <div class="showcase-grid showcase-grid-tools">
-    {% for tool in site.tools limit: 3 %}
-      <article class="showcase-card showcase-card-compact js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
-        {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Tool" %}
+  <div class="card-grid">
+    {% for tool in site.tools limit: 6 %}
+      <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
+        {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
         {% if tool.show_text_placeholder == true or tool.image == blank %}
-          <div class="showcase-thumb project-text-placeholder" aria-label="{{ placeholder_label }}"><span>{{ placeholder_label }}</span></div>
+          <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+            <span>{{ placeholder_label }}</span>
+          </div>
+        {% elsif tool.image %}
+          <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
         {% else %}
-          <img src="{{ tool.image | relative_url }}" alt="{{ tool.title }}" class="showcase-thumb">
+          <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
         {% endif %}
-        <div class="showcase-body">
-          <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
-          <p>{{ tool.summary | default: tool.excerpt | strip_html | truncate: 120 }}</p>
-        </div>
+        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <p>{{ tool.summary }}</p>
       </article>
     {% endfor %}
   </div>
