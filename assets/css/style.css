@@ -103,7 +103,11 @@ a:hover {
   left: 0;
   width: 100%;
   z-index: 60;
-  background: var(--bg);
+  background:
+    linear-gradient(180deg, rgba(8, 10, 15, 0.93) 0%, rgba(8, 10, 15, 0.9) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 200'%3E%3Cpath d='M0 82L52 18l42 44-36 56-58-4zM94 62l54-42 50 34-16 58-72 6zM198 54l64-30 54 38-20 64-72-2zM318 64l58-34 44 44-22 56-66 2zM12 130l56-14 44 42-36 42H8zM112 124l72-6 32 52-52 30-68-30zM216 126l80 2 30 48-62 24-54-22zM296 128l66-2 54 38-28 34-72 2-34-24z' fill='none' stroke='rgba(140,194,255,0.22)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: auto, 420px 200px;
+  background-position: center top, center top;
   border: 0;
   padding-top: 10px;
   isolation: isolate;
