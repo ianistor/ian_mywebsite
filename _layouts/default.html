@@ -15,7 +15,28 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 </head>
-<body>
+<body{% if page.url == '/' %} class="home-with-bg-video"{% endif %}>
+  {% if page.url == '/' %}
+    <div class="site-bg-video-wrap" aria-hidden="true">
+      <video class="site-bg-video" autoplay muted playsinline preload="metadata"></video>
+      <div class="site-bg-video-overlay"></div>
+    </div>
+    <script id="site-bg-video-pool" type="application/json">
+      [
+        {% assign comma = "" %}
+        {% for project in site.projects %}
+          {% if project.trailer_video %}
+            {{ comma }}"{{ project.trailer_video | relative_url }}"
+            {% assign comma = "," %}
+          {% endif %}
+        {% endfor %}
+        {{ comma }}"https://cdn.artstation.com/p/video_sources/002/194/715/ianistor-stone-wall-destruction3-2.mp4#t=0.001",
+        "https://cdn.artstation.com/p/video_sources/002/194/842/ianistor-brick-wall-destruction-main.mp4#t=0.001",
+        "https://cdn.artstation.com/p/video_sources/002/194/648/ianistor-mq060-debrisseq.mp4#t=0.001",
+        "https://cdn.artstation.com/p/video_sources/002/194/736/ianistor-trailblazerengines-gameplay.mp4#t=0.001"
+      ]
+    </script>
+  {% endif %}
   <div class="page-shell">
   <header class="site-header">
     <div class="container">
@@ -98,6 +119,49 @@
       const mobileScrollTarget = pageScroll || window;
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
       addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
+
+      const initSiteBackgroundVideo = () => {
+        const backgroundVideo = document.querySelector('.site-bg-video');
+        const poolNode = document.getElementById('site-bg-video-pool');
+        if (!backgroundVideo || !poolNode) return;
+
+        let videoPool = [];
+        try {
+          videoPool = JSON.parse(poolNode.textContent).filter(Boolean);
+        } catch (error) {
+          return;
+        }
+        if (!videoPool.length) return;
+
+        let currentIndex = Math.floor(Math.random() * videoPool.length);
+        const playIndex = (index) => {
+          backgroundVideo.src = videoPool[index];
+          backgroundVideo.load();
+          backgroundVideo.play().catch(() => {});
+        };
+
+        backgroundVideo.addEventListener('playing', () => {
+          document.body.classList.add('video-bg-ready');
+        }, { once: true });
+
+        const playNext = () => {
+          if (videoPool.length === 1) {
+            playIndex(0);
+            return;
+          }
+          let nextIndex = currentIndex;
+          while (nextIndex === currentIndex) {
+            nextIndex = Math.floor(Math.random() * videoPool.length);
+          }
+          currentIndex = nextIndex;
+          playIndex(currentIndex);
+        };
+
+        backgroundVideo.addEventListener('ended', playNext);
+        playIndex(currentIndex);
+      };
+
+      initSiteBackgroundVideo();
 
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
