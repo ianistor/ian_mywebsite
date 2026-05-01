@@ -2167,6 +2167,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 
+
+body.home-with-bg-video .section-block,
+body.home-with-bg-video .landing-hero {
+  width: min(calc(100vw - 2rem), 1760px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 .hero-backdrop {
   position: absolute;
   inset: 0;
@@ -2226,10 +2233,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 
 .landing-hero .hero-content {
-  transform: scale(0.5);
+  transform: scale(0.75);
   transform-origin: top left;
-  width: 200%;
-  margin-bottom: -48%;
+  width: 133.333%;
+  margin-bottom: -18%;
 }
 
 .landing-hero .hero-title {
@@ -2249,6 +2256,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 @media (max-width: 900px) {
   .landing-hero {
     padding: 1.4rem;
+  }
+
+  body.home-with-bg-video .section-block,
+  body.home-with-bg-video .landing-hero {
     width: 100%;
     margin-left: 0;
     transform: none;
