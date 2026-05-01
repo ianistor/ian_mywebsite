@@ -198,7 +198,13 @@ title: Home
       </li>
       <li>
         <a href="https://github.com/ianistor" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
-          <span class="contact-icon" aria-hidden="true">GitHub</span>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.45-1.1-1.45-.9-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.88 1.52 2.31 1.08 2.87.83.09-.64.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .85-.27 2.8 1.03a9.7 9.7 0 0 1 5.1 0c1.94-1.3 2.8-1.03 2.8-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.85-2.35 4.7-4.58 4.95.36.3.68.9.68 1.8v2.67c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+            </svg>
+          </span>
         </a>
       </li>
     </ul>
