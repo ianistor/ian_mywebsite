@@ -2164,7 +2164,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   border-radius: 24px;
   overflow: hidden;
   min-height: 620px;
-  background: linear-gradient(90deg, rgba(7, 10, 16, 0.95) 32%, rgba(7, 10, 16, 0.56) 100%);
+  background: linear-gradient(90deg, rgba(6, 9, 14, 0.96) 32%, rgba(6, 9, 14, 0.58) 100%);
 }
 
 body.home-with-bg-video .landing-hero,
@@ -2176,7 +2176,7 @@ body.home-with-bg-video .section-block {
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(7, 10, 16, 0.96) 20%, rgba(7, 10, 16, 0.76) 50%, rgba(7, 10, 16, 0.88) 100%);
+  background: linear-gradient(90deg, rgba(6, 9, 14, 0.97) 20%, rgba(6, 9, 14, 0.78) 50%, rgba(6, 9, 14, 0.9) 100%);
 }
 
 .landing-hero .hero-content,
@@ -2216,7 +2216,7 @@ body.home-with-bg-video .section-block {
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(7, 10, 16, 0.9) 0%, rgba(7, 10, 16, 0.72) 18%, rgba(7, 10, 16, 0.52) 34%, rgba(7, 10, 16, 0.3) 54%, rgba(7, 10, 16, 0.14) 72%, rgba(7, 10, 16, 0) 100%);
+  background: linear-gradient(90deg, rgba(6, 9, 14, 0.92) 0%, rgba(6, 9, 14, 0.74) 18%, rgba(6, 9, 14, 0.54) 34%, rgba(6, 9, 14, 0.32) 54%, rgba(6, 9, 14, 0.16) 72%, rgba(6, 9, 14, 0) 100%);
 }
 
 .hero-title-accent {
