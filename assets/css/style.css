@@ -1266,11 +1266,11 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 .projects-row-nav-prev {
-  left: 0.5rem;
+  left: -0.85rem;
 }
 
 .projects-row-nav-next {
-  right: 0.5rem;
+  right: -0.85rem;
 }
 
 .projects-row-nav:hover {
