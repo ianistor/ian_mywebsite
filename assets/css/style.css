@@ -230,7 +230,7 @@ a:hover {
   height: min(50vh, 510px);
   transform: translateX(-50%);
   overflow: hidden;
-  pointer-events: auto;
+  pointer-events: none;
   z-index: 0;
 }
 
@@ -2211,7 +2211,7 @@ body.home-with-bg-video .section-block {
 .landing-hero .hero-image-container::before {
   content: "";
   position: absolute;
-  left: -15%;
+  left: -12%;
   top: 0;
   width: 76%;
   height: 100%;
