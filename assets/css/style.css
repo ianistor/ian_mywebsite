@@ -2243,7 +2243,7 @@ body.home-with-bg-video .section-block {
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(15, 19, 29, 0.92) 0%, rgba(15, 19, 29, 0.68) 30%, rgba(15, 19, 29, 0.42) 55%, rgba(15, 19, 29, 0.2) 75%, rgba(15, 19, 29, 0) 100%);
+  background: radial-gradient(circle at left center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0) 75%), linear-gradient(90deg, rgba(8,10,16,0.98) 0%, rgba(8,10,16,0.96) 20%, rgba(8,10,16,0.88) 40%, rgba(8,10,16,0.70) 58%, rgba(8,10,16,0.38) 72%, rgba(8,10,16,0.10) 88%, rgba(8,10,16,0) 100%);
 }
 
 .landing-hero .hero-image-container::after {
