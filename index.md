@@ -13,16 +13,6 @@ title: Home
       <a class="button" href="{{ '/projects/' | relative_url }}">View projects</a>
       <a class="button secondary" href="{{ '/cv/' | relative_url }}">About me</a>
     </div>
-    <p class="stack-label">Preferred Stack</p>
-    <ul class="hero-stack-list" aria-label="Preferred technical stack">
-      <li><img src="https://cdn.simpleicons.org/houdini/FF6A00" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
-      <li><img src="https://cdn.simpleicons.org/autodeskmaya/2AB4E8" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
-      <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
-      <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
-      <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Blender</span></li>
-      <li><img src="https://static.wikia.nocookie.net/logopedia/images/4/40/Snowdrop-2016.png/revision/latest?cb=20250728162817" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
-      <li><img src="https://images.seeklogo.com/logo-png/48/2/3ds-max-logo-png_seeklogo-482396.png" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>3ds Max</span></li>
-    </ul>
   </div>
 
   <div class="hero-image-container hero-content-elevated">
@@ -30,6 +20,19 @@ title: Home
       <source src="{{ '/assets/videos/SWO.mp4' | relative_url }}" type="video/mp4">
     </video>
   </div>
+</section>
+
+<section class="section-block preferred-stack-block">
+  <p class="stack-label">Preferred Stack</p>
+  <ul class="hero-stack-list" aria-label="Preferred technical stack">
+    <li><img src="https://cdn.simpleicons.org/houdini/FF6A00" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
+    <li><img src="https://cdn.simpleicons.org/autodeskmaya/2AB4E8" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
+    <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
+    <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
+    <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Blender</span></li>
+    <li><img src="https://static.wikia.nocookie.net/logopedia/images/4/40/Snowdrop-2016.png/revision/latest?cb=20250728162817" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+    <li><img src="https://images.seeklogo.com/logo-png/48/2/3ds-max-logo-png_seeklogo-482396.png" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>3ds Max</span></li>
+  </ul>
 </section>
 
 <section class="section-block">
