@@ -42,9 +42,9 @@ title: Home
   </div>
 
   <div class="projects-row-wrap projects-row-wrap--with-arrows">
-    <button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll projects left" data-projects-nav="prev">←</button>
+    <button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll projects left" data-row-nav="prev">←</button>
 
-    <div class="projects-row" data-projects-row>
+    <div class="projects-row" data-projects-row data-scroll-row>
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         {% if project.hidden != true %}
@@ -76,7 +76,7 @@ title: Home
         {% endif %}
       {% endfor %}
     </div>
-    <button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll projects right" data-projects-nav="next">→</button>
+    <button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll projects right" data-row-nav="next">→</button>
   </div>
 </section>
 
@@ -88,9 +88,10 @@ title: Home
     </div>
     <a href="{{ '/blog/' | relative_url }}">See all</a>
   </div>
-  <div class="projects-row-wrap">
+  <div class="projects-row-wrap projects-row-wrap--with-arrows">
+    {% if site.posts.size > 4 %}<button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll blog left" data-row-nav="prev">←</button>{% endif %}
     <div class="projects-row-hint">Scroll for older posts</div>
-    <div class="projects-row blog-row">
+    <div class="projects-row blog-row" data-scroll-row>
       {% for post in site.posts %}
         {% if post.hidden != true %}
         <article class="card blog-row-card js-clickable-card" data-href="{{ post.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ post.title }}">
@@ -124,6 +125,7 @@ title: Home
         {% endif %}
       {% endfor %}
     </div>
+    {% if site.posts.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll blog right" data-row-nav="next">→</button>{% endif %}
     <div class="projects-row-dots" aria-hidden="true">
       <span></span><span></span><span></span>
     </div>
@@ -141,9 +143,10 @@ title: Home
     <h2>Tools</h2>
     <a href="{{ '/tools/' | relative_url }}">See all</a>
   </div>
-  <div class="projects-row-wrap">
+  <div class="projects-row-wrap projects-row-wrap--with-arrows">
+    {% if site.tools.size > 4 %}<button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll tools left" data-row-nav="prev">←</button>{% endif %}
     <div class="projects-row-hint">Scroll for more tools</div>
-    <div class="projects-row blog-row">
+    <div class="projects-row blog-row" data-scroll-row>
       {% for tool in site.tools limit: 6 %}
         <article class="card blog-row-card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
           {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
@@ -161,6 +164,7 @@ title: Home
         </article>
       {% endfor %}
     </div>
+    {% if site.tools.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll tools right" data-row-nav="next">→</button>{% endif %}
     <div class="projects-row-dots" aria-hidden="true">
       <span></span><span></span><span></span>
     </div>
