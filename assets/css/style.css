@@ -395,8 +395,8 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, max-content));
   gap: 0.6rem;
 }
 
@@ -694,7 +694,6 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
-  transform: translateX(4%);
   border-radius: 14px;
   margin-bottom: 0;
   display: block;
@@ -703,7 +702,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .card:hover .card-thumb,
 .list-card:hover .card-thumb {
-  transform: scale(1.02);
+  transform: scale(1.06);
 }
 
 .experience-head {
@@ -1122,6 +1121,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   overflow-x: auto;
   padding-bottom: 0.5rem;
   scroll-snap-type: x proximity;
+  scrollbar-width: none;
 }
 
 .projects-row.is-auto-scrolling {
@@ -1129,7 +1129,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 .projects-row::-webkit-scrollbar {
-  height: 10px;
+  display: none;
 }
 
 .projects-row::-webkit-scrollbar-thumb {
@@ -1148,7 +1148,6 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 72%, transparent);
 }
 
 .project-row-image {
@@ -1239,6 +1238,29 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   border-radius: 999px;
   background: var(--line);
   display: inline-block;
+}
+
+.projects-row-wrap--with-arrows {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.projects-row-nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  color: var(--text);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.projects-row-nav:hover {
+  border-color: var(--accent);
+  color: var(--accent-2);
 }
 
 .lightbox {
@@ -1443,6 +1465,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
   .projects-row {
     grid-auto-columns: minmax(240px, 86vw);
+  }
+
+  .hero-stack-list {
+    grid-template-columns: repeat(2, minmax(0, max-content));
   }
 
   .cv-core-skills {

@@ -41,9 +41,10 @@ title: Home
     <a href="{{ '/projects/' | relative_url }}">See all</a>
   </div>
 
-  <div class="projects-row-wrap">
+  <div class="projects-row-wrap projects-row-wrap--with-arrows">
+    <button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll projects left" data-projects-nav="prev">←</button>
 
-    <div class="projects-row">
+    <div class="projects-row" data-projects-row>
       {% assign sorted_projects = site.projects | sort: "release_year" | reverse %}
       {% for project in sorted_projects %}
         {% if project.hidden != true %}
@@ -75,10 +76,7 @@ title: Home
         {% endif %}
       {% endfor %}
     </div>
-
-    <div class="projects-row-dots" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
+    <button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll projects right" data-projects-nav="next">→</button>
   </div>
 </section>
 
