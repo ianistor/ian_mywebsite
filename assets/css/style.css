@@ -164,7 +164,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   font-weight: 700;
-  color: var(--text);
+  color: #ff9d2f;
   white-space: nowrap;
 }
 
