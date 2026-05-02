@@ -2237,13 +2237,11 @@ body.home-with-bg-video .section-block {
 .landing-hero .hero-image-container::before {
   content: "";
   position: absolute;
-  left: -12%;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 2;
-  background: radial-gradient(circle at left center, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.12) 42%, rgba(0, 0, 0, 0) 72%), linear-gradient(90deg, rgba(5, 7, 12, 0.92) 0%, rgba(5, 7, 12, 0.86) 18%, rgba(5, 7, 12, 0.68) 34%, rgba(5, 7, 12, 0.4) 48%, rgba(5, 7, 12, 0.2) 60%, rgba(5, 7, 12, 0.08) 72%, rgba(5, 7, 12, 0.02) 82%, rgba(5, 7, 12, 0) 100%);
+  border-radius: 18px;
+  background: linear-gradient(90deg, rgba(5, 7, 12, 0.78) 0%, rgba(5, 7, 12, 0.62) 20%, rgba(5, 7, 12, 0.4) 42%, rgba(5, 7, 12, 0.2) 62%, rgba(5, 7, 12, 0.08) 78%, rgba(5, 7, 12, 0) 100%);
 }
 
 .landing-hero .hero-image-container::after {
