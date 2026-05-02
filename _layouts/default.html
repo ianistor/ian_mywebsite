@@ -232,6 +232,27 @@
 
       initTouchScrollClickGuard();
 
+      const initProjectsRowNavigation = () => {
+        const projectsRow = document.querySelector('[data-projects-row]');
+        if (!projectsRow) return;
+
+        const prevButton = document.querySelector('[data-projects-nav="prev"]');
+        const nextButton = document.querySelector('[data-projects-nav="next"]');
+        if (!prevButton || !nextButton) return;
+
+        const scrollStep = () => Math.max(260, Math.round(projectsRow.clientWidth * 0.72));
+
+        prevButton.addEventListener('click', () => {
+          projectsRow.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+        });
+
+        nextButton.addEventListener('click', () => {
+          projectsRow.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+        });
+      };
+
+      initProjectsRowNavigation();
+
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
