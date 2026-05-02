@@ -1241,21 +1241,36 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 .projects-row-wrap--with-arrows {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
+}
+
+.projects-row-wrap--with-arrows .projects-row {
+  width: 100%;
 }
 
 .projects-row-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   width: 40px;
   height: 40px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
   color: var(--text);
   font-size: 1.05rem;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.projects-row-nav-prev {
+  left: 0.5rem;
+}
+
+.projects-row-nav-next {
+  right: 0.5rem;
 }
 
 .projects-row-nav:hover {
