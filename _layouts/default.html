@@ -242,7 +242,7 @@
           const nextButton = rowWrap.querySelector('[data-row-nav="next"]');
           if (!row || !prevButton || !nextButton) return;
 
-          const getScrollStep = () => 128;
+          const getScrollStep = () => 320;
 
           prevButton.addEventListener('click', () => {
             row.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
