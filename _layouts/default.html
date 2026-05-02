@@ -233,21 +233,24 @@
       initTouchScrollClickGuard();
 
       const initProjectsRowNavigation = () => {
-        const projectsRow = document.querySelector('[data-projects-row]');
-        if (!projectsRow) return;
+        const rowWraps = document.querySelectorAll('.projects-row-wrap--with-arrows');
+        if (!rowWraps.length) return;
 
-        const prevButton = document.querySelector('[data-projects-nav="prev"]');
-        const nextButton = document.querySelector('[data-projects-nav="next"]');
-        if (!prevButton || !nextButton) return;
+        rowWraps.forEach((rowWrap) => {
+          const row = rowWrap.querySelector('[data-scroll-row]');
+          const prevButton = rowWrap.querySelector('[data-row-nav="prev"]');
+          const nextButton = rowWrap.querySelector('[data-row-nav="next"]');
+          if (!row || !prevButton || !nextButton) return;
 
-        const scrollStep = () => Math.max(260, Math.round(projectsRow.clientWidth * 0.72));
+          const getScrollStep = () => 128;
 
-        prevButton.addEventListener('click', () => {
-          projectsRow.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
-        });
+          prevButton.addEventListener('click', () => {
+            row.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+          });
 
-        nextButton.addEventListener('click', () => {
-          projectsRow.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+          nextButton.addEventListener('click', () => {
+            row.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+          });
         });
       };
 
