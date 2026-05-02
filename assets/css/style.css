@@ -2300,6 +2300,14 @@ body.home-with-bg-video .section-block {
     overflow: visible;
   }
 
+  .landing-hero .hero-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
   body.home-with-bg-video .section-block,
   body.home-with-bg-video .landing-hero {
     width: 100%;
