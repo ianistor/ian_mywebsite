@@ -179,26 +179,6 @@
 
       initSiteBackgroundVideo();
 
-
-      const initHeroFullscreenState = () => {
-        if (!isHomePage || !pageScroll) return;
-        const landingHero = document.querySelector('.landing-hero');
-        if (!landingHero) return;
-
-        const desktopOnly = window.matchMedia('(min-width: 901px)');
-        const syncHeroState = () => {
-          const shouldBeFullscreen = desktopOnly.matches && pageScroll.scrollTop <= 8;
-          landingHero.classList.toggle('hero-fullscreen', shouldBeFullscreen);
-        };
-
-        syncHeroState();
-        pageScroll.addEventListener('scroll', syncHeroState, { passive: true });
-        addMediaQueryChangeListener(desktopOnly, syncHeroState);
-        window.addEventListener('resize', syncHeroState);
-      };
-
-      initHeroFullscreenState();
-
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
         if (!coarsePointer) return;
