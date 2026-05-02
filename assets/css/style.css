@@ -1113,9 +1113,14 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   position: absolute;
   top: 1.8rem;
   left: 0;
-  width: 68px;
+  width: 86px;
   height: calc(100% - 2.6rem);
-  background: linear-gradient(to right, rgba(8, 10, 15, 0.82) 0%, rgba(8, 10, 15, 0) 100%);
+  background:
+    linear-gradient(to right,
+      rgba(8, 10, 15, 0.66) 0%,
+      rgba(8, 10, 15, 0.48) 22%,
+      rgba(8, 10, 15, 0.22) 58%,
+      rgba(8, 10, 15, 0) 100%);
   pointer-events: none;
   z-index: 2;
   opacity: 0;
