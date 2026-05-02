@@ -1108,30 +1108,6 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   content: none;
 }
 
-.projects-row-wrap::before {
-  content: "";
-  position: absolute;
-  top: 1.8rem;
-  left: 0;
-  width: 92px;
-  height: clamp(350px, 56vw, 425px);
-  background:
-    linear-gradient(to right,
-      rgba(8, 10, 15, 0.42) 0%,
-      rgba(8, 10, 15, 0.56) 18%,
-      rgba(8, 10, 15, 0.34) 54%,
-      rgba(8, 10, 15, 0) 100%);
-  clip-path: polygon(0 0, 86% 0, 100% 50%, 86% 100%, 0 100%);
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.projects-row-wrap.is-scrolled::before {
-  opacity: 1;
-}
-
 .projects-row-hint {
   color: var(--muted);
   font-size: 0.9rem;
