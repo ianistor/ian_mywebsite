@@ -2175,15 +2175,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .landing-hero {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(420px, 0.95fr) minmax(560px, 1.35fr);
-  align-items: stretch;
-  gap: 1.2rem;
-  padding: 2rem 0;
+  display: block;
+  padding: 0;
   border: 0;
   border-radius: 24px;
   overflow: hidden;
   min-height: 620px;
+  max-height: 620px;
   background: linear-gradient(155deg, color-mix(in srgb, var(--panel) 20%, transparent) 0%, color-mix(in srgb, var(--panel-2) 14%, transparent) 52%, color-mix(in srgb, var(--panel) 16%, transparent) 100%);
 }
 
@@ -2199,36 +2197,41 @@ body.home-with-bg-video .section-block {
   background: transparent;
 }
 
-.landing-hero .hero-content,
+.landing-hero .hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: min(44%, 540px);
+  height: 100%;
+  padding: 1.6rem 1.6rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .landing-hero .hero-image-container {
   position: relative;
-}
-
-.landing-hero .hero-content {
-  z-index: 3;
-}
-
-.landing-hero .hero-image-container {
   z-index: 1;
-}
-
-.landing-hero .hero-image-container {
-  justify-content: flex-start;
-  align-items: flex-start;
+  height: 620px;
+  min-height: 620px;
+  max-height: 620px;
 }
 
 .hero-feature-video {
-  width: 112%;
-  height: 100%;
+  width: 100%;
+  height: 620px;
   min-height: 620px;
+  max-height: 620px;
   border-radius: 18px;
   object-fit: cover;
   object-position: 28% center;
-  opacity: 0.8;
-  filter: saturate(0.9) contrast(1.01) brightness(0.76);
+  opacity: 0.95;
+  filter: saturate(0.95) contrast(1.02) brightness(0.86);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 12%, rgba(0, 0, 0, 0.56) 24%, rgba(0, 0, 0, 0.88) 38%, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 1) 100%);
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 12%, rgba(0, 0, 0, 0.56) 24%, rgba(0, 0, 0, 0.88) 38%, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 
@@ -2243,7 +2246,7 @@ body.home-with-bg-video .section-block {
   pointer-events: none;
   z-index: 2;
   border-radius: 18px;
-  background: linear-gradient(90deg, rgba(5, 7, 12, 0.78) 0%, rgba(5, 7, 12, 0.62) 20%, rgba(5, 7, 12, 0.4) 42%, rgba(5, 7, 12, 0.2) 62%, rgba(5, 7, 12, 0.08) 78%, rgba(5, 7, 12, 0) 100%);
+  background: linear-gradient(90deg, rgba(5, 7, 12, 0.38) 0%, rgba(5, 7, 12, 0.24) 20%, rgba(5, 7, 12, 0.12) 42%, rgba(5, 7, 12, 0.06) 62%, rgba(5, 7, 12, 0.02) 78%, rgba(5, 7, 12, 0) 100%);
 }
 
 .landing-hero .hero-image-container::after {
@@ -2253,7 +2256,7 @@ body.home-with-bg-video .section-block {
   pointer-events: none;
   z-index: 2;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(15, 19, 29, 0.05) 0%, rgba(15, 19, 29, 0.12) 70%, rgba(15, 19, 29, 0.24) 100%);
+  background: linear-gradient(180deg, rgba(15, 19, 29, 0.02) 0%, rgba(15, 19, 29, 0.06) 70%, rgba(15, 19, 29, 0.12) 100%);
 }
 
 .hero-title-accent {
@@ -2268,8 +2271,9 @@ body.home-with-bg-video .section-block {
 
 
 .landing-hero .hero-title {
-  max-width: 13ch;
-  font-size: clamp(2.6rem, 4.7vw, 5rem);
+  max-width: 11ch;
+  font-size: clamp(2.2rem, 3.8vw, 4.2rem);
+  line-height: 1.04;
 }
 
 .landing-hero .hero-lead {
@@ -2283,9 +2287,17 @@ body.home-with-bg-video .section-block {
 
 @media (max-width: 900px) {
   .landing-hero {
-    grid-template-columns: 1fr;
-    padding: 1.4rem 0;
     min-height: auto;
+    max-height: none;
+  }
+
+  .landing-hero .hero-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 1rem;
+    overflow: visible;
   }
 
   body.home-with-bg-video .section-block,
@@ -2298,8 +2310,15 @@ body.home-with-bg-video .section-block {
     background: transparent;
   }
 
+  .landing-hero .hero-image-container {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
   .hero-feature-video {
     width: 100%;
+    height: auto;
     min-height: 300px;
     max-height: 420px;
     margin-top: 0.5rem;
