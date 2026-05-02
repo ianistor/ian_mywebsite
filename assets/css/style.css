@@ -2213,8 +2213,8 @@ body.home-with-bg-video .section-block {
 }
 
 .landing-hero .hero-image-container {
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .hero-feature-video {
