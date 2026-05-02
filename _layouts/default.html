@@ -489,12 +489,25 @@
         projectsAutoScrollController = null;
       };
 
-      runProjectsAutoScroll();
-      if (document.readyState !== 'complete') {
-        window.addEventListener('DOMContentLoaded', runProjectsAutoScroll, { once: true });
-        window.addEventListener('load', runProjectsAutoScroll, { once: true });
-      }
-      window.addEventListener('pageshow', runProjectsAutoScroll);
+      const getProjectsScrollTop = () => {
+        if (pageScroll) return pageScroll.scrollTop;
+        return window.scrollY || window.pageYOffset || 0;
+      };
+
+      let projectsLastScrollTop = getProjectsScrollTop();
+      const maybeStartProjectsAutoScrollOnDownwardScroll = () => {
+        const currentScrollTop = getProjectsScrollTop();
+        const isScrollingDown = currentScrollTop > projectsLastScrollTop;
+        projectsLastScrollTop = currentScrollTop;
+        if (!isScrollingDown) return;
+        runProjectsAutoScroll();
+        (pageScroll || window).removeEventListener('scroll', maybeStartProjectsAutoScrollOnDownwardScroll);
+      };
+
+      (pageScroll || window).addEventListener('scroll', maybeStartProjectsAutoScrollOnDownwardScroll, { passive: true });
+      window.addEventListener('pageshow', () => {
+        projectsLastScrollTop = getProjectsScrollTop();
+      });
       window.addEventListener('pagehide', stopProjectsAutoScroll);
 
       const autoLinkTextNodes = (root) => {
