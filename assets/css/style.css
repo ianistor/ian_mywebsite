@@ -2211,7 +2211,7 @@ body.home-with-bg-video .section-block {
 .landing-hero .hero-image-container::before {
   content: "";
   position: absolute;
-  left: -20%;
+  left: -15%;
   top: 0;
   width: 76%;
   height: 100%;
