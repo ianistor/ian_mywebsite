@@ -242,13 +242,7 @@
           const nextButton = rowWrap.querySelector('[data-row-nav="next"]');
           if (!row || !prevButton || !nextButton) return;
 
-          const getScrollStep = () => {
-            const firstCard = row.querySelector('.project-row-card, .blog-row-card');
-            if (!firstCard) return Math.max(260, Math.round(row.clientWidth * 0.72));
-            const rowStyles = window.getComputedStyle(row);
-            const gap = parseFloat(rowStyles.columnGap || rowStyles.gap || '0') || 0;
-            return Math.round(firstCard.getBoundingClientRect().width + gap);
-          };
+          const getScrollStep = () => 56;
 
           prevButton.addEventListener('click', () => {
             row.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });

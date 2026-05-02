@@ -126,9 +126,6 @@ title: Home
       {% endfor %}
     </div>
     {% if site.posts.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll blog right" data-row-nav="next">→</button>{% endif %}
-    <div class="projects-row-dots" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
   </div>
   {% if site.posts.size > 3 %}
     <a class="blog-scroll-hint" href="{{ '/blog/' | relative_url }}" aria-label="Go to older blog posts">
@@ -165,9 +162,6 @@ title: Home
       {% endfor %}
     </div>
     {% if site.tools.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll tools right" data-row-nav="next">→</button>{% endif %}
-    <div class="projects-row-dots" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
   </div>
 </section>
 
