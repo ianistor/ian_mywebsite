@@ -2160,11 +2160,11 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   align-items: stretch;
   gap: 1.2rem;
   padding: 2rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+  border: 0;
   border-radius: 24px;
   overflow: hidden;
   min-height: 620px;
-  background: linear-gradient(90deg, rgba(6, 9, 14, 0.96) 32%, rgba(6, 9, 14, 0.58) 100%);
+  background: linear-gradient(155deg, color-mix(in srgb, var(--panel) 28%, transparent) 0%, color-mix(in srgb, var(--panel-2) 22%, transparent) 52%, color-mix(in srgb, var(--panel) 24%, transparent) 100%);
 }
 
 body.home-with-bg-video .landing-hero,
@@ -2177,8 +2177,8 @@ body.home-with-bg-video .section-block {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(6, 9, 14, 0.22) 0%, rgba(6, 9, 14, 0.58) 68%, rgba(6, 9, 14, 0.88) 100%),
-    linear-gradient(90deg, rgba(6, 9, 14, 0.97) 20%, rgba(6, 9, 14, 0.78) 50%, rgba(6, 9, 14, 0.9) 100%);
+    linear-gradient(180deg, rgba(15, 19, 29, 0.08) 0%, rgba(15, 19, 29, 0.18) 70%, rgba(15, 19, 29, 0.32) 100%),
+    linear-gradient(90deg, rgba(15, 19, 29, 0.22) 0%, rgba(15, 19, 29, 0.16) 12%, rgba(15, 19, 29, 0.1) 50%, rgba(15, 19, 29, 0.16) 88%, rgba(15, 19, 29, 0.22) 100%);
 }
 
 .landing-hero .hero-content,
@@ -2218,7 +2218,7 @@ body.home-with-bg-video .section-block {
   height: 100%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(6, 9, 14, 0.92) 0%, rgba(6, 9, 14, 0.74) 18%, rgba(6, 9, 14, 0.54) 34%, rgba(6, 9, 14, 0.32) 54%, rgba(6, 9, 14, 0.16) 72%, rgba(6, 9, 14, 0) 100%);
+  background: linear-gradient(90deg, rgba(15, 19, 29, 0.66) 0%, rgba(15, 19, 29, 0.44) 20%, rgba(15, 19, 29, 0.22) 38%, rgba(15, 19, 29, 0.08) 56%, rgba(15, 19, 29, 0.02) 72%, rgba(15, 19, 29, 0) 100%);
 }
 
 .hero-title-accent {
