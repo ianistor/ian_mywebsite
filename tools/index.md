@@ -10,7 +10,9 @@ permalink: /tools/
 </section>
 
 <section class="card-grid">
-  {% assign sorted_tools = site.tools | sort: 'title' %}
+  {% assign ordered_tools = site.tools | where_exp: 'tool', 'tool.landing_position != nil' | sort: 'landing_position' %}
+  {% assign unordered_tools = site.tools | where_exp: 'tool', 'tool.landing_position == nil' | sort: 'title' %}
+  {% assign sorted_tools = ordered_tools | concat: unordered_tools %}
   {% for tool in sorted_tools %}
     <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
       <div class="card-media">
