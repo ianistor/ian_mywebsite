@@ -253,11 +253,17 @@
             return Math.max(1100, Math.round(Math.max(cardBasedStep, viewportBasedStep)));
           };
 
+          const triggerManualNav = () => {
+            row.dispatchEvent(new CustomEvent('row-nav-activate'));
+          };
+
           prevButton.addEventListener('click', () => {
+            triggerManualNav();
             row.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
           });
 
           nextButton.addEventListener('click', () => {
+            triggerManualNav();
             row.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
           });
         });
@@ -478,6 +484,10 @@
           if (!projectsRowWrap) return;
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
         };
+        const onManualNavActivate = () => {
+          isPaused = true;
+          scheduleResume();
+        };
 
         projectsRow.addEventListener('mouseenter', onMouseEnter);
         projectsRow.addEventListener('mouseleave', onMouseLeave);
@@ -487,6 +497,7 @@
         window.addEventListener('touchend', scheduleResume, { passive: true });
         window.addEventListener('touchcancel', scheduleResume, { passive: true });
         projectsRow.addEventListener('scroll', onRowScroll, { passive: true });
+        projectsRow.addEventListener('row-nav-activate', onManualNavActivate);
 
         if (projectsRowWrap) {
           projectsRowWrap.classList.toggle('is-scrolled', projectsRow.scrollLeft > 0);
@@ -505,6 +516,7 @@
             projectsRow.removeEventListener('focusout', onFocusOut);
             projectsRow.removeEventListener('touchstart', onTouchStart);
             projectsRow.removeEventListener('scroll', onRowScroll);
+            projectsRow.removeEventListener('row-nav-activate', onManualNavActivate);
             window.removeEventListener('touchend', scheduleResume);
             window.removeEventListener('touchcancel', scheduleResume);
           }
