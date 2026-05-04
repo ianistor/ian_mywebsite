@@ -762,7 +762,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   border-radius: 14px;
   margin-bottom: 0.75rem;
   display: block;
-  background: rgba(255,255,255,0.03);
+  background: transparent;
   transition: transform 0.28s ease;
 }
 
