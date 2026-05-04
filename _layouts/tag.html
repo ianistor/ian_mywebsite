@@ -12,7 +12,7 @@ layout: default
 </section>
 
 <section class="card-grid">
-  {% assign posts_for_tag = site.tags[page.tag] %}
+  {% assign posts_for_tag = site.tags[page.tag] | where_exp: "post", "post.hidden != true" %}
   {% for post in posts_for_tag %}
     <article class="card">
       {% if post.image %}

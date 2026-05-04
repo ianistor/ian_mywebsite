@@ -138,6 +138,21 @@ Example output:
 
 ![Example image](https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233)
 
+
+### Attach a downloadable file
+
+Use a normal Markdown link to a file in your repo (for example anything under `assets/images/`):
+
+```md
+[Download example image](/assets/images/projectcovers/TCTD2.jpg){: download }
+```
+
+Example download link:
+
+[Download example image](/assets/images/projectcovers/TCTD2.jpg){: download }
+
+> Tip: for non-image files, put them in a folder like `assets/downloads/` and link them the same way.
+
 ## Suggested structure for snippet posts
 
 1. Problem
