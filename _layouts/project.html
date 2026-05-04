@@ -75,27 +75,6 @@ layout: default
           </a>
         </div>
       {% endif %}
-
-
-      {% if page.links %}
-        {% for link in page.links %}
-          {% assign normalized_label = link.label | downcase %}
-          {% if normalized_label == "artstation" %}
-            <div class="project-fact project-back-link-box">
-              <a class="button secondary project-link-artstation" href="{{ link.url }}">
-                {% if link.logo_path %}
-                  <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
-                {% else %}
-                  <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
-                {% endif %}
-                {{ link.label }}
-              </a>
-            </div>
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-
       {% if page.role %}
       <div class="project-fact">
         <h3>Role</h3>
