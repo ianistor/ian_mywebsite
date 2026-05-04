@@ -1610,7 +1610,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   }
 
   .site-nav a {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     white-space: nowrap;
     padding: 0.25rem 0.45rem;
     font-size: clamp(0.62rem, 1.45vw, 0.8rem);
@@ -1632,6 +1632,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   }
 
   .header-contact-button {
+    display: none;
+  }
+
+  .header-search {
     display: none;
   }
 }
