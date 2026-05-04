@@ -30,7 +30,7 @@ title: Home
     <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
     <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
     <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Blender</span></li>
-    <li><img src="https://static.wikia.nocookie.net/logopedia/images/4/40/Snowdrop-2016.png/revision/latest?cb=20250728162817" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+    <li><img src="{{ '/assets/images/companieslogos/snowdrop.png' | relative_url }}" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
     <li><img src="https://images.seeklogo.com/logo-png/48/2/3ds-max-logo-png_seeklogo-482396.png" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>3ds Max</span></li>
   </ul>
 </section>
