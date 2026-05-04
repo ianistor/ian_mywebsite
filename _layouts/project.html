@@ -39,6 +39,43 @@ layout: default
           <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
         {% endif %}
       </div>
+      {% assign artstation_link = nil %}
+      {% if page.links %}
+        {% for link in page.links %}
+          {% assign normalized_label = link.label | downcase %}
+          {% if normalized_label == "artstation" %}
+            {% assign artstation_link = link %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if artstation_link == nil and page.parent_slug %}
+        {% assign parent_project_entry = site.projects | where: "slug", page.parent_slug | first %}
+        {% if parent_project_entry and parent_project_entry.links %}
+          {% for link in parent_project_entry.links %}
+            {% assign normalized_label = link.label | downcase %}
+            {% if normalized_label == "artstation" %}
+              {% assign artstation_link = link %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+
+      {% if artstation_link %}
+        <div class="project-fact project-back-link-box">
+          <a class="button secondary project-link-artstation" href="{{ artstation_link.url }}">
+            {% if artstation_link.logo_path %}
+              <img src="{{ artstation_link.logo_path | relative_url }}" alt="{{ artstation_link.logo_alt | default: artstation_link.label | append: ' logo' }}" class="button-logo">
+            {% else %}
+              <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
+            {% endif %}
+            {{ artstation_link.label }}
+          </a>
+        </div>
+      {% endif %}
+
 
       {% if page.links %}
         {% for link in page.links %}
