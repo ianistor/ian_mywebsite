@@ -32,8 +32,8 @@
     <div class="container">
       <div class="floating-header" role="navigation" aria-label="Main navigation">
         <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand-full">{{ site.title }}</span>
-          <span class="brand-short" aria-hidden="true">IAN • TA</span>
+          <span class="brand-full">IAN</span>
+          <span class="brand-short" aria-hidden="true">IAN</span>
         </a>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
           {% for item in site.nav %}
@@ -41,6 +41,11 @@
           {% endfor %}
           <a class="header-contact-button" href="{{ '/#contact' | relative_url }}">Contact</a>
         </nav>
+        <button class="header-search-toggle" type="button" aria-label="Toggle site search" aria-expanded="false" aria-controls="site-search-input">
+          <span aria-hidden="true" class="header-search-toggle-icon">
+            <svg viewBox="0 0 24 24" focusable="false"><circle cx="11" cy="11" r="6"></circle><line x1="15.5" y1="15.5" x2="21" y2="21"></line></svg>
+          </span>
+        </button>
         <form class="header-search" role="search" aria-label="Site search">
           <label class="sr-only" for="site-search-input">Search site content</label>
           <input
@@ -80,6 +85,7 @@
       const navToggle = document.querySelector('.nav-toggle');
       const siteNav = document.getElementById('site-nav');
       const headerSearch = document.querySelector('.header-search');
+      const headerSearchToggle = document.querySelector('.header-search-toggle');
       const headerSearchInput = document.getElementById('site-search-input');
       const headerSearchResults = document.getElementById('header-search-results');
       const root = document.documentElement;
@@ -284,6 +290,30 @@
 
       initProjectsRowNavigation();
 
+
+      const mobileSearchBreakpoint = window.matchMedia('(max-width: 860px)');
+
+      const setMobileSearchOpen = (isOpen) => {
+        if (!headerSearch || !headerSearchToggle) return;
+        headerSearch.classList.toggle('is-open', isOpen);
+        headerSearchToggle.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen && headerSearchInput) {
+          window.setTimeout(() => headerSearchInput.focus(), 0);
+        }
+      };
+
+      const syncSearchVisibilityForViewport = () => {
+        if (!headerSearch || !headerSearchToggle) return;
+        if (!mobileSearchBreakpoint.matches) {
+          headerSearch.classList.remove('is-open');
+          headerSearchToggle.setAttribute('aria-expanded', 'false');
+          return;
+        }
+      };
+
+      syncSearchVisibilityForViewport();
+      addMediaQueryChangeListener(mobileSearchBreakpoint, syncSearchVisibilityForViewport);
+
       const searchIndex = [
         {% assign search_docs = site.pages | concat: site.posts | concat: site.projects | concat: site.tools %}
         {% for doc in search_docs %}
@@ -363,6 +393,21 @@
       };
 
       if (headerSearch && headerSearchInput && headerSearchResults) {
+        const toggleSearchVisibility = function () {
+          const shouldOpen = !headerSearch.classList.contains('is-open');
+          setMobileSearchOpen(shouldOpen);
+          if (!shouldOpen) {
+            clearSearchResults();
+          }
+        };
+
+        if (headerSearchToggle) {
+          headerSearchToggle.addEventListener('click', toggleSearchVisibility);
+          headerSearchToggle.addEventListener('touchend', function (event) {
+            event.preventDefault();
+            toggleSearchVisibility();
+          }, { passive: false });
+        }
         headerSearchInput.addEventListener('input', function (event) {
           const query = event.target.value;
           if (!query.trim()) {
@@ -394,8 +439,13 @@
         });
 
         document.addEventListener('click', function (event) {
+          const clickedToggle = headerSearchToggle && headerSearchToggle.contains(event.target);
+          if (clickedToggle) return;
           if (!headerSearch.contains(event.target)) {
             clearSearchResults();
+            if (mobileSearchBreakpoint.matches) {
+              setMobileSearchOpen(false);
+            }
           }
         });
       }
