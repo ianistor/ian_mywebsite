@@ -2029,7 +2029,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .experience-head {
   align-items: flex-start;
-  margin-left: -0.75rem;
+  margin-left: calc(-0.75rem + 50px);
 }
 
 @media (max-width: 640px) {
