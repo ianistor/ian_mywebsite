@@ -273,7 +273,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_gr.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/GRFS.jpg' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/GRFS.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
       <figcaption>Ghost Recon Future Soldier</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
