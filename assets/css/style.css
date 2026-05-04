@@ -2098,7 +2098,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .experience-head {
   align-items: flex-start;
-  margin-left: calc(-0.75rem + 150px);
+  margin-left: -0.75;
 }
 
 @media (max-width: 640px) {
