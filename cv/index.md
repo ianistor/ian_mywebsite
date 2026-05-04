@@ -151,7 +151,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2018 - 2022</em></p>
     <img src="{{ '/assets/images/projectcovers/TCTD2.jpg' | relative_url }}" alt="The Division 2 cover" class="experience-project-cover">
-    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.jpg' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
   </div>
 </div>
 
