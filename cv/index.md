@@ -224,7 +224,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_td2_wony.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/TCTD2WONY.jpg' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
       <figcaption>The Division 2: Warlords of New York</figcaption>
       <span class="cv-title-role">Technical Artist</span>
     </a>
