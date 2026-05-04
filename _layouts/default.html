@@ -41,6 +41,17 @@
           {% endfor %}
           <a class="header-contact-button" href="{{ '/#contact' | relative_url }}">Contact</a>
         </nav>
+        <form class="header-search" role="search" aria-label="Site search">
+          <label class="sr-only" for="site-search-input">Search site content</label>
+          <input
+            id="site-search-input"
+            name="q"
+            type="search"
+            autocomplete="off"
+            placeholder="Search..."
+          >
+          <ul id="header-search-results" class="header-search-results" hidden></ul>
+        </form>
       </div>
     </div>
   </header>
