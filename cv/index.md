@@ -58,17 +58,18 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
 - Problem solving
 {: .cv-core-skills}
 
-### Preffered Stack
+### Preferred Stack
 
 <hr class="hero-stack-divider">
-<ul class="hero-stack-list cv-preferred-stack" aria-label="Preffered Stack">
-  <li><img src="https://cdn.simpleicons.org/houdini/FF4713" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
-  <li><img src="https://cdn.simpleicons.org/autodeskmaya/37A5CC" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
-  <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
+<ul class="hero-stack-list cv-preferred-stack" aria-label="Preferred Stack">
+  <li><img src="https://cdn.simpleicons.org/houdini/FF6A00" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Houdini</span></li>
   <li><img src="https://cdn.simpleicons.org/unrealengine/FFFFFF" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Unreal Engine</span></li>
+  <li><img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Python</span></li>
+  <li><img src="https://cdn.simpleicons.org/autodeskmaya/2AB4E8" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Maya</span></li>
   <li><img src="https://cdn.simpleicons.org/blender/F5792A" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Blender</span></li>
-  <li><img src="https://static.wikia.nocookie.net/logopedia/images/4/40/Snowdrop-2016.png/revision/latest?cb=20250728162817" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
   <li><img src="https://images.seeklogo.com/logo-png/48/2/3ds-max-logo-png_seeklogo-482396.png" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>3ds Max</span></li>
+  <li><img src="{{ '/assets/images/companieslogos/snowdrop.png' | relative_url }}" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Snowdrop</span></li>
+  <li><img src="{{ '/assets/images/companieslogos/lumberyard.png' | relative_url }}" alt="" class="hero-stack-icon" loading="lazy" decoding="async"><span>Lumberyard</span></li>
 </ul>
 
 ---
