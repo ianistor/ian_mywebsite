@@ -97,12 +97,14 @@
 
       syncHeaderZoneHeight();
       window.addEventListener('resize', syncHeaderZoneHeight);
+      window.addEventListener('load', syncHeaderZoneHeight);
 
       const syncMobileBrandState = () => {
         if (!floatingHeader) return;
         const scrollPosition = pageScroll ? pageScroll.scrollTop : window.scrollY;
         const shouldCondense = mobileCondenseBreakpoint.matches && (scrollPosition > 12 || !isHomePage);
         floatingHeader.classList.toggle('is-condensed', shouldCondense);
+        syncHeaderZoneHeight();
       };
 
       const addMediaQueryChangeListener = (queryList, handler) => {
