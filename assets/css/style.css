@@ -1153,9 +1153,10 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 .project-row-image {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 14px;
+  background: rgba(255,255,255,0.03);
   transition: transform 0.56s ease, filter 0.56s ease;
 }
 
@@ -1165,7 +1166,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .project-row-card:hover .project-row-image,
 .project-row-card:focus-within .project-row-image {
-  transform: scale(1.02);
+  transform: none;
   filter: brightness(0.42);
 }
 
