@@ -2155,7 +2155,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 
 .project-detail-layout {
-  margin-top: 1.5rem;
+  margin-top: 0;
   padding: 1.5rem 2rem 2rem;
   background: linear-gradient(180deg, rgba(6, 10, 18, 0.74), rgba(6, 10, 18, 0.56));
   border: 1px solid rgba(150, 180, 255, 0.12);
