@@ -25,29 +25,8 @@ layout: default
 
   <header class="project-hero-shell{% unless page.trailer_video or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
     <div class="project-hero-top">
-      {% if page.parent_permalink %}
-        <a class="button secondary project-inline-back" href="{{ page.parent_permalink | relative_url }}">← Back to {{ page.parent_project | default: 'Project' }}</a>
-      {% endif %}
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
-      <div class="project-hero-actions">
-        {% if page.links %}
-          {% for link in page.links %}
-            {% assign normalized_label = link.label | downcase %}
-            {% if normalized_label == "artstation" %}
-              <a class="button secondary project-link-artstation" href="{{ link.url }}">
-                {% if link.logo_path %}
-                  <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
-                {% else %}
-                  <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
-                {% endif %}
-                {{ link.label }}
-              </a>
-              {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </div>
     </div>
   </header>
 
@@ -60,6 +39,43 @@ layout: default
           <a class="button secondary" href="{{ '/projects/' | relative_url }}">Back to projects</a>
         {% endif %}
       </div>
+      {% assign artstation_link = nil %}
+      {% if page.links %}
+        {% for link in page.links %}
+          {% assign normalized_label = link.label | downcase %}
+          {% if normalized_label == "artstation" %}
+            {% assign artstation_link = link %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if artstation_link == nil and page.parent_slug %}
+        {% assign parent_project_entry = site.projects | where: "slug", page.parent_slug | first %}
+        {% if parent_project_entry and parent_project_entry.links %}
+          {% for link in parent_project_entry.links %}
+            {% assign normalized_label = link.label | downcase %}
+            {% if normalized_label == "artstation" %}
+              {% assign artstation_link = link %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+
+      {% if artstation_link %}
+        <div class="project-fact project-back-link-box">
+          <a class="button secondary project-link-artstation" href="{{ artstation_link.url }}">
+            {% if artstation_link.logo_path %}
+              <img src="{{ artstation_link.logo_path | relative_url }}" alt="{{ artstation_link.logo_alt | default: artstation_link.label | append: ' logo' }}" class="button-logo">
+            {% else %}
+              <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/companieslogos/artstation_grey.png" alt="ArtStation logo" class="button-logo project-link-artstation-logo">
+            {% endif %}
+            {{ artstation_link.label }}
+          </a>
+        </div>
+      {% endif %}
+
 
       {% if page.role %}
       <div class="project-fact">
