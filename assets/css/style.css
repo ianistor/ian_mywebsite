@@ -839,6 +839,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 .prose img,
 .prose video {
   max-width: 100%;
+  height: auto;
   border-radius: 14px;
   display: block;
   margin: 1.25rem 0;
