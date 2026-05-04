@@ -252,7 +252,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_acbffc.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/ACBFFC.jpg' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/ACBFFC.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
       <figcaption>Assassin's Creed IV: Black Flag - Freedom Cry DLC</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
@@ -266,7 +266,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_ac3.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/AC3.jpg' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/AC3.png' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
       <figcaption>Assassin's Creed III</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
