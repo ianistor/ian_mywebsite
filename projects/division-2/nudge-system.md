@@ -6,7 +6,7 @@ parent_project: "The Division 2"
 parent_permalink: /projects/division-2/
 parent_slug: "division-2"
 summary: "Procedural cover nudge system deep dive from The Division 2 production work."
-image: "/assets/images/projectcovers/TCTD2.png"
+image: "/assets/images/projectcovers/TCTD2.jpg"
 ---
 
 ## Nudge System
@@ -39,6 +39,6 @@ This couldn't have been possible without the collaboration with Michiel Meesters
 ○Technical Art: Magnus Ander
 ○Technical Art: Ioan-Andrei Nistor
 
-<img src="/assets/images/projectcovers/TCTD2.png" alt="The Division 2 - Nudge System preview">
+<img src="/assets/images/projectcovers/TCTD2.jpg" alt="The Division 2 - Nudge System preview">
 
 [Artstation Link](https://www.artstation.com/artwork/ybvwzR)

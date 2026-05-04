@@ -4,7 +4,7 @@ title: "The Division"
 role: "Technical Content Validator"
 company: "Massive Entertainment"
 summary: "Checking in-engine content"
-image: "/assets/images/projectcovers/TCTD.png"
+image: "/assets/images/projectcovers/TCTD.jpg"
 release_year: 2016
 permalink: /projects/division/
 links:

@@ -4,7 +4,7 @@ title: "Star Wars Outlaws"
 role: "Senior Technical Artist"
 company: "Massive Entertainment"
 summary: "Built destruction workflows, Houdini tools, and gameplay-integrated visual systems for production."
-image: "/assets/images/projectcovers/SWO.png"
+image: "/assets/images/projectcovers/SWO.jpg"
 release_year: 2024
 permalink: /projects/star-wars-outlaws/
 links:

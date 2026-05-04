@@ -116,9 +116,9 @@ Use this snippet:
 
 ```liquid
 {% raw %}{% include image-compare.html
-  before='/assets/images/projectcovers/TCTD2.png'
+  before='/assets/images/projectcovers/TCTD2.jpg'
   before_alt='The Division 2 cover'
-  after='/assets/images/projectcovers/TCTD2WONY.png'
+  after='/assets/images/projectcovers/TCTD2WONY.jpg'
   after_alt='The Division 2: Warlords of New York cover'
   position=50
   label='Slide to compare the two covers'
@@ -128,9 +128,9 @@ Use this snippet:
 Example output:
 
 {% include image-compare.html
-  before='/assets/images/projectcovers/TCTD2.png'
+  before='/assets/images/projectcovers/TCTD2.jpg'
   before_alt='The Division 2 cover'
-  after='/assets/images/projectcovers/TCTD2WONY.png'
+  after='/assets/images/projectcovers/TCTD2WONY.jpg'
   after_alt='The Division 2: Warlords of New York cover'
   position=50
   label='Slide to compare the two covers'

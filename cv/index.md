@@ -85,7 +85,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
       <div class="experience-project-cover project-text-placeholder" aria-label="Unannounced Project">
         <span>Unannounced Project</span>
       </div>
-      <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
+      <img src="{{ '/assets/images/projectcovers/NWA.jpg' | relative_url }}" alt="New World Aeternum cover" class="experience-project-cover">
     </div>
   </div>
 </div>
@@ -106,7 +106,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Senior Technical Artist</h3>
     <p><strong>Ubisoft Romania</strong></p>
     <p><em>2023 - 2024</em></p>
-    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/SWO.jpg' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -127,7 +127,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Senior Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2022 - 2023</em></p>
-    <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/SWO.jpg' | relative_url }}" alt="Star Wars Outlaws cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -149,8 +149,8 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Artist</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2018 - 2022</em></p>
-    <img src="{{ '/assets/images/projectcovers/TCTD2.png' | relative_url }}" alt="The Division 2 cover" class="experience-project-cover">
-    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/TCTD2.jpg' | relative_url }}" alt="The Division 2 cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/TCTD2WONY.jpg' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -173,7 +173,7 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
     <h3>Technical Content Validator</h3>
     <p><strong>Massive Entertainment, A Ubisoft Studio</strong></p>
     <p><em>2015 - 2018</em></p>
-    <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="experience-project-cover">
+    <img src="{{ '/assets/images/projectcovers/TCTD.jpg' | relative_url }}" alt="The Division cover" class="experience-project-cover">
   </div>
 </div>
 
@@ -210,70 +210,70 @@ Senior Technical Artist with 14+ years of AAA experience, specializing in Unreal
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_nw.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/NW.png' | relative_url }}" alt="New World Aeternum cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/NWA.jpg' | relative_url }}" alt="New World Aeternum cover" class="cv-title-cover">
       <figcaption>New World Aeternum</figcaption>
       <span class="cv-title-role">Technical Artist</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_swo.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/SWO.png' | relative_url }}" alt="Star Wars Outlaws cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/SWO.jpg' | relative_url }}" alt="Star Wars Outlaws cover" class="cv-title-cover">
       <figcaption>Star Wars Outlaws</figcaption>
       <span class="cv-title-role">Senior Technical Artist</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_td2_wony.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/TCTD2WONY.png' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/TCTD2WONY.jpg' | relative_url }}" alt="The Division 2: Warlords of New York cover" class="cv-title-cover">
       <figcaption>The Division 2: Warlords of New York</figcaption>
       <span class="cv-title-role">Technical Artist</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_td2.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/TCTD2.png' | relative_url }}" alt="The Division 2 cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/TCTD2.jpg' | relative_url }}" alt="The Division 2 cover" class="cv-title-cover">
       <figcaption>Tom Clancy's The Division 2</figcaption>
       <span class="cv-title-role">Technical Artist</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_td.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/TCTD.png' | relative_url }}" alt="The Division cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/TCTD.jpg' | relative_url }}" alt="The Division cover" class="cv-title-cover">
       <figcaption>Tom Clancy's The Division</figcaption>
       <span class="cv-title-role">Technical Content Validator</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_acu.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/ACUnity.png' | relative_url }}" alt="Assassin's Creed Unity cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/ACU.jpg' | relative_url }}" alt="Assassin's Creed Unity cover" class="cv-title-cover">
       <figcaption>Assassin's Creed Unity</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_acbffc.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/ACBFFC.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/ACBFFC.jpg' | relative_url }}" alt="Assassin's Creed IV: Black Flag - Freedom Cry DLC cover" class="cv-title-cover">
       <figcaption>Assassin's Creed IV: Black Flag - Freedom Cry DLC</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_acbf.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/ACBF.png' | relative_url }}" alt="Assassin's Creed IV: Black Flag cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/ACBF.jpg' | relative_url }}" alt="Assassin's Creed IV: Black Flag cover" class="cv-title-cover">
       <figcaption>Assassin's Creed IV: Black Flag</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_ac3.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/AC3.png' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/AC3.jpg' | relative_url }}" alt="Assassin's Creed III cover" class="cv-title-cover">
       <figcaption>Assassin's Creed III</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>
   </figure>
   <figure class="cv-title-card">
     <a href="{{ p_gr.url | relative_url }}" class="cv-title-link">
-      <img src="{{ '/assets/images/projectcovers/GR.png' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
+      <img src="{{ '/assets/images/projectcovers/GRFS.jpg' | relative_url }}" alt="Ghost Recon cover" class="cv-title-cover">
       <figcaption>Ghost Recon Future Soldier</figcaption>
       <span class="cv-title-role">Game Tester</span>
     </a>

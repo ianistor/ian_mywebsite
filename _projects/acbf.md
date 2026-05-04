@@ -3,7 +3,7 @@ title: "Assassin's Creed IV: Black Flag"
 role: "Game Tester"
 company: "Ubisoft Romania"
 summary: "Supported production quality with hands-on QA validation, regression checks, and detailed issue reporting across gameplay features."
-image: "/assets/images/projectcovers/ACBF.png"
+image: "/assets/images/projectcovers/ACBF.jpg"
 trailer_video: "/assets/videos/ACBF.mp4"
 release_year: 2013
 ---
