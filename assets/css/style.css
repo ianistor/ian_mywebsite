@@ -1153,11 +1153,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .share-link,
 .share-action-button,
+.share-platform-button,
 .share-copy-button {
   font-weight: 500;
 }
 
 .share-action-button,
+.share-platform-button,
 .share-copy-button {
   cursor: pointer;
 }
@@ -1170,6 +1172,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   opacity: 0.9;
 }
 
+.share-platform-button.is-success,
 .share-copy-button.is-success {
   border-color: #2f7d57;
   color: #7ee0a6;
