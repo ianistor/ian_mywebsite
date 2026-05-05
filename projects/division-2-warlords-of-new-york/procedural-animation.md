@@ -15,7 +15,10 @@ Developed procedural animation setups for multiple world assets, using graph tra
 
 I handled graph setup and created the swinging animation logic for this asset using graph transform logic and visual scripting.
 
-<img width="1280" height="720" src="{{ '/assets/images/projects_showcase/lowline_anim1.mp4' | relative_url }}" alt="Lowline procedural animations 1" type = "video/mp4">
+<video width="1280" height="720" controls playsinline preload="metadata">
+  <source src="{{ '/assets/images/projects_showcase/lowline_anim1.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Drill
 
@@ -27,6 +30,8 @@ Animation and VFX work for the Lowline Drill setup.
 
 Animation is driven using a mix of depth buffers, vertex shader logic, and vertex positions baked into vertex color.
 
-<img width="1280" height="720" src="{{ '/assets/images/projects_showcase/lowline_anim2.mp4' | relative_url }}" alt="Lowline procedural animations 2">
-
+<video width="1280" height="720" controls playsinline preload="metadata">
+  <source src="{{ '/assets/images/projects_showcase/lowline_anim2.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
