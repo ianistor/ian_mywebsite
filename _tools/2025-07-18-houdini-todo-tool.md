@@ -5,6 +5,7 @@ overlay_text: "Houdini"
 summary: "A simple TO-DO system inside Houdini using Python, designed for notes and team feedback."
 image: https://public-files.gumroad.com/gcjb0t3xasiy3ng0bzttktyav8yy
 featured: true
+landing_position: 2
 links:
   - label: "Gumroad"
     url: "https://ianistor.gumroad.com/l/yabycq"
