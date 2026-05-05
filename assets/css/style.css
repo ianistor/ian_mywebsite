@@ -2538,3 +2538,46 @@ body.home-with-bg-video .section-block {
     flex-wrap: wrap;
   }
 }
+
+.detail-layout-with-toc {
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) minmax(220px, 280px);
+}
+
+.toc-sidebar {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.toc-list a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.toc-subitem {
+  padding-left: 0.85rem;
+}
+
+.toc-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+  .detail-layout-with-toc {
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  }
+
+  .toc-sidebar {
+    grid-column: 1 / -1;
+    position: static;
+  }
+}
