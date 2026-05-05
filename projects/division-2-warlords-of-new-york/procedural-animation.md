@@ -5,7 +5,7 @@ permalink: /projects/division-2-warlords-of-new-york/procedural-animation/
 parent_project: "The Division 2 - Warlords of New York"
 parent_permalink: /projects/division-2-warlords-of-new-york/
 parent_slug: "division-2-warlords-of-new-york"
-image: /assets/images/projectcovers/TCTD2WONY.jpg
+image: /assets/images/projects_showcase/lowline1.jpg
 summary: "Procedural animation deep dive from Warlords of New York production work."
 ---
 
