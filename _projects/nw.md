@@ -9,4 +9,4 @@ trailer_video: "/assets/videos/NWA.mp4"
 ---
 • Created skinning, rigging, and VO generation setups using in-house tools and in-house engine (Lumberyard)  
 • Designed and maintained pipeline and editor tools using Python to improve content iteration speed and production stability.  
-• Assisted local character artists with Maya Python tools to speed up deliverables.  
+• Assisted local artists with Maya and Blender Python tools to speed up deliverables.
