@@ -10,10 +10,37 @@ permalink: /tools/
 </section>
 
 <section class="card-grid">
-  {% assign ordered_tools = site.tools | where_exp: 'tool', 'tool.landing_position != nil' | sort: 'landing_position' %}
-  {% assign unordered_tools = site.tools | where_exp: 'tool', 'tool.landing_position == nil' | sort: 'title' %}
-  {% assign sorted_tools = ordered_tools | concat: unordered_tools %}
-  {% for tool in sorted_tools %}
+  {% assign tools_with_position = site.tools | where_exp: 'tool', 'tool.landing_position != nil' %}
+  {% assign tools_without_position = site.tools | where_exp: 'tool', 'tool.landing_position == nil' | sort: 'title' %}
+
+  {% assign max_landing_position = tools_with_position | map: 'landing_position' | sort | last | plus: 0 %}
+
+  {% for position in (0..max_landing_position) %}
+    {% assign tools_at_position = tools_with_position | where: 'landing_position', position %}
+    {% for tool in tools_at_position %}
+      <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
+        <div class="card-media">
+          {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
+          {% if tool.show_text_placeholder == true or tool.image == blank %}
+            <div class="card-thumb project-text-placeholder" aria-label="{{ placeholder_label }}">
+              <span>{{ placeholder_label }}</span>
+            </div>
+          {% elsif tool.image %}
+            <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+          {% else %}
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+          {% endif %}
+          <div class="card-overlay">
+            <p>{{ tool.overlay_text | default: tool.summary }}</p>
+          </div>
+        </div>
+        <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
+        <p>{{ tool.summary }}</p>
+      </article>
+    {% endfor %}
+  {% endfor %}
+
+  {% for tool in tools_without_position %}
     <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
       <div class="card-media">
         {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
