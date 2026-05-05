@@ -21,7 +21,8 @@ I handled graph setup and created the swinging animation logic for this asset us
 
 Animation and VFX work for the Lowline Drill setup.
 
-<img src="/assets/images/projects_showcase/ian_drill.gif" alt="Lowline drill animation GIF">
+<img src="/assets/images/projects_showcase/ian_drill.gif" alt="Lowline drill animation GIF"  type="video/mp4" > 
+
 
 ## Wooden bridge
 
@@ -29,4 +30,4 @@ Animation is driven using a mix of depth buffers, vertex shader logic, and verte
 
 <img width="1280" height="720" alt="Wooden bridge procedural animation" src="https://github.com/user-attachments/assets/10656dcc-33fb-479e-ad08-e1030c665136" />
 
-[Artstation](https://www.artstation.com/artwork/w8g5P5)
+
