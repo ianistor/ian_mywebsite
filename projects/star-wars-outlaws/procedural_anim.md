@@ -6,7 +6,7 @@ parent_project: "Star Wars Outlaws"
 parent_permalink: /projects/star-wars-outlaws/
 parent_slug: "star-wars-outlaws"
 image: /assets/images/projects_showcase/TB_Engines.png
-summary: " Procedural Animation for the main character ship"
+summary: " Procedural Animation for the main character ship - Trailblazer"
 ---
 
 Developed procedural animations for our main vehicle, Trailblazer, taking gameplay driven values and animating parts of the ship to enhance the feel of speed and turning. The logic was communicating with other systems and it was driving light intensity, vfx intensity, animation and some gameplay elements (like shields, collisions and some damaged states)
