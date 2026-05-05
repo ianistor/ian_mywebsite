@@ -8,7 +8,7 @@ title: Home
   <div class="hero-content hero-content-elevated">
     <p class="eyebrow hero-eyebrow">Technical Artist · Game Developer · Procedural Artist</p>
     <h1 class="hero-title">Senior Technical Artist with 14+ years of <span class="hero-title-accent">AAA</span> game development.</h1>
-    <p class="lead hero-lead">Hi, I'm Ioan-Andrei Nistor. I love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams and establishing best practices.</p>
+    <p class="lead hero-lead">Hi, I'm <strong>Ioan-Andrei Nistor</strong>. I love improving workflows, problem solving, procedural content and real-time visuals. I have proven track record developing tools, destruction systems, and gameplay systems/solutions while mentoring teams and establishing best practices.</p>
     <div class="hero-cta-row">
       <a class="button" href="{{ '/projects/' | relative_url }}">View projects</a>
       <a class="button secondary" href="{{ '/cv/' | relative_url }}">About me</a>
