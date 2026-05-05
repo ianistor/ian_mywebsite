@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Template with tags, helpers, and formatting"
+date: 2026-05-05
+tags: [houdini, unreal]
+image: "placeholder"
+hidden: false
+---
+
+<div class="callout warning"><p><strong>Warning:</strong> This is a fan made environment </p></div>
