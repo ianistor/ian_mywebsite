@@ -1148,7 +1148,31 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 .post-share-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.55rem;
+}
+
+.share-link,
+.share-action-button,
+.share-copy-button {
+  font-weight: 500;
+}
+
+.share-action-button,
+.share-copy-button {
+  cursor: pointer;
+}
+
+.share-icon {
+  display: inline-flex;
+  width: 1.1rem;
+  justify-content: center;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.share-copy-button.is-success {
+  border-color: #2f7d57;
+  color: #7ee0a6;
 }
 
 .post-pagination {
