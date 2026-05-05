@@ -29,13 +29,13 @@ Houdini was used for the door snapping simulation as well.
 Bridge collapse
 
 <video width="714" height="400" controls preload="metadata" playsinline>
-  <source src="/assets/images/projects_showcase/wreck_bridge.mp4" type="video/mp4">
+  <source src="/assets/videos/wreck_bridge.mp4" type="video/mp4">
 </video>
 
 Environment Player Reaction
 
 <video width="714" height="400" controls preload="metadata" playsinline>
-  <source src="/assets/images/projects_showcase/wreck_coil.mp4" type="video/mp4">
+  <source src="/assets/videos/wreck_coil.mp4" type="video/mp4">
 </video>
 
 
