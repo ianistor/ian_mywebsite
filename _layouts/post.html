@@ -29,18 +29,18 @@ layout: default
         <span class="share-icon" aria-hidden="true">↗</span>
         <span>Share…</span>
       </button>
-      <a class="tag-chip small share-link" href="https://x.com/intent/post?url={{ share_url }}&text={{ share_title }}" target="_blank" rel="noopener noreferrer" data-platform="X" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on X">
+      <a class="tag-chip small share-link" href="https://x.com/intent/post?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer" data-platform="X" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on X">
         <span class="share-icon" aria-hidden="true">𝕏</span>
         <span>X</span>
       </a>
-      <a class="tag-chip small share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener noreferrer" data-platform="Facebook" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on Facebook">
+      <a class="tag-chip small share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer" data-platform="Facebook" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on Facebook">
         <span class="share-icon" aria-hidden="true">f</span>
         <span>Facebook</span>
       </a>
-      <a class="tag-chip small share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener noreferrer" data-platform="LinkedIn" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on LinkedIn">
+      <a class="tag-chip small share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer" data-platform="LinkedIn" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on LinkedIn">
         <span class="share-icon" aria-hidden="true">in</span>
         <span>LinkedIn</span>
-      </button>
+      </a>
       <button type="button" class="tag-chip small share-copy-button" data-share-url="{{ page.url | absolute_url }}" aria-label="Copy page URL">
         <span class="share-icon" aria-hidden="true">⧉</span>
         <span>Copy link</span>
@@ -86,35 +86,6 @@ layout: default
       }
     }
 
-
-    const platformLinks = document.querySelectorAll('.share-link[data-platform]');
-    const preferCopyMode = window.matchMedia('(pointer: coarse)').matches;
-
-    platformLinks.forEach((link) => {
-      link.addEventListener('click', async (event) => {
-        if (!preferCopyMode) return;
-        event.preventDefault();
-
-        const platform = link.dataset.platform;
-        const url = link.dataset.shareUrl;
-        const title = link.dataset.shareTitle;
-        const payload = platform === 'X' ? `${title} ${url}` : url;
-
-        try {
-          await navigator.clipboard.writeText(payload);
-          const label = link.querySelector('span:last-child');
-          const originalText = label.textContent;
-          label.textContent = 'Copied';
-          link.classList.add('is-success');
-          setTimeout(() => {
-            label.textContent = originalText;
-            link.classList.remove('is-success');
-          }, 1400);
-        } catch (error) {
-          window.prompt(`Copy this ${platform} share text:`, payload);
-        }
-      });
-    });
 
     if (copyButton) {
       copyButton.addEventListener('click', async () => {
