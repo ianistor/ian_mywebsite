@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="content-page tool-page project-page">
     {% if page.trailer_video or page.trailer_youtube_id %}
-    <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
+    <section class="project-trailer-hero{% if page.trailer_fit == 'contain' %} project-trailer-hero--contain{% endif %}" aria-label="{{ page.title }} trailer preview">
       {% if page.trailer_video %}
         <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
           <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
