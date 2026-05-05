@@ -6,10 +6,11 @@ parent_project: "Star Wars Outlaws"
 parent_slug: star-wars-outlaws
 parent_permalink: /projects/star-wars-outlaws/
 image: /assets/images/projects_showcase/wreck.jpg
-summary: "Focused breakdown page for VFX and real time presentation work on Star Wars Outlaws."
+summary: "Destruction simulations and procedural animation for The Wreck mission area"
 ---
 
 I was in charge in simulating and implementing the destruction for one of our main mission "The Shipwreck", where the environment collapses in front of the player.
+
 The simulations were done in Houdini and exported and integrated as VAT simulations, this helps us in use the GPU as much as we can and offset some CPU costs that are associated with traditional animation workflows.
 The dust and small particles were made by our VFX Artist Baptiste Erades
 This wouldn't have been possible without our amazing level designers, environment artists, prop artists and quest designers.
