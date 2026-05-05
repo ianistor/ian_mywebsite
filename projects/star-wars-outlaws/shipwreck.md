@@ -29,13 +29,13 @@ Houdini was used for the door snapping simulation as well.
 Bridge collapse
 
 <video width="714" height="400" controls preload="metadata" playsinline>
-  <source src="https://cdn.artstation.com/p/video_sources/002/194/649/ianistor-mq060-doorseq.mp4#t=0.001" type="video/mp4">
+  <source src="/assets/images/projects_showcase/wreck_bridge.mp4" type="video/mp4">
 </video>
 
 Environment Player Reaction
 
 <video width="714" height="400" controls preload="metadata" playsinline>
-  <source src="https://cdn.artstation.com/p/video_sources/002/194/649/ianistor-mq060-doorseq.mp4#t=0.001" type="video/mp4">
+  <source src="/assets/images/projects_showcase/wreck_coil.mp4" type="video/mp4">
 </video>
 
 
