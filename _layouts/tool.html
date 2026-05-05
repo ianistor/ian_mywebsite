@@ -2,39 +2,89 @@
 layout: default
 ---
 <article class="content-page tool-page">
-  <header class="page-header narrow">
-    <a class="button secondary" href="{{ '/tools/' | relative_url }}">Back to tools</a>
-    <h1>{{ page.title }}</h1>
-    {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
-
-    {% if page.tags %}
-      <div class="post-tags">
-        {% for tag in page.tags %}
-          <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% if page.links %}
-      <div class="link-row">
-        {% for link in page.links %}
-          {% assign normalized_label = link.label | downcase %}
-          <a class="button secondary" href="{{ link.url }}">
-            {% if link.logo_path %}
-              <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
-            {% elsif normalized_label == "gumroad" %}
-              <img src="{{ '/assets/images/companieslogos/gumroad.png' | relative_url }}" alt="Gumroad logo" class="button-logo">
-            {% elsif normalized_label == "fab" %}
-              <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large">
-            {% endif %}
-            {{ link.label }}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+  <header class="project-hero-shell project-hero-shell--no-trailer post-hero-shell">
+    <div class="project-hero-top">
+      <p class="eyebrow">Tools</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+    </div>
   </header>
 
-  <div class="prose narrow">
-    {{ content }}
-  </div>
+  <section class="project-detail-layout detail-layout-with-toc">
+    <aside class="project-sidebar detail-sidebar-left">
+      <div class="project-fact project-back-link-box">
+        <a class="button secondary" href="{{ '/tools/' | relative_url }}">Back to tools</a>
+      </div>
+
+      {% if page.tags %}
+      <div class="project-fact">
+        <h3>Tags</h3>
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <a class="tag-chip small" href="{{ '/tags/' | append: tag | downcase | append: '/' | relative_url }}">{{ tag | upcase }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.links %}
+      <div class="project-fact">
+        <h3>Links</h3>
+        <div class="link-row">
+          {% for link in page.links %}
+            {% assign normalized_label = link.label | downcase %}
+            <a class="button secondary" href="{{ link.url }}">
+              {% if link.logo_path %}
+                <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
+              {% elsif normalized_label == "gumroad" %}
+                <img src="{{ '/assets/images/companieslogos/gumroad.png' | relative_url }}" alt="Gumroad logo" class="button-logo">
+              {% elsif normalized_label == "fab" %}
+                <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large">
+              {% endif %}
+              {{ link.label }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </aside>
+
+    <div class="prose project-main-content">
+      {{ content }}
+    </div>
+
+    <aside class="project-sidebar toc-sidebar" aria-label="Table of contents">
+      <div class="project-fact">
+        <h3>Table of contents</h3>
+        <ul class="toc-list" id="page-toc"></ul>
+      </div>
+    </aside>
+  </section>
 </article>
+
+<script>
+  (() => {
+    const tocRoot = document.querySelector('#page-toc');
+    const contentRoot = document.querySelector('.project-main-content');
+
+    if (tocRoot && contentRoot) {
+      const headings = [...contentRoot.querySelectorAll('h2, h3')];
+      headings.forEach((heading, index) => {
+        if (!heading.id) {
+          heading.id = `section-${index + 1}-${heading.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+        }
+        const li = document.createElement('li');
+        li.className = heading.tagName.toLowerCase() === 'h3' ? 'toc-subitem' : 'toc-item';
+        const a = document.createElement('a');
+        a.href = `#${heading.id}`;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocRoot.appendChild(li);
+      });
+
+      if (headings.length === 0) {
+        tocRoot.innerHTML = '<li class="toc-empty">No sections yet.</li>';
+      }
+    }
+  })();
+</script>
