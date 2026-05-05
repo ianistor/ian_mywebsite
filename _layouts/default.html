@@ -1090,6 +1090,49 @@
       const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
       const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
 
+      const initializeMediaLoadingState = (media) => {
+        if (!(media instanceof HTMLImageElement || media instanceof HTMLVideoElement)) return;
+
+        let wrap = media.parentElement;
+        if (!wrap || !wrap.classList.contains('media-loading-wrap')) {
+          wrap = document.createElement('span');
+          wrap.className = 'media-loading-wrap';
+          media.parentNode.insertBefore(wrap, media);
+          wrap.appendChild(media);
+        }
+
+        const setLoaded = () => wrap.classList.remove('is-loading');
+        const setLoading = () => wrap.classList.add('is-loading');
+
+        if (media instanceof HTMLImageElement) {
+          if (media.complete && media.naturalWidth > 0) {
+            setLoaded();
+          } else {
+            setLoading();
+            media.addEventListener('load', setLoaded, { once: true });
+            media.addEventListener('error', setLoaded, { once: true });
+          }
+          return;
+        }
+
+        if (media.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          setLoaded();
+        } else {
+          setLoading();
+          media.addEventListener('loadeddata', setLoaded, { once: true });
+          media.addEventListener('error', setLoaded, { once: true });
+        }
+
+        media.addEventListener('waiting', setLoading);
+        media.addEventListener('stalled', setLoading);
+        media.addEventListener('canplay', setLoaded);
+        media.addEventListener('playing', setLoaded);
+      };
+
+      if (prose) {
+        prose.querySelectorAll('img, video').forEach((media) => initializeMediaLoadingState(media));
+      }
+
       if (prose && lightbox && lightboxImage) {
         prose.querySelectorAll('img').forEach((img) => {
           img.classList.add('zoomable-image');

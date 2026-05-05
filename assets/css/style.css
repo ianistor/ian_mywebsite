@@ -962,6 +962,43 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   margin: 1.25rem 0;
 }
 
+.prose .media-loading-wrap {
+  position: relative;
+  display: block;
+}
+
+.prose .media-loading-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin: -1rem 0 0 -1rem;
+  border-radius: 999px;
+  border: 2px solid rgba(238, 242, 247, 0.28);
+  border-top-color: var(--accent);
+  animation: media-spinner 0.9s linear infinite;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.prose .media-loading-wrap.is-loading::after {
+  opacity: 1;
+}
+
+.prose .media-loading-wrap.is-loading > img,
+.prose .media-loading-wrap.is-loading > video {
+  opacity: 0.6;
+}
+
+@keyframes media-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .prose iframe {
   border-radius: 14px;
   margin: 1.25rem 0;
