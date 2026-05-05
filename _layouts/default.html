@@ -1090,8 +1090,32 @@
       const lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
       const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
 
+      const initializeImageLoadingState = (img) => {
+        if (!(img instanceof HTMLImageElement)) return;
+
+        let wrap = img.parentElement;
+        if (!wrap || !wrap.classList.contains('image-loading-wrap')) {
+          wrap = document.createElement('span');
+          wrap.className = 'image-loading-wrap';
+          img.parentNode.insertBefore(wrap, img);
+          wrap.appendChild(img);
+        }
+
+        const setLoaded = () => wrap.classList.remove('is-loading');
+        const setLoading = () => wrap.classList.add('is-loading');
+
+        if (img.complete && img.naturalWidth > 0) {
+          setLoaded();
+        } else {
+          setLoading();
+          img.addEventListener('load', setLoaded, { once: true });
+          img.addEventListener('error', setLoaded, { once: true });
+        }
+      };
+
       if (prose && lightbox && lightboxImage) {
         prose.querySelectorAll('img').forEach((img) => {
+          initializeImageLoadingState(img);
           img.classList.add('zoomable-image');
           img.addEventListener('click', () => {
             lightboxImage.src = img.currentSrc || img.src;
