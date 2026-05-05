@@ -57,21 +57,7 @@ layout: default
         </div>
       </section>
 
-      <nav class="post-pagination narrow" aria-label="Post navigation">
-        {% if page.previous %}
-          <a class="post-pagination-card prev" href="{{ page.previous.url | relative_url }}">
-            <span class="post-pagination-label">Previous post</span>
-            <strong>{{ page.previous.title }}</strong>
-          </a>
-        {% endif %}
-        {% if page.next %}
-          <a class="post-pagination-card next" href="{{ page.next.url | relative_url }}">
-            <span class="post-pagination-label">Next post</span>
-            <strong>{{ page.next.title }}</strong>
-          </a>
-        {% endif %}
-      </nav>
-    </div>
+
 
     <aside class="project-sidebar toc-sidebar" aria-label="Table of contents">
       <div class="project-fact">
@@ -81,65 +67,3 @@ layout: default
     </aside>
   </section>
 </article>
-
-<script>
-  (() => {
-    const shareButton = document.querySelector('.share-action-button');
-    const copyButton = document.querySelector('.share-copy-button');
-    const tocRoot = document.querySelector('#page-toc');
-    const contentRoot = document.querySelector('.project-main-content');
-
-    if (tocRoot && contentRoot) {
-      const headings = [...contentRoot.querySelectorAll('h2, h3')];
-      headings.forEach((heading, index) => {
-        if (!heading.id) {
-          heading.id = `section-${index + 1}-${heading.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-        }
-        const li = document.createElement('li');
-        li.className = heading.tagName.toLowerCase() === 'h3' ? 'toc-subitem' : 'toc-item';
-        const a = document.createElement('a');
-        a.href = `#${heading.id}`;
-        a.textContent = heading.textContent;
-        li.appendChild(a);
-        tocRoot.appendChild(li);
-      });
-
-      if (headings.length === 0) {
-        tocRoot.innerHTML = '<li class="toc-empty">No sections yet.</li>';
-      }
-    }
-
-    if (shareButton) {
-      const title = shareButton.dataset.shareTitle;
-      const url = shareButton.dataset.shareUrl;
-
-      if (navigator.share) {
-        shareButton.addEventListener('click', async () => {
-          try {
-            await navigator.share({ title, url });
-          } catch (error) {
-          }
-        });
-      } else {
-        shareButton.style.display = 'none';
-      }
-    }
-
-    if (copyButton) {
-      copyButton.addEventListener('click', async () => {
-        const url = copyButton.dataset.shareUrl;
-        try {
-          await navigator.clipboard.writeText(url);
-          copyButton.classList.add('is-success');
-          copyButton.querySelector('span:last-child').textContent = 'Copied';
-          setTimeout(() => {
-            copyButton.classList.remove('is-success');
-            copyButton.querySelector('span:last-child').textContent = 'Copy link';
-          }, 1400);
-        } catch (error) {
-          window.prompt('Copy this URL:', url);
-        }
-      });
-    }
-  })();
-</script>
