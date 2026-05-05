@@ -25,7 +25,7 @@ My time on this project was very broad as I was lucky enough to be in the team r
 • Grappling hook early implementation (this was later on polished by my colleague Kirill Arafev)  
 • Wanted Screens procedural logic and setup  
 • Trailblazer (main ship) ownership  
-• Speeders destruction
+• Speeders destruction  
 • Speeder destruction of environment assets (setup, development and entire workflow)
 
 ## Deep dives
