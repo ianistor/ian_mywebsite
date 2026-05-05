@@ -2,7 +2,7 @@
 layout: post
 title: "Template with tags, helpers, and formatting"
 date: 2026-04-06
-tags: [houdini, vex, python, snippet, workflow]
+tags: [houdini, unreal, vex, python, snippet, workflow]
 image: "https://cdnb.artstation.com/p/media_assets/images/images/001/250/727/original/karma_building_up-ezgif.com-resize.gif?1707944233"
 hidden: true
 ---
@@ -23,7 +23,7 @@ hidden: true
 layout: post
 title: "Your post title"
 date: 2026-04-06
-tags: [houdini, vex, python, snippet, workflow]
+tags: [houdini, unreal, vex, python, snippet, workflow]
 image: "https://example.com/thumbnail.jpg" # optional but recommended
 youtube_id: "dQw4w9WgXcQ" # optional fallback if no image
 ---
