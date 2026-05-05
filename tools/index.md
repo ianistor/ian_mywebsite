@@ -16,8 +16,9 @@ permalink: /tools/
   {% assign max_landing_position = tools_with_position | map: 'landing_position' | sort | last | plus: 0 %}
 
   {% for position in (0..max_landing_position) %}
-    {% assign tools_at_position = tools_with_position | where: 'landing_position', position %}
-    {% for tool in tools_at_position %}
+    {% for tool in tools_with_position %}
+      {% assign tool_position = tool.landing_position | plus: 0 %}
+      {% if tool_position == position %}
       <article class="card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
         <div class="card-media">
           {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
@@ -37,6 +38,7 @@ permalink: /tools/
         <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
         <p>{{ tool.summary }}</p>
       </article>
+      {% endif %}
     {% endfor %}
   {% endfor %}
 
