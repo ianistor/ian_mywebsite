@@ -15,7 +15,7 @@ Developed procedural animation setups for multiple world assets, using graph tra
 
 I handled graph setup and created the swinging animation logic for this asset using graph transform logic and visual scripting.
 
-<img width="1280" height="720" src="{{ '/assets/images/projects_showcase/lowline_anim1.mp4' | relative_url }}" alt="Lowline procedural animations 1">
+<img width="1280" height="720" src="{{ '/assets/images/projects_showcase/lowline_anim1.mp4' | relative_url }}" alt="Lowline procedural animations 1" type = "video/mp4">
 
 ## Drill
 
