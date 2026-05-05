@@ -17,14 +17,12 @@ layout: default
     {% endif %}
   </header>
 
-  <div class="prose narrow">
+  <div class="prose">
     {{ content }}
   </div>
 
 
   <section class="post-share narrow" aria-label="Share this post">
-    {% assign share_url = page.url | absolute_url | uri_escape %}
-    {% assign share_title = page.title | uri_escape %}
     <p class="post-share-label">Share this post</p>
     <div class="post-share-links">
       <button type="button" class="tag-chip small share-action-button" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Open device share menu">
@@ -42,7 +40,7 @@ layout: default
       <a class="tag-chip small share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener noreferrer" data-platform="LinkedIn" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Share on LinkedIn">
         <span class="share-icon" aria-hidden="true">in</span>
         <span>LinkedIn</span>
-      </a>
+      </button>
       <button type="button" class="tag-chip small share-copy-button" data-share-url="{{ page.url | absolute_url }}" aria-label="Copy page URL">
         <span class="share-icon" aria-hidden="true">⧉</span>
         <span>Copy link</span>

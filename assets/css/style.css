@@ -1153,11 +1153,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .share-link,
 .share-action-button,
+.share-platform-button,
 .share-copy-button {
   font-weight: 500;
 }
 
 .share-action-button,
+.share-platform-button,
 .share-copy-button {
   cursor: pointer;
 }
