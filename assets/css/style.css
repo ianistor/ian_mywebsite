@@ -1997,7 +1997,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   max-width: 200px;
   max-height: 200px;
   object-position: center top;
-  margin-left: 150px;
+  margin: 0 auto;
 }
 
 .experience-head .company-logo-massive {
@@ -2047,7 +2047,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 .experience-project-covers {
   display: flex;
   gap: 0.6rem;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 0.5rem;
 }
 
@@ -2204,14 +2204,14 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 .experience-head-copy {
-  text-align: left;
+  text-align: center;
   margin-left: 0;
   width: 100%;
 }
 
 .experience-head {
-  align-items: flex-start;
-  margin-left: -0.75;
+  align-items: center;
+  margin-left: 0;
 }
 
 @media (max-width: 640px) {
