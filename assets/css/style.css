@@ -360,6 +360,13 @@ a:hover {
   z-index: 0;
 }
 
+.project-trailer-hero--contain .project-trailer-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: none;
+}
+
 .project-trailer-overlay {
   position: absolute;
   inset: 0;
