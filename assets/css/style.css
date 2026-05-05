@@ -1621,6 +1621,29 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
     grid-template-columns: 1fr;
   }
 
+  .card,
+  .list-card {
+    padding: 1.1rem;
+  }
+
+  .card h2,
+  .card h3,
+  .list-card h2,
+  .list-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .card p,
+  .list-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .tag-chip {
+    font-size: 0.88rem;
+  }
+
   .variation-grid-3col,
   .variation-grid-minimal,
   .variation-grid-cta,
