@@ -2631,12 +2631,16 @@ body.home-with-bg-video .section-block {
 
 @media (max-width: 1200px) {
   .detail-layout-with-toc {
-    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .detail-layout-with-toc .project-sidebar,
+  .detail-layout-with-toc .toc-sidebar {
+    position: static;
   }
 
   .toc-sidebar {
-    grid-column: 1 / -1;
-    position: static;
+    grid-column: auto;
   }
 }
 
