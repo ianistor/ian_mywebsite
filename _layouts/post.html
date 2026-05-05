@@ -27,9 +27,26 @@ layout: default
     {% assign share_title = page.title | uri_escape %}
     <p class="post-share-label">Share this post</p>
     <div class="post-share-links">
-      <a class="tag-chip small" href="https://x.com/intent/post?url={{ share_url }}&text={{ share_title }}" target="_blank" rel="noopener noreferrer">Share on X</a>
-      <a class="tag-chip small" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener noreferrer">Share on Facebook</a>
-      <a class="tag-chip small" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+      <button type="button" class="tag-chip small share-action-button" data-share-url="{{ page.url | absolute_url }}" data-share-title="{{ page.title }}" aria-label="Open device share menu">
+        <span class="share-icon" aria-hidden="true">↗</span>
+        <span>Share…</span>
+      </button>
+      <a class="tag-chip small share-link" href="https://x.com/intent/post?url={{ share_url }}&text={{ share_title }}" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+        <span class="share-icon" aria-hidden="true">𝕏</span>
+        <span>X</span>
+      </a>
+      <a class="tag-chip small share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+        <span class="share-icon" aria-hidden="true">f</span>
+        <span>Facebook</span>
+      </a>
+      <a class="tag-chip small share-link" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+        <span class="share-icon" aria-hidden="true">in</span>
+        <span>LinkedIn</span>
+      </a>
+      <button type="button" class="tag-chip small share-copy-button" data-share-url="{{ page.url | absolute_url }}" aria-label="Copy page URL">
+        <span class="share-icon" aria-hidden="true">⧉</span>
+        <span>Copy link</span>
+      </button>
     </div>
   </section>
 
@@ -48,3 +65,44 @@ layout: default
     {% endif %}
   </nav>
 </article>
+
+<script>
+  (() => {
+    const shareButton = document.querySelector('.share-action-button');
+    const copyButton = document.querySelector('.share-copy-button');
+
+    if (shareButton) {
+      const title = shareButton.dataset.shareTitle;
+      const url = shareButton.dataset.shareUrl;
+
+      if (navigator.share) {
+        shareButton.addEventListener('click', async () => {
+          try {
+            await navigator.share({ title, url });
+          } catch (error) {
+            // User canceled the dialog; no-op.
+          }
+        });
+      } else {
+        shareButton.style.display = 'none';
+      }
+    }
+
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const url = copyButton.dataset.shareUrl;
+        try {
+          await navigator.clipboard.writeText(url);
+          copyButton.classList.add('is-success');
+          copyButton.querySelector('span:last-child').textContent = 'Copied';
+          setTimeout(() => {
+            copyButton.classList.remove('is-success');
+            copyButton.querySelector('span:last-child').textContent = 'Copy link';
+          }, 1400);
+        } catch (error) {
+          window.prompt('Copy this URL:', url);
+        }
+      });
+    }
+  })();
+</script>
