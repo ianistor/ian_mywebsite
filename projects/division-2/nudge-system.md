@@ -34,7 +34,7 @@ A good example would be the emergency beds mattress.
 Prop created by : Jill Ralmark
 Nudge/animation setup created by myself.
 
-This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.  
+This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.    
 ○Code: Michiel Meesters  
 ○Technical Art: Magnus Ander  
 ○Technical Art: Ioan-Andrei Nistor  
