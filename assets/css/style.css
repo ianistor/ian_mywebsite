@@ -1670,6 +1670,27 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
     grid-auto-columns: minmax(240px, 86vw);
   }
 
+  .projects-row.blog-row {
+    grid-auto-columns: minmax(260px, 92vw);
+  }
+
+  .blog-row-card,
+  .projects-row.blog-row .card {
+    padding: 1rem;
+  }
+
+  .projects-row.blog-row h3,
+  .projects-row.blog-row h2 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0.45rem 0 0.55rem;
+  }
+
+  .projects-row.blog-row p {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
   .hero-stack-list {
     grid-template-columns: repeat(2, minmax(0, max-content));
   }
