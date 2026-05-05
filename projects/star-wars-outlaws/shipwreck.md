@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Shipwreck Level Destruction"
+title: "The Wreck -  Level Destruction & Player Interaction"
 permalink: /projects/star-wars-outlaws/shipwreck_1/
 parent_project: "Star Wars Outlaws"
 parent_slug: star-wars-outlaws
