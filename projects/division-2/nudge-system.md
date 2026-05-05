@@ -34,11 +34,9 @@ A good example would be the emergency beds mattress.
 Prop created by : Jill Ralmark
 Nudge/animation setup created by myself.
 
-This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.
-○Code: Michiel Meesters
-○Technical Art: Magnus Ander
-○Technical Art: Ioan-Andrei Nistor
+This couldn't have been possible without the collaboration with Michiel Meesters (Lead 3c Programmer) and ex-colleague Magnus Ander(Senior TA) who helped me a lot during this feature development.  
+○Code: Michiel Meesters  
+○Technical Art: Magnus Ander  
+○Technical Art: Ioan-Andrei Nistor  
 
-<img src="/assets/images/projectcovers/TCTD2.jpg" alt="The Division 2 - Nudge System preview">
 
-[Artstation Link](https://www.artstation.com/artwork/ybvwzR)
