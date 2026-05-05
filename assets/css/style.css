@@ -743,6 +743,12 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   vertical-align: -0.1em;
 }
 
+
+.gumroad-logo-large {
+  width: 2em;
+  height: 2em;
+}
+
 .fab-logo-large {
   width: 1.35em;
   height: 1.35em;
