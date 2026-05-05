@@ -1133,6 +1133,24 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   background: rgba(140, 194, 255, 0.12);
 }
 
+
+.post-share {
+  margin-top: 1.4rem;
+  padding-top: 0.35rem;
+}
+
+.post-share-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 0.6rem;
+}
+
+.post-share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .post-pagination {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
