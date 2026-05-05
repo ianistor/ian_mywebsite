@@ -1135,6 +1135,7 @@
 
       if (prose && lightbox && lightboxImage) {
         prose.querySelectorAll('img').forEach((img) => {
+          initializeImageLoadingState(img);
           img.classList.add('zoomable-image');
           img.addEventListener('click', () => {
             lightboxImage.src = img.currentSrc || img.src;
