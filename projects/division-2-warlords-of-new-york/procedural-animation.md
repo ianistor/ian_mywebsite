@@ -21,7 +21,7 @@ I handled graph setup and created the swinging animation logic for this asset us
 
 Animation and VFX work for the Lowline Drill setup.
 
-<img src="/assets/images/projects_showcase/ian_drill.gif" alt="Lowline drill animation GIF">
+<img src="{{ '/assets/images/projects_showcase/ian_drill.gif' | relative_url }}" alt="Lowline drill animation GIF">
 
 ## Wooden bridge
 
