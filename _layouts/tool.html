@@ -58,7 +58,7 @@ layout: default
               {% if link.logo_path %}
                 <img src="{{ link.logo_path | relative_url }}" alt="{{ link.logo_alt | default: link.label | append: ' logo' }}" class="button-logo">
               {% elsif normalized_label == "gumroad" %}
-                <img src="{{ '/assets/images/companieslogos/gumroad.png' | relative_url }}" alt="Gumroad logo" class="button-logo">
+                <img src="{{ '/assets/images/companieslogos/gumroad.png' | relative_url }}" alt="Gumroad logo" class="button-logo gumroad-logo-large">
               {% elsif normalized_label == "fab" %}
                 <img src="{{ '/assets/images/companieslogos/fab.png' | relative_url }}" alt="Fab logo" class="button-logo fab-logo-large">
               {% endif %}
