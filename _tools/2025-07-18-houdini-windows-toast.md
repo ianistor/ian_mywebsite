@@ -5,6 +5,7 @@ overlay_text: "Houdini"
 summary: "A toast notification tool for Houdini that alerts you when nodes finish cooking."
 image: https://public-files.gumroad.com/t8susl0u79ceockidc4u192fwuc4
 featured: true
+landing_position: 1
 links:
   - label: "Gumroad"
     url: "https://ianistor.gumroad.com/l/ian_hou_notify"
