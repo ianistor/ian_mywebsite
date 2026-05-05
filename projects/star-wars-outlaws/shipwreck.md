@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Shipwreck Level Destruction"
-permalink: /projects/star-wars-outlaws/vfx-and-real-time-presentation/
+permalink: /projects/star-wars-outlaws/shipwreck_1/
 parent_project: "Star Wars Outlaws"
 parent_slug: star-wars-outlaws
 parent_permalink: /projects/star-wars-outlaws/
