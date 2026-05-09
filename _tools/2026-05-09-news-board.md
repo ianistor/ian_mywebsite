@@ -20,7 +20,7 @@ News Board is an Unreal Engine editor plugin for sharing project updates directl
 
 The goal is to decrease the chances of missing important project changes/information. Artists, designers, and developers can see relevant news when they open the project, mark it as read, snooze it, or hide it until the message changes.
 
-<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png" width="714" height="400" />
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png" />
 
 ## What It Does
 
