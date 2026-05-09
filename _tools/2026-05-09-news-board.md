@@ -6,7 +6,7 @@ summary: "An Unreal Engine editor plugin for sharing project updates directly in
 image: https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png
 tags: [production, communication, unreal]
 featured: true
-landing_position: 3
+landing_position: 1
 links:
   - label: "Fab"
     url: "TBD"
