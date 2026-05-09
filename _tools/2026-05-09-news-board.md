@@ -8,7 +8,7 @@ tags: [production, communication, unreal]
 featured: true
 landing_position: 1
 trailer_video: /assets/images/tools_showcase/newsboard/ProjectNews.png
-trailer_fit: contain
+trailer_fit: fit
 links:
   - label: "Fab"
     url: "TBD"
