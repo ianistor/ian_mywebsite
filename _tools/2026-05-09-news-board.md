@@ -4,7 +4,7 @@ title: "News Board"
 overlay_text: "Unreal Engine"
 summary: "An Unreal Engine editor plugin for sharing project updates directly inside the editor."
 image:
-featured: false
+featured: true
 landing_position: 3
 links:
   - label: "Fab"
