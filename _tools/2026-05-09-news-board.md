@@ -55,6 +55,9 @@ On editor startup, the Project News window opens automatically if there is at le
 
 You can also open it manually from the NewsBoard button in the main editor toolbar.
 
+<img width="1130" height="433" alt="image" src="https://github.com/user-attachments/assets/b47e5ba1-c3d5-4dfc-b428-b9429a61f6a0" />
+
+
 ## Creating Updates With a NewsBoard Asset
 
 Use a NewsBoard Asset when you want the update to live as an Unreal asset in the project.
@@ -64,7 +67,12 @@ Use a NewsBoard Asset when you want the update to live as an Unreal asset in the
 3. Fill in the update fields.
 4. Save the asset.
 
+<img width="1233" height="369" alt="image" src="https://github.com/user-attachments/assets/7507a440-c648-4fa6-a9f7-aa08d9fc6de2" />
+
+
 ### Asset Fields
+
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_UAsset.png" />
 
 `Show On Startup`
 
