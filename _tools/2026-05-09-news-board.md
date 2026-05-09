@@ -3,8 +3,8 @@ layout: tool
 title: "News Board"
 overlay_text: "Unreal Engine"
 summary: "An Unreal Engine editor plugin for sharing project updates directly inside the editor."
-image:
-featured: true
+image: https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png
+featured: false
 landing_position: 3
 links:
   - label: "Fab"
