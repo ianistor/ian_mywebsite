@@ -7,4 +7,4 @@ image:  https://raw.githubusercontent.com/ianistor/ian_website/main/assets/image
 hidden: false
 ---
 
-<div class="callout warning"><p><strong>Warning:</strong> This is a fan made environment </p></div>
+<div class="callout warning"><p><strong>Warning:</strong> This is a fan made environment, more info to add soon! </p></div>
