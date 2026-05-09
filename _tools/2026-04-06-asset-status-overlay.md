@@ -8,6 +8,7 @@ featured: true
 landing_position: 0
 trailer_video: /assets/aso/ASODemo.mp4
 trailer_fit: contain
+tags : [unreal, tool]
 links:
   - label: "Fab"
     url: "https://fab.com/s/d783d916db7e"
