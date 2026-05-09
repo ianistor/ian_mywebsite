@@ -141,11 +141,12 @@ title: Home
     <h2>Tools</h2>
     <a href="{{ '/tools/' | relative_url }}">See all</a>
   </div>
+  {% assign featured_tools = site.tools | where: 'featured', true %}
   <div class="projects-row-wrap projects-row-wrap--with-arrows">
-    {% if site.tools.size > 4 %}<button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll tools left" data-row-nav="prev">←</button>{% endif %}
+    {% if featured_tools.size > 4 %}<button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll tools left" data-row-nav="prev">←</button>{% endif %}
     <div class="projects-row-hint">Scroll for more tools</div>
     <div class="projects-row blog-row" data-scroll-row>
-      {% for tool in site.tools limit: 6 %}
+      {% for tool in featured_tools limit: 6 %}
         <article class="card blog-row-card js-clickable-card" data-href="{{ tool.url | relative_url }}" role="link" tabindex="0" aria-label="Open {{ tool.title }}">
           {% assign placeholder_label = tool.placeholder_text | default: tool.title | default: "Unannounced Project" %}
           {% if tool.show_text_placeholder == true or tool.image == blank %}
@@ -162,7 +163,7 @@ title: Home
         </article>
       {% endfor %}
     </div>
-    {% if site.tools.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll tools right" data-row-nav="next">→</button>{% endif %}
+    {% if featured_tools.size > 4 %}<button class="projects-row-nav projects-row-nav-next" type="button" aria-label="Scroll tools right" data-row-nav="next">→</button>{% endif %}
   </div>
 </section>
 
