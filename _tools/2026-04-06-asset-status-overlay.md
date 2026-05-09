@@ -99,3 +99,24 @@ Project Settings → Asset Status Overlay
 
 **Get it here:**  
 https://fab.com/s/d783d916db7e
+
+# Current Version: 3.0
+* Bug fixing and optimization
+* (New Feature) Added status change feature in context menu (right click menu, in the level)
+* Material Status Visualizer now shows an average of all Statuses colors if more than 1 is on that mesh. If it's only one it will show the status color of that one. (old version was just displaying first material status)
+* Added an option for the visualizer in the Project Settings, now you can pick between Lit and Unlit mode (this should help increase visibility for most lightning conditions in your level)
+* Auto Save setting added, now it no longer automatically saves the asset after a status change (by default, its now a toggle option in settings), this is to align with UE's edit & saving.
+* Changing font size now lets you know you need to restart your engine.
+
+# Version: 2.0
+
+* Bug fixing and optimization
+* Added viewport overlay debug
+
+# * Version: 1.0
+* Initial release
+* Core status overlay functionality
+* Status removal capability
+* Customizable statuses and appearance
+* Content Browser integration
+* Configurable font size
