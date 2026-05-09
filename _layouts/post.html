@@ -85,6 +85,33 @@ layout: default
       if (headings.length === 0) {
         tocRoot.innerHTML = '<li class="toc-empty">No sections yet.</li>';
       }
+
+      const pageScroll = document.querySelector('.page-scroll');
+      const rootStyles = getComputedStyle(document.documentElement);
+      const headerZoneHeight = parseFloat(rootStyles.getPropertyValue('--header-zone-height')) || 0;
+      const headerGap = parseFloat(rootStyles.getPropertyValue('--header-gap')) || 0;
+      const anchorOffset = headerZoneHeight + headerGap + 12;
+
+      tocRoot.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+
+        const targetTop = target.getBoundingClientRect().top + (pageScroll ? pageScroll.scrollTop : window.scrollY) - anchorOffset;
+
+        if (pageScroll) {
+          pageScroll.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        }
+
+        history.replaceState(null, '', `#${targetId}`);
+      });
     }
   })();
 </script>
