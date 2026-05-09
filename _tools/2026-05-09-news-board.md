@@ -3,7 +3,7 @@ layout: tool
 title: "News Board"
 overlay_text: "Unreal Engine"
 summary: "An Unreal Engine editor plugin for sharing project updates directly inside the editor."
-image: https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png
+image: https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_mix.png
 tags: [production, communication, unreal]
 featured: true
 landing_position: 1
