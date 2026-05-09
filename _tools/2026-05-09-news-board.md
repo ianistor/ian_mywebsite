@@ -32,7 +32,7 @@ The goal is to keep important project information close to the work. Artists, de
 
 ## Installation
 
-1. Copy the `NewsBoard` plugin folder into your Unreal project `Plugins` folder.
+1. Install the `NewsBoard` plugin from Fab.
 2. Regenerate project files if needed.
 3. Build or open the project in Unreal Engine 5.7.
 4. Enable the plugin if Unreal asks for confirmation.
@@ -75,11 +75,11 @@ The date shown with the update. New assets default to the current local date and
 
 `Tags`
 
-Short labels shown under the post title. Tags are displayed as colored chips. They are visual labels only and are not clickable.
+Short labels shown under the post title. Tags are displayed as colored chips. They are visual labels only.
 
 `Body`
 
-The main update text. The body supports a small markdown-style subset for headings, bullets, image URL references, and inline emphasis. Images are not rendered inside the window.
+The main update text. The body supports a small markdown-style subset for headings, bullets, image URL references, and inline emphasis. Keep in mind that images are not rendered inside the window.
 
 `Sort Order`
 
@@ -108,15 +108,15 @@ Markdown files can include front matter at the top of the file.
 
 ```md
 ---
-title: "Houdini Tool Update"
+title: "Asset Update"
 date: 2026-05-09
-tags: [houdini, workflow, tools]
-image: "https://example.com/image.gif"
+tags: [production, workflow, assets]
 ---
 
-# Houdini Tool Update
+# Asset Update
 
-We changed the workflow for publishing tool notes.
+Your updates here.
+
 ```
 
 Supported front matter fields:
@@ -133,9 +133,6 @@ Sets the published date. If no date is provided, the file modified time is used.
 
 Adds visual tag chips to the post.
 
-`image`
-
-Stores an image URL reference from the markdown front matter. News Board does not render images directly in the Project News window.
 
 ## Supported Markdown
 
