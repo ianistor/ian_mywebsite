@@ -947,6 +947,13 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   border-radius: 6px;
 }
 
+.prose p code,
+.prose li code {
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .prose pre code {
   background: var(--bg);
   padding: 0;
