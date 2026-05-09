@@ -91,18 +91,45 @@ Supported front matter:
 News Board supports a small markdown-style subset for update posts:
 
 ```md
-## Main Section
-### Smaller Section
-#### Smallest Section
+## Actor Tagging Requirement
 
-Regular paragraph text with **bold**, *italic*, `inline code`, and [color=yellow]colored text[/color].
+**Area**: Assets / Actors
+
+**Importance**: [color=red]High[/color]
+
+**Status**: [color=yellow]Action needed[/color]
 
 ---
 
-- Bullet item
-- Another bullet item
+### What Changed
 
-![Reference image](https://example.com/image.gif)
+All actors placed in production levels need the `FeatureY_Enabled` tag added before submission.
+
+This is required so **Feature Y** can detect the actor during editor validation and runtime setup.
+
+### What You Need To Do
+
+- Open any level you are working on.
+- Select newly added actors.
+- Add the `FeatureY_Enabled` tag in the actor details panel.
+- Save and submit the level as usual.
+
+### Example
+
+Use this tag:
+
+`FeatureY_Enabled`
+
+[color=green]Already tagged actors do not need any changes.[/color]
+
+---
+
+#### Notes
+
+If the tag is missing, Feature Y will not process the actor correctly.
+
+![Reference image](https://example.com/reference-image.png)
+
 ```
 
 Supported syntax:
@@ -118,12 +145,18 @@ Supported syntax:
 
 News Board tracks read state per user in Unreal's per-project user settings.
 
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_MarkRead.png" />
+
 - `New`: the current user has not read the update.
 - `Read`: the update will not trigger startup for that user.
 - `Snoozed`: the update is hidden from startup until the snooze time expires.
 - `Don't show again until update`: the update stays hidden until its content changes.
 
 The startup popup appears only when at least one unread update has `Show On Startup` enabled. If all updates are read, snoozed, or dismissed, the window does not open automatically.
+
+## Settings you have acess to
+
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_Settings.png" />
 
 ## Notes
 
