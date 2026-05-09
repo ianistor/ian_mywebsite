@@ -102,6 +102,8 @@ Controls ordering. Higher numbers appear before lower numbers. If two posts have
 
 Use markdown or text files when you want updates to be easy to edit outside Unreal.
 
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_MDFile.png" />
+
 By default, News Board scans:
 
 `Content/NewsBoard`
