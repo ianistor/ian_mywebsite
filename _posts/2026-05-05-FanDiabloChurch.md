@@ -3,7 +3,7 @@ layout: post
 title: "Diablo Church - Fan made environment"
 date: 2026-05-05
 tags: [houdini, unreal]
-image: "placeholder"
+image:  https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/projects_showcase/Lilith_1.png
 hidden: false
 ---
 
