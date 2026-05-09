@@ -7,6 +7,8 @@ image: https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images
 tags: [production, communication, unreal]
 featured: true
 landing_position: 1
+trailer_video: /assets/images/tools_showcase/newsboard/ProjectNews.png
+trailer_fit: contain
 links:
   - label: "Fab"
     url: "TBD"
