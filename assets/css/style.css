@@ -955,7 +955,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 }
 
 .prose pre code {
-  background: var(--bg);
+  background: transparent;
   padding: 0;
   border-radius: 0;
 }
@@ -1086,7 +1086,7 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
 
 .hljs {
   color: var(--code-text);
-  background: var(--code-bg);
+  background: transparent;
 }
 
 .hljs-comment,
