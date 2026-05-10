@@ -11,8 +11,9 @@ trailer_video: /assets/images/tools_showcase/newsboard/ProjectNewsPopUp.mp4
 trailer_fit: contain
 links:
   - label: "Fab"
-    url: "TBD"
+    url: "https://www.fab.com/portal/listings/86dc7cf1-12dd-4498-9377-e34781995b32"
 ---
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_Hero_Fab.png" />
 
 # News Board
 
@@ -57,7 +58,7 @@ Use a `NewsBoardAsset` when you want the update to live as an Unreal asset.
 3. Fill in `Title`, `Tags`, `Body`, `Show On Startup`, and optional `Sort Order`.
 4. Save the asset.
 
-<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_UAsset.png" />
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/5.png" />
 
 ### Markdown or Text File
 
@@ -84,7 +85,7 @@ Supported front matter:
 - `tags`
 - `image` as a URL reference only
 
-<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_MDfile.png" />
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/6.png" />
 
 ## Supported Body Formatting
 
@@ -145,7 +146,7 @@ Supported syntax:
 
 News Board tracks read state per user in Unreal's per-project user settings.
 
-<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_MarkRead.png" />
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/4.png" />
 
 - `New`: the current user has not read the update.
 - `Read`: the update will not trigger startup for that user.
@@ -156,7 +157,7 @@ The startup popup appears only when at least one unread update has `Show On Star
 
 ## Settings you have acess to
 
-<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_Settings.png" />
+<img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/7.png" />
 
 ## Notes
 
