@@ -11,7 +11,7 @@ trailer_video: /assets/images/tools_showcase/newsboard/ProjectNewsPopUp.mp4
 trailer_fit: contain
 links:
   - label: "Fab"
-    url: "https://www.fab.com/portal/listings/86dc7cf1-12dd-4498-9377-e34781995b32"
+    url: "https://fab.com/s/087d75cfa8d9"
 ---
 <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews_Hero_Fab.png" />
 
