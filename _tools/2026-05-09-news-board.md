@@ -23,6 +23,10 @@ Updates can be written as Unreal `NewsBoardAsset` data assets or as simple `.md`
 
 <img src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNews.png" />
 
+<video width="714" height="400" controls preload="metadata" playsinline>
+  <source src="https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/tools_showcase/newsboard/ProjectNewsPopUp.mp4" type="video/mp4">
+</video>
+
 ## Main Features
 
 - Project News window inside Unreal Editor.
