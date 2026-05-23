@@ -1136,8 +1136,10 @@
         prose.querySelectorAll('img, video').forEach((media) => initializeMediaLoadingState(media));
       }
 
-      if (prose && lightbox && lightboxImage) {
-        prose.querySelectorAll('img').forEach((img) => {
+      const initializeLightboxImages = (root) => {
+        if (!root || !lightbox || !lightboxImage) return;
+        root.querySelectorAll('.prose img').forEach((img) => {
+          if (img.closest('a')) return;
           initializeImageLoadingState(img);
           img.classList.add('zoomable-image');
           img.addEventListener('click', () => {
@@ -1147,7 +1149,9 @@
             document.body.classList.add('lightbox-open');
           });
         });
-      }
+      };
+
+      initializeLightboxImages(document);
 
       const closeLightbox = () => {
         if (!lightbox) return;
