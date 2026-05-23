@@ -6,7 +6,7 @@ summary: "Visual status tracking for assets directly inside the Unreal Engine Co
 image: https://cdnb.artstation.com/p/assets/images/images/093/739/371/large/ioan-andrei-nistor-artstationthumbnailfront.jpg?1765303899
 featured: true
 landing_position: 0
-trailer_video: /assets/aso/ASODemo.mp4
+trailer_video: https://www.youtube.com/watch?v=6bnHbuFv8L4
 trailer_fit: contain
 tags : [unreal, tool]
 links:
