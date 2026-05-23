@@ -180,6 +180,9 @@ You can configure:
 
 I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lang=en) for allowing me to use his amazing rural cabin environment to showcase my plugin in a more "production" environment.
 
+<details class="patch-notes" markdown="1">
+<summary>Patch notes / version history</summary>
+
 # Current Version: 4.0
 
 * Added dashboard / kanban board with status counts, search, type filters, cached scans, CSV export, and drag-and-drop status changes.
@@ -218,3 +221,5 @@ I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lan
 * Customizable statuses and appearance.
 * Content Browser integration.
 * Configurable font size.
+
+</details>
