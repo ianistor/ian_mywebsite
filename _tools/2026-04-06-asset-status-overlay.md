@@ -123,19 +123,13 @@ The current-level scan is explicit, so opening or switching levels does not auto
 <img src="/assets/images/tools_showcase/aso/12_AssetDashboard.png" width="714" height="400" />
 <img src="/assets/images/tools_showcase/aso/13_AssetDashboard_ReplaceFind.png" width="714" height="400" />
 
-## Installation
-
-Enable the plugin:
-
-Edit > Plugins > Editor > Asset Status Overlay
-
-The Editor Scripting Utilities plugin is enabled automatically.
-
 ## Configuration
 
 Project Settings > Asset Status Overlay
 
 <img src="/assets/images/tools_showcase/aso/14_Project_Settings.png" width="714" height="400" />
+In-Depth video
+https://vimeo.com/1195044373?share=copy&fl=sv&fe=ci
 
 You can configure:
 
@@ -184,7 +178,7 @@ You can configure:
 ---
 
 
-I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lang=en) for allowing me to use his amazing rural cabin environment to showcase my plugin in a more "production" environment.
+I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lang=en) for allowing me to use his amazing rural cabin environment to showcase my plugin in an environment closer to production than empty levels.
 
 <details class="patch-notes" markdown="1">
 <summary>Patch notes / version history</summary>
