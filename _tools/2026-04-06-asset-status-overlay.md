@@ -37,6 +37,8 @@ Status information can show up:
 
 The goal is simple: make it easier to know what is safe to use before it lands in a level.
 
+https://vimeo.com/1195047193?share=copy&fl=sv&fe=ci
+
 <img src="/assets/images/tools_showcase/aso/1_Welcome.png" width="714" height="400" />
 
 ## Features
