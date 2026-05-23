@@ -19,6 +19,7 @@
   <link rel="alternate icon" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  {% include analytics-consent.html %}
 </head>
 <body{% if page.url == '/' %} class="home-with-bg-video"{% endif %}>
   {% if page.url == '/' %}
@@ -74,6 +75,7 @@
     <footer class="site-footer">
       <div class="container footer-row">
         <p>{{ site.description }}</p>
+        <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
       </div>
     </footer>
   </div>

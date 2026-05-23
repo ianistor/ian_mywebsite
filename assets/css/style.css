@@ -81,6 +81,54 @@ body.lightbox-open {
   overflow: hidden;
 }
 
+.cookie-consent {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 120;
+  width: min(420px, calc(100vw - 2rem));
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 157, 47, 0.34);
+  border-radius: 14px;
+  background: rgba(8, 10, 15, 0.96);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.cookie-consent[hidden] {
+  display: none;
+}
+
+.cookie-consent__copy h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.cookie-consent__copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.cookie-consent__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.cookie-consent__button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.95rem;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
