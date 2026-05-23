@@ -717,6 +717,33 @@
         }
       };
 
+      const getVimeoEmbedUrl = (inputUrl) => {
+        try {
+          const url = new URL(inputUrl);
+          const host = url.hostname.replace(/^www\./, '');
+          let videoId = '';
+
+          if (host === 'vimeo.com') {
+            videoId = url.pathname.split('/').filter(Boolean)[0] || '';
+          } else if (host === 'player.vimeo.com' && url.pathname.startsWith('/video/')) {
+            videoId = url.pathname.split('/')[2] || '';
+          }
+
+          if (!/^\d+$/.test(videoId)) return null;
+
+          const embedUrl = new URL(`https://player.vimeo.com/video/${videoId}`);
+          const privateHash = url.searchParams.get('h');
+          if (privateHash) embedUrl.searchParams.set('h', privateHash);
+          embedUrl.searchParams.set('badge', '0');
+          embedUrl.searchParams.set('autopause', '0');
+          embedUrl.searchParams.set('player_id', '0');
+          embedUrl.searchParams.set('app_id', '58479');
+          return embedUrl.toString();
+        } catch (error) {
+          return null;
+        }
+      };
+
       const ensureResponsiveEmbedFrame = (iframe) => {
         if (!iframe || iframe.closest('.embed-frame')) return;
 
@@ -734,7 +761,7 @@
       };
 
 
-      const convertYoutubeLinksToEmbeds = (root) => {
+      const convertVideoLinksToEmbeds = (root) => {
         if (!root) return;
 
         root.querySelectorAll('p').forEach((paragraph) => {
@@ -747,16 +774,18 @@
           const onlyLink = links[0];
           if (trimmedText !== onlyLink.textContent.trim()) return;
 
-          const embedUrl = getYoutubeEmbedUrl(onlyLink.href);
+          const youtubeEmbedUrl = getYoutubeEmbedUrl(onlyLink.href);
+          const vimeoEmbedUrl = getVimeoEmbedUrl(onlyLink.href);
+          const embedUrl = youtubeEmbedUrl || vimeoEmbedUrl;
           if (!embedUrl) return;
 
           const iframe = document.createElement('iframe');
           iframe.src = embedUrl;
-          iframe.title = `YouTube video: ${onlyLink.textContent.trim()}`;
+          iframe.title = `${vimeoEmbedUrl ? 'Vimeo' : 'YouTube'} video: ${onlyLink.textContent.trim()}`;
           iframe.width = '16';
           iframe.height = '9';
           iframe.loading = 'lazy';
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
           iframe.referrerPolicy = 'strict-origin-when-cross-origin';
           iframe.allowFullscreen = true;
 
@@ -868,7 +897,7 @@
 
       if (prose) {
         autoLinkTextNodes(prose);
-        convertYoutubeLinksToEmbeds(prose);
+        convertVideoLinksToEmbeds(prose);
         initializeVideoPosters(prose);
         prose.querySelectorAll('iframe').forEach(ensureResponsiveEmbedFrame);
 
