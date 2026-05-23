@@ -5,7 +5,7 @@ description: >-
 baseurl: ""
 url: "https://ianistor.com"
 og_image: "/assets/images/profile_photo.png"
-google_analytics_id: ""
+google_analytics_id: "G-0EGJN06V16"
 markdown: kramdown
 syntax_highlighter: rouge
 kramdown:
