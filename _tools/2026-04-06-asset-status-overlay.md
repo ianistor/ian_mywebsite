@@ -129,6 +129,7 @@ Project Settings > Asset Status Overlay
 
 <img src="/assets/images/tools_showcase/aso/14_Project_Settings.png" width="714" height="400" />
 In-Depth video
+
 https://vimeo.com/1195044373?share=copy&fl=sv&fe=ci
 
 You can configure:
