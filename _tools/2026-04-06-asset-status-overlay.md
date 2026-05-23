@@ -7,13 +7,14 @@ image: /assets/images/tools_showcase/aso/1_Welcome.png
 featured: true
 landing_position: 0
 trailer_youtube_id: 6bnHbuFv8L4
+trailer_vimeo_id: 1194992080
 trailer_fit: contain
 tags: [unreal, tool]
 links:
   - label: "Fab"
     url: "https://fab.com/s/d783d916db7e"
   - label: "Showcase Video"
-    url: "https://www.youtube.com/watch?v=6bnHbuFv8L4"
+    url: "https://vimeo.com/1194992080?share=copy&fl=sv&fe=ci"
   - label: "In-Depth Video"
     url: "https://www.youtube.com/watch?v=6bnHbuFv8L4"
 ---

@@ -2,12 +2,22 @@
 layout: default
 ---
 <article class="content-page project-page">
-  {% if page.trailer_video or page.trailer_youtube_id %}
+  {% if page.trailer_video or page.trailer_vimeo_id or page.trailer_youtube_id %}
     <section class="project-trailer-hero" aria-label="{{ page.title }} trailer preview">
       {% if page.trailer_video %}
         <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
           <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
         </video>
+      {% elsif page.trailer_vimeo_id %}
+        <iframe
+          class="project-trailer-media"
+          src="https://player.vimeo.com/video/{{ page.trailer_vimeo_id }}?background=1&autoplay=1&muted=1&loop=1&autopause=0&controls=0{% if page.trailer_vimeo_hash %}&h={{ page.trailer_vimeo_hash }}{% endif %}"
+          title="{{ page.title }} trailer preview"
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          aria-hidden="true">
+        </iframe>
       {% elsif page.trailer_youtube_id %}
         <iframe
           class="project-trailer-media"
@@ -23,7 +33,7 @@ layout: default
     </section>
   {% endif %}
 
-  <header class="project-hero-shell{% unless page.trailer_video or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
+  <header class="project-hero-shell{% unless page.trailer_video or page.trailer_vimeo_id or page.trailer_youtube_id %} project-hero-shell--no-trailer{% endunless %}">
     <div class="project-hero-top">
       <p class="eyebrow">Technical Art</p>
       <h1>{{ page.title }}</h1>
