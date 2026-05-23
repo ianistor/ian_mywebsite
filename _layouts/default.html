@@ -898,7 +898,9 @@
       if (prose) {
         autoLinkTextNodes(prose);
         convertVideoLinksToEmbeds(prose);
-        initializeVideoPosters(prose);
+        if (typeof initializeVideoPosters === 'function') {
+          initializeVideoPosters(prose);
+        }
         prose.querySelectorAll('iframe').forEach(ensureResponsiveEmbedFrame);
 
         prose.querySelectorAll('h2, h3, h4').forEach((heading) => {
