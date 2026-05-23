@@ -1,0 +1,13 @@
+{% assign announcement = site.site_announcement %}
+{% if announcement and announcement.id and announcement.message %}
+  <script>
+    window.siteAnnouncementConfig = {
+      id: {{ announcement.id | jsonify }},
+      title: {{ announcement.title | default: 'Latest update' | jsonify }},
+      message: {{ announcement.message | jsonify }},
+      url: {{ announcement.url | default: '/' | relative_url | jsonify }},
+      linkLabel: {{ announcement.link_label | default: 'More details' | jsonify }}
+    };
+  </script>
+  <script src="{{ '/assets/js/site-announcement.js' | relative_url }}" defer></script>
+{% endif %}

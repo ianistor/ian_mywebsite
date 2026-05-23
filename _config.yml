@@ -6,6 +6,12 @@ baseurl: ""
 url: "https://ianistor.com"
 og_image: "/assets/images/profile_photo.png"
 google_analytics_id: "G-0EGJN06V16"
+site_announcement:
+  id: "aso-4-0"
+  title: "Latest updates"
+  message: "Version 4.0 of Asset Status Overlay is now available."
+  url: "/tools/2026-04-06-asset-status-overlay/"
+  link_label: "More details"
 markdown: kramdown
 syntax_highlighter: rouge
 kramdown:

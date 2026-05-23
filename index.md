@@ -141,7 +141,7 @@ title: Home
     <h2>Tools</h2>
     <a href="{{ '/tools/' | relative_url }}">See all</a>
   </div>
-  {% assign featured_tools = site.tools | where: 'featured', true %}
+  {% assign featured_tools = site.tools | where: 'featured', true | sort: 'landing_position' %}
   <div class="projects-row-wrap projects-row-wrap--with-arrows">
     {% if featured_tools.size > 4 %}<button class="projects-row-nav projects-row-nav-prev" type="button" aria-label="Scroll tools left" data-row-nav="prev">←</button>{% endif %}
     <div class="projects-row-hint">Scroll for more tools</div>
