@@ -150,7 +150,7 @@ You can configure:
 - No additional database is required.
 - Status removal is handled by deleting the metadata tag.
 - Invalid-use suppressions are stored per user in editor settings, not in the project.
-- Dashboard scans can be limited to configured project paths.
+- Dashboard scans can be limited to configured project paths. (and should be to avoid big scans)
 
 ## Requirements
 
@@ -162,7 +162,7 @@ You can configure:
 ## Download
 
 **Get it here:**  
-https://fab.com/s/d783d916db7e
+**!!** https://fab.com/s/d783d916db7e **!!**
 
 # Current Version: 4.0
 
@@ -176,10 +176,9 @@ https://fab.com/s/d783d916db7e
 * Added Details panel thumbnail overlay support.
 * Added configurable dashboard scan paths.
 * Improved mesh and material status visualization.
-* Material Status Visualizer now averages colors across all tagged materials on a mesh.
 * Added compatibility for older settings names.
-* Improved welcome screen and onboarding information.
-* Bug fixing and performance improvements.
+* Added welcome screen and onboarding information.
+* Bug fixing and performance improvements. (You no longer have to swap folders for thumbnail refresh...*finally*)
 
 # Version: 3.0
 
