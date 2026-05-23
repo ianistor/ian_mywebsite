@@ -157,7 +157,8 @@ You can configure:
 - Mark deprecated, unsafe, or approval-sensitive statuses as Invalid For Use.
 - Limit dashboard scan paths for large projects.
 - Use current-level scan when reviewing a specific map.
-- Refresh thumbnails by changing folders or switching Content Browser view mode if Unreal has not redrawn them yet.
+- Refresh thumbnails by changing folders or switching Content Browser view mode if Unreal has not redrawn them yet. (no longer applicable since version 4.0 of the plugin)
+- Depending on your pipeline you can either go L0, L1, L2 , CUT or Test, In Review, Final, Deprecated/Cut (or whatever works for your team)
 
 ## Technical Details
 
