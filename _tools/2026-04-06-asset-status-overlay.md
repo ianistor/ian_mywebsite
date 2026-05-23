@@ -162,10 +162,12 @@ You can configure:
 ## Download
 
 **Get it here:**  
-**!!** https://fab.com/s/d783d916db7e **!!**
+**!!** [FAB](https://fab.com/s/d783d916db7e) **!!**
+
+---
 
 
-P.S: I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lang=en) for allowing me to use his amazing rural cabin environment to showcase my plugin in a more "production" environment.
+I also want to thank [Marteen Hof](https://www.fab.com/sellers/Maarten%20Hof?lang=en) for allowing me to use his amazing rural cabin environment to showcase my plugin in a more "production" environment.
 
 # Current Version: 4.0
 
