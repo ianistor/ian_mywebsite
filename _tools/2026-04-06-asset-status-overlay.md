@@ -98,7 +98,7 @@ This is useful for assets that are deprecated, test-only, cut from production, n
 
 <img src="/assets/images/tools_showcase/aso/4_MarkInvalidStatus.png" width="714" height="400" />
 
-https://vimeo.com/1194992080?share=copy&fl=sv&fe=ci
+https://vimeo.com/1195036762?share=copy&fl=sv&fe=ci
 
 ### Dashboard
 
