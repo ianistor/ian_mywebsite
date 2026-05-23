@@ -1140,7 +1140,9 @@
         if (!root || !lightbox || !lightboxImage) return;
         root.querySelectorAll('.prose img').forEach((img) => {
           if (img.closest('a')) return;
-          initializeImageLoadingState(img);
+          if (img.dataset.lightboxReady === 'true') return;
+          initializeMediaLoadingState(img);
+          img.dataset.lightboxReady = 'true';
           img.classList.add('zoomable-image');
           img.addEventListener('click', () => {
             lightboxImage.src = img.currentSrc || img.src;
