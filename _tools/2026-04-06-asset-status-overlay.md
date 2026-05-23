@@ -104,6 +104,8 @@ https://vimeo.com/1195036762?share=copy&fl=sv&fe=ci
 
 The dashboard gives a project-level overview of status coverage.
 
+https://vimeo.com/1195040491?share=copy&fl=sv&fe=ci
+
 - Full project scan
 - Scan only assets used in the current level
 - Status counts
