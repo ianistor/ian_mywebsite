@@ -3,7 +3,7 @@ layout: tool
 title: "Asset Status Overlay"
 overlay_text: "Unreal Engine"
 summary: "Visual asset status tracking for Unreal Engine, with thumbnail overlays, viewport visualization, invalid-use warnings, and a project dashboard."
-image: https://cdnb.artstation.com/p/assets/images/images/093/739/371/large/ioan-andrei-nistor-artstationthumbnailfront.jpg?1765303899
+image: /assets/images/tools_showcase/aso/1_Welcome.png
 featured: true
 landing_position: 0
 trailer_youtube_id: 6bnHbuFv8L4
@@ -32,6 +32,8 @@ Status information can show up:
 
 The goal is simple: make it easier to know what is safe to use before it lands in a level.
 
+<img src="/assets/images/tools_showcase/aso/1_Welcome.png" width="714" height="400" />
+
 ## Features
 
 ### Thumbnail Overlay
@@ -41,7 +43,7 @@ The goal is simple: make it easier to know what is safe to use before it lands i
 - Optional Details panel thumbnail overlays
 - Configurable overlay font size
 
-<img src="https://github.com/user-attachments/assets/610f5290-5fe8-4d1a-a953-b395addd09ae" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/2_ThumbnailOverlay.png" width="714" height="400" />
 
 ### Metadata and Status Management
 
@@ -53,10 +55,10 @@ The goal is simple: make it easier to know what is safe to use before it lands i
 - Optional auto-save after status changes
 - Optional dependency status changes for static mesh materials
 
-<img src="https://github.com/user-attachments/assets/6c077a69-4da3-41ed-9956-8b5b71218cee" width="714" height="400" />
-<img src="https://github.com/user-attachments/assets/4393e30d-bbcc-49ec-b65b-e86a24c53188" width="714" height="400" />
-<img src="https://github.com/user-attachments/assets/330b8844-3b39-4c66-885c-554996d30ed6" width="714" height="400" />
-<img src="https://github.com/user-attachments/assets/4f0fc80a-b192-41c2-9ad2-d1b7914fb614" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/3_CustomStatusEdit.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/5_SetStatusInCB.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/6_RemoveReplaceStatus.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/7_SetStatusLevelContext.png" width="714" height="400" />
 
 ### Level Visualization
 
@@ -66,13 +68,15 @@ The goal is simple: make it easier to know what is safe to use before it lands i
 - Viewport visualization refreshes after status changes
 - Material visualization averages all unique material statuses on a mesh
 
-<img src="https://github.com/user-attachments/assets/dfa40971-0b93-40a2-90c8-8eeb940c8dc9" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/8_ViewportDebugStatus.png" width="714" height="400" />
 
 For mesh visualization, actors are colored by the status of the placed mesh asset.
 
 For material visualization, meshes with multiple tagged materials display an average of those material status colors.
 
-<img src="https://github.com/user-attachments/assets/4cc05bac-efd8-40fb-a7fe-619490011a96" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/9_ViewportDebugMaterials1.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/10_ViewportDebugMaterials2.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/11_ViewportDebugLitUnlit.png" width="714" height="400" />
 
 ### Invalid For Use
 
@@ -86,6 +90,8 @@ This is useful for assets that are deprecated, test-only, cut from production, n
 - Current-level scans for invalid assets already present in the map
 - Invalid assets are highlighted in the dashboard when they are used in the current level
 - Dashboard actions can select or replace matching actors in the level
+
+<img src="/assets/images/tools_showcase/aso/4_MarkInvalidStatus.png" width="714" height="400" />
 
 ### Dashboard
 
@@ -105,6 +111,9 @@ The dashboard gives a project-level overview of status coverage.
 
 The current-level scan is explicit, so opening or switching levels does not automatically trigger a heavy dashboard rebuild. If the dashboard was showing a previous level, it asks you to scan the new level or switch back to the full project view.
 
+<img src="/assets/images/tools_showcase/aso/12_AssetDashboard.png" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/13_AssetDashboard_ReplaceFind.png" width="714" height="400" />
+
 ## Installation
 
 Enable the plugin:
@@ -117,7 +126,7 @@ The Editor Scripting Utilities plugin is enabled automatically.
 
 Project Settings > Asset Status Overlay
 
-<img src="https://github.com/user-attachments/assets/5138766c-914c-4aa9-8cb6-fb6be15034c2" width="714" height="400" />
+<img src="/assets/images/tools_showcase/aso/14_Project_Settings.png" width="714" height="400" />
 
 You can configure:
 
@@ -140,8 +149,6 @@ You can configure:
 - Limit dashboard scan paths for large projects.
 - Use current-level scan when reviewing a specific map.
 - Refresh thumbnails by changing folders or switching Content Browser view mode if Unreal has not redrawn them yet.
-
-<img src="https://github.com/user-attachments/assets/f694fbc9-8de6-4733-a673-12e3a1988f8c" width="714" height="400" />
 
 ## Technical Details
 
