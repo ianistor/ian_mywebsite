@@ -12,6 +12,10 @@ tags: [unreal, tool]
 links:
   - label: "Fab"
     url: "https://fab.com/s/d783d916db7e"
+  - label: "Showcase Video"
+    url: "https://www.youtube.com/watch?v=6bnHbuFv8L4"
+  - label: "In-Depth Video"
+    url: "https://www.youtube.com/watch?v=6bnHbuFv8L4"
 ---
 
 ## Asset Status Overlay
