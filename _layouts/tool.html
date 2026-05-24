@@ -13,7 +13,7 @@ layout: default
           class="project-trailer-media"
           src="https://player.vimeo.com/video/{{ page.trailer_vimeo_id }}?background=1&autoplay=1&muted=1&loop=1&autopause=0&controls=0&playsinline=1{% if page.trailer_vimeo_hash %}&h={{ page.trailer_vimeo_hash }}{% endif %}"
           title="{{ page.title }} trailer preview"
-          loading="lazy"
+          loading="eager"
           allow="autoplay; fullscreen; picture-in-picture"
           referrerpolicy="strict-origin-when-cross-origin"
           aria-hidden="true">
