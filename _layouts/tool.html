@@ -4,23 +4,13 @@ layout: default
 <article class="content-page tool-page project-page">
   {% if page.trailer_video or page.trailer_vimeo_id or page.trailer_youtube_id %}
     <section class="project-trailer-hero{% if page.trailer_fit == 'contain' %} project-trailer-hero--contain{% endif %}" aria-label="{{ page.title }} trailer preview">
-      {% if page.image %}
-        <img
-          class="project-trailer-poster"
-          src="{{ page.image | relative_url }}"
-          alt=""
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          aria-hidden="true">
-      {% endif %}
       {% if page.trailer_video %}
         <video class="project-trailer-media" autoplay muted loop playsinline preload="metadata" poster="{{ page.image | relative_url }}" aria-hidden="true">
           <source src="{{ page.trailer_video | relative_url }}" type="video/mp4">
         </video>
       {% elsif page.trailer_vimeo_id %}
         <iframe
-          class="project-trailer-media project-trailer-media--embed"
+          class="project-trailer-media"
           src="https://player.vimeo.com/video/{{ page.trailer_vimeo_id }}?background=1&autoplay=1&muted=1&loop=1&autopause=0&controls=0&playsinline=1{% if page.trailer_vimeo_hash %}&h={{ page.trailer_vimeo_hash }}{% endif %}"
           title="{{ page.title }} trailer preview"
           loading="eager"
@@ -30,7 +20,7 @@ layout: default
         </iframe>
       {% elsif page.trailer_youtube_id %}
         <iframe
-          class="project-trailer-media project-trailer-media--embed"
+          class="project-trailer-media"
           src="https://www.youtube-nocookie.com/embed/{{ page.trailer_youtube_id }}?autoplay=1&mute=1&controls=0&loop=1&playlist={{ page.trailer_youtube_id }}&start={{ page.trailer_start | default: 0 }}{% if page.trailer_end %}&end={{ page.trailer_end }}{% endif %}&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&fs=0&disablekb=1"
           title="{{ page.title }} trailer preview"
           loading="lazy"
