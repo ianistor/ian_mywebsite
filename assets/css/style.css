@@ -451,6 +451,8 @@ a:hover {
 }
 
 .project-trailer-media {
+  position: absolute;
+  inset: 0;
   width: 110%;
   height: 110%;
   border: 0;
@@ -459,11 +461,23 @@ a:hover {
   filter: saturate(1.08) contrast(1.04) brightness(0.9);
   transform: scale(1.08);
   pointer-events: none;
-  position: relative;
+  z-index: 1;
+}
+
+.project-trailer-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.78;
+  filter: saturate(1.08) contrast(1.04) brightness(0.9);
+  pointer-events: none;
   z-index: 0;
 }
 
-.project-trailer-hero--contain .project-trailer-media {
+.project-trailer-hero--contain .project-trailer-media,
+.project-trailer-hero--contain .project-trailer-poster {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -474,12 +488,22 @@ a:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   background:
     radial-gradient(ellipse at center, rgba(8, 10, 15, 0) 22%, rgba(8, 10, 15, calc(0.18 * var(--project-hero-fade-strength))) 48%, rgba(8, 10, 15, calc(0.52 * var(--project-hero-fade-strength))) 70%, rgba(8, 10, 15, calc(0.86 * var(--project-hero-fade-strength))) 90%, rgba(8, 10, 15, var(--project-hero-fade-strength)) 100%),
     linear-gradient(180deg, rgba(8, 10, 15, calc(0.14 * var(--project-hero-fade-strength))) 0%, rgba(8, 10, 15, calc(0.36 * var(--project-hero-fade-strength))) 50%, rgba(8, 10, 15, calc(0.62 * var(--project-hero-fade-strength))) 68%, rgba(8, 10, 15, calc(0.88 * var(--project-hero-fade-strength))) 80%, rgba(8, 10, 15, var(--project-hero-fade-strength)) 86%, rgba(8, 10, 15, var(--project-hero-fade-strength)) 100%);
   box-shadow: inset 0 -90px 120px -100px rgba(8, 10, 15, 0.82);
   opacity: var(--project-hero-fade-strength);
+}
+
+@media (max-width: 760px), (pointer: coarse) {
+  .project-trailer-media--embed {
+    display: none;
+  }
+
+  .project-trailer-poster {
+    opacity: 0.84;
+  }
 }
 
 .project-hero-shell {
