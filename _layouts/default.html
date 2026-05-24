@@ -464,9 +464,35 @@
       clickableCards.forEach((card) => {
         const href = card.dataset.href;
         if (!href) return;
-        if (coarsePointer) return;
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchMoved = false;
+        const touchMoveThreshold = 10;
+
+        card.addEventListener('touchstart', function (event) {
+          const touch = event.touches && event.touches[0];
+          if (!touch) return;
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+          touchMoved = false;
+        }, { passive: true });
+
+        card.addEventListener('touchmove', function (event) {
+          const touch = event.touches && event.touches[0];
+          if (!touch || touchMoved) return;
+          const dx = Math.abs(touch.clientX - touchStartX);
+          const dy = Math.abs(touch.clientY - touchStartY);
+          if (dx > touchMoveThreshold || dy > touchMoveThreshold) {
+            touchMoved = true;
+          }
+        }, { passive: true });
 
         card.addEventListener('click', function (event) {
+          if (touchMoved) {
+            touchMoved = false;
+            return;
+          }
           const interactiveTarget = event.target.closest(interactiveSelector);
           if (interactiveTarget && interactiveTarget !== card) return;
           window.location.href = href;
