@@ -16,7 +16,7 @@ title: Home
   </div>
 
   <div class="hero-image-container hero-content-elevated">
-    <video id="hero-feature-video" class="hero-feature-video" autoplay muted loop playsinline preload="metadata" aria-label="Showreel preview">
+    <video id="hero-feature-video" class="hero-feature-video" autoplay muted loop playsinline preload="auto" aria-label="Showreel preview">
       <source src="{{ '/assets/videos/SWO.mp4' | relative_url }}" type="video/mp4">
     </video>
   </div>

@@ -159,7 +159,7 @@
         backgroundVideo.autoplay = true;
         backgroundVideo.muted = true;
         backgroundVideo.playsInline = true;
-        backgroundVideo.preload = 'metadata';
+        backgroundVideo.preload = 'auto';
 
         const overlay = document.createElement('div');
         overlay.className = 'site-bg-video-overlay';
@@ -168,17 +168,35 @@
         wrap.appendChild(overlay);
         document.body.prepend(wrap);
 
-        let currentIndex = Math.floor(Math.random() * videoPool.length);
+        const getVideoPathname = (input) => {
+          if (!input) return '';
+          try {
+            return new URL(input, window.location.href).pathname;
+          } catch (error) {
+            return input;
+          }
+        };
+
+        const heroInitialSrc = heroFeatureVideo
+          ? heroFeatureVideo.currentSrc || heroFeatureVideo.src || (heroFeatureVideo.querySelector('source') && heroFeatureVideo.querySelector('source').src) || ''
+          : '';
+        const heroInitialIndex = videoPool.findIndex((videoUrl) => getVideoPathname(videoUrl) === getVideoPathname(heroInitialSrc));
+        let currentIndex = heroInitialIndex >= 0 ? heroInitialIndex : Math.floor(Math.random() * videoPool.length);
 
         const playIndex = (index) => {
           const selectedVideo = videoPool[index];
+          const selectedPath = getVideoPathname(selectedVideo);
           backgroundVideo.src = selectedVideo;
           backgroundVideo.load();
           backgroundVideo.play().catch(() => {});
 
           if (heroFeatureVideo) {
-            heroFeatureVideo.src = selectedVideo;
-            heroFeatureVideo.load();
+            const heroSourceNode = heroFeatureVideo.querySelector('source');
+            const activeHeroPath = getVideoPathname(heroFeatureVideo.currentSrc || heroFeatureVideo.src || (heroSourceNode && heroSourceNode.src) || '');
+            if (activeHeroPath !== selectedPath) {
+              heroFeatureVideo.src = selectedVideo;
+              heroFeatureVideo.load();
+            }
             heroFeatureVideo.play().catch(() => {});
           }
         };

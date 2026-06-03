@@ -525,6 +525,7 @@ a:hover {
   opacity: 0;
   filter: saturate(0.9) contrast(0.95) brightness(0.72);
   transform: scale(1.04);
+  transition: opacity 0.24s ease;
 }
 
 body.home-with-bg-video.video-bg-ready .site-bg-video {
@@ -541,6 +542,12 @@ body.home-with-bg-video.video-bg-disabled .site-bg-video-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(8, 10, 15, 0.58), rgba(8, 10, 15, 0.74));
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+body.home-with-bg-video.video-bg-ready .site-bg-video-overlay {
+  opacity: 1;
 }
 
 .home-with-bg-video .site-bg-video {
