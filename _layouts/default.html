@@ -17,6 +17,9 @@
   <meta name="twitter:image" content="{{ social_image | absolute_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="alternate icon" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
+  {% if page.url == '/' %}
+  <link rel="preload" href="{{ '/assets/videos/SWO.mp4' | relative_url }}" as="video" type="video/mp4" fetchpriority="high">
+  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   {% include analytics-consent.html %}
@@ -33,6 +36,14 @@
         "{{ '/assets/videos/TCTD.mp4' | relative_url }}"
       ]
     </script>
+  {% endif %}
+  {% if page.url == '/' %}
+    <div class="site-bg-video-wrap" aria-hidden="true">
+      <video id="site-bg-video" class="site-bg-video" autoplay muted playsinline preload="auto" onplaying="document.body.classList.add('video-bg-ready')">
+        <source src="{{ '/assets/videos/SWO.mp4' | relative_url }}" type="video/mp4">
+      </video>
+      <div class="site-bg-video-overlay"></div>
+    </div>
   {% endif %}
   <div class="page-shell">
   <header class="site-header">
@@ -149,24 +160,32 @@
         }
         if (!videoPool.length) return;
 
-        const wrap = document.createElement('div');
-        wrap.className = 'site-bg-video-wrap';
-        wrap.setAttribute('aria-hidden', 'true');
+        let wrap = document.querySelector('.site-bg-video-wrap');
+        if (!wrap) {
+          wrap = document.createElement('div');
+          wrap.className = 'site-bg-video-wrap';
+          wrap.setAttribute('aria-hidden', 'true');
+          document.body.prepend(wrap);
+        }
 
-        const backgroundVideo = document.createElement('video');
-        backgroundVideo.className = 'site-bg-video';
+        let backgroundVideo = document.getElementById('site-bg-video') || wrap.querySelector('.site-bg-video');
+        if (!backgroundVideo) {
+          backgroundVideo = document.createElement('video');
+          backgroundVideo.id = 'site-bg-video';
+          backgroundVideo.className = 'site-bg-video';
+          wrap.appendChild(backgroundVideo);
+        }
         const heroFeatureVideo = document.getElementById('hero-feature-video');
         backgroundVideo.autoplay = true;
         backgroundVideo.muted = true;
         backgroundVideo.playsInline = true;
         backgroundVideo.preload = 'auto';
 
-        const overlay = document.createElement('div');
-        overlay.className = 'site-bg-video-overlay';
-
-        wrap.appendChild(backgroundVideo);
-        wrap.appendChild(overlay);
-        document.body.prepend(wrap);
+        if (!wrap.querySelector('.site-bg-video-overlay')) {
+          const overlay = document.createElement('div');
+          overlay.className = 'site-bg-video-overlay';
+          wrap.appendChild(overlay);
+        }
 
         const getVideoPathname = (input) => {
           if (!input) return '';
@@ -186,8 +205,12 @@
         const playIndex = (index) => {
           const selectedVideo = videoPool[index];
           const selectedPath = getVideoPathname(selectedVideo);
-          backgroundVideo.src = selectedVideo;
-          backgroundVideo.load();
+          const backgroundSourceNode = backgroundVideo.querySelector('source');
+          const activeBackgroundPath = getVideoPathname(backgroundVideo.currentSrc || backgroundVideo.src || (backgroundSourceNode && backgroundSourceNode.src) || '');
+          if (activeBackgroundPath !== selectedPath) {
+            backgroundVideo.src = selectedVideo;
+            backgroundVideo.load();
+          }
           backgroundVideo.play().catch(() => {});
 
           if (heroFeatureVideo) {
@@ -201,9 +224,14 @@
           }
         };
 
-        backgroundVideo.addEventListener('playing', () => {
+        const markBackgroundVideoReady = () => {
           document.body.classList.add('video-bg-ready');
-        }, { once: true });
+        };
+
+        backgroundVideo.addEventListener('playing', markBackgroundVideoReady, { once: true });
+        if (backgroundVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && !backgroundVideo.paused) {
+          markBackgroundVideoReady();
+        }
 
         const playNext = () => {
           if (videoPool.length === 1) {
