@@ -74,7 +74,7 @@ body {
 }
 
 body.home-with-bg-video {
-  background: radial-gradient(circle at top, rgba(13, 20, 35, 0.66) 0%, rgba(8, 10, 15, 0.72) 38%);
+  background: #05070d;
 }
 
 body.lightbox-open {
@@ -2621,7 +2621,7 @@ body.home-with-bg-video.video-bg-ready .site-bg-video-overlay {
   overflow: hidden;
   min-height: 750px;
   max-height: 750px;
-  background: linear-gradient(155deg, color-mix(in srgb, var(--panel) 20%, transparent) 0%, color-mix(in srgb, var(--panel-2) 14%, transparent) 52%, color-mix(in srgb, var(--panel) 16%, transparent) 100%);
+  background: #05070d;
 }
 
 body.home-with-bg-video .landing-hero,
