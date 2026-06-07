@@ -17,11 +17,10 @@
   <meta name="twitter:image" content="{{ social_image | absolute_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
   <link rel="alternate icon" href="{{ '/assets/images/logos/favicon-ian.svg' | relative_url }}">
-  {% if page.url == '/' %}
-  <link rel="preload" href="{{ '/assets/videos/SWO.mp4' | relative_url }}" as="video" type="video/mp4" fetchpriority="high">
-  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if page.layout == 'post' or page.layout == 'project' or page.layout == 'tool' %}
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  {% endif %}
   {% include analytics-consent.html %}
   {% include site-announcement.html %}
 </head>
@@ -36,14 +35,6 @@
         "{{ '/assets/videos/TCTD.mp4' | relative_url }}"
       ]
     </script>
-  {% endif %}
-  {% if page.url == '/' %}
-    <div class="site-bg-video-wrap" aria-hidden="true">
-      <video id="site-bg-video" class="site-bg-video" autoplay muted playsinline preload="auto" onplaying="document.body.classList.add('video-bg-ready')">
-        <source src="{{ '/assets/videos/SWO.mp4' | relative_url }}" type="video/mp4">
-      </video>
-      <div class="site-bg-video-overlay"></div>
-    </div>
   {% endif %}
   <div class="page-shell">
   <header class="site-header">
@@ -148,6 +139,10 @@
       mobileScrollTarget.addEventListener('scroll', syncMobileBrandState, { passive: true });
       addMediaQueryChangeListener(mobileCondenseBreakpoint, syncMobileBrandState);
 
+      const markVideoBackgroundReady = () => {
+        document.body.classList.add('video-bg-ready');
+      };
+
       const initSiteBackgroundVideo = () => {
         const poolNode = document.getElementById('site-bg-video-pool');
         if (!poolNode) return;
@@ -179,7 +174,7 @@
         backgroundVideo.autoplay = true;
         backgroundVideo.muted = true;
         backgroundVideo.playsInline = true;
-        backgroundVideo.preload = 'auto';
+        backgroundVideo.preload = 'metadata';
 
         if (!wrap.querySelector('.site-bg-video-overlay')) {
           const overlay = document.createElement('div');
@@ -224,13 +219,10 @@
           }
         };
 
-        const markBackgroundVideoReady = () => {
-          document.body.classList.add('video-bg-ready');
-        };
-
-        backgroundVideo.addEventListener('playing', markBackgroundVideoReady, { once: true });
-        if (backgroundVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && !backgroundVideo.paused) {
-          markBackgroundVideoReady();
+        backgroundVideo.addEventListener('loadeddata', markVideoBackgroundReady, { once: true });
+        backgroundVideo.addEventListener('playing', markVideoBackgroundReady, { once: true });
+        if (backgroundVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          markVideoBackgroundReady();
         }
 
         const playNext = () => {
@@ -250,7 +242,28 @@
         playIndex(currentIndex);
       };
 
-      initSiteBackgroundVideo();
+      const heroFeatureVideo = document.getElementById('hero-feature-video');
+      let siteBackgroundVideoStarted = false;
+      const startSiteBackgroundVideo = () => {
+        if (siteBackgroundVideoStarted) return;
+        siteBackgroundVideoStarted = true;
+        initSiteBackgroundVideo();
+      };
+
+      if (heroFeatureVideo) {
+        heroFeatureVideo.addEventListener('loadeddata', markVideoBackgroundReady, { once: true });
+        heroFeatureVideo.addEventListener('playing', markVideoBackgroundReady, { once: true });
+        heroFeatureVideo.addEventListener('playing', startSiteBackgroundVideo, { once: true });
+        if (heroFeatureVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          markVideoBackgroundReady();
+          if (!heroFeatureVideo.paused) {
+            startSiteBackgroundVideo();
+          }
+        }
+        window.setTimeout(startSiteBackgroundVideo, 2500);
+      } else {
+        startSiteBackgroundVideo();
+      }
 
       const initTouchScrollClickGuard = () => {
         const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
