@@ -2756,11 +2756,14 @@ body.home-with-bg-video .section-block {
   }
 
   .hero-feature-video {
+    display: block;
     width: 100%;
     height: auto;
-    min-height: 300px;
-    max-height: 420px;
+    min-height: 0;
+    max-height: min(52vh, 420px);
     margin-top: 0.5rem;
+    object-fit: contain;
+    object-position: center;
   }
 
   .landing-hero .hero-image-container::before,
