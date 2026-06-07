@@ -57,7 +57,7 @@ title: Home
                 <span>{{ placeholder_label }}</span>
               </div>
             {% else %}
-              <img src="{{ project.image | relative_url }}" alt="{{ project.title }} thumbnail" class="project-row-image">
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }} thumbnail" class="project-row-image" loading="lazy" decoding="async" fetchpriority="low">
             {% endif %}
             <p class="project-card-summary">{{ project.summary }}</p>
           </div>
@@ -106,11 +106,11 @@ title: Home
               <span>{{ placeholder_label }}</span>
             </div>
           {% elsif post.image %}
-            <img src="{{ post.image | relative_url }}" alt="{{ post.title }} thumbnail" class="card-thumb">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }} thumbnail" class="card-thumb" loading="lazy" decoding="async" fetchpriority="low">
           {% elsif post.youtube_id %}
-            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }} video thumbnail" class="card-thumb">
+            <img src="https://img.youtube.com/vi/{{ post.youtube_id }}/hqdefault.jpg" alt="{{ post.title }} video thumbnail" class="card-thumb" loading="lazy" decoding="async" fetchpriority="low">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="{{ post.title }} placeholder thumbnail" class="card-thumb">
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="{{ post.title }} placeholder thumbnail" class="card-thumb" loading="lazy" decoding="async" fetchpriority="low">
           {% endif %}
           <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -154,9 +154,9 @@ title: Home
               <span>{{ placeholder_label }}</span>
             </div>
           {% elsif tool.image %}
-            <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb">
+            <img src="{{ tool.image | relative_url }}" alt="" class="card-thumb" loading="lazy" decoding="async" fetchpriority="low">
           {% else %}
-            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb">
+            <img src="{{ '/assets/images/placeholder.png' | relative_url }}" alt="" class="card-thumb" loading="lazy" decoding="async" fetchpriority="low">
           {% endif %}
           <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
           <p>{{ tool.summary }}</p>
