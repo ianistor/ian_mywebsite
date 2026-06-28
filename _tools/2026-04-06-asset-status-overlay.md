@@ -168,15 +168,14 @@ You can configure:
 
 ## Requirements
 
-- Unreal Engine 5.6 and 5.7
+- Unreal Engine 5.6, 5.7 or 5.8
 - Editor-only plugin
 - Supported target platforms: Windows, Mac, Linux
 - Editor Scripting Utilities plugin auto enabled
 
 ## Download
 
-**Get it here:**  
-**!!** [FAB](https://fab.com/s/d783d916db7e) **!!**
+**Get it here:** [FAB](https://fab.com/s/d783d916db7e) 
 
 ---
 
