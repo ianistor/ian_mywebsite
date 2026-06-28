@@ -4,7 +4,7 @@ title: "Diablo Church - Fan made environment"
 date: 2026-05-05
 tags: [houdini, unreal, vfx]
 image:  https://raw.githubusercontent.com/ianistor/ian_website/main/assets/images/projects_showcase/Lilith_1.png
-hidden: false
+hidden: true
 trailer_video: /assets/images/projects_showcase/Lilith_1.png
 trailer_fit: contain
 ---
